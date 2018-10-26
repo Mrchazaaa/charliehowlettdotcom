@@ -6,9 +6,13 @@ export default function( sketch ) {
         // cnv.parent("sketch");
     }
     sketch.draw = function() {
-        sketch.fill(0);
-        sketch.ellipse(50, 50, 80, 80);
-        sketch.background(255, 204, 0);
+        sketch.noStroke();
+        sketch.background('#80dfff');
+        sketch.smooth();
+        sketch.fill('#9dc785');
+        sketch.arc(document.body.clientWidth - 20, document.body.scrollHeight+200, 1.5*document.body.clientWidth, 1080, sketch.PI, 0, sketch.PIE);
+        sketch.fill('#93C178');
+        sketch.arc(0, document.body.scrollHeight+200, 1.5*document.body.clientWidth, 1080, sketch.PI, 0, sketch.PIE);
     }
     sketch.windowResized = function() {
         sketch.resizeCanvas(document.body.clientWidth, document.body.scrollHeight);
