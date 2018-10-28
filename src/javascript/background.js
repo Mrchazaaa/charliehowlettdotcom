@@ -4,32 +4,39 @@ class Cloud {
         //maximum number of ellipses that can be used to make this cloud
         this.maxCloudPoints = 7;
         //the maximum size of any cloud
-        this.cloudWidth = 270;
+        this.cloudWidth = 140;
         //the maximum radius of any ellipse ("cloud point") in a cloud
-        this.cloudPointWidth = 140;
-        this.cloudPointMinWidth = 100;
+        this.cloudPointWidth = 100;
+        this.cloudPointMinWidth = 50;
         this.cloudPoints = [];
-        this.offset = 400;
+
+        this.x = -(this.cloudWidth + Math.floor(Math.random()*2350));
+        this.y = Math.floor(Math.random() * (document.body.scrollHeight * (1/2)) );
 
 
         //loop a random number of times (between) 3 and maxCloudPoints
         for (let i = 0; i < Math.floor((Math.random() * this.maxCloudPoints) + 3); i++) {
             //generate a number of arrays where the first element is the position of a cloud point and the second is the radius of the cloud point
-            this.cloudPoints.push( [Math.floor(Math.random() * this.cloudWidth) + this.offset,  Math.floor((Math.random() * this.cloudPointWidth) + this.cloudPointMinWidth)]);
+            this.cloudPoints.push( [Math.floor(Math.random() * this.cloudWidth),  Math.floor((Math.random() * this.cloudPointWidth) + this.cloudPointMinWidth)]);
             console.log("plot");
         }        
+    }
+
+    move(){
+        this.x++;
+
     }
 
     draw(){
         this.sketch.fill('#f0ead6');
         for (let i = 0; i < this.cloudPoints.length; i++) {
-            this.sketch.ellipse( this.cloudPoints[i][0], 100, this.cloudPoints[i][1], this.cloudPoints[i][1] );
+            this.sketch.ellipse( this.cloudPoints[i][0] + this.x, this.y, this.cloudPoints[i][1], this.cloudPoints[i][1] );
         }
-        this.sketch.stroke('#222222');
-        this.sketch.strokeWeight(4);
-        this.sketch.noFill();
-        this.sketch.rect(this.offset - this.cloudPointWidth, 0, this.cloudWidth, this.cloudPointWidth);
-        this.sketch.noStroke();
+        // this.sketch.stroke('#222222');
+        // this.sketch.strokeWeight(4);
+        // this.sketch.noFill();
+        // this.sketch.rect(this.offset - this.cloudPointWidth, 0, this.cloudWidth, this.cloudPointWidth);
+        // this.sketch.noStroke();
     }
 }
 
@@ -37,7 +44,7 @@ export default function( sketch ) {
     //stores the dimensions of the canvas (relative to the whole page not just viewport)
     var width;
     var height;
-    var cloud;
+    var cloud = [];
 
     //setup function, run at initialization
     sketch.setup = function() {
@@ -45,7 +52,9 @@ export default function( sketch ) {
         height = document.body.scrollHeight + 20;
         var cnv = sketch.createCanvas(width, height);
 
-        cloud = new Cloud(sketch);
+        for (let i = 0; i < 25; i++) {
+            cloud.push(new Cloud(sketch));
+        }
     }
 
     //called every time the canvas is drawn
@@ -66,8 +75,11 @@ export default function( sketch ) {
         sketch.arc(0, viewportHeight+200, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
         //draw background below hills
         sketch.rect(0, viewportHeight+200, width, height);
-        
-        cloud.draw();
+
+        for (let i = 0; i < 25; i++) {
+            cloud[i].move();
+            cloud[i].draw();
+        }
     }
 
     //called every time the canvas is resized
