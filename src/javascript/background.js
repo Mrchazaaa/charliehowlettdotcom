@@ -11,7 +11,7 @@ class Cloud {
         this.cloudPoints = [];
 
         this.x = -(this.cloudWidth + Math.floor(Math.random()*2350));
-        this.y = Math.floor(Math.random() * (document.body.scrollHeight * (1/2)) );
+        this.y = Math.floor(Math.random() * (document.body.scrollHeight * (1/4)) );
 
 
         //loop a random number of times (between) 3 and maxCloudPoints
@@ -55,7 +55,7 @@ export default function( sketch ) {
         for (let i = 0; i < 25; i++) {
             cloud.push(new Cloud(sketch));
         }
-    }
+    };
 
     //called every time the canvas is drawn
     sketch.draw = function() {
@@ -67,6 +67,11 @@ export default function( sketch ) {
         //draw sun
         sketch.fill('#FFD670');
         sketch.ellipse(width - 30, 30, 200, 200);
+        //draw and move clouds
+        for (let i = 0; i < 25; i++) {
+            cloud[i].move();
+            cloud[i].draw();
+        }
         //draw background hill
         sketch.fill('#9dc785');
         sketch.arc(width - 20, viewportHeight+200, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
@@ -76,16 +81,12 @@ export default function( sketch ) {
         //draw background below hills
         sketch.rect(0, viewportHeight+200, width, height);
 
-        for (let i = 0; i < 25; i++) {
-            cloud[i].move();
-            cloud[i].draw();
-        }
-    }
+    };
 
     //called every time the canvas is resized
     sketch.windowResized = function() {
         width = document.body.clientWidth;
         height = document.body.scrollHeight + 20;
         sketch.resizeCanvas(width, height);
-    }
+    };
 }
