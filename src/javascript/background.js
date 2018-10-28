@@ -1,11 +1,4 @@
 class Cloud {
-
-    // var cloudPoints;
-    // var maxCloudPoints;
-    // var cloudWidth;
-    // var cloudPointWidth;
-    // var sketch;
-
     constructor(sketch){
         this.sketch = sketch;
         //maximum number of ellipses that can be used to make this cloud

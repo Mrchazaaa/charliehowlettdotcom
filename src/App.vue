@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class='sketch' id='sketch'></div>
-      <img alt="Vue logo" src="./assets/logo.png">
+      <img alt="Vue logo" src="./assets/logo.png"/>
       <HelloWorld msg="big website coming soon"/>
       <CharliesWorld />
   </div>
@@ -9,26 +9,26 @@
 
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import CharliesWorld from './components/CharliesWorld.vue'
-import sketch from './javascript/background.js'
-import p5 from 'p5'
+    import HelloWorld from './components/HelloWorld.vue'
+    import CharliesWorld from './components/CharliesWorld.vue'
+    import p5 from 'p5'
+    import sketch from './javascript/background.js'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld,
-    CharliesWorld
-  },
-  data() {
-    return {
-      myp5: null
+    export default {
+      name: 'app',
+      components: {
+        HelloWorld,
+        CharliesWorld
+      },
+      data() {
+        return {
+          myp5: null
+        }
+      },
+      mounted() {
+        this.myp5 = new p5(sketch, document.getElementById('sketch'))
+      }
     }
-  },
-  mounted() {
-    this.myp5 = new p5(sketch, document.getElementById('sketch'))
-  }
-}
 </script>
 
 <style>
