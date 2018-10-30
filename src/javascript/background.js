@@ -2,13 +2,8 @@
 //class used to represent clouds in the background sketch
 class Cloud {
 
-    //a cloud is essentially a collection of ellipses, of varying size. In this code each ellipse is refered to as a "cloud points"
-    constructor(sketch, width, height){
-        //pass a reference of the sketch object, which contains all p5 methods
-        this.sketch = sketch;
-        //store a local copy of the width and height of the canvas containing this cloud
-        this.width = width;
-        this.height = height;
+    //initializes cloud just of the left side of the screen, also called when this cloud goes off the screen so that a new cloud is drawn
+    reset() {
 
         //stores relative x coordinate and radius of each cloud point that form this cloud
         this.cloudPoints = [];
@@ -57,7 +52,18 @@ class Cloud {
             let relativeX = Math.floor(this.cloudWidth * (i/cloudPointNum));
 
             this.cloudPoints.push([relativeX, ellipseRadius]);
-        }        
+        }
+    }
+
+    //a cloud is essentially a collection of ellipses, of varying size. In this code each ellipse is refered to as a "cloud points"
+    constructor(sketch, width, height){
+        //pass a reference of the sketch object, which contains all p5 methods
+        this.sketch = sketch;
+        //store a local copy of the width and height of the canvas containing this cloud
+        this.width = width;
+        this.height = height;
+
+        this.reset();
     }
 
     move(newWidth, newHeight) {
@@ -68,29 +74,43 @@ class Cloud {
     }
 
     draw(){
-        // if (this.x <= this.width + this.cloudWidth ) {
+        if (this.x >= this.width + this.cloudWidth ) {
+            this.reset();
+            console.log("reset");
+        }
+        else {
             this.sketch.fill('#f0ead6');
             for (let i = 0; i < this.cloudPoints.length; i++) {
                 this.sketch.ellipse( this.cloudPoints[i][0] + this.x, this.y, this.cloudPoints[i][1], this.cloudPoints[i][1] );
             }
-        // }
+        }
     }
 }
 
 export default function( sketch ) {
     //stores the dimensions of the canvas (relative to the whole page not just viewport)
-    var width;
-    var height;
-    var clouds = [];
+    let width;
+    let height;
+    let clouds = [];
+    let cloudInterval;
+    let maxClouds = 20;
 
     //setup function, run at initialization
     sketch.setup = function() {
         width = document.body.clientWidth;
         height = document.body.scrollHeight + 20;
 
-        var cnv = sketch.createCanvas(width, height);
+        let cnv = sketch.createCanvas(width, height);
 
-        setInterval( function() { clouds.push(new Cloud(sketch, width, height))  }, 1500);
+        cloudInterval = setInterval( function() { 
+            clouds.push(new Cloud(sketch, width, height)); 
+            console.log("new cloud"); 
+            if (clouds.length == maxClouds) {
+                clearInterval(cloudInterval);
+
+            }
+        }, 1500);
+
 
         // for (let i = 0; i < 1; i++) {
         //     clouds.push(new Cloud(sketch, width, height));
@@ -111,12 +131,16 @@ export default function( sketch ) {
         sketch.ellipse(width - 30, 30, 200, 200);
         //draw and move clouds
         clouds.forEach(function(element) { 
-            if (element.x < width) {
-                element.move(); 
-                element.draw(width, height);  
-            } else {
-            }
+            // if (element.x < width) {
+                element.move(width, height); 
+                element.draw();  
+            // } else {
+            // }
         });
+
+        
+
+
         // for (let i = 0; i < 1; i++) {
         //     clouds[i].move();
         //     clouds[i].draw(width, height);
