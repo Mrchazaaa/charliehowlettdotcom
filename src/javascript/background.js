@@ -16,7 +16,7 @@ class Cloud {
         //the maximum radius of any cloud point in a cloud
         this.cloudPointMaxWidth = 80;
         //the minimum radius of any cloud point in a cloud
-        this.cloudPointMinWidth = 50;
+        this.cloudPointMinWidth = 70; //50;
 
         //initial x coordinate of cloud is set so that the cloud starts just off the left side of the screen
         this.x = -this.cloudWidth;
@@ -31,15 +31,17 @@ class Cloud {
 
             let ellipseRadius;
 
+            //TODO: ellipses in cloud are sometimes small than min cloud point
+
             // start of the cloud should be thinner
             // so allow ellipses to be bigger or equal in size to the previous cloud point
             if ( i < Math.floor(cloudPointNum/2) ) {
                 // let prevCloudPointRadius = this.cloudPoints[i - 1] || this.cloudPointMinWidth;
                 // ellipseRadius = Math.max(Math.floor((Math.random() * this.cloudPointMaxWidth) + this.cloudPointMinWidth), prevCloudPointRadius);
-                ellipseRadius = Math.floor((Math.random() * (this.cloudPointMaxWidth/4)) + this.cloudPointMinWidth);
+                ellipseRadius = Math.floor((Math.random() * (this.cloudPointMaxWidth/4 - this.cloudPointMinWidth)) + this.cloudPointMinWidth);
             } 
             else if ( i == Math.floor(cloudPointNum/2) || i == Math.floor(cloudPointNum/2) - 1 || i == Math.floor(cloudPointNum/2) + 1 ) {
-                ellipseRadius = Math.floor((Math.random() * (this.cloudPointMaxWidth)) + this.cloudPointMinWidth);
+                ellipseRadius = Math.floor((Math.random() * (this.cloudPointMaxWidth - this.cloudPointMinWidth)) + this.cloudPointMinWidth);
             }
             // end of the cloud should be thinner 
             // so allow ellipses to be smaller or equal in size to the previous cloud point
@@ -129,6 +131,8 @@ export default function( sketch ) {
         //draw sun
         sketch.fill('#FFD670');
         sketch.ellipse(width - 30, 30, 200, 200);
+        sketch.ellipse(100, 100, 65, 65);
+        sketch.ellipse(200, 100, 80, 80);
         //draw and move clouds
         clouds.forEach(function(element) { 
             // if (element.x < width) {

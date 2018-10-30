@@ -1,18 +1,18 @@
 <template>
   <div id="app">
     <div class='sketch' id='sketch'></div>
-      <img alt="Vue logo" src="./assets/logo.png"/>
-      <HelloWorld msg="big website coming soon"/>
-      <CharliesWorld />
+    <img alt="Vue logo" src="./assets/logo.png"/>
+    <HelloWorld msg="big website coming soon"/>
+    <CharliesWorld />
+    <button type="button" class="btn btn-warning">Warning</button>
   </div>
 </template>
 
-
-<script>
-    import HelloWorld from './components/HelloWorld.vue'
-    import CharliesWorld from './components/CharliesWorld.vue'
-    import p5 from 'p5'
-    import sketch from './javascript/background.js'
+    <script>
+        import HelloWorld from './components/HelloWorld.vue';
+        import CharliesWorld from './components/CharliesWorld.vue';
+        import p5 from 'p5';
+    import sketch from './javascript/background.js';
 
     export default {
       name: 'app',
@@ -26,7 +26,20 @@
         }
       },
       mounted() {
-        this.myp5 = new p5(sketch, document.getElementById('sketch'))
+        this.myp5 = new p5(sketch, document.getElementById('sketch'));
+
+        let jqueryScript = document.createElement('script');
+        jqueryScript.setAttribute('src', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js');
+        document.head.appendChild(jqueryScript);
+
+        let bootStrapCSS = document.createElement('link');
+        bootStrapCSS.setAttribute('rel', 'stylesheet');
+        bootStrapCSS.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+        document.head.appendChild(bootStrapCSS);
+
+        let bootStrapScript = document.createElement('script');
+        bootStrapScript.setAttribute('src', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
+        document.head.appendChild(bootStrapScript);
       }
     }
 </script>
