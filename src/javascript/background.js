@@ -89,7 +89,7 @@ class Cloud {
 }
 
 export default function( sketch ) {
-    //stores the dimensions of the canvas (relative to the whole page not just viewport)
+    //stores the dimensions of the canvas (relative to the viewport)
     let width;
     let height;
     let clouds = [];
@@ -99,7 +99,7 @@ export default function( sketch ) {
     //setup function, run at initialization
     sketch.setup = function() {
         width = document.body.clientWidth;
-        height = document.body.scrollHeight + 20;
+        height = document.body.clientHeight + 300;
 
         let cnv = sketch.createCanvas(width, height);
 
@@ -110,34 +110,20 @@ export default function( sketch ) {
 
             }
         }, 1500);
-
-
-        // for (let i = 0; i < 1; i++) {
-        //     clouds.push(new Cloud(sketch, width, height));
-        // }
-
-
     };
 
     //called every time the canvas is drawn
     sketch.draw = function() {
-        var viewportHeight = document.documentElement.clientHeight;
-
         sketch.noStroke();
         sketch.background('#80dfff');
         sketch.smooth();
         //draw sun
         sketch.fill('#FFD670');
         sketch.ellipse(width - 30, 30, 200, 200);
-        // sketch.ellipse(100, 100, 65, 65);
-        // sketch.ellipse(200, 100, 80, 80);
         //draw and move clouds
         clouds.forEach(function(element) { 
-            // if (element.x < width) {
-                element.move(width, height); 
-                element.draw();  
-            // } else {
-            // }
+            element.move(width, height); 
+            element.draw();  
         });
 
         
@@ -145,16 +131,16 @@ export default function( sketch ) {
 
         //draw background hill
         sketch.fill('#9dc785');
-        sketch.arc(width - 20, viewportHeight+200, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
+        sketch.arc(width - 20, height-100, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
         //draw foreground hill
         sketch.fill('#93C178');
-        sketch.arc(0, viewportHeight+200, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
+        sketch.arc(0, height-100, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
         //draw background below hills
-        sketch.rect(0, viewportHeight+200, width, height);
+        sketch.rect(0, height-100, width, height);
 
 
 
-        let y = viewportHeight-200;
+        let y = height-100;
         let x = 0.75*width;
         let h = 100;
 
@@ -172,7 +158,7 @@ export default function( sketch ) {
     //called every time the canvas is resized
     sketch.windowResized = function() {
         width = document.body.clientWidth;
-        height = document.body.scrollHeight + 20;
+        height = document.body.clientHeight + 300;
         sketch.resizeCanvas(width, height);
     };
 }

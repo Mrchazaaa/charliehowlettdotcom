@@ -41,14 +41,15 @@
 </script>
 
 <style>
-#sketch {
-    width: 100%;
+body, html {
+    margin:0; 
+    padding:0;
     height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+    background-color: #93C178;
+}
+#sketch {
     margin: 0; 
-    z-index: -1;
+    z-index: 0;
 }
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -57,17 +58,12 @@
     text-align: center;
     color: #2c3e50;
 }
-body, html {
-    margin:0; 
-    padding:0;
-    background-color: #93C178;
-}
 .container{
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    margin-top: 80vh;
-    margin-bottom: 5vh;
+    margin-top: -400px;
+    margin-bottom: 5px;
 }
 .row > div{
     background-color: transparent;
