@@ -1,16 +1,14 @@
 <template>
   <div id="app">
     <div class='sketch' id='sketch'></div>
-    <img alt="Vue logo" src="./assets/logo.png"/>
-    <HelloWorld msg="big website coming soon"/>
-    <CharliesWorld />
-    <button type="button" class="btn btn-warning">Warning</button>
-
     <div class="container">
         <div class="row"> 
             <div class="col-12  col-md-1"></div>
-            <div class="col-12 col-md-10">
-              2 of 3
+            <div class="col-12 col-md-10" id="content-container">
+                <img alt="Vue logo" src="./assets/logo.png"/>
+                <HelloWorld msg="big website coming soon"/>
+                <CharliesWorld />
+                <button type="button" class="btn btn-warning">Warning</button>
             </div>
             <div class="col-12 col-md-1" style="background-color: transparent;"></div>
         </div>
@@ -62,17 +60,20 @@
 body, html {
     margin:0; 
     padding:0;
+    background-color: #93C178;
 }
 .container{
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    margin:0;
+    margin-top: 80vh;
+    margin-bottom: 5vh;
 }
 .row > div{
     background-color: transparent;
 }
-.row > div:nth-child(2){
+#content-container{
     background-color: #f0ead6;
+    padding: 10px;
 }
 </style>

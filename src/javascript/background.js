@@ -78,7 +78,6 @@ class Cloud {
     draw(){
         if (this.x >= this.width + this.cloudWidth ) {
             this.reset();
-            console.log("reset");
         }
         else {
             this.sketch.fill('#f0ead6');
@@ -106,7 +105,6 @@ export default function( sketch ) {
 
         cloudInterval = setInterval( function() { 
             clouds.push(new Cloud(sketch, width, height)); 
-            console.log("new cloud"); 
             if (clouds.length == maxClouds) {
                 clearInterval(cloudInterval);
 
@@ -131,8 +129,8 @@ export default function( sketch ) {
         //draw sun
         sketch.fill('#FFD670');
         sketch.ellipse(width - 30, 30, 200, 200);
-        sketch.ellipse(100, 100, 65, 65);
-        sketch.ellipse(200, 100, 80, 80);
+        // sketch.ellipse(100, 100, 65, 65);
+        // sketch.ellipse(200, 100, 80, 80);
         //draw and move clouds
         clouds.forEach(function(element) { 
             // if (element.x < width) {
@@ -145,10 +143,6 @@ export default function( sketch ) {
         
 
 
-        // for (let i = 0; i < 1; i++) {
-        //     clouds[i].move();
-        //     clouds[i].draw(width, height);
-        // }
         //draw background hill
         sketch.fill('#9dc785');
         sketch.arc(width - 20, viewportHeight+200, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
@@ -157,6 +151,21 @@ export default function( sketch ) {
         sketch.arc(0, viewportHeight+200, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
         //draw background below hills
         sketch.rect(0, viewportHeight+200, width, height);
+
+
+
+        let y = viewportHeight-200;
+        let x = 0.75*width;
+        let h = 100;
+
+        sketch.noFill();
+
+        for (let i = y; i <= y+h; i++) {
+            let inter = sketch.map(i, y, y+h, 0, 1);
+            let c = sketch.lerpColor(sketch.color('#9dc785'), sketch.color('#93c178'), inter);
+            sketch.stroke(c);
+            sketch.line(x, i, x+1000, i);
+        }
 
     };
 
