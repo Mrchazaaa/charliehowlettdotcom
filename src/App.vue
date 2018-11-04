@@ -11,7 +11,10 @@
         <button type="button" id="menu-toggle" class="btn btn-light"><img src="./assets/align-left.svg"></button>
 
         <!--Title-->
-        <h1>Charles Howlett</h1>
+        <h1 class="hidden">Charlie Howlett</h1>
+
+        <!--content pointer-->
+        <a class="hidden" href="#content-container"><img id="content-pointer" src="./assets/chevron-bottom.svg"></a>
 
         <!--Page content-->
         <MainComponent/>
@@ -24,6 +27,18 @@
     import SideBarComponent from './components/SideBar.vue';
     import p5 from 'p5';
     import sketch from './javascript/background.js';
+
+    
+    $( document ).ready(function() {
+        //fade in title and content pointer on page load
+        $('.hidden').fadeIn(1750).removeClass('hidden');
+        
+        //add click event handler to sidebar toggle button
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#app").toggleClass("toggled");
+        });
+    });
 
     export default {
       name: 'app',
@@ -43,6 +58,9 @@
 </script>
 
 <style>
+.hidden{
+  display: none;
+}
 h1 {
     font-size: 550%;
     font-weight: bold;
@@ -64,7 +82,6 @@ body, html {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
 }
 #menu-toggle {
@@ -79,6 +96,13 @@ body, html {
 #sketch {
     margin: 0; 
     z-index: 0;
+}
+#content-pointer {
+    position: absolute;
+    top: 95vh;
+    margin-left: 50%;
+    margin-right: 50%;
+    width: 25px;
 }
 .container{
     width: 100%;

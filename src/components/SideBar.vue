@@ -4,12 +4,6 @@
 </template>
 
 <script>
-$( document ).ready(function() {
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#app").toggleClass("toggled");
-    });
-});
 
 export default {
   name: 'SideBar'
