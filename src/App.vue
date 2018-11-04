@@ -8,13 +8,13 @@
         <div id='sketch'></div>
         
         <!--Toggle sidebar button-->
-        <button type="button" id="menu-toggle" class="btn btn-light"><img src="./assets/align-left.svg"></button>
+        <button type="button" id="menu-toggle" class="btn btn-secondary"><img src="./assets/align-left.svg"></button>
 
         <!--Title-->
         <h1 class="hidden">Charlie Howlett</h1>
 
         <!--content pointer-->
-        <a class="hidden" href="#content-container"><img id="content-pointer" src="./assets/chevron-bottom.svg"></a>
+        <a href="#content-container"><img id="content-pointer" class="hidden"  src="./assets/chevron-bottom.svg"></a>
 
         <!--Page content-->
         <MainComponent/>
@@ -30,8 +30,35 @@
 
     
     $( document ).ready(function() {
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                    }, 800, function(){
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+            } // End if
+        });
+
         //fade in title and content pointer on page load
-        $('.hidden').fadeIn(1750).removeClass('hidden');
+        $('h1').fadeIn(1750).removeClass('hidden');
+        $('#content-pointer').fadeTo(1750, 0.3).removeClass('hidden');
+
+        //set rules for hovering on/off content pointer
+        $('#content-pointer').hover( function() { $(this).fadeTo(500, 1.0);  }, function() { $(this).fadeTo(500, 0.3); }  );
         
         //add click event handler to sidebar toggle button
         $("#menu-toggle").click(function(e) {
