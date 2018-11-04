@@ -1,33 +1,35 @@
 <template>
   <div id="app">
-    <div class='sketch' id='sketch'></div>
-    <div class="container">
-        <div class="row"> 
-            <div class="col-12  col-md-1"></div>
-            <div class="col-12 col-md-10" id="content-container">
-                <img alt="Vue logo" src="./assets/logo.png"/>
-                <HelloWorld msg="big website coming soon"/>
-                <CharliesWorld />
-                <button type="button" class="btn btn-warning">Warning</button>
-            </div>
-            <div class="col-12 col-md-1" style="background-color: transparent;"></div>
-        </div>
-    </div>
+    
+    <SideBarComponent/>
 
+    <div id="page-content-wrapper">
+        <!--p5 sketch background-->
+        <div id='sketch'></div>
+        
+        <!--Toggle sidebar button-->
+        <button type="button" id="menu-toggle" class="btn btn-light"><img src="./assets/align-left.svg"></button>
+
+        <!--Title-->
+        <h1>Charles Howlett</h1>
+
+        <!--Page content-->
+        <MainComponent/>
+    </div>
   </div>
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld.vue';
-    import CharliesWorld from './components/CharliesWorld.vue';
+    import MainComponent from './components/MainComponent.vue';
+    import SideBarComponent from './components/SideBar.vue';
     import p5 from 'p5';
     import sketch from './javascript/background.js';
 
     export default {
       name: 'app',
       components: {
-        HelloWorld,
-        CharliesWorld
+        MainComponent,
+        SideBarComponent
       },
       data() {
         return {
@@ -41,15 +43,22 @@
 </script>
 
 <style>
+h1 {
+    font-size: 550%;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 35px;
+    background-color: transparent;
+    position: absolute;
+    top: 30vh;
+    text-align: center;
+    width: 100%;
+}
 body, html {
     margin:0; 
     padding:0;
     height: 100%;
     background-color: #93C178;
-}
-#sketch {
-    margin: 0; 
-    z-index: 0;
 }
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -58,18 +67,24 @@ body, html {
     text-align: center;
     color: #2c3e50;
 }
+#menu-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+}
+#sketch {
+    margin: 0; 
+    z-index: 0;
+}
 .container{
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: -400px;
-    margin-bottom: 5px;
-}
-.row > div{
-    background-color: transparent;
-}
-#content-container{
-    background-color: #f0ead6;
-    padding: 10px;
+    position: absolute;
+    top: 100vh;
+    left: 0px;
+    background-color: #f8f9fa;
 }
 </style>
