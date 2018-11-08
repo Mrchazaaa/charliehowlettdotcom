@@ -131,11 +131,4 @@ body, html {
     margin-right: 50%;
     width: 25px;
 }
-.container{
-    width: 100%;
-    position: absolute;
-    top: 100vh;
-    left: 0px;
-    background-color: #f8f9fa;
-}
 </style>
