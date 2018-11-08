@@ -2,64 +2,61 @@
 <div id="content-container" class="container bg-light">
     <!--Introduction-->
     <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-6 content">
+        <div class="col-md-1"></div>
+        <div class="col-md-6 content">
             <h2>A bit about me</h2>
             <p>I'm currently in my third year of studying at the University of York, working towards a BSc/BEng in computer science. I designed 
             this page to supplement my cv and give people a way to get to know me and the kind of work I do. Below, you'll find links to a few of my
             Github projects and When I'm not too busy studying for 
             my next AI exam, I enjoy working on personal projects, reading, attending hackathons and playing the guitar/drums! </p>
         </div>
-        <div class="col-sm-4">
+        <div class="col-md-4" id="portrait-container">
             <img id="portrait" src="../assets/photo-of-me.jpg">
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-md-1"></div>
     </div>
 
     <!--Github stuff-->
     <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10 well content">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 well content">
         <h2>Some of My Work</h2>
         <p>Here are a few of the projects I'm proud to have worked on in 
         the past.</p>
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-md-1"></div>
     </div>
 
     <!--Github stuff-->
     <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10 content">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 content">
             <h2>Hobbies</h2>
             <p>In my spare time I like competing in hackathons, working on
             personal projects and playing music.</p>
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-md-1"></div>
     </div>
 
     <!--Github stuff-->
     <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10 well content">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 well content">
             <h2>Curriculum Vitae</h2>
             <p>Find enlosed a copy of my C.V *note that contact information on
             this copy has been hidden for privary purposes</p>
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-md-1"></div>
     </div>
 
-    <!--Github stuff-->
+    <!--Contact Information-->
     <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10 content">
-            <h2>A bit about me</h2>
-            <p>I'm currently in my third year of studying at the University of York, working towards a BSc/BEng in computer science. I designed 
-            this page to supplement my cv and give people a way to get to know me and the kind of work I do. Below, you'll find links to a few of my
-            Github projects and When I'm not too busy studying for 
-            my next AI exam, I enjoy working on personal projects, reading, attending hackathons and playing the guitar/drums! </p>
-        </div>
-        <div class="col-sm-1"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2 contact"><a href="https://github.com/Mrchazaaa/"><img src="../assets/github.svg"></a></div>
+        <div class="col-md-2 contact"><a href="https://www.linkedin.com/in/charles-howlett-383b26155/"><img src="../assets/linkedin.svg"></a></div>
+        <div class="col-md-2 contact"><a href="https://www.facebook.com/charlie.howlett.1"><img src="../assets/facebook.svg"></a></div>
+        <div class="col-md-2 contact"><a href="mailto:charlie.howlett@live.co.uk"><img src="../assets/email.svg"></a></div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 </template>
@@ -82,29 +79,43 @@
     padding-left: 7vw;
     padding-right: 10vw;
 }
-#portrait {
-    padding-top: 20px;
-    border-radius: 50%;
-    width: 90%;
+.row {
+    padding: 5vh 0;
+}
+#portrait-container {
+    height: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-height: 325px;
-    max-width: 325px;
+    padding: 35px;
+    background: red;
+}
+#portrait {
+    display: bock;
+    border-radius: 50%;
+    width: 275px;
+    height: 275px;
 }
 h2 {
-    /* text-decoration: underline; */
     /* consider switching to "strong" tags instead as they are better for screen
     readers... */
     font-weight: bold;
-    font-size: 3em;
+    font-size: calc(32px + 1vw); 
+    margin-top: 0;
 }
 p {
-    font-size: 1.5em;
+    font-size: calc(14px + 0.8vw); 
 }
 .content {
     margin: 0;
-    margin-top: 5vh;
     padding-left: 2vw;
+}
+.contact {
+    height: 120px;
+}
+.contact img {
+    position: absolute;
+    height: 50px;
+    top: calc(50% - 30px);
+    left: calc(50% - 50px);
+    margin: 10px 0px;
 }
 </style>
