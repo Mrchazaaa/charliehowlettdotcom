@@ -1,24 +1,23 @@
 <template>
 <div id="content-container" class="container bg-light">
     <!--Introduction-->
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-6 content" id="description">
-            <h2>A bit about me</h2>
-            <p>I'm currently in my third year of studying at the University of York, working towards a BSc/BEng in computer science. I designed 
+    <div class="row well">
+        <div class="col-md-7 content" id="description">
+            <p>"I'm currently in my third year of studying at the University of York, working towards a BSc/BEng in computer science. I designed 
             this page to supplement my cv and give people a way to get to know me and the kind of work I do. Below, you'll find links to a few of my
-            Github projects and some more information about what I enjoy doing when not working. </p>
+            past projects and some more information about what I enjoy doing when I'm not working."</p>
         </div>
-        <div class="col-md-4" id="portrait-container">
+        <div class="col-md-5" id="portrait-container">
             <img id="portrait" src="../assets/photo-of-me.jpg">
         </div>
-        <div class="col-md-1"></div>
     </div>
+
+    <hr />
 
     <!--Github stuff-->
     <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-10 well content">
+        <div class="col-md-10 content">
         <h2>Some of My Work</h2>
         <p>Here are a few of the projects I'm proud to have worked on in 
         the past.</p>
@@ -41,7 +40,7 @@
     <!--Github stuff-->
     <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-10 well content">
+        <div class="col-md-10 content">
             <h2>Curriculum Vitae</h2>
             <p>Find enlosed a copy of my C.V *note that contact information on
             this copy has been hidden for privary purposes</p>
@@ -115,18 +114,32 @@
 }
 .row {
     padding: 5vh 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+}
+#description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#description p {
+    vertical-align: middle;
 }
 #portrait-container {
-    display: inline;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
     padding-left: 5%;
-    padding-top: 10px;
+    padding-right: 5%;
 }
 #portrait {
-    display: absolute;
-    top: 0;
+    /* display: absolute; */
+    /* top: 0; */
     border-radius: 50%;
-    width: 100%;
+    width: 90%;
 }
 h2 {
     /* consider switching to "strong" tags instead as they are better for screen
