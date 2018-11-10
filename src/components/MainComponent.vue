@@ -1,8 +1,8 @@
 <template>
-<div id="content-container" class="container bg-light">
+<div id="page-container" class="container bg-light">
     <!--Introduction-->
-    <div class="row well">
-        <div class="col-md-7 content" id="description">
+    <div class="row well" id="introduction">
+        <div class="col-md-7" id="description">
             <p>"I'm currently in my third year of studying at the University of York, working towards a BSc/BEng in computer science. I designed 
             this page to supplement my cv and give people a way to get to know me and the kind of work I do. Below, you'll find links to a few of my
             past projects and some more information about what I enjoy doing when I'm not working."</p>
@@ -14,38 +14,37 @@
 
     <hr />
 
-    <!--Github stuff-->
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10 content">
-        <h2>Some of My Work</h2>
-        <p>Here are a few of the projects I'm proud to have worked on in 
-        the past.</p>
+    <div id="group-content" class ="container bg-light">
+        <div class="row">
+            <div class="col-md-6">
+                <!--Github stuff-->
+                <div class="group-item ">
+                    <h2>Some of My Work</h2>
+                    <p>Here are a few of the projects I'm proud to have worked on in 
+                    the past.</p>
+                </div>
+                <!--Hobbies-->
+                <div class="group-item ">
+                    <h2>Hobbies</h2>
+                    <p>In my spare time I like competing in hackathons, working on
+                    personal projects and playing music. When I'm not too busy studying for 
+                    my next AI exam, I enjoy working on personal projects, reading, attending hackathons and playing the guitar/drums! </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!--University info-->
+                <div class="group-item ">
+                    <h2>University</h2>
+                    <p>I study at... blur blur blur. Ive been in these societies and study these specific modules and my third year project</p>
+                </div>
+                <!--CV-->
+                <div class="group-item ">
+                    <h2>Curriculum Vitae</h2>
+                    <p>Find enlosed a copy of my C.V *note that contact information on
+                    this copy has been hidden for privary purposes</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-1"></div>
-    </div>
-
-    <!--Github stuff-->
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10 content">
-            <h2>Hobbies</h2>
-            <p>In my spare time I like competing in hackathons, working on
-            personal projects and playing music. When I'm not too busy studying for 
-            my next AI exam, I enjoy working on personal projects, reading, attending hackathons and playing the guitar/drums! </p>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-
-    <!--Github stuff-->
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10 content">
-            <h2>Curriculum Vitae</h2>
-            <p>Find enlosed a copy of my C.V *note that contact information on
-            this copy has been hidden for privary purposes</p>
-        </div>
-        <div class="col-md-1"></div>
     </div>
 
     <!--Contact Information-->
@@ -61,40 +60,6 @@
 </template>
 
 <script>
-    /* //the following code is used to correctly size the portrait at the top of the content section */
-    /* sizePortraitContainer(); */
-
-    /* //this code stops the resize event from being called multiple times when the user manually resizes the window */
-    /* //(if the resize event is called every time, then the response will be janky) */
-    /* var waitForFinalEvent = (function () { */
-    /*     var timers = {}; */
-    /*     return function (callback, ms, uniqueId) { */
-    /*         if (!uniqueId) { */
-    /*             uniqueId = "Don't call this twice without a uniqueId"; */
-    /*         } */
-    /*         if (timers[uniqueId]) { */
-    /*             clearTimeout (timers[uniqueId]); */
-    /*         } */
-    /*         timers[uniqueId] = setTimeout(callback, ms); */
-    /*     }; */
-    /* })(); */
-
-    /* //called whenever the window size is changed */
-    /* $(window).resize(function () { */
-    /*     waitForFinalEvent(function(){ */
-    /*       /1* alert('Resize...'); *1/ */
-    /*       sizePortraitContainer(); */
-    /*       //... */
-    /*     }, 500, "resize portrait"); */
-    /* }); */
-
-    /* function sizePortraitContainer() { */
-    /*     let $portraitCont = $('#portrait-container'); */
-    /*     let descriptHeight = $('#description').height(); */
-    /*     let padding = (descriptHeight - $portraitCont.width())/4; */
-    /*     $portraitCont.height( descriptHeight - (padding * 2 ) ); */
-    /* } */
-
     export default {
       name: 'MainContent'
     }
@@ -102,22 +67,22 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.container{
+#page-container{
     max-width: 1600px;
     /* width: 100%; */
     background-color: #f8f9fa;
     padding-top: 50px;
     /* padding-left: 7vw; */
     /* padding-right: 10vw; */
-    padding-left: auto;
-    padding-right: auto;
+    padding-left: 0;
+    padding-right: 0;
 }
-.row {
+#introduction {
     padding: 5vh 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display:         flex;
+    display: flex;
 }
 #description {
     text-align: center;
@@ -125,9 +90,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    padding-left: 2vw;
 }
 #description p {
     vertical-align: middle;
+    font-size: calc(14px + 0.8vw); 
 }
 #portrait-container {
     display: flex;
@@ -136,24 +104,29 @@
     padding-right: 5%;
 }
 #portrait {
-    /* display: absolute; */
-    /* top: 0; */
     border-radius: 50%;
     width: 90%;
+}
+#group-content {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+.group-item {
+    background-color: red;
+    padding: 15px;
+    margin: 7.5px;
+    margin-top: 15px;
+}
+#group-content div[class*="col-"] {
+    padding: 0px;
 }
 h2 {
     /* consider switching to "strong" tags instead as they are better for screen
     readers... */
     font-weight: bold;
-    font-size: calc(32px + 1vw); 
+    font-size: 34px;; 
     margin-top: 0;
-}
-p {
-    font-size: calc(14px + 0.8vw); 
-}
-.content {
-    margin: 0;
-    padding-left: 2vw;
 }
 .contact {
     height: 120px;

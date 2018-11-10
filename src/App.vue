@@ -14,7 +14,7 @@
         <h1 class="hidden">Charlie Howlett</h1>
 
         <!--content pointer-->
-        <a href="#content-container"><img id="content-pointer" class="hidden"  src="./assets/chevron-bottom.svg"></a>
+        <a href="#page-container"><img id="content-pointer" class="hidden"  src="./assets/chevron-bottom.svg"></a>
 
         <!--Page content-->
         <MainComponent/>
