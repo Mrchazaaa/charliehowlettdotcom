@@ -99,7 +99,7 @@ export default function( sketch ) {
     //setup function, run at initialization
     sketch.setup = function() {
         width = document.body.clientWidth;
-        height = document.body.clientHeight + 300;
+        height = document.body.clientHeight;
 
         let cnv = sketch.createCanvas(width, height);
 
@@ -131,12 +131,10 @@ export default function( sketch ) {
 
         //draw background hill
         sketch.fill('#9dc785');
-        sketch.arc(width - 20, height-100, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
+        sketch.arc(width - 20, height+200, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
         //draw foreground hill
         sketch.fill('#93C178');
-        sketch.arc(0, height-100, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
-        //draw background below hills
-        sketch.rect(0, height-100, width, height);
+        sketch.arc(0, height+200, 1.5*width, 1080, sketch.PI, 0, sketch.PIE);
 
 
 
@@ -158,7 +156,7 @@ export default function( sketch ) {
     //called every time the canvas is resized
     sketch.windowResized = function() {
         width = document.body.clientWidth;
-        height = document.body.clientHeight + 300;
+        height = document.body.clientHeight;
         sketch.resizeCanvas(width, height);
     };
 }

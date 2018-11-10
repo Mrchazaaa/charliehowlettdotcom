@@ -85,6 +85,12 @@
 </script>
 
 <style>
+body, html {
+    margin:0; 
+    padding:0;
+    height: 100%;
+    background-color: #f8f9fa
+}
 .hidden{
   display: none;
 }
@@ -99,11 +105,6 @@ h1 {
     text-align: center;
     width: 100%;
 }
-body, html {
-    margin:0; 
-    padding:0;
-    height: 100%;
-}
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -112,8 +113,8 @@ body, html {
 }
 #menu-toggle {
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
     z-index: 2;
     padding: 5px;
     width: 35px;
@@ -122,6 +123,7 @@ body, html {
 #sketch {
     margin: 0; 
     z-index: 0;
+    height: 100vh;
 }
 #content-pointer {
     position: absolute;

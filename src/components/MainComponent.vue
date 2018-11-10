@@ -62,39 +62,39 @@
 </template>
 
 <script>
-    //the following code is used to correctly size the portrait at the top of the content section
-    sizePortraitContainer();
+    /* //the following code is used to correctly size the portrait at the top of the content section */
+    /* sizePortraitContainer(); */
 
-    //this code stops the resize event from being called multiple times when the user manually resizes the window
-    //(if the resize event is called every time, then the response will be janky)
-    var waitForFinalEvent = (function () {
-        var timers = {};
-        return function (callback, ms, uniqueId) {
-            if (!uniqueId) {
-                uniqueId = "Don't call this twice without a uniqueId";
-            }
-            if (timers[uniqueId]) {
-                clearTimeout (timers[uniqueId]);
-            }
-            timers[uniqueId] = setTimeout(callback, ms);
-        };
-    })();
+    /* //this code stops the resize event from being called multiple times when the user manually resizes the window */
+    /* //(if the resize event is called every time, then the response will be janky) */
+    /* var waitForFinalEvent = (function () { */
+    /*     var timers = {}; */
+    /*     return function (callback, ms, uniqueId) { */
+    /*         if (!uniqueId) { */
+    /*             uniqueId = "Don't call this twice without a uniqueId"; */
+    /*         } */
+    /*         if (timers[uniqueId]) { */
+    /*             clearTimeout (timers[uniqueId]); */
+    /*         } */
+    /*         timers[uniqueId] = setTimeout(callback, ms); */
+    /*     }; */
+    /* })(); */
 
-    //called whenever the window size is changed
-    $(window).resize(function () {
-        waitForFinalEvent(function(){
-          /* alert('Resize...'); */
-          sizePortraitContainer();
-          //...
-        }, 500, "resize portrait");
-    });
+    /* //called whenever the window size is changed */
+    /* $(window).resize(function () { */
+    /*     waitForFinalEvent(function(){ */
+    /*       /1* alert('Resize...'); *1/ */
+    /*       sizePortraitContainer(); */
+    /*       //... */
+    /*     }, 500, "resize portrait"); */
+    /* }); */
 
-    function sizePortraitContainer() {
-        let $portraitCont = $('#portrait-container');
-        let descriptHeight = $('#description').height();
-        let padding = (descriptHeight - $portraitCont.width())/4;
-        $portraitCont.height( descriptHeight - (padding * 2 ) );
-    }
+    /* function sizePortraitContainer() { */
+    /*     let $portraitCont = $('#portrait-container'); */
+    /*     let descriptHeight = $('#description').height(); */
+    /*     let padding = (descriptHeight - $portraitCont.width())/4; */
+    /*     $portraitCont.height( descriptHeight - (padding * 2 ) ); */
+    /* } */
 
     export default {
       name: 'MainContent'
@@ -104,14 +104,14 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container{
-    width: 100%;
-    position: absolute;
-    top: 100vh;
-    left: 0px;
+    max-width: 1600px;
+    /* width: 100%; */
     background-color: #f8f9fa;
     padding-top: 50px;
-    padding-left: 7vw;
-    padding-right: 10vw;
+    /* padding-left: 7vw; */
+    /* padding-right: 10vw; */
+    padding-left: auto;
+    padding-right: auto;
 }
 .row {
     padding: 5vh 0;
@@ -119,13 +119,14 @@
 #portrait-container {
     display: inline;
     padding: 0;
-    padding-left: 5px;
+    padding-left: 5%;
+    padding-top: 10px;
 }
 #portrait {
     display: absolute;
     top: 0;
     border-radius: 50%;
-    width: 85%;
+    width: 100%;
 }
 h2 {
     /* consider switching to "strong" tags instead as they are better for screen
