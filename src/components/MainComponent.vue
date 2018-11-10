@@ -40,7 +40,9 @@
                 <!--CV-->
                 <div class="group-item ">
                     <h2>Curriculum Vitae</h2>
-                    <p>Find enlosed a copy of my C.V *note that contact information on
+                    <p>Find enlosed a copy of my C.V</p> 
+                    <a href="">Charles_Howlett_cv.pdf</a>
+                    <p>*note that contact information on
                     this copy has been hidden for privary purposes</p>
                 </div>
             </div>
@@ -113,10 +115,11 @@
     padding: 0;
 }
 .group-item {
-    background-color: red;
     padding: 15px;
     margin: 7.5px;
     margin-top: 15px;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
 }
 #group-content div[class*="col-"] {
     padding: 0px;
