@@ -69,6 +69,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#content-container {
+    /* height: calc(100% - 100vh); */
+}
 .container{
     width: 100%;
     position: absolute;
@@ -81,15 +84,21 @@
 }
 .row {
     padding: 5vh 0;
+
+    /* position: relative; */
 }
 #portrait-container {
+    /* height: calc(100% - 10vh); */
     height: 100%;
-    display: block;
-    padding: 35px;
-    background: red;
+    /* width: 100%; */
+    display: inline-block;
+    /* padding: 35px; */
+    /* background: red; */
+
+    /* position: absolute; */
 }
 #portrait {
-    display: bock;
+    /* display: bock; */
     border-radius: 50%;
     width: 275px;
     height: 275px;
