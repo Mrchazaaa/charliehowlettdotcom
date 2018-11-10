@@ -3,12 +3,11 @@
     <!--Introduction-->
     <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-6 content">
+        <div class="col-md-6 content" id="description">
             <h2>A bit about me</h2>
             <p>I'm currently in my third year of studying at the University of York, working towards a BSc/BEng in computer science. I designed 
             this page to supplement my cv and give people a way to get to know me and the kind of work I do. Below, you'll find links to a few of my
-            Github projects and When I'm not too busy studying for 
-            my next AI exam, I enjoy working on personal projects, reading, attending hackathons and playing the guitar/drums! </p>
+            Github projects and some more information about what I enjoy doing when not working. </p>
         </div>
         <div class="col-md-4" id="portrait-container">
             <img id="portrait" src="../assets/photo-of-me.jpg">
@@ -33,7 +32,8 @@
         <div class="col-md-10 content">
             <h2>Hobbies</h2>
             <p>In my spare time I like competing in hackathons, working on
-            personal projects and playing music.</p>
+            personal projects and playing music. When I'm not too busy studying for 
+            my next AI exam, I enjoy working on personal projects, reading, attending hackathons and playing the guitar/drums! </p>
         </div>
         <div class="col-md-1"></div>
     </div>
@@ -62,6 +62,40 @@
 </template>
 
 <script>
+    //the following code is used to correctly size the portrait at the top of the content section
+    sizePortraitContainer();
+
+    //this code stops the resize event from being called multiple times when the user manually resizes the window
+    //(if the resize event is called every time, then the response will be janky)
+    var waitForFinalEvent = (function () {
+        var timers = {};
+        return function (callback, ms, uniqueId) {
+            if (!uniqueId) {
+                uniqueId = "Don't call this twice without a uniqueId";
+            }
+            if (timers[uniqueId]) {
+                clearTimeout (timers[uniqueId]);
+            }
+            timers[uniqueId] = setTimeout(callback, ms);
+        };
+    })();
+
+    //called whenever the window size is changed
+    $(window).resize(function () {
+        waitForFinalEvent(function(){
+          /* alert('Resize...'); */
+          sizePortraitContainer();
+          //...
+        }, 500, "resize portrait");
+    });
+
+    function sizePortraitContainer() {
+        let $portraitCont = $('#portrait-container');
+        let descriptHeight = $('#description').height();
+        let padding = (descriptHeight - $portraitCont.width())/4;
+        $portraitCont.height( descriptHeight - (padding * 2 ) );
+    }
+
     export default {
       name: 'MainContent'
     }
@@ -69,9 +103,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#content-container {
-    /* height: calc(100% - 100vh); */
-}
 .container{
     width: 100%;
     position: absolute;
@@ -84,24 +115,17 @@
 }
 .row {
     padding: 5vh 0;
-
-    /* position: relative; */
 }
 #portrait-container {
-    /* height: calc(100% - 10vh); */
-    height: 100%;
-    /* width: 100%; */
-    display: inline-block;
-    /* padding: 35px; */
-    /* background: red; */
-
-    /* position: absolute; */
+    display: inline;
+    padding: 0;
+    padding-left: 5px;
 }
 #portrait {
-    /* display: bock; */
+    display: absolute;
+    top: 0;
     border-radius: 50%;
-    width: 275px;
-    height: 275px;
+    width: 85%;
 }
 h2 {
     /* consider switching to "strong" tags instead as they are better for screen
