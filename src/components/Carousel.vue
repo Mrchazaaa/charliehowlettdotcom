@@ -1,21 +1,30 @@
 <template>
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="carousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="item active">
-      <img class="d-block w-100" src="../assets/photo-of-me.jpg" alt="First slide">
+      <img class="d-block w-100" src="../assets/volunteering.jpg" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <p>Me preparing to give a presentation on protecting sea turtle nests during my time volunteering in Greece</p>
+        </div>
     </div>
     <div class="item">
-      <img class="d-block w-100" src="../assets/photo-of-me.jpg" alt="Second slide">
+      <img class="d-block w-100" src="../assets/cybersoc.jpg" alt="Second slide">
+        <div class="carousel-caption d-none d-md-block">
+          <p>Attending the first Cyber Security Society event at the University of York</p>
+        </div>
     </div>
     <div class="item">
-      <img class="d-block w-100" src="../assets/photo-of-me.jpg" alt="Third slide">
+      <img class="d-block w-100" src="../assets/band.jpg" alt="Third slide">
+        <div class="carousel-caption d-none d-md-block">
+          <p>Me and my friends</p>
+        </div>
     </div>
   </div>
-  <a class="left carousel-control" href="#carouselExampleControls" role="button" data-slide="prev">
+  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
     <span class="icon-prev" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="right carousel-control" href="#carouselExampleControls" role="button" data-slide="next">
+  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
     <span class="icon-next" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
@@ -23,7 +32,7 @@
 </template>
 
 <script>
-$("#carouselExampleControls").carousel();
+$("#carousel").carousel();
 
 export default {
   name: 'Carousel'
@@ -31,5 +40,19 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
+#carousel {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10px;
+}
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+.carousel-caption {
+    padding: 0px 10px;
+    width: 100%;
+    left: 0;
+}
 </style>

@@ -30,6 +30,9 @@
                     personal projects and playing music. When I'm not too busy studying for 
                     my next AI exam, I enjoy working on personal projects, reading, attending hackathons and playing the guitar/drums! </p>
                     <CarouselComponent/>
+                    <p>more content more content more content
+                    more content more content more content
+                    more content more content more content</p>
                 </div>
             </div>
             <div class="col-md-6">
