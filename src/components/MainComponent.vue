@@ -17,12 +17,41 @@
     <div id="group-content" class ="container bg-light">
         <div class="row">
             <div class="col-md-6">
+
                 <!--Github stuff-->
                 <div class="group-item ">
                     <h2>Some of My Work</h2>
                     <p>Here are a few of the projects I'm proud to have worked on in 
                     the past:</p>
+                    <table class="table table-striped" id="workTable">
+                    <thead>
+                      <thead>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>Go AI</td>
+                            <td>During sixth form, I made this AI to play the board game "Go" for my extended project qualification.</td>
+                        </tr>
+                        <tr>
+                            <td>This Website</td>
+                            <td>The source for this website is available on my Github. I used Vue and Bootstrap for its design.</td>
+                        </tr>
+                        <tr>
+                            <td>PROM Keypad</td>
+                            <td>A hardware project I worked on during my first year at University wth 2 other students.</td>
+                        </tr>
+                        <tr>
+                            <td>VimRC</td>
+                            <td>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</td>
+                        </tr>
+                        <tr>
+                            <td>HMGCC Code Breaker</td>
+                            <td>This is a short program I made to decode the an encrypted message on a HMGCC pen I recieved at a tech fair.</td>
+                        </tr>
+                      </tbody>
+                    </table>
                 </div>
+
                 <!--Hobbies-->
                 <div class="group-item ">
                     <h2>Hobbies</h2>
@@ -242,7 +271,6 @@ table a {
     text-decoration: unset;
 }
 table a:hover {
-    background-color: red;
     text-decoration: underline;
 }
 table {
