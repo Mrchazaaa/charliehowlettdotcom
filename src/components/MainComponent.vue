@@ -1,5 +1,5 @@
 <template>
-<div id="page-container" class="container bg-light">
+<div id="page-container" class="container">
     <!--Introduction-->
     <div class="row well" id="introduction">
         <div class="col-md-7" id="description">
@@ -14,7 +14,7 @@
 
     <hr />
 
-    <div id="group-content" class ="container bg-light">
+    <div id="group-content" class ="container">
         <div class="row">
             <div class="col-md-6">
 
@@ -86,25 +86,32 @@
                     Futures Scholarship.</p>
 
                     <h3>Modules</h3>
-                    <table class="table table-striped">
-                    <thead>
-                        <tr>
-                          <a href="javascript:void(0);" data-toggle="collapse" data-target="#firstCollapse"><th scope="col" class="list-group-item list-group-item-action list-group-item-dark">First Year Modules</th></a>
-                        </tr>
-                      </thead>
-                      <tbody id="firstCollapse" class="collapse">
-                        <tr><td scope="row">Human Aspects of Computer Science</td></tr>
-                        <tr><td scope="row">Skills, Knowledge & Independent Learning</td></tr>
-                        <tr><td scope="row">Introduction to Computer Architectures</td></tr>
-                        <tr><td scope="row">Mathematical Foundations of Computer Science</td></tr>
-                        <tr><td scope="row">Theory & Practice of Programming</td></tr>
-                        <tr><td scope="row">Numerical Analysis</td></tr>
-                        <tr><td scope="row">Foundation in Electronics, Signals & Circuits</td></tr>
-                        <tr><td scope="row">Programming of micro-controllers</td></tr>
-                      </tbody>
+                    <table id="modules1Table">
+                        <thead>
+                            <tr>
+                              <!--a href="javascript:void(0);" data-toggle="collapse" data-target="#firstCollapse"><th scope="col" class="list-group-item list-group-item-action list-group-item-dark">First Year Modules</th></a-->
+                              <!--th scope="col" class="list-group-item list-group-item-action list-group-item-dark">First Year Modules</th-->
+                              <th scope="col" class="well">First Year Modules</th>
+                            </tr>
+                        </thead>
+
+                        <div id="firstCollapse">
+                          <table class="table">
+                          <tbody>
+                            <tr><td scope="row">Human Aspects of Computer Science</td></tr>
+                            <tr><td scope="row">Skills, Knowledge & Independent Learning</td></tr>
+                            <tr><td scope="row">Introduction to Computer Architectures</td></tr>
+                            <tr><td scope="row">Mathematical Foundations of Computer Science</td></tr>
+                            <tr><td scope="row">Theory & Practice of Programming</td></tr>
+                            <tr><td scope="row">Numerical Analysis</td></tr>
+                            <tr><td scope="row">Foundation in Electronics, Signals & Circuits</td></tr>
+                            <tr><td scope="row">Programming of micro-controllers</td></tr>
+                          </tbody>
+                          </table>
+                        </div>
                     </table>
 
-                    <table class="table table-striped">
+                    <table class="table table-striped" id="modules2Table">
                     <thead>
                         <tr>
                           <a href="javascript:void(0);" data-toggle="collapse" data-target="#secondCollapse"><th scope="col" class="list-group-item list-group-item-action list-group-item-dark">Second Year Modules</th></a>
@@ -121,7 +128,7 @@
                       </tbody>
                     </table>
 
-                    <table class="table table-striped">
+                    <table class="table table-striped" id="modules3Table">
                     <thead>
                         <tr>
                           <a href="javascript:void(0);" data-toggle="collapse" data-target="#thirdCollapse"><th scope="col" class="list-group-item list-group-item-action list-group-item-dark">Third Year Modules</th></a>
@@ -186,6 +193,13 @@
 </template>
 
 <script>
+    $( document ).ready(function() {
+        $("#firstCollapse").hide();
+        $("#modules1Table th").on('click', function(event) {
+            $("#firstCollapse").slideToggle('slow');
+        });
+    });
+
     import CarouselComponent from './Carousel.vue';
 
     export default {
@@ -201,7 +215,7 @@
 #page-container{
     max-width: 1600px;
     /* width: 100%; */
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa; */
     padding-top: 50px;
     /* padding-left: 7vw; */
     /* padding-right: 10vw; */
@@ -250,6 +264,19 @@
     border: 1px solid #e3e3e3;
     border-radius: 4px;
 }
+#modules1Table {
+    width: 100%;
+}
+#modules1Table th{
+    padding: 10px;
+}
+#modules1Table tbody {
+    padding: 0px;
+    margin: 0px;
+}
+#firstCollapse table {
+    margin: 0;
+}
 #group-content div[class*="col-"] {
     padding: 0px;
 }
@@ -261,7 +288,7 @@ h2 {
     margin-top: 0;
 }
 h3 {
-    text-decoration: underline;
+    font-weight: bold;
 }
 p {
     text-align: justify;
@@ -286,10 +313,10 @@ table {
 }
 th {
     padding-left: 8px;
-    background-color: #A9A9A9;
+    /* background-color: #A9A9A9; */
 }
 td {
-    background-color: #A9A9A9;
+    /* background-color: #A9A9A9; */
 }
 .contact {
     height: 120px;

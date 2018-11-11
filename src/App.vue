@@ -88,7 +88,7 @@ body, html {
     margin:0; 
     padding:0;
     height: 100%;
-    background-color: #f8f9fa
+    /* background-color: #f8f9fa */
 }
 .hidden{
   display: none;
