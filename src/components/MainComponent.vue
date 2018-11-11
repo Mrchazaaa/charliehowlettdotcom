@@ -29,6 +29,7 @@
                     <p>In my spare time I like competing in hackathons, working on
                     personal projects and playing music. When I'm not too busy studying for 
                     my next AI exam, I enjoy working on personal projects, reading, attending hackathons and playing the guitar/drums! </p>
+                    <CarouselComponent/>
                 </div>
             </div>
             <div class="col-md-6">
@@ -40,7 +41,7 @@
                 <!--CV-->
                 <div class="group-item ">
                     <h2>Curriculum Vitae</h2>
-                    <p>Find enlosed a copy of my C.V</p> 
+                    <p style="margin-bottom: 0;">Find enclosed a copy of my C.V</p> 
                     <a href="">Charles_Howlett_cv.pdf</a>
                     <p>*note that contact information on
                     this copy has been hidden for privary purposes</p>
@@ -48,6 +49,8 @@
             </div>
         </div>
     </div>
+
+    <hr />
 
     <!--Contact Information-->
     <div class="row">
@@ -62,8 +65,13 @@
 </template>
 
 <script>
+    import CarouselComponent from './Carousel.vue';
+
     export default {
-      name: 'MainContent'
+      name: 'MainContent',
+      components: {
+        CarouselComponent
+      }
     }
 </script>
 

@@ -27,7 +27,6 @@
     import SideBarComponent from './components/SideBar.vue';
     import p5 from 'p5';
     import sketch from './javascript/background.js';
-
     
     $( document ).ready(function() {
         // Add smooth scrolling to all links
