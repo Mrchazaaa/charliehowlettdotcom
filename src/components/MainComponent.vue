@@ -85,6 +85,8 @@
                     information about some of the societies I've joined at York and more information about my third year project. I'm also a recipient of the University's
                     Futures Scholarship.</p>
 
+                    <AccordionComponent/>
+
                     <h3>Modules</h3>
                     <table id="modules1Table">
                         <thead>
@@ -201,11 +203,13 @@
     });
 
     import CarouselComponent from './Carousel.vue';
+    import AccordionComponent from './Accordion.vue';
 
     export default {
       name: 'MainContent',
       components: {
-        CarouselComponent
+        CarouselComponent,
+        AccordionComponent
       }
     }
 </script>
@@ -256,6 +260,11 @@
     flex-direction: column;
     margin: 0;
     padding: 0;
+}
+tbody {
+}
+thead {
+    cursor: pointer;
 }
 .group-item {
     padding: 15px;
