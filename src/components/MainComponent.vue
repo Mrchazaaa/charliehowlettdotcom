@@ -85,68 +85,41 @@
                     information about some of the societies I've joined at York and more information about my third year project. I'm also a recipient of the University's
                     Futures Scholarship.</p>
 
-                    <AccordionComponent/>
-
                     <h3>Modules</h3>
-                    <table id="modules1Table">
-                        <thead>
-                            <tr>
-                              <!--a href="javascript:void(0);" data-toggle="collapse" data-target="#firstCollapse"><th scope="col" class="list-group-item list-group-item-action list-group-item-dark">First Year Modules</th></a-->
-                              <!--th scope="col" class="list-group-item list-group-item-action list-group-item-dark">First Year Modules</th-->
-                              <th scope="col" class="well">First Year Modules</th>
-                            </tr>
-                        </thead>
+                    <p class="modulesList">First Year Modules</p>
+                    <ul>
+                        <li>Human Aspects of Computer Science</li>
+                        <li>Skills, Knowledge & Independent Learning</li>
+                        <li>Introduction to Computer Architectures</li>
+                        <li>Mathematical Foundations of Computer Science</li>
+                        <li>Theory & Practice of Programming</li>
+                        <li>Numerical Analysis</li>
+                        <li>Foundation in Electronics, Signals & Circuits</li>
+                        <li>Programming of micro-controllers</li>
+                    </ul>
 
-                        <div id="firstCollapse">
-                          <table class="table">
-                          <tbody>
-                            <tr><td scope="row">Human Aspects of Computer Science</td></tr>
-                            <tr><td scope="row">Skills, Knowledge & Independent Learning</td></tr>
-                            <tr><td scope="row">Introduction to Computer Architectures</td></tr>
-                            <tr><td scope="row">Mathematical Foundations of Computer Science</td></tr>
-                            <tr><td scope="row">Theory & Practice of Programming</td></tr>
-                            <tr><td scope="row">Numerical Analysis</td></tr>
-                            <tr><td scope="row">Foundation in Electronics, Signals & Circuits</td></tr>
-                            <tr><td scope="row">Programming of micro-controllers</td></tr>
-                          </tbody>
-                          </table>
-                        </div>
-                    </table>
+                    <p class="modulesList">Second Year Modules</p>
+                    <ul>
+                        <li>Vision & Graphics</li>
+                        <li>Implementation of Programming Languages</li>
+                        <li>Principles of Programming Languages</li>
+                        <li>Software Engineering Project</li>
+                        <li>Computability & Complexity</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Systems (Operating Systems)</li>
+                    </ul>
 
-                    <table class="table table-striped" id="modules2Table">
-                    <thead>
-                        <tr>
-                          <a href="javascript:void(0);" data-toggle="collapse" data-target="#secondCollapse"><th scope="col" class="list-group-item list-group-item-action list-group-item-dark">Second Year Modules</th></a>
-                        </tr>
-                      </thead>
-                      <tbody id="secondCollapse" class="collapse">
-                        <tr><td scope="row">Vision & Graphics</td></tr>
-                        <tr><td scope="row">Implementation of Programming Languages</td></tr>
-                        <tr><td scope="row">Principles of Programming Languages</td></tr>
-                        <tr><td scope="row">Software Engineering Project</td></tr>
-                        <tr><td scope="row">Computability & Complexity</td></tr>
-                        <tr><td scope="row">Artificial Intelligence</td></tr>
-                        <tr><td scope="row">Systems (Operating Systems)</td></tr>
-                      </tbody>
-                    </table>
-
-                    <table class="table table-striped" id="modules3Table">
-                    <thead>
-                        <tr>
-                          <a href="javascript:void(0);" data-toggle="collapse" data-target="#thirdCollapse"><th scope="col" class="list-group-item list-group-item-action list-group-item-dark">Third Year Modules</th></a>
-                        </tr>
-                      </thead>
-                      <tbody id="thirdCollapse" class="collapse">
-                        <tr><td scope="row">Analysable Real-Time Systems</td></tr>
-                        <tr><td scope="row">Fundamentals of Machine Learning</td></tr>
-                        <tr><td scope="row">Project Management for Computer Scientists</td></tr>
-                        <tr><td scope="row">Embedded Systems Design & Implementation</td></tr>
-                        <tr><td scope="row">Third Year Project</td></tr>
-                        <tr><td scope="row">Computer Vision</td></tr>
-                        <tr><td scope="row">Design of Analysable Real-Time Systems</td></tr>
-                        <tr><td scope="row">Machine Learning & Probabilistic Graphical Models</td></tr>
-                      </tbody>
-                    </table>
+                    <p class="modulesList">Second Year Modules</p>
+                    <ul>
+                        <li>Analysable Real-Time Systems</li>
+                        <li>Fundamentals of Machine Learning</li>
+                        <li>Project Management for Computer Scientists</li>
+                        <li>Embedded Systems Design & Implementation</li>
+                        <li>Third Year Project</li>
+                        <li>Computer Vision</li>
+                        <li>Design of Analysable Real-Time Systems</li>
+                        <li>Machine Learning & Probabilistic Graphical Models</li>
+                    </ul>
 
                     <h3>Societies</h3>
                     <p>During my time at University I've taken part in a number of societies, which I've listed here to demonstrate the kind of activities I enjoy
@@ -196,20 +169,18 @@
 
 <script>
     $( document ).ready(function() {
-        $("#firstCollapse").hide();
-        $("#modules1Table th").on('click', function(event) {
-            $("#firstCollapse").slideToggle('slow');
+        $(".modulesList").next().hide();
+        $(".modulesList").on('click', function(event) {
+            $(this).next().slideToggle('slow');
         });
     });
 
     import CarouselComponent from './Carousel.vue';
-    import AccordionComponent from './Accordion.vue';
 
     export default {
       name: 'MainContent',
       components: {
-        CarouselComponent,
-        AccordionComponent
+        CarouselComponent
       }
     }
 </script>
