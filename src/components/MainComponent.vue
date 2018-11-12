@@ -36,7 +36,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td><img src="../assets/github.svg"/></td>
                             <td>
                                 <h4>This Website</h4>
                                 <p>The source for this website is available on my Github. I used Vue and Bootstrap for its design.</p>
