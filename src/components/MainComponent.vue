@@ -172,6 +172,7 @@
         $(".modulesList").next().hide();
         $(".modulesList").on('click', function(event) {
             $(this).next().slideToggle('slow');
+            $(this).toggleClass("modulesListClicked");
         });
     });
 
@@ -313,10 +314,13 @@ td {
     margin: 10px 0 0 0;
     background-color: #f5f5f5;
 }
+.list-group-item {
+    background-color: #f5f5f5;
+}
 .modulesList:hover {
     background-color: #cccccc;
 }
-.list-group-item {
-    background-color: #f5f5f5;
+.modulesListClicked {
+    background-color: #cccccc;
 }
 </style>
