@@ -86,39 +86,39 @@
                     Futures Scholarship.</p>
 
                     <h3>Modules</h3>
-                    <p class="modulesList">First Year Modules</p>
-                    <ul>
-                        <li>Human Aspects of Computer Science</li>
-                        <li>Skills, Knowledge & Independent Learning</li>
-                        <li>Introduction to Computer Architectures</li>
-                        <li>Mathematical Foundations of Computer Science</li>
-                        <li>Theory & Practice of Programming</li>
-                        <li>Numerical Analysis</li>
-                        <li>Foundation in Electronics, Signals & Circuits</li>
-                        <li>Programming of micro-controllers</li>
+                    <p class="modulesList list-group-item">First Year Modules</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Human Aspects of Computer Science</li>
+                        <li class="list-group-item">Skills, Knowledge & Independent Learning</li>
+                        <li class="list-group-item">Introduction to Computer Architectures</li>
+                        <li class="list-group-item">Mathematical Foundations of Computer Science</li>
+                        <li class="list-group-item">Theory & Practice of Programming</li>
+                        <li class="list-group-item">Numerical Analysis</li>
+                        <li class="list-group-item">Foundation in Electronics, Signals & Circuits</li>
+                        <li class="list-group-item">Programming of micro-controllers</li>
                     </ul>
 
-                    <p class="modulesList">Second Year Modules</p>
-                    <ul>
-                        <li>Vision & Graphics</li>
-                        <li>Implementation of Programming Languages</li>
-                        <li>Principles of Programming Languages</li>
-                        <li>Software Engineering Project</li>
-                        <li>Computability & Complexity</li>
-                        <li>Artificial Intelligence</li>
-                        <li>Systems (Operating Systems)</li>
+                    <p class="modulesList list-group-item">Second Year Modules</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Vision & Graphics</li>
+                        <li class="list-group-item">Implementation of Programming Languages</li>
+                        <li class="list-group-item">Principles of Programming Languages</li>
+                        <li class="list-group-item">Software Engineering Project</li>
+                        <li class="list-group-item">Computability & Complexity</li>
+                        <li class="list-group-item">Artificial Intelligence</li>
+                        <li class="list-group-item">Systems (Operating Systems)</li>
                     </ul>
 
-                    <p class="modulesList">Second Year Modules</p>
-                    <ul>
-                        <li>Analysable Real-Time Systems</li>
-                        <li>Fundamentals of Machine Learning</li>
-                        <li>Project Management for Computer Scientists</li>
-                        <li>Embedded Systems Design & Implementation</li>
-                        <li>Third Year Project</li>
-                        <li>Computer Vision</li>
-                        <li>Design of Analysable Real-Time Systems</li>
-                        <li>Machine Learning & Probabilistic Graphical Models</li>
+                    <p class="modulesList list-group-item">Third Year Modules</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Analysable Real-Time Systems</li>
+                        <li class="list-group-item">Fundamentals of Machine Learning</li>
+                        <li class="list-group-item">Project Management for Computer Scientists</li>
+                        <li class="list-group-item">Embedded Systems Design & Implementation</li>
+                        <li class="list-group-item">Third Year Project</li>
+                        <li class="list-group-item">Computer Vision</li>
+                        <li class="list-group-item">Design of Analysable Real-Time Systems</li>
+                        <li class="list-group-item">Machine Learning & Probabilistic Graphical Models</li>
                     </ul>
 
                     <h3>Societies</h3>
@@ -309,6 +309,14 @@ td {
     margin: 10px 0px;
 }
 .modulesList {
-    margin: 0px;
+    cursor: pointer;
+    margin: 10px 0 0 0;
+    background-color: #f5f5f5;
+}
+.modulesList:hover {
+    background-color: #cccccc;
+}
+.list-group-item {
+    background-color: #f5f5f5;
 }
 </style>
