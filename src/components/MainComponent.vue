@@ -5,7 +5,7 @@
         <div class="col-md-7" id="description">
             <p>"I'm currently in my third year of studying at the University of York, working towards a BSc/BEng in computer science. I designed 
             this page to supplement my cv and give people a way to get to know me and the kind of work I do. Below, you'll find links to a few of my
-            past projects and some more information about what I enjoy doing when I'm not working."</p>
+            past projects and some more information about what I enjoy doing when I'm not studying for my next AI exam!"</p>
         </div>
         <div class="col-md-5" id="portrait-container">
             <img id="portrait" src="../assets/photo-of-me.jpg">
@@ -29,24 +29,47 @@
                       </thead>
                       <tbody>
                         <tr>
-                            <td>Go AI</td>
-                            <td>During sixth form, I made this AI to play the board game "Go" for my extended project qualification.</td>
+                            <td><img src="../assets/go.jpg"/></td>
+                            <td>
+                                <h4>Go AI</h4>
+                                <p>During sixth form, I made this AI to play the board game "Go" for my extended project qualification.</p>
+                            </td>
                         </tr>
                         <tr>
-                            <td>This Website</td>
-                            <td>The source for this website is available on my Github. I used Vue and Bootstrap for its design.</td>
+                            <td></td>
+                            <td>
+                                <h4>This Website</h4>
+                                <p>The source for this website is available on my Github. I used Vue and Bootstrap for its design.</p>
+                            </td>
                         </tr>
                         <tr>
-                            <td>PROM Keypad</td>
-                            <td>A hardware project I worked on during my first year at University wth 2 other students.</td>
+                            <td><img src="../assets/universe-city.png"/></td>
+                            <td>
+                                <h4>Universe City</h4>
+                                <p>A game I developed for the software engineering project in my second year of university. The module didnt require that this game
+                                be coded to completion, however, I did so in my spare time.</p>
+                            </td>
                         </tr>
                         <tr>
-                            <td>VimRC</td>
-                            <td>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</td>
+                            <td><img src="../assets/PROM.jpg"/></td>
+                            <td>
+                                <h4>PROM Keypad Lock</h4>
+                                <p>A hardware project I worked on during my first year at University wth 2 other students.</p>
+                            </td>
                         </tr>
                         <tr>
-                            <td>HMGCC Code Breaker</td>
-                            <td>This is a short program I made to decode the an encrypted message on a HMGCC pen I recieved at a tech fair.</td>
+                            <td><img src="../assets/vim.png"/></td>
+                            <td>
+                                <h4>My VimRC</h4>
+                                <p>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/HMGCC.jpg"/></td>
+                            <td>
+                                <h4>HMGCC Code Breaker</h4>
+                                <p>This is a short program I made to decode an encrypted message on a HMGCC pen I recieved at a tech fair.</p>
+                            </td>
                         </tr>
                       </tbody>
                     </table>
@@ -55,14 +78,14 @@
                 <!--Hobbies-->
                 <div class="group-item ">
                     <h2>Hobbies</h2>
-                    <p>When I'm not bust revising for my next AI exam, I like competing in hackathons, working on
-                    personal projects, reading and playing music (I play the guitar and drums).</p>
+                    <p>Outside of university, I like competing in hackathons, reading, working on
+                    personal projects and playing music (I play the guitar and drums).</p>
                     <CarouselComponent/>
                     <p>In the summer after my first year at University, I spent 2 months in Greece volunteering with the 
                     <a href="https://www.archelon.gr/index_eng.php">Sea Turtle Protection Society of Greece</a>. I found this a
-                    really fun, rewarding experience and am eager to engage in more volunteering opportunities in the future</p>
+                    really fun, rewarding experience and am eager to engage in more volunteering opportunities in the future.</p>
                     <h3>Hackathons</h3>
-                    <p>I really enjoy hackathons, particulalry team based ones, and have so far competed in the following:</p>
+                    <p>I really enjoy hackathons, particularly team based ones, and have so far competed in the following:</p>
                     <table class="table table-striped" id="hackathonsTable">
                     <thead>
                       <thead>
@@ -205,8 +228,20 @@
     display: -ms-flexbox;
     display: flex;
 }
+h2 {
+    /* consider switching to "strong" tags instead as they are better for screen
+    readers... */
+    font-weight: bold;
+    font-size: 34px;; 
+    margin-top: 0;
+}
+h3 {
+    font-weight: bold;
+}
+p {
+    text-align: justify;
+}
 #description {
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -217,6 +252,7 @@
 #description p {
     vertical-align: middle;
     font-size: calc(14px + 0.8vw); 
+    text-align: center;
 }
 #portrait-container {
     display: flex;
@@ -233,7 +269,16 @@
     margin: 0;
     padding: 0;
 }
-tbody {
+#workTable img {
+    width: 100px;
+    height: 100px;
+}
+#workTable p {
+    text-align: left;
+}
+#workTable tr:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
 }
 thead {
     cursor: pointer;
@@ -261,19 +306,6 @@ thead {
 #group-content div[class*="col-"] {
     padding: 0px;
 }
-h2 {
-    /* consider switching to "strong" tags instead as they are better for screen
-    readers... */
-    font-weight: bold;
-    font-size: 34px;; 
-    margin-top: 0;
-}
-h3 {
-    font-weight: bold;
-}
-p {
-    text-align: justify;
-}
 table a {
     color: unset;
     text-decoration: unset;
@@ -300,7 +332,8 @@ td {
     /* background-color: #A9A9A9; */
 }
 .contact {
-    height: 120px;
+    height: 40px;
+    margin-bottom: 20px;
 }
 .contact img {
     position: absolute;
@@ -312,15 +345,15 @@ td {
 .modulesList {
     cursor: pointer;
     margin: 10px 0 0 0;
-    background-color: #f5f5f5;
+    background-color: #f9f9f9;
 }
 .list-group-item {
-    background-color: #f5f5f5;
+    background-color: #f9f9f9;
 }
 .modulesList:hover {
-    background-color: #cccccc;
+    background-color: #eaeaea;
 }
 .modulesListClicked {
-    background-color: #cccccc;
+    background-color: #eaeaea;
 }
 </style>
