@@ -308,4 +308,7 @@ td {
     left: calc(50% - 50px);
     margin: 10px 0px;
 }
+.modulesList {
+    margin: 0px;
+}
 </style>
