@@ -32,29 +32,34 @@
                             <td><img src="../assets/go.jpg"/></td>
                             <td>
                                 <h4>Go AI</h4>
-                                <p>During sixth form, I made this AI to play the board game "Go" for my extended project qualification.</p>
+                                <p>During sixth form, I made this AI to play the board game "Go", for my extended project qualification.</p>
+                                <a href="./Go.zip"><p>Download now!</p></a>
+                                <p>*Eventually, I plan to publish the source code, after a few minor improvements and code cleaning.</p>
                             </td>
                         </tr>
                         <tr>
                             <td><img src="../assets/github.svg"/></td>
                             <td>
                                 <h4>This Website</h4>
-                                <p>The source for this website is available on my Github. I used Vue and Bootstrap for its design.</p>
+                                <p>The source for this website is available on my Github. I used Vue and Bootstrap in its design.</p>
+                                <a href="https://github.com/Mrchazaaa/MyOwnWebsite"><p>Visit the Github page!</p></a>
                             </td>
                         </tr>
-                        <tr>
+                        <!--tr> soon...
                             <td><img src="../assets/universe-city.png"/></td>
                             <td>
                                 <h4>Universe City</h4>
-                                <p>A game I developed for the software engineering project in my second year of university. The module didnt require that this game
+                                <p>A game I developed for the software engineering project in my second year of university. The module didn't require that this game
                                 be coded to completion, however, I did so in my spare time.</p>
+                                <a href=""><p>Download now!</p></a>
                             </td>
-                        </tr>
+                        </tr-->
                         <tr>
                             <td><img src="../assets/PROM.jpg"/></td>
                             <td>
                                 <h4>PROM Keypad Lock</h4>
                                 <p>A hardware project I worked on during my first year at University wth 2 other students.</p>
+                                <a href="https://github.com/spankie1337/PROM_keypad"><p>Visit the Github page!</p></a>
                             </td>
                         </tr>
                         <tr>
@@ -62,6 +67,7 @@
                             <td>
                                 <h4>My VimRC</h4>
                                 <p>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</p>
+                                <a href="https://github.com/Mrchazaaa/myVimRC"><p>Visit the Github page!</p></a>
                             </td>
                         </tr>
                         <tr>
@@ -69,6 +75,7 @@
                             <td>
                                 <h4>HMGCC Code Breaker</h4>
                                 <p>This is a short program I made to decode an encrypted message on a HMGCC pen I recieved at a tech fair.</p>
+                                <a href="https://github.com/Mrchazaaa/HMGCC-_Code_Breaking"><p>Visit the Github page!</p></a>
                             </td>
                         </tr>
                       </tbody>
@@ -109,10 +116,12 @@
                     <h2>University</h2>
                     <p>I'm on schedule to graduate with a BEng/BSc in Computer Science in 2019. Here I list the modules I've studied to date, 
                     information about some of the societies I've joined at York and more information about my third year project. I'm also a recipient of the University's
-                    Futures Scholarship.</p>
+                    Futures Scholarship, and go on to explain a little more about what that means.</p>
 
                     <h3>Modules</h3>
-                    <p class="modulesList list-group-item">First Year Modules</p>
+                    <p>Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I 
+                    chose to study many modules relating to the theory and implementation of real-time and embedded systems.</p>
+                    <p class="modulesList list-group-item">First Year Modules (click me)</p>
                     <ul class="list-group">
                         <li class="list-group-item">Human Aspects of Computer Science</li>
                         <li class="list-group-item">Skills, Knowledge & Independent Learning</li>
@@ -124,7 +133,7 @@
                         <li class="list-group-item">Programming of micro-controllers</li>
                     </ul>
 
-                    <p class="modulesList list-group-item">Second Year Modules</p>
+                    <p class="modulesList list-group-item">Second Year Modules (click me)</p>
                     <ul class="list-group">
                         <li class="list-group-item">Vision & Graphics</li>
                         <li class="list-group-item">Implementation of Programming Languages</li>
@@ -135,7 +144,7 @@
                         <li class="list-group-item">Systems (Operating Systems)</li>
                     </ul>
 
-                    <p class="modulesList list-group-item">Third Year Modules</p>
+                    <p class="modulesList list-group-item">Third Year Modules (click me)</p>
                     <ul class="list-group">
                         <li class="list-group-item">Analysable Real-Time Systems</li>
                         <li class="list-group-item">Fundamentals of Machine Learning</li>
@@ -166,14 +175,17 @@
 
                     <h3>Third Year Project</h3>
                     <p>One of the more interesting parts of my curriculum is my third year project. For which I am...</p>
+
+                    <h3>York Futures Scholarship</h3>
+                    <p></p>
                 </div>
                 <!--CV-->
                 <div class="group-item ">
                     <h2>Curriculum Vitae</h2>
                     <p style="margin-bottom: 0;">Find enclosed a copy of my C.V</p> 
                     <a href="">Charles_Howlett_cv.pdf</a>
-                    <p>*note that some contact information on
-                    this copy has been hidden for privacy purposes</p>
+                    <p>*note that some contact information on this copy has been hidden for privacy purposes, 
+                    you'll find more ways to contact me at the bottom of this page!</p>
                 </div>
             </div>
         </div>
@@ -195,11 +207,14 @@
 
 <script>
     $( document ).ready(function() {
+        
+        //setup animations for each module list
         $(".modulesList").next().hide();
         $(".modulesList").on('click', function(event) {
             $(this).next().slideToggle('slow');
             $(this).toggleClass("modulesListClicked");
         });
+
     });
 
     import CarouselComponent from './Carousel.vue';
@@ -216,13 +231,9 @@
 <style scoped>
 #page-container{
     max-width: 1600px;
-    /* width: 100%; */
-    /* background-color: #f8f9fa; */
     padding-top: 50px;
-    /* padding-left: 7vw; */
-    /* padding-right: 10vw; */
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 #introduction {
     padding: 5vh 0;
@@ -244,10 +255,9 @@ h3 {
 p {
     text-align: justify;
 }
-#introduction:nth-child(0) {
+#introduction > div:first-child {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     margin: 0;
     padding-left: 2vw;
@@ -281,7 +291,6 @@ p {
 }
 #workTable tr:hover {
     background-color: #eaeaea;
-    cursor: pointer;
 }
 thead {
     cursor: pointer;
@@ -293,28 +302,8 @@ thead {
     border: 1px solid #e3e3e3;
     border-radius: 4px;
 }
-#modules1Table {
-    width: 100%;
-}
-#modules1Table th{
-    padding: 10px;
-}
-#modules1Table tbody {
-    padding: 0px;
-    margin: 0px;
-}
-#firstCollapse table {
-    margin: 0;
-}
 #group-content div[class*="col-"] {
     padding: 0px;
-}
-table a {
-    color: unset;
-    text-decoration: unset;
-}
-table a:hover {
-    text-decoration: underline;
 }
 table {
     margin: 5px 0;
@@ -329,10 +318,6 @@ table {
 }
 th {
     padding-left: 8px;
-    /* background-color: #A9A9A9; */
-}
-td {
-    /* background-color: #A9A9A9; */
 }
 .contact {
     height: 40px;
