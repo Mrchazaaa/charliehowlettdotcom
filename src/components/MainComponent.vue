@@ -2,12 +2,12 @@
 <div id="page-container" class="container">
     <!--Introduction-->
     <div class="row well" id="introduction">
-        <div class="col-md-7" id="description">
+        <div class="col-12 col-md-7">
             <p>"I'm currently in my third year of studying at the University of York, working towards a BSc/BEng in computer science. I designed 
             this page to supplement my cv and give people a way to get to know me and the kind of work I do. Below, you'll find links to a few of my
             past projects and some more information about what I enjoy doing when I'm not studying for my next AI exam!"</p>
         </div>
-        <div class="col-md-5" id="portrait-container">
+        <div class="col-12 col-md-5">
             <img id="portrait" src="../assets/photo-of-me.jpg">
         </div>
     </div>
@@ -81,9 +81,6 @@
                     <p>Outside of university, I like competing in hackathons, reading, working on
                     personal projects and playing music (I play the guitar and drums).</p>
                     <CarouselComponent/>
-                    <p>In the summer after my first year at University, I spent 2 months in Greece volunteering with the 
-                    <a href="https://www.archelon.gr/index_eng.php">Sea Turtle Protection Society of Greece</a>. I found this a
-                    really fun, rewarding experience and am eager to engage in more volunteering opportunities in the future.</p>
                     <h3>Hackathons</h3>
                     <p>I really enjoy hackathons, particularly team based ones, and have so far competed in the following:</p>
                     <table class="table table-striped" id="hackathonsTable">
@@ -98,6 +95,12 @@
                         <tr><td scope="row">ARM Hackathon</td></tr>
                       </tbody>
                     </table>
+
+                    <h3>Volunteering</h3>
+                    <p>In the summer after my first year at University, I spent 2 months in Greece volunteering with the 
+                    <a href="https://www.archelon.gr/index_eng.php">Sea Turtle Protection Society of Greece</a>. I found this a
+                    really fun, rewarding experience and am eager to engage in more volunteering opportunities in the future. I am hoping to
+                    be able to partake in the <a href="https://www.volunteerics.org/">International Citizen Service</a> volunteering program in 2019.</p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -241,7 +244,7 @@ h3 {
 p {
     text-align: justify;
 }
-#description {
+#introduction:nth-child(0) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -249,12 +252,12 @@ p {
     margin: 0;
     padding-left: 2vw;
 }
-#description p {
+#introduction p {
     vertical-align: middle;
     font-size: calc(14px + 0.8vw); 
     text-align: center;
 }
-#portrait-container {
+#introduction img {
     display: flex;
     flex-direction: column;
     padding-left: 5%;
