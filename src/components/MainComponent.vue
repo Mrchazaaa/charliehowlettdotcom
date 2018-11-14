@@ -29,7 +29,7 @@
                       </thead>
                       <tbody>
                         <tr>
-                            <td><img src="../assets/go.jpg"/></td>
+                            <td class="center-icons"><div><img src="../assets/go.jpg"/></div></td>
                             <td>
                                 <h4>Go AI</h4>
                                 <p>During sixth form, I made this AI to play the board game "Go", for my extended project qualification.</p>
@@ -38,7 +38,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><img src="../assets/github.svg"/></td>
+                            <td class="center-icons"><div><img src="../assets/github.svg"/></div></td>
                             <td>
                                 <h4>This Website</h4>
                                 <p>The source for this website is available on my Github. I used Vue and Bootstrap in its design.</p>
@@ -46,7 +46,7 @@
                             </td>
                         </tr>
                         <!--tr> soon...
-                            <td><img src="../assets/universe-city.png"/></td>
+                            <td class="center-icons"><div><img src="../assets/universe-city.png"/></div></td>
                             <td>
                                 <h4>Universe City</h4>
                                 <p>A game I developed for the software engineering project in my second year of university. The module didn't require that this game
@@ -55,7 +55,7 @@
                             </td>
                         </tr-->
                         <tr>
-                            <td><img src="../assets/PROM.jpg"/></td>
+                            <td class="center-icons"><div><img src="../assets/PROM.jpg"/></div></td>
                             <td>
                                 <h4>PROM Keypad Lock</h4>
                                 <p>A hardware project I worked on during my first year at University wth 2 other students.</p>
@@ -63,7 +63,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><img src="../assets/vim.png"/></td>
+                            <td class="center-icons"><div><img src="../assets/vim.png"/></div></td>
                             <td>
                                 <h4>My VimRC</h4>
                                 <p>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</p>
@@ -71,7 +71,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><img src="../assets/HMGCC.jpg"/></td>
+                            <td class="center-icons"><div><img src="../assets/HMGCC.jpg"/></div></td>
                             <td>
                                 <h4>HMGCC Code Breaker</h4>
                                 <p>This is a short program I made to decode an encrypted message on a HMGCC pen I recieved at a tech fair.</p>
@@ -344,4 +344,15 @@ th {
 .modulesListClicked {
     background-color: #eaeaea;
 }
+/*use flex to vertically center icons in previous work table*/
+.center-icons {
+    height: 1px;
+}
+.center-icons div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
 </style>
