@@ -2,7 +2,7 @@
 <div id="page-container" class="container">
     <!--Sidebar for smaller screens-->
     <div id="topSideBar">
-        <p>I love being cool and attractive :)</p>
+        <p>Add sidebar(nav) content here</p>
     </div>
     <!--Introduction-->
     <div class="row well hidden-sm hidden-xs" id="introduction">
@@ -23,7 +23,7 @@
             <div class="col-md-6">
 
                 <!--Previous work-->
-                <div class="group-item">
+                <div class="group-item" id="prev-work">
                     <h2>Some of My Work</h2>
                     <p>Here are a few of the projects I'm proud to have worked on in 
                     the past:</p>
@@ -89,7 +89,7 @@
                 </div>
 
                 <!--Hobbies-->
-                <div class="group-item ">
+                <div class="group-item" id="hobbies">
                     <h2>Hobbies</h2>
                     <p>Outside of university, I like competing in hackathons, reading, working on
                     personal projects and playing music (I play the guitar and drums).</p>
@@ -121,7 +121,7 @@
             </div>
             <div class="col-md-6">
                 <!--University info-->
-                <div class="group-item ">
+                <div class="group-item" id="uni-info">
                     <h2>University</h2>
                     <p>I'm on schedule to graduate with a BEng/BSc in Computer Science in 2019. Here I list the modules I've studied to date, 
                     information about some of the societies I've joined at York and more information about my third year project. I'm also a recipient of the University's
@@ -205,14 +205,16 @@
 
     <hr />
 
+    <!--div class="row well hidden-sm hidden-xs" id="introduction"-->
+
     <!--Contact Information-->
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-2 contact"><a href="https://github.com/Mrchazaaa/"><img src="../assets/github.svg"></a></div>
-        <div class="col-md-2 contact"><a href="https://www.linkedin.com/in/charles-howlett-383b26155/"><img src="../assets/linkedin.svg"></a></div>
-        <div class="col-md-2 contact"><a href="https://www.facebook.com/charlie.howlett.1"><img src="../assets/facebook.svg"></a></div>
-        <div class="col-md-2 contact"><a href="mailto:charlie.howlett@live.co.uk"><img src="../assets/email.svg"></a></div>
-        <div class="col-md-2"></div>
+    <div class="row" id="contact-info">
+        <div class="hidden-sm hidden-xs col-md-2"></div>
+        <div class="col-xs-6 col-md-2 contact"><a href="https://github.com/Mrchazaaa/"><img src="../assets/github.svg"></a></div>
+        <div class="col-xs-6 col-md-2 contact"><a href="https://www.linkedin.com/in/charles-howlett-383b26155/"><img src="../assets/linkedin.svg"></a></div>
+        <div class="col-xs-6 col-md-2 contact"><a href="https://www.facebook.com/charlie.howlett.1"><img src="../assets/facebook.svg"></a></div>
+        <div class="col-xs-6 col-md-2 contact"><a href="mailto:charlie.howlett@live.co.uk"><img src="../assets/email.svg"></a></div>
+        <div class="hidden-sm hidden-xs col-md-2"></div>
     </div>
 </div>
 </template>

@@ -11,7 +11,7 @@
         <button type="button" id="menu-toggle" class="btn btn-secondary"><img src="./assets/align-left.svg"></button>
 
         <!--Title-->
-        <h1 class="hidden">Charlie Howlett</h1>
+        <h1 class="hidden" id="title">Charlie Howlett</h1>
 
         <!--content pointer-->
         <a href="#page-container"><img id="content-pointer" class="hidden"  src="./assets/chevron-bottom.svg"></a>
@@ -63,6 +63,7 @@
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("#app").toggleClass("toggled");
+            $(this).fadeOut("slow");
         });
     });
 
@@ -88,7 +89,7 @@ body, html {
     margin:0; 
     padding:0;
     height: 100%;
-    /* background-color: #f8f9fa */
+    overflow-x: hidden;
 }
 .hidden{
   display: none;
@@ -131,4 +132,58 @@ h1 {
     margin-right: 50%;
     width: 25px;
 }
+
+/*sidebar styling*/
+
+#app {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#app.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    overflow-x: hidden;
+}
+
+#app.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+}
+
+#app.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 </style>
