@@ -23,179 +23,173 @@
             <div class="col-md-6">
 
                 <!--Previous work-->
-                <div>
-                    <div class="group-item">
-                        <h2>Some of My Work</h2>
-                        <p>Here are a few of the projects I'm proud to have worked on in 
-                        the past:</p>
-                        <table class="table table-striped" id="workTable">
-                        <thead>
-                          <thead>
-                          </thead>
-                          <tbody>
-                            <tr>
-                                <td class="center-icons"><div><img src="../assets/go.jpg"/></div></td>
-                                <td>
-                                    <h4>Go AI</h4>
-                                    <p>During sixth form, I made this AI to play the board game "Go", for my extended project qualification.</p>
-                                    <a href="./Go.zip"><p>Download now!</p></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="center-icons"><div><img src="../assets/github.svg"/></div></td>
-                                <td>
-                                    <h4>This Website</h4>
-                                    <p>The source for this website is available on my Github. I used Vue and Bootstrap in its design.</p>
-                                    <a href="https://github.com/Mrchazaaa/MyOwnWebsite"><p>Visit the Github page!</p></a>
-                                </td>
-                            </tr>
-                            <!--tr> soon...
-                                <td class="center-icons"><div><img src="../assets/universe-city.png"/></div></td>
-                                <td>
-                                    <h4>Universe City</h4>
-                                    <p>A game I developed for the software engineering project in my second year of university. The module didn't require that this game
-                                    be coded to completion, however, I did so in my spare time.</p>
-                                    <a href=""><p>Download now!</p></a>
-                                </td>
-                            </tr-->
-                            <tr>
-                                <td class="center-icons"><div><img src="../assets/PROM.jpg"/></div></td>
-                                <td>
-                                    <h4>PROM Keypad Lock</h4>
-                                    <p>A hardware project I worked on during my first year at University wth 2 other students.</p>
-                                    <a href="https://github.com/spankie1337/PROM_keypad"><p>Visit the Github page!</p></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="center-icons"><div><img src="../assets/vim.png"/></div></td>
-                                <td>
-                                    <h4>My VimRC</h4>
-                                    <p>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</p>
-                                    <a href="https://github.com/Mrchazaaa/myVimRC"><p>Visit the Github page!</p></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="center-icons"><div><img src="../assets/HMGCC.jpg"/></div></td>
-                                <td>
-                                    <h4>HMGCC Code Breaker</h4>
-                                    <p>This is a short program I made to decode an encrypted message on a HMGCC pen I recieved at a tech fair.</p>
-                                    <a href="https://github.com/Mrchazaaa/HMGCC-_Code_Breaking"><p>Visit the Github page!</p></a>
-                                </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                    </div>
-                    <div class="lessMore">
-                        <p>Show more...</p>
-                    </div>
-                </div>                
+                <div class="group-item">
+                    <h2>Some of My Work</h2>
+                    <p>Here are a few of the projects I'm proud to have worked on in 
+                    the past:</p>
+                    <table class="table table-striped" id="workTable">
+                    <thead>
+                      <thead>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td class="center-icons"><div><img src="../assets/go.jpg"/></div></td>
+                            <td>
+                                <h4>Go AI</h4>
+                                <p>During sixth form, I made this AI to play the board game "Go", for my extended project qualification.</p>
+                                <a href="./Go.zip"><p>Download now!</p></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center-icons"><div><img src="../assets/github.svg"/></div></td>
+                            <td>
+                                <h4>This Website</h4>
+                                <p>The source for this website is available on my Github. I used Vue and Bootstrap in its design.</p>
+                                <a href="https://github.com/Mrchazaaa/MyOwnWebsite"><p>Visit the Github page!</p></a>
+                            </td>
+                        </tr>
+                        <!--tr> soon...
+                            <td class="center-icons"><div><img src="../assets/universe-city.png"/></div></td>
+                            <td>
+                                <h4>Universe City</h4>
+                                <p>A game I developed for the software engineering project in my second year of university. The module didn't require that this game
+                                be coded to completion, however, I did so in my spare time.</p>
+                                <a href=""><p>Download now!</p></a>
+                            </td>
+                        </tr-->
+                        <tr>
+                            <td class="center-icons"><div><img src="../assets/PROM.jpg"/></div></td>
+                            <td>
+                                <h4>PROM Keypad Lock</h4>
+                                <p>A hardware project I worked on during my first year at University wth 2 other students.</p>
+                                <a href="https://github.com/spankie1337/PROM_keypad"><p>Visit the Github page!</p></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center-icons"><div><img src="../assets/vim.png"/></div></td>
+                            <td>
+                                <h4>My VimRC</h4>
+                                <p>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</p>
+                                <a href="https://github.com/Mrchazaaa/myVimRC"><p>Visit the Github page!</p></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center-icons"><div><img src="../assets/HMGCC.jpg"/></div></td>
+                            <td>
+                                <h4>HMGCC Code Breaker</h4>
+                                <p>This is a short program I made to decode an encrypted message on a HMGCC pen I recieved at a tech fair.</p>
+                                <a href="https://github.com/Mrchazaaa/HMGCC-_Code_Breaking"><p>Visit the Github page!</p></a>
+                            </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                <div class="lessMore">
+                    <p>Show more...</p>
+                </div>
 
                 <!--Hobbies-->
-                <div>
-                    <div class="group-item ">
-                        <h2>Hobbies</h2>
-                        <p>Outside of university, I like competing in hackathons, reading, working on
-                        personal projects and playing music (I play the guitar and drums).</p>
-                        <CarouselComponent/>
-                        <h3>Hackathons</h3>
-                        <p>I really enjoy hackathons, particularly team based ones, and have so far competed in the following:</p>
-                        <table class="table table-striped" id="hackathonsTable">
-                        <thead>
-                          <thead>
-                          </thead>
-                          <tbody>
-                            <tr><td scope="row">Google Code Jam</td></tr>
-                            <tr><td scope="row">Google Hashcode</td></tr>
-                            <tr><td scope="row">BAE Systems Capture the Flag</td></tr>
-                            <tr><td scope="row">BBC Hackathon</td></tr>
-                            <tr><td scope="row">ARM Hackathon</td></tr>
-                          </tbody>
-                        </table>
+                <div class="group-item ">
+                    <h2>Hobbies</h2>
+                    <p>Outside of university, I like competing in hackathons, reading, working on
+                    personal projects and playing music (I play the guitar and drums).</p>
+                    <CarouselComponent/>
+                    <h3>Hackathons</h3>
+                    <p>I really enjoy hackathons, particularly team based ones, and have so far competed in the following:</p>
+                    <table class="table table-striped" id="hackathonsTable">
+                    <thead>
+                      <thead>
+                      </thead>
+                      <tbody>
+                        <tr><td scope="row">Google Code Jam</td></tr>
+                        <tr><td scope="row">Google Hashcode</td></tr>
+                        <tr><td scope="row">BAE Systems Capture the Flag</td></tr>
+                        <tr><td scope="row">BBC Hackathon</td></tr>
+                        <tr><td scope="row">ARM Hackathon</td></tr>
+                      </tbody>
+                    </table>
 
-                        <h3>Volunteering</h3>
-                        <p>In the summer after my first year at University, I spent 2 months in Greece volunteering with the 
-                        <a href="https://www.archelon.gr/index_eng.php">Sea Turtle Protection Society of Greece</a>. I found this a
-                        really fun, rewarding experience and am eager to engage in more volunteering opportunities in the future. I am hoping to
-                        be able to partake in the <a href="https://www.volunteerics.org/">International Citizen Service</a> volunteering program in 2019.</p>
-                    </div>
-                    <div class="lessMore">
-                        <p>Show more...</p>
-                    </div>
+                    <h3>Volunteering</h3>
+                    <p>In the summer after my first year at University, I spent 2 months in Greece volunteering with the 
+                    <a href="https://www.archelon.gr/index_eng.php">Sea Turtle Protection Society of Greece</a>. I found this a
+                    really fun, rewarding experience and am eager to engage in more volunteering opportunities in the future. I am hoping to
+                    be able to partake in the <a href="https://www.volunteerics.org/">International Citizen Service</a> volunteering program in 2019.</p>
+                </div>
+                <div class="lessMore">
+                    <p>Show more...</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <!--University info-->
-                <div>
-                    <div class="group-item ">
-                        <h2>University</h2>
-                        <p>I'm on schedule to graduate with a BEng/BSc in Computer Science in 2019. Here I list the modules I've studied to date, 
-                        information about some of the societies I've joined at York and more information about my third year project. I'm also a recipient of the University's
-                        Futures Scholarship, and go on to explain a little more about what that means.</p>
+                <div class="group-item ">
+                    <h2>University</h2>
+                    <p>I'm on schedule to graduate with a BEng/BSc in Computer Science in 2019. Here I list the modules I've studied to date, 
+                    information about some of the societies I've joined at York and more information about my third year project. I'm also a recipient of the University's
+                    Futures Scholarship, and go on to explain a little more about what that means.</p>
 
-                        <h3>Modules</h3>
-                        <p>Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I 
-                        chose to study many modules relating to the theory and implementation of real-time and embedded systems.</p>
-                        <p class="modulesList list-group-item">First Year Modules *add icon</p>
-                        <ul class="list-group">
-                            <li class="list-group-item">Human Aspects of Computer Science</li>
-                            <li class="list-group-item">Skills, Knowledge & Independent Learning</li>
-                            <li class="list-group-item">Introduction to Computer Architectures</li>
-                            <li class="list-group-item">Mathematical Foundations of Computer Science</li>
-                            <li class="list-group-item">Theory & Practice of Programming</li>
-                            <li class="list-group-item">Numerical Analysis</li>
-                            <li class="list-group-item">Foundation in Electronics, Signals & Circuits</li>
-                            <li class="list-group-item">Programming of micro-controllers</li>
-                        </ul>
+                    <h3>Modules</h3>
+                    <p>Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I 
+                    chose to study many modules relating to the theory and implementation of real-time and embedded systems.</p>
+                    <p class="modulesList list-group-item">First Year Modules *add icon</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Human Aspects of Computer Science</li>
+                        <li class="list-group-item">Skills, Knowledge & Independent Learning</li>
+                        <li class="list-group-item">Introduction to Computer Architectures</li>
+                        <li class="list-group-item">Mathematical Foundations of Computer Science</li>
+                        <li class="list-group-item">Theory & Practice of Programming</li>
+                        <li class="list-group-item">Numerical Analysis</li>
+                        <li class="list-group-item">Foundation in Electronics, Signals & Circuits</li>
+                        <li class="list-group-item">Programming of micro-controllers</li>
+                    </ul>
 
-                        <p class="modulesList list-group-item">Second Year Modules</p>
-                        <ul class="list-group">
-                            <li class="list-group-item">Vision & Graphics</li>
-                            <li class="list-group-item">Implementation of Programming Languages</li>
-                            <li class="list-group-item">Principles of Programming Languages</li>
-                            <li class="list-group-item">Software Engineering Project</li>
-                            <li class="list-group-item">Computability & Complexity</li>
-                            <li class="list-group-item">Artificial Intelligence</li>
-                            <li class="list-group-item">Systems (Operating Systems)</li>
-                        </ul>
+                    <p class="modulesList list-group-item">Second Year Modules</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Vision & Graphics</li>
+                        <li class="list-group-item">Implementation of Programming Languages</li>
+                        <li class="list-group-item">Principles of Programming Languages</li>
+                        <li class="list-group-item">Software Engineering Project</li>
+                        <li class="list-group-item">Computability & Complexity</li>
+                        <li class="list-group-item">Artificial Intelligence</li>
+                        <li class="list-group-item">Systems (Operating Systems)</li>
+                    </ul>
 
-                        <p class="modulesList list-group-item">Third Year Modules</p>
-                        <ul class="list-group">
-                            <li class="list-group-item">Analysable Real-Time Systems</li>
-                            <li class="list-group-item">Fundamentals of Machine Learning</li>
-                            <li class="list-group-item">Project Management for Computer Scientists</li>
-                            <li class="list-group-item">Embedded Systems Design & Implementation</li>
-                            <li class="list-group-item">Third Year Project</li>
-                            <li class="list-group-item">Computer Vision</li>
-                            <li class="list-group-item">Design of Analysable Real-Time Systems</li>
-                            <li class="list-group-item">Machine Learning & Probabilistic Graphical Models</li>
-                        </ul>
+                    <p class="modulesList list-group-item">Third Year Modules</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Analysable Real-Time Systems</li>
+                        <li class="list-group-item">Fundamentals of Machine Learning</li>
+                        <li class="list-group-item">Project Management for Computer Scientists</li>
+                        <li class="list-group-item">Embedded Systems Design & Implementation</li>
+                        <li class="list-group-item">Third Year Project</li>
+                        <li class="list-group-item">Computer Vision</li>
+                        <li class="list-group-item">Design of Analysable Real-Time Systems</li>
+                        <li class="list-group-item">Machine Learning & Probabilistic Graphical Models</li>
+                    </ul>
 
-                        <h3>Societies</h3>
-                        <p>During my time at University I've taken part in a number of societies, which I've listed here to demonstrate the kind of activities I enjoy
-                        outside of studying:<p>                        
-                        <table class="table table-striped" id="societiesTable">
-                        <thead>
-                          <thead>
-                          </thead>
-                          <tbody>
-                            <tr><td scope="row">Cyber Security Society</td></tr>
-                            <tr><td scope="row">Dog Society</td></tr>
-                            <tr><td scope="row">Game Development Society</td></tr>
-                            <tr><td scope="row">Movie Society</td></tr>
-                            <tr><td scope="row">Band Society</td></tr>
-                          </tbody>
-                        </table>
-                        
+                    <h3>Societies</h3>
+                    <p>During my time at University I've taken part in a number of societies, which I've listed here to demonstrate the kind of activities I enjoy
+                    outside of studying:<p>                        
+                    <table class="table table-striped" id="societiesTable">
+                    <thead>
+                      <thead>
+                      </thead>
+                      <tbody>
+                        <tr><td scope="row">Cyber Security Society</td></tr>
+                        <tr><td scope="row">Dog Society</td></tr>
+                        <tr><td scope="row">Game Development Society</td></tr>
+                        <tr><td scope="row">Movie Society</td></tr>
+                        <tr><td scope="row">Band Society</td></tr>
+                      </tbody>
+                    </table>
+                    
 
-                        <h3>Third Year Project</h3>
-                        <p>One of the more interesting parts of my curriculum is my third year project. For which I am...</p>
+                    <h3>Third Year Project</h3>
+                    <p>One of the more interesting parts of my curriculum is my third year project. For which I am...</p>
 
-                        <h3>York Futures Scholarship</h3>
-                        <p></p>
-                    </div>
-                    <div class="lessMore">
-                        <p>Show more...</p>
-                    </div>
+                    <h3>York Futures Scholarship</h3>
+                    <p></p>
+                </div>
+                <div class="lessMore">
+                    <p>Show more...</p>
                 </div>
                 <!--CV-->
                 <div class="group-item" id="cv">
