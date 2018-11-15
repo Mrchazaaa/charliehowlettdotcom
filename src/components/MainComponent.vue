@@ -1,7 +1,7 @@
 <template>
 <div id="page-container" class="container">
     <!--Introduction-->
-    <div class="row well" id="introduction">
+    <div class="row well hidden-sm hidden-xs" id="introduction">
         <div class="col-12 col-md-7">
             <p>"I'm currently in my third year of studying at the University of York, working towards a BSc/BEng in computer science. I designed 
             this page to supplement my cv and give people a way to get to know me and the kind of work I do. Below, you'll find links to a few of my
@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <hr />
+    <hr class="hidden-sm hidden-xs" />
 
     <div id="group-content" class ="container">
         <div class="row">
@@ -231,7 +231,7 @@
 <style scoped>
 #page-container{
     max-width: 1600px;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
 }
