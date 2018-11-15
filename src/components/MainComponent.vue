@@ -227,6 +227,12 @@
             $(this).toggleClass("modulesListClicked");
         });
 
+        //setup show more buttons (on smaller screens)
+        $(".lessMore").on('click', function(event) {
+            $(this).prev().removeClass("readMore");
+            $(this).addClass("hidden");
+        });
+
         //make worktable rows clickable
         $("#workTable tr").mousedown(function(event) {
             if (event.which != 3) {
@@ -240,12 +246,14 @@
                 $("#topSideBar").removeClass("hidden");
                 $("#menu-toggle").addClass("hidden");
                 $(".group-item").addClass("readMore");
+                $(".lessMore").removeClass("hidden");
             } 
             //on larger screens... 
             else {
                 $("#topSideBar").addClass("hidden");
                 $("#menu-toggle").removeClass("hidden");
                 $(".group-item").removeClass("readMore");
+                $(".lessMore").addClass("hidden");
             }
         }
         
