@@ -246,14 +246,14 @@
             //on smaller screens...
             if ($(window).width() < 992) {
                 $("#topSideBar").removeClass("hidden");
-                $("#menu-toggle").addClass("hidden");
+                $("#menu-open").addClass("hidden");
                 $(".group-item").addClass("readMore");
                 $(".lessMore").removeClass("hidden");
             } 
             //on larger screens... 
             else {
                 $("#topSideBar").addClass("hidden");
-                $("#menu-toggle").removeClass("hidden");
+                $("#menu-open").removeClass("hidden");
                 $(".group-item").removeClass("readMore");
                 $(".lessMore").addClass("hidden");
             }

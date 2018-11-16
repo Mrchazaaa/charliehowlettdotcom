@@ -7,11 +7,11 @@
         <!--p5 sketch background-->
         <div id='sketch'></div>
         
-        <!--Toggle sidebar button-->
-        <button type="button" id="menu-toggle" class="btn btn-secondary"><img src="./assets/align-left.svg"></button>
+        <!--Open sidebar button-->
+        <button type="button" id="menu-open" class="btn btn-secondary"><img src="./assets/align-left.svg"></button>
 
         <!--Title-->
-        <h1 class="hidden" id="title">Charlie Howlett</h1>
+        <h1 class="hidden">Charlie Howlett</h1>
 
         <!--content pointer-->
         <a href="#page-container"><img id="content-pointer" class="hidden"  src="./assets/chevron-bottom.svg"></a>
@@ -60,10 +60,11 @@
         $('#content-pointer').hover( function() { $(this).fadeTo(500, 1.0);  }, function() { $(this).fadeTo(500, 0.3); }  );
         
         //add click event handler to sidebar toggle button
-        $("#menu-toggle").click(function(e) {
+        $("#menu-open").click(function(e) {
             e.preventDefault();
-            $("#app").toggleClass("toggled");
+            $("#app").addClass("toggled");
             $(this).fadeOut("slow");
+            $("#menu-close").fadeIn("slow");
         });
     });
 
@@ -111,7 +112,7 @@ h1 {
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
 }
-#menu-toggle {
+#menu-open {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -143,24 +144,23 @@ h1 {
     transition: all 0.5s ease;
 }
 
-#app.toggled {
-    padding-left: 250px;
-}
-
 #sidebar-wrapper {
-    z-index: 1;
+    z-index: 3;
     position: fixed;
     left: 250px;
     width: 0;
     height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background: #000;
+    margin-left: -255px; /*250px + 5px to account for border*/
+    background-color: #eaeaea;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    overflow-x: hidden;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    border-right: 5px solid #2c3e50;
 }
 
 #app.toggled #sidebar-wrapper {
@@ -170,20 +170,6 @@ h1 {
 #page-content-wrapper {
     width: 100%;
     position: absolute;
-}
-
-#app.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-}
-
-.sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
 </style>
