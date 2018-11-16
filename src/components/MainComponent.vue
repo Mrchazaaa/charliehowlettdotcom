@@ -1,9 +1,5 @@
 <template>
 <div id="page-container" class="container">
-    <!--Sidebar for smaller screens-->
-    <div id="topSideBar">
-        <p>Add sidebar(nav) content here</p>
-    </div>
     <!--Introduction-->
     <div class="row well hidden-sm hidden-xs" id="introduction">
         <div class="col-12 col-md-7">
@@ -21,6 +17,17 @@
     <div id="group-content" class ="container">
         <div class="row">
             <div class="col-md-6">
+
+                <!--Sidebar for smaller screens-->
+                <div id="topSideBar">
+                    <p class="topNav list-group-item">Third Year Modules</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Analysable Real-Time Systems</li>
+                        <li class="list-group-item">Computer Vision</li>
+                        <li class="list-group-item">Design of Analysable Real-Time Systems</li>
+                        <li class="list-group-item">Machine Learning & Probabilistic Graphical Models</li>
+                    </ul>
+                </div>
 
                 <!--Previous work-->
                 <div class="group-item" id="prev-work">
@@ -286,9 +293,13 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/* #topSideBar { */
+/*     width: 100%; */
+/* } */
 .readMore {
     overflow-y: hidden;
-    height: 300px;
+    height: 300px; 
+    border-radius: 4px 4px 0px 0px !important;
 }
 #cv {
     height: unset;
@@ -370,7 +381,7 @@ thead {
     margin: 0px 7.5px 0px 7.5px;
     padding: 0px 15px 0px 15px;
     border: 1px solid #e3e3e3;
-    border-radius: 4px;
+    border-radius: 0px 0px 4px;
     background-color: #eaeaea;
 }
 .lessMore p {
