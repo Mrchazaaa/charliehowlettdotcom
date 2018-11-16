@@ -203,9 +203,9 @@
                 <!--CV-->
                 <div class="group-item" id="cv">
                     <h2>Curriculum Vitae</h2>
-                    <p style="margin-bottom: 0;">Find enclosed a copy of my C.V</p> 
-                    <a href="">Charles_Howlett_cv.pdf</a>
-                    <p>*note that some contact information on this copy has been hidden for privacy purposes, 
+                    <p>Find enclosed a copy of my C.V</p> 
+                    <a href="">Charles_Howlett_CV.pdf</a>
+                    <p style="margin-top: 10px;">*note that some contact information on this copy has been hidden for privacy purposes, 
                     you'll find more ways to contact me at the bottom of this page!</p>
                 </div>
             </div>
@@ -304,10 +304,8 @@
     color: #fff;
     margin: 0;
     border: 1px solid #000;
-}
-#topSideBar ul li:first-of-type {
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    border-left-left-radius: 0px;
+    border-left-left-radius: 0px;
 }
 #topSideBar ul li {
     background-color: #eaeaea;
@@ -336,6 +334,18 @@
 }
 #cv {
     height: unset;
+}
+#cv a {
+    font-weight: bold;
+    background-color: #596475;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #000;
+    text-decoration: none;
+}
+#cv a:hover {
+    background-color: #eaeaea;
+    color: #2c3e50;
 }
 #page-container{
     max-width: 1600px;
