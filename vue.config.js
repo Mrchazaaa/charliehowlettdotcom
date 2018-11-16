@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl: ‘/charlies-website/
+  baseUrl: '/charlies-website/'
   //   ? '/production-sub-path/'
   //   : '/'
 }
