@@ -20,12 +20,14 @@
 
                 <!--Sidebar for smaller screens-->
                 <div id="topSideBar">
-                    <p class="topNav list-group-item">Third Year Modules</p>
+                    <p class="toggle-list list-group-item">Nav</p>
                     <ul class="list-group">
-                        <li class="list-group-item">Analysable Real-Time Systems</li>
-                        <li class="list-group-item">Computer Vision</li>
-                        <li class="list-group-item">Design of Analysable Real-Time Systems</li>
-                        <li class="list-group-item">Machine Learning & Probabilistic Graphical Models</li>
+                        <li class="list-group-item"><a href="#sketch">Top</a></li>
+                        <li class="list-group-item"><a href="#prev-work">Previous Work</a></li>
+                        <li class="list-group-item"><a href="#uni-info">University</a></li>
+                        <li class="list-group-item"><a href="#hobbies">Hobbies</a></li>
+                        <li class="list-group-item"><a href="#cv">CV</a></li>
+                        <li class="list-group-item"><a href="#contact-info">Contact</a></li>
                     </ul>
                 </div>
 
@@ -137,7 +139,7 @@
                     <h3>Modules</h3>
                     <p>Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I 
                     chose to study many modules relating to the theory and implementation of real-time and embedded systems.</p>
-                    <p class="modulesList list-group-item">First Year Modules *add icon</p>
+                    <p class="toggle-list list-group-item">First Year Modules *add icon</p>
                     <ul class="list-group">
                         <li class="list-group-item">Human Aspects of Computer Science</li>
                         <li class="list-group-item">Skills, Knowledge & Independent Learning</li>
@@ -149,7 +151,7 @@
                         <li class="list-group-item">Programming of micro-controllers</li>
                     </ul>
 
-                    <p class="modulesList list-group-item">Second Year Modules</p>
+                    <p class="toggle-list list-group-item">Second Year Modules</p>
                     <ul class="list-group">
                         <li class="list-group-item">Vision & Graphics</li>
                         <li class="list-group-item">Implementation of Programming Languages</li>
@@ -160,7 +162,7 @@
                         <li class="list-group-item">Systems (Operating Systems)</li>
                     </ul>
 
-                    <p class="modulesList list-group-item">Third Year Modules</p>
+                    <p class="toggle-list list-group-item">Third Year Modules</p>
                     <ul class="list-group">
                         <li class="list-group-item">Analysable Real-Time Systems</li>
                         <li class="list-group-item">Fundamentals of Machine Learning</li>
@@ -229,11 +231,11 @@
 <script>
     $( document ).ready(function() {
         
-        //setup animations for each module list
-        $(".modulesList").next().hide();
-        $(".modulesList").on('click', function(event) {
+        //setup animations for each toggleable list
+        $(".toggle-list").next().hide();
+        $(".toggle-list").on('click', function(event) {
             $(this).next().slideToggle('slow');
-            $(this).toggleClass("modulesListClicked");
+            $(this).toggleClass("toggle-listClicked");
         });
 
         //setup show more buttons (on smaller screens)
@@ -293,9 +295,40 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* #topSideBar { */
-/*     width: 100%; */
-/* } */
+#topSideBar p {
+    font-weight: bold;
+    padding: 5px 15px 5px 15px !important;
+    text-align: center;
+    font-size: 26px;
+    background-color: #596475;
+    color: #fff;
+    margin: 0;
+    border: 1px solid #000;
+}
+#topSideBar ul li:first-of-type {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+#topSideBar ul li {
+    background-color: #eaeaea;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #000;
+    border-top: none;
+}
+#topSideBar a {
+    display: block;
+    color: #2c3e50;
+    padding: 10px 15px 10px 15px;
+    font-size: 18px;
+    text-decoration: none;
+}
+#topSideBar ul li a:hover {
+    background-color: #596475;
+    cursor: pointer;
+    color: #fff;
+}
 .readMore {
     overflow-y: hidden;
     height: 300px; 
@@ -422,7 +455,7 @@ th {
     left: calc(50% - 50px);
     margin: 10px 0px;
 }
-.modulesList {
+.toggle-list {
     cursor: pointer;
     margin: 10px 0 0 0;
     background-color: #f9f9f9;
@@ -430,10 +463,10 @@ th {
 .list-group-item {
     background-color: #f9f9f9;
 }
-.modulesList:hover {
+.toggle-list:hover {
     background-color: #eaeaea;
 }
-.modulesListClicked {
+.toggle-listClicked {
     background-color: #eaeaea;
 }
 /*use flex to vertically center icons in previous work table*/
