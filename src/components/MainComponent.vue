@@ -249,6 +249,9 @@
                 $("#menu-open").addClass("hidden");
                 $(".group-item").addClass("readMore");
                 $(".lessMore").removeClass("hidden");
+                //always close sidebar after resizing
+                $("#app").removeClass("toggled");
+                
             } 
             //on larger screens... 
             else {
@@ -256,6 +259,10 @@
                 $("#menu-open").removeClass("hidden");
                 $(".group-item").removeClass("readMore");
                 $(".lessMore").addClass("hidden");
+                //always close sidebar after resizing
+                $("#app").removeClass("toggled");
+                $("#menu-close").fadeOut("slow");
+                $("#menu-open").fadeIn("slow");
             }
         }
         
