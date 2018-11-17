@@ -82,14 +82,6 @@
                                 <a href="https://github.com/Mrchazaaa/myVimRC"><p>Visit the Github page!</p></a>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="center-icons"><div><img src="../assets/HMGCC.jpg"/></div></td>
-                            <td>
-                                <h4>HMGCC Code Breaker</h4>
-                                <p>This is a short program I made to decode an encrypted message on a HMGCC pen I recieved at a tech fair.</p>
-                                <a href="https://github.com/Mrchazaaa/HMGCC-_Code_Breaking"><p>Visit the Github page!</p></a>
-                            </td>
-                        </tr>
                       </tbody>
                     </table>
                 </div>
@@ -139,7 +131,7 @@
                     <h3>Modules</h3>
                     <p>Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I 
                     chose to study many modules relating to the theory and implementation of real-time and embedded systems.</p>
-                    <p class="toggle-list list-group-item">First Year Modules *add icon</p>
+                    <p class="toggle-list list-group-item">First Year Modules</p>
                     <ul class="list-group">
                         <li class="list-group-item">Human Aspects of Computer Science</li>
                         <li class="list-group-item">Skills, Knowledge & Independent Learning</li>
@@ -192,7 +184,11 @@
                     
 
                     <h3>Third Year Project</h3>
-                    <p>One of the more interesting parts of my curriculum is my third year project. For which I am...</p>
+                    <p>One of the more interesting parts of my curriculum is my third year project. For which I will be undertaking a self-defined project entitled:
+                    "Construction and Timing Analysis of Automotive Control Software Benchmarks". This project aims to construct automotive control software benchmarks
+                    and, upon successful construction of benchmarks, perform timing analysis on them. This project will be a great contribution to the academic
+                    community working on topics related to automotive control software as related software is usually proprietary and highly confidential, and thus
+                    agreed upon benchmark results have yet to be published.</p>
 
                     <h3>York Futures Scholarship</h3>
                     <p></p>
@@ -339,8 +335,9 @@
     font-weight: bold;
     background-color: #596475;
     color: #fff;
-    padding: 10px;
+    padding: 7.5px;
     border: 1px solid #000;
+    border-radius: 4px;
     text-decoration: none;
 }
 #cv a:hover {
