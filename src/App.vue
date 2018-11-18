@@ -3,7 +3,7 @@
     
     <SideBarComponent/>
 
-    <div id="page-content-wrapper">
+    <div id="page-content-wrapper" >
         <!--p5 sketch background-->
         <div id='sketch'></div>
         
@@ -11,7 +11,9 @@
         <button type="button" id="menu-open" class="btn btn-secondary"><img src="./assets/align-left.svg"></button>
 
         <!--Title-->
-        <h1 class="hidden">Charlie Howlett</h1>
+        <div id="title-container">
+            <h1 class="hidden">Charlie Howlett</h1>
+        </div>
 
         <!--content pointer-->
         <a href="#page-container"><img id="content-pointer" class="hidden"  src="./assets/chevron-bottom.svg"></a>
@@ -95,14 +97,22 @@ body, html {
 .hidden{
   display: none;
 }
+#title-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
 h1 {
     font-size: 550%;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 35px;
     background-color: transparent;
-    position: absolute;
-    top: 30vh;
+    margin: 0;
     text-align: center;
     width: 100%;
 }
