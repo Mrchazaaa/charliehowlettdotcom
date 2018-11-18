@@ -92,7 +92,6 @@ body, html {
     margin:0; 
     padding:0;
     height: 100%;
-    overflow-x: hidden;
 }
 .hidden{
   display: none;
@@ -105,16 +104,19 @@ body, html {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    max-width: 1600px;
 }
 h1 {
-    font-size: 550%;
+    font-size: calc(250% + 40px);
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     background-color: transparent;
     margin: 0;
+    padding: 0;
     text-align: center;
-    width: 100%;
+    /* width: 100%; */
+    /* height: 100vh; */
 }
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -177,7 +179,7 @@ h1 {
 
 #page-content-wrapper {
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
 }
 
 </style>
