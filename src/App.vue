@@ -122,15 +122,6 @@ h1 {
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
 }
-#menu-open {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
-    padding: 5px;
-    width: 35px;
-    height: 35px;
-}
 #sketch {
     margin: 0; 
     z-index: 0;
@@ -145,15 +136,22 @@ h1 {
 }
 
 /*sidebar styling*/
+#menu-open {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+}
 
 #app {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
+    /* -webkit-transition: all 0.5s ease; */
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-
 #sidebar-wrapper {
     z-index: 3;
     position: fixed;

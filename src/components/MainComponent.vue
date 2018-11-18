@@ -323,6 +323,10 @@
     cursor: pointer;
     color: #fff;
 }
+.row {
+    margin: 0px;
+    padding: 0px;
+}
 .readMore {
     overflow-y: hidden;
     height: 300px; 
@@ -347,8 +351,14 @@
 #page-container{
     max-width: 1600px;
     padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-left: 0px; */
+    /* padding-right: 0px; */
+    /* margin-left: 0px; */
+    /* margin-right: 0px; */
 }
 #introduction {
     padding: 5vh 0;
@@ -394,8 +404,7 @@ p {
 }
 #group-content {
     flex-direction: column;
-    margin: 0;
-    padding: 0;
+    width: 100%;
 }
 #workTable img {
     width: 100px;
