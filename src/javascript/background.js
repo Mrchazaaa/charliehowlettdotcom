@@ -2,65 +2,65 @@
 //class used to represent clouds in the background sketch
 class Cloud {
 
-    //initializes cloud just of the left side of the screen, also called when this cloud goes off the screen so that a new cloud is drawn
+    //dynamically generates the clouds shape and sets its position to just off the left side of the screen
     initialise() {
 
-        //stores x offset and radius of each cloud point that forms this cloud
+        //stores x offset and radius of each cloud point that forms this cloud (as actual pixel values)
         this.cloudPoints = [];
         //maximum number of cloud points that can be used to make a cloud
         let maxCloudPoints = 8;
         //minimum number of cloud points that can be used to make a cloud
-        let minCloudPoints = 5;
-        //the overall width of any cloud (in percentage of screen height)
-        let cloudWidth = 0.2;
+        let minCloudPoints = 4;
+        //the average width of any cloud (in percentage of screen width)
+        this.cloudWidth = 0.2;
 
-        //stores the number of cloud points that this cloud will have
-        this.cloudPointNum = Math.floor((Math.random() * maxCloudPoints) + minCloudPoints );
-        
-        //the minimum radius of any cloud point in a cloud (in percentage of screen height)
-        let cloudPointMinWidth = this.cloudWidth/(this.cloudPointNum - 1);
-        //the maximum radius of any cloud point in a cloud (in percentage of screen height)
-        let cloudPointMaxWidth = this.cloudPointMinWidth * 4/3; 
-        
+        //randomly generate the number of cloud points that this cloud will have
+        this.cloudPointNum = Math.floor((Math.random() * (maxCloudPoints - minCloudPoints) + minCloudPoints ));
+
+        //the minimum radius of any cloud point in a cloud (in percentage of screen width)
+        let cloudPointMinWidth = (this.cloudWidth/(this.cloudPointNum - 1))*1.5;
+        //the maximum radius of any cloud point in a cloud (in percentage of screen width)
+        let cloudPointMaxWidth = cloudPointMinWidth * 2; 
+
         //radius of each cloud point as a percentage of viewport height
         this.ellipsePerc = [];
-        //generate a number (between min/maxCloudPoints) of cloud points with varying relative x coordinates and radius' to make a cloud looking blob
+        //generate a cloud point with random a relative x offset and radius to make a cloud looking blob
         for (let i = 0; i < this.cloudPointNum; i++) {
             let ellipseRadius;
 
+            //set start and ending ellipses to be min cloud width
+            if ( i == 0 || i == this.cloudPointNum - 1) {
+                ellipseRadius = cloudPointMinWidth;
+            }
             // start of the cloud should be thinner
             // so allow ellipses to be bigger or equal in size to the previous cloud point
-            if ( i < Math.floor(this.cloudPointNum/2) ) {
+            else if ( i < Math.floor(this.cloudPointNum/2) ) {
                 ellipseRadius = (Math.random() * ((cloudPointMaxWidth - cloudPointMinWidth)/2)) + cloudPointMinWidth ;
-                this.ellipsePerc.push(ellipseRadius);
             } 
             else if ( i == Math.floor(this.cloudPointNum/2) - 1 ) {
-                ellipseRadius = Math.random() * (cloudPointMaxWidth - cloudPointMinWidth) ;
-                this.ellipsePerc.push(ellipseRadius);
+                ellipseRadius = (Math.random() * (cloudPointMaxWidth - cloudPointMinWidth)) + cloudPointMinWidth;
             }
             // end of the cloud should be thinner 
             // so allow ellipses to be smaller or equal in size to the previous cloud point
             else {
                 ellipseRadius = (Math.random() * ((cloudPointMaxWidth - cloudPointMinWidth)/2)) + cloudPointMinWidth ;
-                this.ellipsePerc.push(ellipseRadius);
             }
-            //set start and ending ellipses to be min cloud width
-            if ( i == 0 || i == this.cloudPointNum - 1) {
-                ellipseRadius = cloudPointMinWidth;
-            }
+            //store percentage value of this cloud points radius so that it can be updated on screen size change
+            this.ellipsePerc.push(ellipseRadius);
 
-            let xOffset = cloudWidth * (i/this.cloudPointNum);
+            let xOffset = this.cloudWidth * (i/this.cloudPointNum) * this.height;
+            let radius = ellipseRadius * this.height; 
 
-            this.cloudPoints.push([xOffset, ellipseRadius * height]);
+            this.cloudPoints.push([xOffset, radius]);
         }
 
         //initial x coordinate of cloud is set so that the cloud starts just off the left side of the screen
-        this.startingPoint = -((this.cloudWidth + (cloudPointMaxWidth/2)) * this.width);
+        this.startingPoint = -((this.cloudWidth + (cloudPointMaxWidth/2)) * this.height);
         this.x = this.startingPoint;
 
         //initial y coordinate of cloud is a random number between 0 and view port height (stored as percentage of viewport height from top of page)
-        this.yPerc = Math.random() * this.height; 
-        this.y = this.height * (this.yPerc/2);
+        this.yPerc = Math.random() / 2; 
+        this.y = this.height * this.yPerc;
     }
 
     //a cloud is essentially a collection of ellipses, of varying size. In this code each ellipse is refered to as a "cloud point"
@@ -75,7 +75,7 @@ class Cloud {
     }
 
     move() {
-        if (this.x++ >= this.width ) {
+        if (this.x++ >= this.width + (this.cloudPoints[0][1]/2)) {
             this.x = this.startingPoint;
         }
         this.x++;
@@ -87,9 +87,9 @@ class Cloud {
 
         for (let i = 0; i < this.cloudPoints.length; i++) {
             //update y position of clouds
-            this.y = this.height * (this.yPerc/2);
+            this.y = this.height * this.yPerc;
             //update cloud offsets
-            this.cloudPoints[i][0] = this.cloudPoints[i][0] * this.width;
+            this.cloudPoints[i][0] = this.cloudWidth * (i/this.cloudPointNum) * this.height;
             //update cloud radius' 
             this.cloudPoints[i][1] = this.ellipsePerc[i] * this.height;
         }
@@ -97,7 +97,7 @@ class Cloud {
 
     draw(){
         for (let i = 0; i < this.cloudPoints.length; i++) {
-            this.sketch.ellipse( this.cloudPoints[i][1] + this.x, this.y, this.cloudPoints[i][0]);
+            this.sketch.ellipse( this.cloudPoints[i][0] + this.x, this.y, this.cloudPoints[i][1]);
         }
     }
 }
@@ -156,7 +156,7 @@ export default function( sketch ) {
         height = document.body.clientHeight;
         sketch.resizeCanvas(width, height);
         clouds.forEach(function(element) { 
-            element.updateSize();  
+            element.updateSize(width, height);  
         });
     };
 }
