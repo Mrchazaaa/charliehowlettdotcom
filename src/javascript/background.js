@@ -57,6 +57,7 @@ class Cloud {
         //initial x coordinate of cloud is set so that the cloud starts just off the left side of the screen
         this.startingPoint = -((this.cloudWidth + (cloudPointMaxWidth/2)) * this.height);
         this.x = this.startingPoint;
+        this.x = Math.random() * this.width;
 
         //initial y coordinate of cloud is a random number between 0 and view port height (stored as percentage of viewport height from top of page)
         this.yPerc = Math.random() / 2; 
@@ -108,7 +109,7 @@ export default function( sketch ) {
     let height;
     let clouds = [];
     let cloudInterval;
-    let maxClouds = 20;
+    let cloudCount = 25;
 
     //setup function, run at initialization
     sketch.setup = function() {
@@ -117,12 +118,20 @@ export default function( sketch ) {
 
         let cnv = sketch.createCanvas(width, height);
 
-        cloudInterval = setInterval( function() { 
+
+        for (let i = 0; i < cloudCount; i++) {
             clouds.push(new Cloud(sketch, width, height)); 
-            if (clouds.length == maxClouds) {
-                clearInterval(cloudInterval);
+            if (clouds.length == cloudCount) {
+                 clearInterval(cloudInterval);
             }
-        }, 1500);
+        }
+    
+        // cloudInterval = setInterval( function() { 
+        //     clouds.push(new Cloud(sketch, width, height)); 
+        //     if (clouds.length == maxClouds) {
+        //         clearInterval(cloudInterval);
+        //     }
+        // }, 1500);
     };
 
     //called every time the canvas is drawn
