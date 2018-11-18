@@ -236,8 +236,11 @@
 
         //setup show more buttons (on smaller screens)
         $(".lessMore").on('click', function(event) {
-            $(this).prev().removeClass("readMore");
-            $(this).addClass("hidden");
+            $(this).prev().toggleClass("readMore", 1200);
+            /* $(this).prev().slideToggle('slow'); */
+            /* $(this).prev().animate({ */
+            /*     height: "toggle" */
+            /* }, 5000, function() {}); */
         });
 
         //make worktable rows clickable
@@ -249,10 +252,13 @@
 
         function resizeConfigure() {
             //on smaller screens...
-            if ($(window).width() < 992) {
+            console.log($(window).width());
+            if ($(window).width() <= 976) {
                 $("#topSideBar").removeClass("hidden");
                 $("#menu-open").addClass("hidden");
-                $(".group-item").addClass("readMore");
+                if ( !$(".group-item").hasClass("readMore")  ) {
+                    $(".group-item").addClass("readMore");
+                }
                 $(".lessMore").removeClass("hidden");
                 //always close sidebar after resizing
                 $("#app").removeClass("toggled");
@@ -332,8 +338,25 @@
     height: 300px; 
     border-radius: 4px 4px 0px 0px !important;
 }
+.lessMore {
+    margin: 0px 7.5px 0px 7.5px;
+    padding: 0px 15px 0px 15px;
+    border: 1px solid #e3e3e3;
+    border-radius: 0px 0px 4px;
+    background-color: #eaeaea;
+}
+.lessMore p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.lessMore:hover {
+    background-color: #596475;
+    color: #fff;
+    cursor: pointer;
+}
 #cv {
-    height: unset;
+    height: auto;
 }
 #cv a {
     font-weight: bold;
@@ -425,23 +448,6 @@ thead {
     margin: 15px 7.5px 0px 7.5px;
     border: 1px solid #e3e3e3;
     border-radius: 4px;
-}
-.lessMore {
-    margin: 0px 7.5px 0px 7.5px;
-    padding: 0px 15px 0px 15px;
-    border: 1px solid #e3e3e3;
-    border-radius: 0px 0px 4px;
-    background-color: #eaeaea;
-}
-.lessMore p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-.lessMore:hover {
-    background-color: #596475;
-    color: #fff;
-    cursor: pointer;
 }
 #group-content div[class*="col-"] {
     padding: 0px;
