@@ -47,7 +47,6 @@ export default {
     margin-bottom: 10px;
 }
 p {
-    font-size: 20px;
     font-weight: bold;
 }
 .carousel-caption {
