@@ -4,13 +4,13 @@
     <div class="item active">
       <img class="d-block w-100" src="../assets/volunteering.jpg" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
-          <p>Me preparing to give a presentation on protecting sea turtle nests during my time volunteering in Greece</p>
+          <p>Preparing to give a presentation on protecting sea turtles for Archelon</p>
         </div>
     </div>
     <div class="item">
       <img class="d-block w-100" src="../assets/cybersoc.jpg" alt="Second slide">
         <div class="carousel-caption d-none d-md-block">
-          <p>Attending the first Cyber Security Society event at the University of York</p>
+          <p>Attending the Cyber Security Society's first event</p>
         </div>
     </div>
     <div class="item">

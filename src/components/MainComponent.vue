@@ -466,17 +466,20 @@ table {
 th {
     padding-left: 8px;
 }
+/*use flex to vertically center icons in previous work table*/
 .contact {
     height: 40px;
     margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .contact img {
-    position: absolute;
     height: 50px;
-    top: calc(50% - 30px);
-    left: calc(50% - 50px);
-    margin: 10px 0px;
+    display: inline-block;
 }
+    
 .toggle-list {
     cursor: pointer;
     margin: 10px 0 0 0;

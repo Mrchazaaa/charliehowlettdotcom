@@ -77,7 +77,7 @@ class Cloud {
 
     move() {
         if (this.x++ >= this.width + (this.cloudPoints[0][1]/2)) {
-            this.x = this.startingPoint;
+            this.x = this.startingPoint - (this.x - (this.width + (this.cloudPoints[0][1]/2)));
         }
         this.x++;
     }
