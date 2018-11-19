@@ -102,11 +102,13 @@
                       <thead>
                       </thead>
                       <tbody>
-                        <tr><td scope="row">Google Code Jam</td></tr>
-                        <tr><td scope="row">Google Hashcode</td></tr>
-                        <tr><td scope="row">BAE Systems Capture the Flag</td></tr>
-                        <tr><td scope="row">BBC Hackathon</td></tr>
-                        <tr><td scope="row">ARM Hackathon</td></tr>
+                        <tr><td scope="row">Google Code Jam (2017)</td></tr>
+                        <tr><td scope="row">Google Hashcode (2017)</td></tr>
+                        <tr><td scope="row">Google Hashcode (2018)</td></tr>
+                        <tr><td scope="row">BAE Systems Capture the Flag (2017)</td></tr>
+                        <tr><td scope="row">BAE Systems Capture the Flag (2018)</td></tr>
+                        <tr><td scope="row">BBC Hackathon (2017)</td></tr>
+                        <tr><td scope="row">ARM Hackathon (2017)</td></tr>
                       </tbody>
                     </table>
 
@@ -125,8 +127,7 @@
                 <div class="group-item" id="uni-info">
                     <h2>University</h2>
                     <p>I'm on schedule to graduate with a BEng/BSc in Computer Science in 2019. Here I list the modules I've studied to date, 
-                    information about some of the societies I've joined at York and more information about my third year project. I'm also a recipient of the University's
-                    Futures Scholarship, and go on to explain a little more about what that means.</p>
+                    information about some of the societies I've joined at York and more information about my third year project.</p>
 
                     <h3>Modules</h3>
                     <p>Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I 
@@ -181,17 +182,15 @@
                         <tr><td scope="row">Band Society</td></tr>
                       </tbody>
                     </table>
+                    <p>I'm also a recipient of the University's "Futures Scholarship".</p>
                     
 
                     <h3>Third Year Project</h3>
                     <p>One of the more interesting parts of my curriculum is my third year project. For which I will be undertaking a self-defined project entitled:
                     "Construction and Timing Analysis of Automotive Control Software Benchmarks". This project aims to construct automotive control software benchmarks
-                    and, upon successful construction of benchmarks, perform timing analysis on them. This project will be a great contribution to the academic
-                    community working on topics related to automotive control software as related software is usually proprietary and highly confidential, and thus
+                    and, upon successful construction, perform timing analysis on them. This project will be a great contribution to the academic
+                    community working on topics related to automotive control as such software is usually proprietary and confidential, and thus
                     agreed upon benchmark results have yet to be published.</p>
-
-                    <h3>York Futures Scholarship</h3>
-                    <p></p>
                 </div>
                 <div class="lessMore">
                     <p>Show more...</p>
@@ -200,7 +199,7 @@
                 <div class="group-item" id="cv">
                     <h2>Curriculum Vitae</h2>
                     <p>Find enclosed a copy of my C.V</p> 
-                    <a href="">Charles_Howlett_CV.pdf</a>
+                    <a href="./Charles_Howlett.pdf">Charles_Howlett.pdf</a>
                     <p style="margin-top: 10px;">*note that some contact information on this copy has been hidden for privacy purposes, 
                     you'll find more ways to contact me at the bottom of this page!</p>
                 </div>
@@ -237,10 +236,9 @@
         //setup show more buttons (on smaller screens)
         $(".lessMore").on('click', function(event) {
             $(this).prev().toggleClass("readMore", 1200);
-            /* $(this).prev().slideToggle('slow'); */
-            /* $(this).prev().animate({ */
-            /*     height: "toggle" */
-            /* }, 5000, function() {}); */
+            $(this).text(function(i, text){
+                return text === "Show more..." ? "Show less..." : "Show more...";
+              });
         });
 
         //make worktable rows clickable
@@ -260,6 +258,8 @@
                     $(".group-item").addClass("readMore");
                 }
                 $(".lessMore").removeClass("hidden");
+                $(".lessMore").text("Show more...");
+
                 //always close sidebar after resizing
                 $("#app").removeClass("toggled");
                 
@@ -340,14 +340,10 @@
 }
 .lessMore {
     margin: 0px 7.5px 0px 7.5px;
-    padding: 0px 15px 0px 15px;
+    padding: 10px 15px 10px 15px;
     border: 1px solid #e3e3e3;
     border-radius: 0px 0px 4px;
     background-color: #eaeaea;
-}
-.lessMore p {
-    margin-top: 10px;
-    margin-bottom: 10px;
     font-weight: bold;
 }
 .lessMore:hover {
