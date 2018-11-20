@@ -131,7 +131,7 @@
 
                     <h3>Modules</h3>
                     <p>Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I 
-                    chose to study many modules relating to the theory and implementation of real-time and embedded systems.</p>
+                    chose to study many modules related to the theory and implementation of real-time and embedded systems.</p>
                     <p class="toggle-list list-group-item">First Year Modules</p>
                     <ul class="list-group">
                         <li class="list-group-item">Human Aspects of Computer Science</li>
