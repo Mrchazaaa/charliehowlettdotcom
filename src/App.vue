@@ -108,7 +108,7 @@ body, html {
     left: 0;
     height: 100vh;
     width: 100%;
-    max-width: 1600px;
+    /* max-width: 1600px; */
     margin: 0 auto;
 }
 h1 {
@@ -121,6 +121,7 @@ h1 {
     text-align: center;
     /* width: 100%; */
     /* height: 100vh; */
+    max-width: 582px;
 }
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
