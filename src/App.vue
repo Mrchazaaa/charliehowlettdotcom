@@ -96,9 +96,6 @@ body, html {
 .hidden{
   display: none;
 }
-#page-content-wrapper {
-    text-align: center;
-}
 #title-container {
     display: flex; 
     align-items: center; 
