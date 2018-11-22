@@ -492,10 +492,16 @@ th {
 }
 /*use flex to vertically center icons in previous work table*/
 .center-icons {
-    height: 1px;
+    position: relative;
+    top: 0; left: 0;
+    height: 100%;
+    width: 116px;
+    padding: 0px;
+    padding-left: 8px;
 }
 .center-icons div {
     display: flex;
+    position: absolute;
     flex-direction: column;
     justify-content: center;
     height: 100%;
