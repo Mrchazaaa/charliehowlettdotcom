@@ -37,7 +37,6 @@
                     <p>Here are a few of the projects I'm proud to have worked on in 
                     the past:</p>
                     <table class="table table-striped" id="workTable">
-                    <thead>
                       <thead>
                       </thead>
                       <tbody>
@@ -49,6 +48,15 @@
                                 <a href="./Go.zip"><p>Download now!</p></a>
                             </td>
                         </tr>
+                        <tr> 
+                            <td class="center-icons"><div><img src="../assets/universe-city.png"/></div></td>
+                            <td>
+                                <h4>Universe City</h4>
+                                <p>A game I developed for the software engineering project in my second year of university. The module didn't require that this game
+                                be coded to completion, however, I did so in my spare time.</p>
+                                <a href="./UniverseCity.zip"><p>Download now!</p></a>
+                            </td>
+                        </tr>
                         <tr>
                             <td class="center-icons"><div><img src="../assets/github.svg"/></div></td>
                             <td>
@@ -57,15 +65,6 @@
                                 <a href="https://github.com/Mrchazaaa/MyOwnWebsite"><p>Visit the Github page!</p></a>
                             </td>
                         </tr>
-                        <!--tr> soon...
-                            <td class="center-icons"><div><img src="../assets/universe-city.png"/></div></td>
-                            <td>
-                                <h4>Universe City</h4>
-                                <p>A game I developed for the software engineering project in my second year of university. The module didn't require that this game
-                                be coded to completion, however, I did so in my spare time.</p>
-                                <a href=""><p>Download now!</p></a>
-                            </td>
-                        </tr-->
                         <tr>
                             <td class="center-icons"><div><img src="../assets/PROM.jpg"/></div></td>
                             <td>
