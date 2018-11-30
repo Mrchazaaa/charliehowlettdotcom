@@ -445,10 +445,15 @@ h3 {
     width: 100%; 
     text-decoration: unset;
 }
-.work-table > a, .work-table > a:hover, .work-table > a:active, .work-table > a:focus {
+.work-table > a, .work-table > a:active, .work-table > a:focus {
     text-decoration: none !important;
     color: unset;
 }
+.work-table > a > div:hover {
+    text-decoration: none !important;
+    color: unset;
+    background-color: #eaeaea !important;
+} 
 .work-table img {
     width: 100px;
     height: 100px;
