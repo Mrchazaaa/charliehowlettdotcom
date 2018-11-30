@@ -36,6 +36,20 @@
                     <h2>Some of My Work</h2>
                     <p>Here are a few of the projects I'm proud to have worked on in 
                     the past:</p>
+
+                    <div class="work-table" style="width: 100%; /*overflow: hidden;*/">
+                      <div class="my-center-icons" style="width: 100%; height: 100%; display: inline-block; background-color: green;">
+                        <div style="width: 60%; float: left; background-color: red;">
+                            <div style="height: 100%;"><img src="../assets/go.jpg"/></div>
+                        </div>
+                        <div style="width: 40%; float: right; background-color: blue;">
+                            <h4>Go AI</h4>
+                            <p>During sixth form, I made this AI to play the board game "Go", for my extended project qualification.</p>
+                            <p>Download now!</p>
+                        </div>
+                      </div>
+                    </div>
+
                     <table class="table table-striped" id="workTable">
                       <thead>
                       </thead>
@@ -424,6 +438,10 @@ p {
     flex-direction: column;
     width: 100%;
 }
+.work-table img {
+    width: 100px;
+    height: 100px;
+}
 #workTable img {
     width: 100px;
     height: 100px;
@@ -433,7 +451,7 @@ p {
 }
 #workTable tr:hover {
     background-color: #eaeaea;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 thead {
     cursor: pointer;
@@ -490,6 +508,12 @@ th {
     background-color: #eaeaea;
 }
 /*use flex to vertically center icons in previous work table*/
+.my-center-icons {
+    
+}
+.my-center-icons img {
+    
+}
 .center-icons {
     position: relative;
     top: 0; left: 0;
