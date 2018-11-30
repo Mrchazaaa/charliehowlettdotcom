@@ -37,66 +37,69 @@
                     <p>Here are a few of the projects I'm proud to have worked on in 
                     the past:</p>
 
-                    <div class="work-table" style="width: 100%; /*overflow: hidden;*/">
-                      <div class="my-center-icons" style="width: 100%; height: 100%; display: inline-block; background-color: green;">
-                        <div style="width: 60%; float: left; background-color: red;">
-                            <div style="height: 100%;"><img src="../assets/go.jpg"/></div>
+                    <div class="work-table">
+                      <a href="./Go.zip">
+                      <div>
+                        <div>
+                            <div><img src="../assets/go.jpg"/></div>
                         </div>
-                        <div style="width: 40%; float: right; background-color: blue;">
+                        <div>
                             <h4>Go AI</h4>
                             <p>During sixth form, I made this AI to play the board game "Go", for my extended project qualification.</p>
-                            <p>Download now!</p>
+                            <a><p>Download now!</p></a>
                         </div>
                       </div>
+                      </a>
+                      <a href="./UniverseCity.zip">
+                      <div>
+                        <div>
+                            <div><img src="../assets/universe-city.png"/></div>
+                        </div>
+                        <div>
+                            <h4>Universe City</h4>
+                            <p>A game I developed for the software engineering project in my second year of university. The module didn't require that this game
+                            be coded to completion, however, I did so in my spare time.</p>
+                            <a><p>Download now!</p></a>
+                        </div>
+                      </div>
+                      </a>
+                      <a href="https://github.com/Mrchazaaa/MyOwnWebsite">
+                      <div>
+                        <div>
+                            <div><img src="../assets/github.svg"/></div>
+                        </div>
+                        <div>
+                            <h4>This Website</h4>
+                            <p>The source for this website is available on my Github. I used Vue and Bootstrap in its design.</p>
+                            <a><p>Visit the Github page!</p></a>
+                        </div>
+                      </div>
+                      </a>
+                      <a href="https://github.com/spankie1337/PROM_keypad">
+                      <div>
+                        <div>
+                            <div><img src="../assets/PROM.jpg"/></div>
+                        </div>
+                        <div>
+                            <h4>PROM Keypad Lock</h4>
+                            <p>A hardware project I worked on during my first year at University wth 2 other students.</p>
+                            <a><p>Visit the Github page!</p></a>
+                        </div>
+                      </div>
+                      </a>
+                      <a href="https://github.com/Mrchazaaa/myVimRC">
+                      <div>
+                        <div>
+                            <div><img src="../assets/vim.png"/></div>
+                        </div>
+                        <div>
+                            <h4>My VimRC</h4>
+                            <p>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</p>
+                            <a><p>Visit the Github page!</p></a>
+                        </div>
+                      </div>
+                      </a>
                     </div>
-
-                    <table class="table table-striped" id="workTable">
-                      <thead>
-                      </thead>
-                      <tbody>
-                        <tr>
-                            <td class="center-icons"><div><img src="../assets/go.jpg"/></div></td>
-                            <td>
-                                <h4>Go AI</h4>
-                                <p>During sixth form, I made this AI to play the board game "Go", for my extended project qualification.</p>
-                                <a href="./Go.zip"><p>Download now!</p></a>
-                            </td>
-                        </tr>
-                        <tr> 
-                            <td class="center-icons"><div><img src="../assets/universe-city.png"/></div></td>
-                            <td>
-                                <h4>Universe City</h4>
-                                <p>A game I developed for the software engineering project in my second year of university. The module didn't require that this game
-                                be coded to completion, however, I did so in my spare time.</p>
-                                <a href="./UniverseCity.zip"><p>Download now!</p></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="center-icons"><div><img src="../assets/github.svg"/></div></td>
-                            <td>
-                                <h4>This Website</h4>
-                                <p>The source for this website is available on my Github. I used Vue and Bootstrap in its design.</p>
-                                <a href="https://github.com/Mrchazaaa/MyOwnWebsite"><p>Visit the Github page!</p></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="center-icons"><div><img src="../assets/PROM.jpg"/></div></td>
-                            <td>
-                                <h4>PROM Keypad Lock</h4>
-                                <p>A hardware project I worked on during my first year at University wth 2 other students.</p>
-                                <a href="https://github.com/spankie1337/PROM_keypad"><p>Visit the Github page!</p></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="center-icons"><div><img src="../assets/vim.png"/></div></td>
-                            <td>
-                                <h4>My VimRC</h4>
-                                <p>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</p>
-                                <a href="https://github.com/Mrchazaaa/myVimRC"><p>Visit the Github page!</p></a>
-                            </td>
-                        </tr>
-                      </tbody>
-                    </table>
                 </div>
                 <div class="lessMore">
                     <p>Show more...</p>
@@ -438,9 +441,50 @@ p {
     flex-direction: column;
     width: 100%;
 }
+.work-table {
+    width: 100%; 
+    text-decoration: unset;
+}
+.work-table > a {
+    color: unset;
+}
+.work-table > a:hover, .work-table > a:active, .work-table > a:focus {
+    text-decoration: none !important;
+}
 .work-table img {
     width: 100px;
     height: 100px;
+}
+.work-table > a:nth-child(1) > div {
+    border-top: 1px solid #e3e3e3; 
+}
+.work-table > a > div {
+    display: flex;
+    border: 1px solid #e3e3e3; 
+    border-top: none ; 
+}
+.work-table > a:nth-child(odd)  > div{
+    background-color: #f9f9f9;
+}
+.work-table > a > div > div:nth-child(1) {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.work-table > a > div > div:nth-child(2) {
+    padding: 8px;
+    flex: 1;
+}
+/*use flex to vertically center icons in previous work table*/
+.my-center-icons {
+    width: 100%; 
+    height: 100%;  
+    display: inline-block; 
+}
+.my-center-icons img {
+    
 }
 #workTable img {
     width: 100px;
@@ -506,13 +550,6 @@ th {
 }
 .toggle-listClicked {
     background-color: #eaeaea;
-}
-/*use flex to vertically center icons in previous work table*/
-.my-center-icons {
-    
-}
-.my-center-icons img {
-    
 }
 .center-icons {
     position: relative;
