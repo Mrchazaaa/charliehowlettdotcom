@@ -412,7 +412,7 @@ h2 {
 h3 {
     font-weight: bold;
 }
-p {
+.group-item > p {
     text-align: justify;
 }
 #introduction > div:first-child {
@@ -445,11 +445,9 @@ p {
     width: 100%; 
     text-decoration: unset;
 }
-.work-table > a {
-    color: unset;
-}
-.work-table > a:hover, .work-table > a:active, .work-table > a:focus {
+.work-table > a, .work-table > a:hover, .work-table > a:active, .work-table > a:focus {
     text-decoration: none !important;
+    color: unset;
 }
 .work-table img {
     width: 100px;
@@ -489,13 +487,6 @@ p {
 #workTable img {
     width: 100px;
     height: 100px;
-}
-#workTable p {
-    text-align: left;
-}
-#workTable tr:hover {
-    background-color: #eaeaea;
-    /* cursor: pointer; */
 }
 thead {
     cursor: pointer;
