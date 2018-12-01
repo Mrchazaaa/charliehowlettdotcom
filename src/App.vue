@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    
+    <!--sidebar navbar-->    
     <SideBarComponent/>
 
     <div id="page-content-wrapper" >
         <!--p5 sketch background-->
         <div id='sketch'></div>
         
-        <!--Open sidebar button-->
+        <!--open sidebar button-->
         <button type="button" id="menu-open" class="btn btn-secondary"><img src="./assets/align-left.svg"></button>
 
-        <!--Title-->
+        <!--title (title-container used to vertically center title with flex)-->
         <div id="title-container">
             <h1 class="hidden">Charlie Howlett</h1>
         </div>
@@ -18,7 +18,7 @@
         <!--content pointer-->
         <a href="#page-container"><img id="content-pointer" class="hidden"  src="./assets/chevron-bottom.svg"></a>
 
-        <!--Page content-->
+        <!--page content-->
         <MainComponent/>
     </div>
   </div>
@@ -33,7 +33,6 @@
     $( document ).ready(function() {
         // Add smooth scrolling to all links
         $("a").on('click', function(event) {
-
             // Make sure this.hash has a value before overriding default behavior
             if (this.hash !== "") {
                 // Prevent default anchor click behavior
