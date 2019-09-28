@@ -34,7 +34,7 @@
 $(".carousel").carousel();
 
 export default {
-  name: "Carousel"
+  name: "Carousel",
 };
 </script>
 
