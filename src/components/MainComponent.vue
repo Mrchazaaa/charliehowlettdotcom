@@ -20,7 +20,14 @@
       <div class="row">
         <div class="col-12 col-lg-6">
           <!--Sidebar for smaller screens-->
-          <div id="topSideBar">
+          <ToggleListComponent id="topSideBar" :content="{title:'Nav', items:[{text:'Top', link:'#sketch'},
+                                                                              {text:'Previous Work', link:'#prev-work'},
+                                                                              {text:'University', link:'#uni-info'},
+                                                                              {text:'Hobbies', link:'#hobbies'},
+                                                                              {text:'CV', link:'#cv'},
+                                                                              {text:'Contact', link:'#contact-info'}]}"/>
+
+          <!-- <div id="topSideBar">
             <p class="toggle-list list-group-item">Nav</p>
             <ul class="list-group">
               <li class="list-group-item">
@@ -42,7 +49,7 @@
                 <a href="#contact-info">Contact</a>
               </li>
             </ul>
-          </div>
+          </div> -->
 
           <!--Previous work-->
           <div class="group-item" id="prev-work">
@@ -222,42 +229,38 @@
               Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I
               chose to study many modules related to the theory and implementation of real-time and embedded systems.
             </p>
-            <div class="toggle-list-collection">
-            <p class="toggle-list list-group-item">First Year Modules</p>
-            <ul class="list-group">
-              <li class="list-group-item">Human Aspects of Computer Science</li>
-              <li class="list-group-item">Skills, Knowledge & Independent Learning</li>
-              <li class="list-group-item">Introduction to Computer Architectures</li>
-              <li class="list-group-item">Mathematical Foundations of Computer Science</li>
-              <li class="list-group-item">Theory & Practice of Programming</li>
-              <li class="list-group-item">Numerical Analysis</li>
-              <li class="list-group-item">Foundation in Electronics, Signals & Circuits</li>
-              <li class="list-group-item">Programming of micro-controllers</li>
-            </ul>
 
-            <p class="toggle-list list-group-item">Second Year Modules</p>
-            <ul class="list-group">
-              <li class="list-group-item">Vision & Graphics</li>
-              <li class="list-group-item">Implementation of Programming Languages</li>
-              <li class="list-group-item">Principles of Programming Languages</li>
-              <li class="list-group-item">Software Engineering Project</li>
-              <li class="list-group-item">Computability & Complexity</li>
-              <li class="list-group-item">Artificial Intelligence</li>
-              <li class="list-group-item">Systems (Operating Systems)</li>
-            </ul>
+            <ToggleListComponent 
+            :content=" {title:'First Year Modules', 
+                        items:[{text: 'Human Aspects of Computer Science', link:''}, 
+                               {text: 'Skills, Knowledge & Independent Learning', link:''}, 
+                               {text: 'Introduction to Computer Architectures', link:''},
+                               {text: 'Mathematical Foundations of Computer Science', link:''},
+                               {text: 'Theory & Practice of Programming', link:''},
+                               {text: 'Numerical Analysis', link:''},
+                               {text: 'Foundation in Electronics, Signals & Circuits', link:''},
+                               {text: 'Programming of micro-controllers', link:''}]}"/>
 
-            <p class="toggle-list list-group-item">Third Year Modules</p>
-            <ul class="list-group">
-              <li class="list-group-item">Analysable Real-Time Systems</li>
-              <li class="list-group-item">Fundamentals of Machine Learning</li>
-              <li class="list-group-item">Project Management for Computer Scientists</li>
-              <li class="list-group-item">Embedded Systems Design & Implementation</li>
-              <li class="list-group-item">Third Year Project</li>
-              <li class="list-group-item">Computer Vision</li>
-              <li class="list-group-item">Design of Analysable Real-Time Systems</li>
-              <li class="list-group-item">Machine Learning & Probabilistic Graphical Models</li>
-            </ul>
-            </div>
+            <ToggleListComponent 
+            :content=" {title:'Second Year Modules', 
+                        items:[{text: 'Vision & Graphics', link:''}, 
+                               {text: 'Implementation of Programming Languages', link:''}, 
+                               {text: 'Principles of Programming Languages', link:''},
+                               {text: 'Software Engineering Project', link:''},
+                               {text: 'Computability & Complexity', link:''},
+                               {text: 'Artificial Intelligence', link:''},
+                               {text: 'Systems (Operating Systems)', link:''}]}"/>
+
+            <ToggleListComponent 
+            :content=" {title:'Third Year Modules', 
+                        items:[{text: 'Analysable Real-Time Systems', link:''}, 
+                               {text: 'Fundamentals of Machine Learning', link:''}, 
+                               {text: 'Project Management for Computer Scientists', link:''},
+                               {text: 'Embedded Systems Design & Implementation', link:''},
+                               {text: 'Third Year Project (Dissertation)', link:''},
+                               {text: 'Computer Vision', link:''},
+                               {text: 'Design of Analysable Real-Time Systems', link:''},
+                               {text: 'Machine Learning & Probabilistic Graphical Models', link:''}]}"/>
 
             <h3>Societies</h3>
             <p>
@@ -349,17 +352,6 @@
 
 <script>
 $(document).ready(function() {
-  //setup animations for each toggleable list
-  $(".toggle-list")
-    .next()
-    .hide();
-  $(".toggle-list").on("click", function(event) {
-    $(this)
-      .next()
-      .slideToggle("slow");
-    $(this).toggleClass("toggle-listClicked");
-  });
-
   //setup show more buttons (on smaller screens)
   $(".lessMore").on("click", function(event) {
     $(this)
@@ -415,11 +407,13 @@ $(document).ready(function() {
 });
 
 import CarouselComponent from "./Carousel.vue";
+import ToggleListComponent from "./ToggleList.vue";
 
 export default {
   name: "MainContent",
   components: {
-    CarouselComponent
+    CarouselComponent,
+    ToggleListComponent
   }
 };
 </script>
@@ -654,28 +648,6 @@ th {
 .contact img {
   height: 50px;
   display: inline-block;
-}
-.toggle-list-collection p:first-of-type {
-    margin-top: 0px;
-}
-.toggle-list-collection {
-    margin-bottom: 10px;
-}
-.toggle-list {
-  cursor: pointer;
-  margin: 10px 0 0 0;
-  /* margin: 0 0 10px 0;   */
-  background-color: #f9f9f9;
-}
-.list-group-item {
-  background-color: #f9f9f9;
-}
-.toggle-list:hover {
-  background-color: #eaeaea;
-}
-.toggle-listClicked {
-  background-color: #eaeaea;
-  margin-bottom: 0;
 }
 .center-icons {
   position: relative;
