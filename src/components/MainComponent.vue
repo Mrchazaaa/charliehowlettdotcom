@@ -222,6 +222,7 @@
               Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I
               chose to study many modules related to the theory and implementation of real-time and embedded systems.
             </p>
+            <div class="toggle-list-collection">
             <p class="toggle-list list-group-item">First Year Modules</p>
             <ul class="list-group">
               <li class="list-group-item">Human Aspects of Computer Science</li>
@@ -256,6 +257,7 @@
               <li class="list-group-item">Design of Analysable Real-Time Systems</li>
               <li class="list-group-item">Machine Learning & Probabilistic Graphical Models</li>
             </ul>
+            </div>
 
             <h3>Societies</h3>
             <p>
@@ -424,6 +426,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/* p {
+    margin-top: 0;
+    margin-bottom: .5em;
+} */
+.list-group {
+    margin-bottom: 10px;
+}
 #topSideBar p {
   font-weight: bold;
   padding: 5px 15px 5px 15px !important;
@@ -646,10 +655,16 @@ th {
   height: 50px;
   display: inline-block;
 }
-
+.toggle-list-collection p:first-of-type {
+    margin-top: 0px;
+}
+.toggle-list-collection {
+    margin-bottom: 10px;
+}
 .toggle-list {
   cursor: pointer;
   margin: 10px 0 0 0;
+  /* margin: 0 0 10px 0;   */
   background-color: #f9f9f9;
 }
 .list-group-item {
@@ -660,6 +675,7 @@ th {
 }
 .toggle-listClicked {
   background-color: #eaeaea;
+  margin-bottom: 0;
 }
 .center-icons {
   position: relative;
