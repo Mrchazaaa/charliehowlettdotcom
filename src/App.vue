@@ -3,7 +3,7 @@
     <!--sidebar navbar-->    
     <SideBarComponent/>
 
-    <div id="page-content-wrapper" >
+    <div id="page-content-wrapper">
         <!--p5 sketch background-->
         <div id='sketch'></div>
         
@@ -123,7 +123,7 @@ h1 {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
+    color: #363635;
 }
 #sketch {
     margin: 0; 
