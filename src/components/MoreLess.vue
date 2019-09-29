@@ -1,8 +1,5 @@
 <template>
-  <div class="lessMore">
-    Show more...
-    <!-- <p>Show more...</p> -->
-  </div>
+  <button type="button" class="lessMore btn btn-secondary btn-lg btn-block">Block level button</button>
 </template>
 
 <script>
@@ -10,34 +7,19 @@ $(document).ready(function() {
   //setup "show more/less" buttons (on smaller screens)
   $(".lessMore").on("click", function(event) {
     if ($(this).prev().hasClass("readMore")) {
-
         $(this).prev().css('height', 'auto');
-        
-        //var autoHeight = $(this).prev().css('height', 'auto').height();//$(this).prev().outerHeight();
-
         $(this)
           .prev()
           .removeClass("readMore");
-
         var autoHeight = $(this).prev().outerHeight();
-        console.log(autoHeight);
-
         $(this)
           .prev()
           .addClass("readMore");
-
-        //var autoHeight = $(this).prev().css('height', 'auto').height();
-        
         $(this).prev().height(300).animate({height: autoHeight}, {
           duration: "slow"
         }).promise().then(() => {
           $(this).prev().css('height', '');
         });
-
-        // $(this)
-        //   .prev()
-        //   .css('height', '');
-
     } else {
       $(this)
         .prev()
@@ -50,10 +32,9 @@ $(document).ready(function() {
           $(this).prev().css('height', '');
         });;
     }
-
     $(this)
       .prev()
-      .toggleClass("readMore");//, 1200);
+      .toggleClass("readMore");
     $(this).text(function(i, text) {
       return text === "Show more..." ? "Show less..." : "Show more...";
     });
@@ -77,14 +58,12 @@ function resizeConfigure() {
   }
   //on larger screens...
   else {
-
     $(".group-item").removeClass("readMore");
     $(".lessMore").addClass("hidden");
   }
 }
 
 //add/remove sidebar to the top of page for small screen sizes
-
 $(window).resize(function() {
   resizeConfigure();
 });
@@ -97,17 +76,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .lessMore {
-  margin: 0px 7.5px 0px 7.5px;
-  padding: 10px 15px 10px 15px;
-  border: 1px solid #e3e3e3;
-  border-radius: 0px 0px 4px;
-  background-color: #eaeaea;
+  color: white !important;
   font-weight: bold;
-}
-.lessMore:hover {
-  background-color: #596475;
-  color: #fff;
-  cursor: pointer;
+  width: calc(100% - 15px);
+  margin: 0 7.5px 0 7.5px;
 }
 .readMore {
   overflow-y: hidden;
