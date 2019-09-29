@@ -1,7 +1,7 @@
 <template>
   <div id="page-container" class="container">
     <!--Introduction-->
-    <div class="row well hidden-sm hidden-xs" id="introduction">
+    <div class="jumbotron row well hidden-sm hidden-xs" id="introduction">
       <div class="col-12 col-md-7">
         <p>
           "I'm a recent computer science graduate of the University of York. I designed
@@ -20,37 +20,15 @@
       <div class="row">
         <div class="col-12 col-lg-6">
           <!--Sidebar for smaller screens-->
-          <ToggleListComponent id="topSideBar" :content="{title:'Nav', items:[{text:'Top', link:'#sketch'},
+          <ToggleListComponent
+            id="topSideBar"
+            :content="{title:'Nav', items:[{text:'Top', link:'#sketch'},
                                                                               {text:'Previous Work', link:'#prev-work'},
                                                                               {text:'University', link:'#uni-info'},
                                                                               {text:'Hobbies', link:'#hobbies'},
                                                                               {text:'CV', link:'#cv'},
-                                                                              {text:'Contact', link:'#contact-info'}]}"/>
-
-          <!-- <div id="topSideBar">
-            <p class="toggle-list list-group-item">Nav</p>
-            <ul class="list-group">
-              <li class="list-group-item">
-                <a href="#sketch">Top</a>
-              </li>
-              <li class="list-group-item">
-                <a href="#prev-work">Previous Work</a>
-              </li>
-              <li class="list-group-item">
-                <a href="#uni-info">University</a>
-              </li>
-              <li class="list-group-item">
-                <a href="#hobbies">Hobbies</a>
-              </li>
-              <li class="list-group-item">
-                <a href="#cv">CV</a>
-              </li>
-              <li class="list-group-item">
-                <a href="#contact-info">Contact</a>
-              </li>
-            </ul>
-          </div> -->
-
+                                                                              {text:'Contact', link:'#contact-info'}]}"
+          />
           <!--Previous work-->
           <div class="group-item" id="prev-work">
             <h2>Some of My Work</h2>
@@ -58,7 +36,6 @@
               Here are a few of the projects I'm proud to have worked on in
               the past:
             </p>
-
             <div class="work-table">
               <a href="./Go.zip">
                 <div>
@@ -144,8 +121,10 @@
                 </div>
               </a>
             </div>
-            <p>Here is a video demonstrating one of the more exciting extra features we added to our PROM Keypad Lock, consisting of a 
-                piezoelectric buzzer we programmed to sing famous tunes!</p>
+            <p>
+              Here is a video demonstrating one of the more exciting extra features we added to our PROM Keypad Lock, consisting of a
+              piezoelectric buzzer we programmed to sing famous tunes!
+            </p>
             <iframe
               width="100%"
               height="315"
@@ -155,9 +134,7 @@
               allowfullscreen
             ></iframe>
           </div>
-          <div class="lessMore">
-            <p>Show more...</p>
-          </div>
+          <MoreLessComponent />
 
           <!--Hobbies-->
           <div class="group-item" id="hobbies">
@@ -197,23 +174,8 @@
                 </tr>
               </tbody>
             </table>
-
-            <h3>Volunteering</h3>
-            <p>
-              In the summer after my first year at University, I spent 2 months in Greece volunteering with the
-              <a
-                href="https://www.archelon.gr/index_eng.php"
-              >Sea Turtle Protection Society of Greece</a>. I found this a
-              really fun, rewarding experience and am eager to engage in more volunteering opportunities in the future. I am hoping to
-              be able to partake in the
-              <a
-                href="https://www.volunteerics.org/"
-              >International Citizen Service</a> volunteering program in 2019.
-            </p>
           </div>
-          <div class="lessMore">
-            <p>Show more...</p>
-          </div>
+          <MoreLessComponent />
         </div>
         <div class="col-12 col-lg-6">
           <!--University info-->
@@ -230,8 +192,8 @@
               chose to study many modules related to the theory and implementation of real-time and embedded systems.
             </p>
 
-            <ToggleListComponent 
-            :content=" {title:'First Year Modules', 
+            <ToggleListComponent
+              :content=" {title:'First Year Modules', 
                         items:[{text: 'Human Aspects of Computer Science', link:''}, 
                                {text: 'Skills, Knowledge & Independent Learning', link:''}, 
                                {text: 'Introduction to Computer Architectures', link:''},
@@ -239,20 +201,22 @@
                                {text: 'Theory & Practice of Programming', link:''},
                                {text: 'Numerical Analysis', link:''},
                                {text: 'Foundation in Electronics, Signals & Circuits', link:''},
-                               {text: 'Programming of micro-controllers', link:''}]}"/>
+                               {text: 'Programming of micro-controllers', link:''}]}"
+            />
 
-            <ToggleListComponent 
-            :content=" {title:'Second Year Modules', 
+            <ToggleListComponent
+              :content=" {title:'Second Year Modules', 
                         items:[{text: 'Vision & Graphics', link:''}, 
                                {text: 'Implementation of Programming Languages', link:''}, 
                                {text: 'Principles of Programming Languages', link:''},
                                {text: 'Software Engineering Project', link:''},
                                {text: 'Computability & Complexity', link:''},
                                {text: 'Artificial Intelligence', link:''},
-                               {text: 'Systems (Operating Systems)', link:''}]}"/>
+                               {text: 'Systems (Operating Systems)', link:''}]}"
+            />
 
-            <ToggleListComponent 
-            :content=" {title:'Third Year Modules', 
+            <ToggleListComponent
+              :content=" {title:'Third Year Modules', 
                         items:[{text: 'Analysable Real-Time Systems', link:''}, 
                                {text: 'Fundamentals of Machine Learning', link:''}, 
                                {text: 'Project Management for Computer Scientists', link:''},
@@ -260,7 +224,8 @@
                                {text: 'Third Year Project (Dissertation)', link:''},
                                {text: 'Computer Vision', link:''},
                                {text: 'Design of Analysable Real-Time Systems', link:''},
-                               {text: 'Machine Learning & Probabilistic Graphical Models', link:''}]}"/>
+                               {text: 'Machine Learning & Probabilistic Graphical Models', link:''}]}"
+            />
 
             <h3>Societies</h3>
             <p>
@@ -301,14 +266,34 @@
               agreed upon benchmark results have yet to be published.
             </p>
           </div>
-          <div class="lessMore">
-            <p>Show more...</p>
+          <MoreLessComponent />
+          <!--Volunteering-->
+          <div class="group-item" id="volunteering">
+            <h2>Volunteering</h2>
+            <p>
+              In the summer after my first year at University, I spent 2 months in Greece volunteering with the
+              <a
+                href="https://www.archelon.gr/index_eng.php"
+              >Sea Turtle Protection Society of Greece</a>. I found this a
+              really fun, rewarding experience and am eager to engage in more volunteering opportunities in the future. I am hoping to
+              be able to partake in the
+              <a
+                href="https://www.volunteerics.org/"
+              >International Citizen Service</a> volunteering program in 2019.
+            </p>
           </div>
+          <MoreLessComponent />
           <!--CV-->
           <div class="group-item" id="cv">
             <h2>Curriculum Vitae</h2>
             <p>Find enclosed a copy of my C.V</p>
-            <a href="./Charles_Howlett.pdf">Charles_Howlett.pdf</a>
+            <a
+              href="./Charles_Howlett.pdf"
+              class="btn btn-primary btn-lg active"
+              role="button"
+              style="font-size: 14px"
+              aria-pressed="true"
+            >Charles_Howlett.pdf</a>
             <p style="margin-top: 10px;">
               *note that some contact information on this copy has been hidden for privacy purposes,
               you'll find more ways to contact me at the bottom of this page!
@@ -352,16 +337,6 @@
 
 <script>
 $(document).ready(function() {
-  //setup show more buttons (on smaller screens)
-  $(".lessMore").on("click", function(event) {
-    $(this)
-      .prev()
-      .toggleClass("readMore", 1200);
-    $(this).text(function(i, text) {
-      return text === "Show more..." ? "Show less..." : "Show more...";
-    });
-  });
-
   //make worktable rows clickable
   $("#workTable tr").mousedown(function(event) {
     if (event.which != 3) {
@@ -377,12 +352,6 @@ $(document).ready(function() {
     if ($(window).width() <= 976) {
       $("#topSideBar").removeClass("hidden");
       $("#menu-open").addClass("hidden");
-      if (!$(".group-item").hasClass("readMore")) {
-        $(".group-item").addClass("readMore");
-      }
-      $(".lessMore").removeClass("hidden");
-      $(".lessMore").text("Show more...");
-
       //always close sidebar after resizing
       $("#app").removeClass("toggled");
     }
@@ -390,8 +359,6 @@ $(document).ready(function() {
     else {
       $("#topSideBar").addClass("hidden");
       $("#menu-open").removeClass("hidden");
-      $(".group-item").removeClass("readMore");
-      $(".lessMore").addClass("hidden");
       //always close sidebar after resizing
       $("#app").removeClass("toggled");
       $("#menu-close").fadeOut("slow");
@@ -408,117 +375,34 @@ $(document).ready(function() {
 
 import CarouselComponent from "./Carousel.vue";
 import ToggleListComponent from "./ToggleList.vue";
+import MoreLessComponent from "./MoreLess.vue";
 
 export default {
   name: "MainContent",
   components: {
     CarouselComponent,
-    ToggleListComponent
+    ToggleListComponent,
+    MoreLessComponent
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* p {
-    margin-top: 0;
-    margin-bottom: .5em;
-} */
 .list-group {
-    margin-bottom: 10px;
-}
-#topSideBar p {
-  font-weight: bold;
-  padding: 5px 15px 5px 15px !important;
-  text-align: center;
-  font-size: 26px;
-  background-color: #596475;
-  color: #fff;
-  margin: 0;
-  border: 1px solid #000;
-  border-left-left-radius: 0px;
-  border-left-left-radius: 0px;
-}
-#topSideBar ul li {
-  background-color: #eaeaea;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #000;
-  border-top: none;
-}
-#topSideBar a {
-  display: block;
-  color: #2c3e50;
-  padding: 10px 15px 10px 15px;
-  font-size: 18px;
-  text-decoration: none;
-}
-#topSideBar ul li a:hover {
-  background-color: #596475;
-  cursor: pointer;
-  color: #fff;
+  margin-bottom: 10px;
 }
 .row {
   margin: 0px;
   padding: 0px;
 }
-.readMore {
-  overflow-y: hidden;
-  height: 300px;
-  border-radius: 4px 4px 0px 0px !important;
-}
-.lessMore {
-  margin: 0px 7.5px 0px 7.5px;
-  padding: 10px 15px 10px 15px;
-  border: 1px solid #e3e3e3;
-  border-radius: 0px 0px 4px;
-  background-color: #eaeaea;
-  font-weight: bold;
-}
-.lessMore:hover {
-  background-color: #596475;
-  color: #fff;
-  cursor: pointer;
-}
-#cv {
-  height: auto;
-}
-#cv a {
-  font-weight: bold;
-  background-color: #363635;
-  color: #fff;
-  padding: 7.5px;
-  border: 1px solid #000;
-  border-radius: 4px;
-  text-decoration: none;
-}
-#cv a:hover {
-  background-color: #eaeaea;
-  color: #363635;
-}
 #page-container {
   max-width: 1600px;
   padding-top: 20px;
-  /* padding-left: 10px; */
-  /* padding-right: 10px; */
   margin-left: auto;
   margin-right: auto;
-  /* padding-left: 0px; */
-  /* padding-right: 0px; */
-  /* margin-left: 0px; */
-  /* margin-right: 0px; */
-}
-#introduction {
-  padding: 5vh 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 h2 {
-  /* consider switching to "strong" tags instead as they are better for screen
-    readers... */
   font-weight: bold;
   font-size: 34px;
   margin-top: 0;
@@ -531,6 +415,13 @@ h3 {
 }
 .group-item {
   font-size: 14px;
+}
+#introduction {
+  padding: 5vh 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 #introduction > div:first-child {
   display: flex;
@@ -550,6 +441,7 @@ h3 {
   padding-left: 5%;
   padding-right: 5%;
 }
+
 #portrait {
   border-radius: 50%;
   width: 90%;
@@ -614,6 +506,7 @@ thead {
   cursor: pointer;
 }
 .group-item {
+  /* height: auto; */
   padding: 15px;
   margin: 15px 7.5px 0px 7.5px;
   border: 1px solid #e3e3e3;
