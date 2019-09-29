@@ -33,8 +33,8 @@
     $( document ).ready(function() {
         // Add smooth scrolling to all links
         $("a").on('click', function(event) {
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
+            // Make sure this.hash has a value before overriding default behavior (dont scroll on )
+            if (this.hash !== "" && this.hash!=="#carouselExampleControls") {
                 // Prevent default anchor click behavior
                 event.preventDefault();
 
@@ -180,7 +180,6 @@ h1 {
 
 #page-content-wrapper {
     width: 100%;
-    /* position: absolute; */
 }
 
 </style>
