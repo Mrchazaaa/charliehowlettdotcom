@@ -147,6 +147,8 @@ h1 {
     padding: 5px;
     width: 35px;
     height: 35px;
+    background-color: buttonFace;
+    border: none;
 }
 
 #app {
