@@ -20,12 +20,13 @@
           <!--Sidebar for smaller screens-->
           <ToggleListComponent
             id="topSideBar"
-            :content="{title:'Nav', items:[{text:'Top', link:'#sketch'},
-                                                                              {text:'Previous Work', link:'#prev-work'},
-                                                                              {text:'University', link:'#uni-info'},
-                                                                              {text:'Hobbies', link:'#hobbies'},
-                                                                              {text:'CV', link:'#cv'},
-                                                                              {text:'Contact', link:'#contact-info'}]}"
+            :content="{title:'Nav', 
+                items:[{text:'Top', link:'#sketch'},
+                       {text:'Previous Work', link:'#prev-work'},
+                       {text:'University', link:'#uni-info'},
+                       {text:'Hobbies', link:'#hobbies'},
+                       {text:'CV', link:'#cv'},
+                       {text:'Contact', link:'#contact-info'}]}"
           />
           <!--Previous work-->
           <div class="group-item" id="prev-work">
@@ -285,6 +286,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/* necessary setting jumbotron to correct width */
+@media (min-width: 1200px) { .container {
+  max-width: 1140px !important;
+}}
 #page-container {
   max-width: 1600px;
   padding-top: 20px;

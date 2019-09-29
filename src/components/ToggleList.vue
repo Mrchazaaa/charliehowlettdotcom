@@ -1,9 +1,11 @@
 <template>
   <div class="toggle-list-collection">
-    <p class="toggle-list list-group-item">{{content.title}}</p>
+    <!-- <p v-if="content.title != 'Nav'" class="toggle-list">{{content.title}}</p> -->
+    <button v-if="content.title != 'Nav'" type="button" class="toggle-list btn btn-light btn-block">{{content.title}}</button>
+    <button v-if="content.title == 'Nav'" type="button" class="toggle-list btn btn-secondary btn-block">{{content.title}}</button>
     <ul class="list-group">
       <li class="list-group-item" v-for="entries in content.items" :key="entries.text">
-        <a v-if="entries.link != ''" :href="entries.link">{{entries.text}}</a>
+        <a v-if="entries.link != ''" :href="entries.link" role="button" class="toggle-list btn btn-light btn-block">{{entries.text}}</a>
         <p v-if="entries.link == ''">{{entries.text}}</p>
       </li>
     </ul>
@@ -37,59 +39,34 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#topSideBar ul li {
-  background-color: #eaeaea;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #000;
-  border-top: none;
-}
-#topSideBar ul li a:hover {
-  background-color: #596475;
-  cursor: pointer;
-  color: #fff;
-}
-#topSideBar p {
+#topSideBar {
   font-weight: bold;
-  padding: 5px 15px 5px 15px;
-  text-align: center;
-  font-size: 26px;
-  background-color: #596475;
-  color: #fff;
-  margin: 0;
-  border: 1px solid #000;
 }
-#topSideBar a {
-  display: block;
-  color: #2c3e50;
-  padding: 10px 15px 10px 15px;
+#topSideBar button {
+  color: white !important;
+}
+#topSideBar li {
+  padding: 0;
+  margin: 0 7.5px;
+}
+#topSideBar button, #topSideBar a {
+  padding: 10px 15px;
   font-size: 18px;
-  text-decoration: none;
+  margin: 0 !important;  
 }
-p {
-  margin-bottom: 0;
-}
-.toggle-list-collection p:first-of-type {
-  margin-top: 0px;
+.btn-light {
+  text-align: left;
+  padding: .75rem 1.25rem;
+  font-size: 14px;
+  font-weight: bold;
 }
 .toggle-list-collection {
   margin-bottom: 10px;
 }
 .toggle-list {
   cursor: pointer;
-  margin: 10px 0 0 0;
-  /* margin: 0 0 10px 0;   */
-  background-color: #f9f9f9;
 }
-.list-group-item {
-  background-color: #f9f9f9;
-}
-.toggle-list:hover {
-  background-color: #eaeaea;
-}
-.toggle-listClicked {
-  background-color: #eaeaea;
+p {
   margin-bottom: 0;
 }
 </style>
