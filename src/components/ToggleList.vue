@@ -59,8 +59,6 @@ export default {
   color: #fff;
   margin: 0;
   border: 1px solid #000;
-  border-left-left-radius: 0px;
-  border-left-left-radius: 0px;
 }
 #topSideBar a {
   display: block;

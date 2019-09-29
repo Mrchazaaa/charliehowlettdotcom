@@ -13,9 +13,7 @@
         <img id="portrait" src="../assets/photo-of-me.jpg" />
       </div>
     </div>
-
     <hr class="hidden-sm hidden-xs" />
-
     <div id="group-content" class="container">
       <div class="row">
         <div class="col-12 col-lg-6">
@@ -36,91 +34,7 @@
               Here are a few of the projects I'm proud to have worked on in
               the past:
             </p>
-            <div class="work-table">
-              <a href="./Go.zip">
-                <div>
-                  <div>
-                    <div>
-                      <img src="../assets/go.jpg" />
-                    </div>
-                  </div>
-                  <div>
-                    <h4>Go AI</h4>
-                    <p>During sixth form, I made this AI to play the board game "Go", for my extended project qualification.</p>
-                    <a>
-                      <p>Download now!</p>
-                    </a>
-                  </div>
-                </div>
-              </a>
-              <a href="./UniverseCity.zip">
-                <div>
-                  <div>
-                    <div>
-                      <img src="../assets/universe-city.png" />
-                    </div>
-                  </div>
-                  <div>
-                    <h4>Universe City</h4>
-                    <p>
-                      A game I developed for the software engineering project in my second year of university. The module didn't require that this game
-                      be coded to completion, however, I did so in my spare time.
-                    </p>
-                    <a>
-                      <p>Download now!</p>
-                    </a>
-                  </div>
-                </div>
-              </a>
-              <a href="https://github.com/Mrchazaaa/MyOwnWebsite">
-                <div>
-                  <div>
-                    <div>
-                      <img src="../assets/github.svg" />
-                    </div>
-                  </div>
-                  <div>
-                    <h4>This Website</h4>
-                    <p>The source for this website is available on my Github. I used Vue and Bootstrap in its design.</p>
-                    <a>
-                      <p>Visit the Github page!</p>
-                    </a>
-                  </div>
-                </div>
-              </a>
-              <a href="https://github.com/spankie1337/PROM_keypad">
-                <div>
-                  <div>
-                    <div>
-                      <img src="../assets/PROM.jpg" />
-                    </div>
-                  </div>
-                  <div>
-                    <h4>PROM Keypad Lock</h4>
-                    <p>A hardware project I worked on during my first year at University wth 2 other students.</p>
-                    <a>
-                      <p>Visit the Github page!</p>
-                    </a>
-                  </div>
-                </div>
-              </a>
-              <a href="https://github.com/Mrchazaaa/myVimRC">
-                <div>
-                  <div>
-                    <div>
-                      <img src="../assets/vim.png" />
-                    </div>
-                  </div>
-                  <div>
-                    <h4>My VimRC</h4>
-                    <p>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</p>
-                    <a>
-                      <p>Visit the Github page!</p>
-                    </a>
-                  </div>
-                </div>
-              </a>
-            </div>
+              <WorkTableComponent/>
             <p>
               Here is a video demonstrating one of the more exciting extra features we added to our PROM Keypad Lock, consisting of a
               piezoelectric buzzer we programmed to sing famous tunes!
@@ -135,7 +49,6 @@
             ></iframe>
           </div>
           <MoreLessComponent />
-
           <!--Hobbies-->
           <div class="group-item" id="hobbies">
             <h2>Hobbies</h2>
@@ -185,13 +98,11 @@
               I'm on schedule to graduate with a BEng/BSc in Computer Science in 2019. Here I list the modules I've studied to date,
               information about some of the societies I've joined at York and more information about my third year project.
             </p>
-
             <h3>Modules</h3>
             <p>
               Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I
               chose to study many modules related to the theory and implementation of real-time and embedded systems.
             </p>
-
             <ToggleListComponent
               :content=" {title:'First Year Modules', 
                         items:[{text: 'Human Aspects of Computer Science', link:''}, 
@@ -203,7 +114,6 @@
                                {text: 'Foundation in Electronics, Signals & Circuits', link:''},
                                {text: 'Programming of micro-controllers', link:''}]}"
             />
-
             <ToggleListComponent
               :content=" {title:'Second Year Modules', 
                         items:[{text: 'Vision & Graphics', link:''}, 
@@ -214,7 +124,6 @@
                                {text: 'Artificial Intelligence', link:''},
                                {text: 'Systems (Operating Systems)', link:''}]}"
             />
-
             <ToggleListComponent
               :content=" {title:'Third Year Modules', 
                         items:[{text: 'Analysable Real-Time Systems', link:''}, 
@@ -226,7 +135,6 @@
                                {text: 'Design of Analysable Real-Time Systems', link:''},
                                {text: 'Machine Learning & Probabilistic Graphical Models', link:''}]}"
             />
-
             <h3>Societies</h3>
             <p>
               During my time at University I've taken part in a number of societies, which I've listed here to demonstrate the kind of activities I enjoy
@@ -256,7 +164,6 @@
               </tbody>
             </table>
             <p>I'm also a recipient of the University's "Futures Scholarship".</p>
-
             <h3>Third Year Project</h3>
             <p>
               One of the more interesting parts of my curriculum is my third year project. For which I will be undertaking a self-defined project entitled:
@@ -302,50 +209,37 @@
         </div>
       </div>
     </div>
-
     <hr />
-
-    <!--div class="row well hidden-sm hidden-xs" id="introduction"-->
-
     <!--Contact Information-->
     <div class="row" id="contact-info">
-      <div class="hidden-sm hidden-xs col-md-2"></div>
-      <div class="col-xs-6 col-md-2 contact">
+      <div class="hidden-xs col-md-2"></div>
+      <div class="col-6 col-md-2 contact">
         <a href="https://github.com/Mrchazaaa/">
           <img src="../assets/github.svg" />
         </a>
       </div>
-      <div class="col-xs-6 col-md-2 contact">
+      <div class="col-6 col-md-2 contact">
         <a href="https://www.linkedin.com/in/charles-howlett-383b26155/">
           <img src="../assets/linkedin.svg" />
         </a>
       </div>
-      <div class="col-xs-6 col-md-2 contact">
+      <div class="col-6 col-md-2 contact">
         <a href="https://www.facebook.com/charlie.howlett.1">
           <img src="../assets/facebook.svg" />
         </a>
       </div>
-      <div class="col-xs-6 col-md-2 contact">
+      <div class="col-6 col-md-2 contact">
         <a href="mailto:charlie.howlett@live.co.uk">
           <img src="../assets/email.svg" />
         </a>
       </div>
-      <div class="hidden-sm hidden-xs col-md-2"></div>
+      <div class="hidden-xs col-md-2"></div>
     </div>
   </div>
 </template>
 
 <script>
 $(document).ready(function() {
-  //make worktable rows clickable
-  $("#workTable tr").mousedown(function(event) {
-    if (event.which != 3) {
-      window.location = $(this)
-        .find("a")
-        .attr("href");
-    }
-  });
-
   function resizeConfigure() {
     //on smaller screens...
     console.log($(window).width());
@@ -376,31 +270,30 @@ $(document).ready(function() {
 import CarouselComponent from "./Carousel.vue";
 import ToggleListComponent from "./ToggleList.vue";
 import MoreLessComponent from "./MoreLess.vue";
+import WorkTableComponent from "./WorkTable.vue";
 
 export default {
   name: "MainContent",
   components: {
     CarouselComponent,
     ToggleListComponent,
-    MoreLessComponent
+    MoreLessComponent,
+    WorkTableComponent
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.list-group {
-  margin-bottom: 10px;
-}
-.row {
-  margin: 0px;
-  padding: 0px;
-}
 #page-container {
   max-width: 1600px;
   padding-top: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+.row {
+  margin: 0px;
+  padding: 0px;
 }
 h2 {
   font-weight: bold;
@@ -410,11 +303,18 @@ h2 {
 h3 {
   font-weight: bold;
 }
+/deep/ h4 {
+    font-size: 18px;
+}
 .group-item > p {
   text-align: justify;
 }
 .group-item {
   font-size: 14px;
+  padding: 15px 15px 0 15px;
+  margin: 15px 7.5px 0px 7.5px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
 }
 #introduction {
   padding: 5vh 0;
@@ -441,7 +341,6 @@ h3 {
   padding-left: 5%;
   padding-right: 5%;
 }
-
 #portrait {
   border-radius: 50%;
   width: 90%;
@@ -450,84 +349,17 @@ h3 {
   flex-direction: column;
   width: 100%;
 }
-.work-table {
-  width: 100%;
-  text-decoration: unset;
-}
-.work-table > a,
-.work-table > a:active,
-.work-table > a:focus {
-  text-decoration: none !important;
-  color: unset;
-}
-.work-table > a > div:hover {
-  text-decoration: none !important;
-  color: unset;
-  background-color: #eaeaea !important;
-}
-.work-table img {
-  width: 100px;
-  height: 100px;
-}
-.work-table > a:nth-child(1) > div {
-  border-top: 1px solid #e3e3e3;
-}
-.work-table > a > div {
-  display: flex;
-  border: 1px solid #e3e3e3;
-  border-top: none;
-}
-.work-table > a:nth-child(odd) > div {
-  background-color: #f9f9f9;
-}
-.work-table > a > div > div:nth-child(1) {
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.work-table > a > div > div:nth-child(2) {
-  padding: 8px;
-  flex: 1;
-}
-/*use flex to vertically center icons in previous work table*/
-.my-center-icons {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-}
-.my-center-icons img {
-}
-#workTable img {
-  width: 100px;
-  height: 100px;
+#group-content div[class*="col-"] {
+  padding: 0px;
 }
 thead {
   cursor: pointer;
 }
-.group-item {
-  /* height: auto; */
-  padding: 15px;
-  margin: 15px 7.5px 0px 7.5px;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-}
-#group-content div[class*="col-"] {
-  padding: 0px;
-}
 table {
-  margin: 5px 0;
+  margin: 0 0 10px 0;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
-}
-#societiesTable td {
   font-weight: bold;
-}
-#hackathonsTable td {
-  font-weight: bold;
-}
-th {
-  padding-left: 8px;
 }
 /*use flex to vertically center icons in previous work table*/
 .contact {
@@ -541,22 +373,6 @@ th {
 .contact img {
   height: 50px;
   display: inline-block;
-}
-.center-icons {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 116px;
-  padding: 0px;
-  padding-left: 8px;
-}
-.center-icons div {
-  display: flex;
-  position: absolute;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
 }
 #contact-info {
   margin-top: 45px;
