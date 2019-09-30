@@ -2,7 +2,6 @@
   <div id="app">
     <!--sidebar navbar-->    
     <SideBarComponent/>
-
     <div id="page-content-wrapper">
         <!--p5 sketch background-->
         <div id='sketch'></div>
@@ -104,7 +103,6 @@ body, html {
     left: 0;
     height: 100vh;
     width: 100%;
-    /* max-width: 1600px; */
     margin: 0 auto;
 }
 h1 {
@@ -115,8 +113,6 @@ h1 {
     margin: 0;
     padding: 0;
     text-align: center;
-    /* width: 100%; */
-    /* height: 100vh; */
     max-width: 582px;
 }
 #app {
@@ -137,49 +133,6 @@ h1 {
     margin-right: 50%;
     width: 25px;
 }
-
-/*sidebar styling*/
-#menu-open {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
-    padding: 5px;
-    width: 35px;
-    height: 35px;
-    background-color: buttonFace;
-    border: none;
-}
-
-#app {
-    /* -webkit-transition: all 0.5s ease; */
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-#sidebar-wrapper {
-    z-index: 3;
-    position: fixed;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -255px; /*250px + 5px to account for border*/
-    background-color: #eaeaea;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    overflow: hidden;
-    text-overflow: clip;
-    white-space: nowrap;
-    box-sizing: border-box;         /* Opera/IE 8+ */
-    border-right: 5px solid #2c3e50;
-}
-
-#app.toggled #sidebar-wrapper {
-    width: 250px;
-}
-
 #page-content-wrapper {
     width: 100%;
 }

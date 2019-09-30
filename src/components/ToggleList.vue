@@ -39,32 +39,36 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#topSideBar {
+#topSideBar button, #topSideBar a {
+  padding: 10px 15px;
+  font-size: 18px;
+  margin: 0 !important;
+  text-align: center !important;  
   font-weight: bold;
 }
 #topSideBar button {
   color: white !important;
 }
 #topSideBar li {
-  padding: 0;
+  padding: 0 !important;
   margin: 0 7.5px;
-}
-#topSideBar button, #topSideBar a {
-  padding: 10px 15px;
-  font-size: 18px;
-  margin: 0 !important;  
 }
 .btn-light {
   text-align: left;
-  padding: .75rem 1.25rem;
+  /* padding: .75rem 1.25rem; */
+  padding: 8px !important;
   font-size: 14px;
   font-weight: bold;
+  background-color: #F2F2F2;
 }
 .toggle-list-collection {
   margin-bottom: 10px;
 }
 .toggle-list {
   cursor: pointer;
+}
+li {
+  padding: 8px !important;
 }
 p {
   margin-bottom: 0;

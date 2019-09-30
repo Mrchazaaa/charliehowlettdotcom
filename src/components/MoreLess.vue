@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="lessMore btn btn-secondary btn-lg btn-block">Block level button</button>
+  <button type="button" class="lessMore btn btn-light btn-lg btn-block">Block level button</button>
 </template>
 
 <script>
@@ -76,7 +76,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .lessMore {
-  color: white !important;
   font-weight: bold;
   width: calc(100% - 15px);
   margin: 0 7.5px 0 7.5px;
