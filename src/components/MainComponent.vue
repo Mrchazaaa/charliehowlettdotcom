@@ -35,7 +35,7 @@
               Here are a few of the projects I'm proud to have worked on in
               the past:
             </p>
-              <WorkTableComponent/>
+            <WorkTableComponent />
             <p>
               Here is a video demonstrating one of the more exciting extra features we added to our PROM Keypad Lock, consisting of a
               piezoelectric buzzer we programmed to sing famous tunes!
@@ -165,13 +165,47 @@
               </tbody>
             </table>
             <p>I'm also a recipient of the University's "Futures Scholarship".</p>
-            <h3>Third Year Project</h3>
+            <h3>Dissertation</h3>
             <p>
-              One of the more interesting parts of my curriculum is my third year project. For which I will be undertaking a self-defined project entitled:
-              "Construction and Timing Analysis of Automotive Control Software Benchmarks". This project aims to construct automotive control software benchmarks
-              and, upon successful construction, perform timing analysis on them. This project will be a great contribution to the academic
-              community working on topics related to automotive control as such software is usually proprietary and confidential, and thus
-              agreed upon benchmark results have yet to be published.
+              In the academic community surrounding automotive-safety, it is vital to incorporate
+              the behaviour of widespread software control systems (such as Adaptive Cruise Control,
+              Traction Control Systems, etc) into models used in conducting accurate research. However,
+              source code for popular commercial implementations of these systems is highly guarded by
+              manufacturers and thus it is very difficult for researchers to develop models that accurately
+              reflect the systems used in the real world.
+            </p>
+            <p>
+              In my dissertation, focusing around a self-defined project entitled:
+              <strong>
+                "Construction of
+                Automotive Control Software"
+              </strong>, I produced an anti-lock braking system (ABS) which
+              attempted to mimic the timing characteristics of commercial ABS products, by implementing an older ABS algorithm
+              defined in a paper published by Bosch. However, this paper did not completely describe the
+              system's construction (particularly in determining vehicle speed in the ABS Electronic Control Unit)
+              and so work from several other research areas were combined to produce a working Anti-lock Braking
+              System that, atleast to some degree, reflects those used in the real world.
+            </p>
+            <p>
+              One of the biggest challenges faced in producing this work was determining vehicle longitudinal velocity whilst only
+              being able to discern circumferential speeds of individual wheels (these values would not directly
+              reflect the actual velocity of the vehicle, under emergency braking conditions, due to large braking
+              forces locking up the wheels). To solve this I implemented an
+              <a
+                href="https://en.wikipedia.org/wiki/Extended_Kalman_filter"
+              >Extended Kalman filter</a> which estimates
+              vehicle longitudinal velocity by utilising an accurate tire physics model and various other wheel speed data.
+            </p>
+
+            <LightBoxComponent/>
+
+            <p>
+              The majority of this work was completed using
+              <strong>C/C++</strong>, and by implementing the system in
+              <a
+                href="http://www.speed-dreams.org/"
+              >Speed Dreams 2</a>, a driving simulator featuring realistic
+              tire physics and individual wheel braking, functionality of the code was verified.
             </p>
           </div>
           <MoreLessComponent />
@@ -272,6 +306,7 @@ import CarouselComponent from "./Carousel.vue";
 import ToggleListComponent from "./ToggleList.vue";
 import MoreLessComponent from "./MoreLess.vue";
 import WorkTableComponent from "./WorkTable.vue";
+import LightBoxComponent from "./LightBox.vue";
 
 export default {
   name: "MainContent",
@@ -279,7 +314,8 @@ export default {
     CarouselComponent,
     ToggleListComponent,
     MoreLessComponent,
-    WorkTableComponent
+    WorkTableComponent,
+    LightBoxComponent
   }
 };
 </script>
@@ -287,9 +323,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 /* necessary setting jumbotron to correct width */
-@media (min-width: 1200px) { .container {
-  max-width: 1140px !important;
-}}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px !important;
+  }
+}
 #page-container {
   max-width: 1600px;
   padding-top: 20px;
@@ -307,9 +345,10 @@ h2 {
 }
 h3 {
   font-weight: bold;
+  font-size: 2.5rem;
 }
 /deep/ h4 {
-    font-size: 18px;
+  font-size: 18px;
 }
 .group-item > p {
   text-align: justify;

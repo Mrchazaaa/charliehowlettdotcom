@@ -10,7 +10,7 @@
         <div>
           <h4>Go AI</h4>
           <p>During sixth form, I made this AI to play the board game "Go", for my extended project qualification.</p>
-          <a>
+          <a href="./Go.zip">
             <p>Download now!</p>
           </a>
         </div>
@@ -29,7 +29,7 @@
             A game I developed for the software engineering project in my second year of university. The module didn't require that this game
             be coded to completion, however, I did so in my spare time.
           </p>
-          <a>
+          <a href="./UniverseCity.zip">
             <p>Download now!</p>
           </a>
         </div>
@@ -45,7 +45,7 @@
         <div>
           <h4>This Website</h4>
           <p>The source for this website is available on my Github. I used Vue and Bootstrap in its design.</p>
-          <a>
+          <a href="https://github.com/Mrchazaaa/MyOwnWebsite">
             <p>Visit the Github page!</p>
           </a>
         </div>
@@ -61,7 +61,7 @@
         <div>
           <h4>PROM Keypad Lock</h4>
           <p>A hardware project I worked on during my first year at University wth 2 other students.</p>
-          <a>
+          <a href="https://github.com/spankie1337/PROM_keypad">
             <p>Visit the Github page!</p>
           </a>
         </div>
@@ -77,7 +77,7 @@
         <div>
           <h4>My VimRC</h4>
           <p>I am a big fan of Vim (the command line text editor) and host my vim configuration file on my Github.</p>
-          <a>
+          <a href="https://github.com/Mrchazaaa/myVimRC">
             <p>Visit the Github page!</p>
           </a>
         </div>
