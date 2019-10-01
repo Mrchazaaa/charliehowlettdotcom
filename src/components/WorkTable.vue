@@ -97,6 +97,7 @@ export default {
 .work-table {
   width: 100%;
   text-decoration: unset;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .work-table > a,

@@ -5,7 +5,8 @@
       <div class="col-12 col-md-7">
         <p>
           "I'm a recent computer science graduate of the University of York. I designed
-          this page to supplement my cv and give people a way to get to know me and the kind of work I do. Below, you'll find links to a few of my
+          this site to supplement my cv and give people a way to get to know me and the 
+          kind of work I do. Below, you'll find links to a few of my
           past projects and some more information about what I enjoy doing in my free time!"
         </p>
       </div>
@@ -31,14 +32,17 @@
           <!--Previous work-->
           <div class="group-item" id="prev-work">
             <h2>Some of My Work</h2>
-            <p>
+            <!-- <p>
               Here are a few of the projects I'm proud to have worked on in
               the past:
-            </p>
+            </p>-->
             <WorkTableComponent />
+            <h3>Micro-controller Powered Music!</h3>
             <p>
-              Here is a video demonstrating one of the more exciting extra features we added to our PROM Keypad Lock, consisting of a
-              piezoelectric buzzer we programmed to sing famous tunes!
+              As part of our PROM Keypad Lock project (a piece of coursework for the 
+              University of York's Programming of Micro-Controllers module), we  
+              extended functionality via a piezoelectric buzzer, placed in a paper cup "megaphone" 
+              that we programmed to sing a few tunes! 
             </p>
             <iframe
               width="100%"
@@ -54,12 +58,15 @@
           <div class="group-item" id="hobbies">
             <h2>Hobbies</h2>
             <p>
-              Outside of university, I like competing in hackathons, reading, working on
-              personal projects and playing music (I play the guitar and drums).
+              In my spare time I like: reading, learning about web Development 
+              and playing music (I play both the guitar and drums). I'm also an avid 
+              proponent of the <a href="https://www.raspberrypi.org/">Raspberry Pi</a> and have used them in developing various 
+              novel projects as well as testing networking principles.
             </p>
             <CarouselComponent />
             <h3>Hackathons</h3>
-            <p>I really enjoy hackathons, particularly team based ones, and have so far competed in the following:</p>
+            <p>One of my most rewarding hobbies is participating in hackathons, particularly team based ones, and have 
+               so far competed in the following:</p>
             <table class="table table-striped" id="hackathonsTable">
               <thead>
                 <thead></thead>
@@ -96,13 +103,16 @@
           <div class="group-item" id="uni-info">
             <h2>University</h2>
             <p>
-              I'm on schedule to graduate with a BEng/BSc in Computer Science in 2019. Here I list the modules I've studied to date,
-              information about some of the societies I've joined at York and more information about my third year project.
+              I graduated from the <strong>University of York</strong> with a BEng/BSc in Computer Science in 2019, also having 
+              recieved the University's <strong>Futures Scholarship</strong>. 
+              Here I list the modules I've studied in attaining this acceditation, as well as some
+              information about the societies I participated in whilst at York and some details about my dissertation.
             </p>
             <h3>Modules</h3>
             <p>
-              Many of the modules through my 1st and 2nd year were compulsory. However, towards my final year I
-              chose to study many modules related to the theory and implementation of real-time and embedded systems.
+              Many of the modules during my 1st and 2nd year were compulsory. However, towards my final year I
+              chose to mainly study modules related to the theory and implementation of real-time and embedded systems.
+              Here I list all of these modules as well as their respective years of study.
             </p>
             <ToggleListComponent
               :content=" {title:'First Year Modules', 
@@ -138,8 +148,8 @@
             />
             <h3>Societies</h3>
             <p>
-              During my time at University I've taken part in a number of societies, which I've listed here to demonstrate the kind of activities I enjoy
-              outside of studying:
+              During my time at University I took part in a number of student-run societies, some of which, 
+              I've listed here:
             </p>
             <p></p>
             <table class="table table-striped" id="societiesTable">
@@ -164,7 +174,6 @@
                 </tr>
               </tbody>
             </table>
-            <p>I'm also a recipient of the University's "Futures Scholarship".</p>
             <h3>Dissertation</h3>
             <p>
               In the academic community surrounding automotive-safety, it is vital to incorporate
@@ -175,7 +184,7 @@
               reflect the systems used in the real world.
             </p>
             <p>
-              In my dissertation, focusing around a self-defined project entitled:
+              The topic of my dissertation focused around a self-defined project entitled:
               <strong>
                 "Construction of
                 Automotive Control Software"
@@ -197,7 +206,7 @@
               vehicle longitudinal velocity by utilising an accurate tire physics model and various other wheel speed data.
             </p>
 
-            <LightBoxComponent/>
+            <LightBoxComponent />
 
             <p>
               The majority of this work was completed using
@@ -213,35 +222,52 @@
           <div class="group-item" id="volunteering">
             <h2>Volunteering</h2>
             <p>
+            Participating with effective volunteering organizations in the past has been greatly rewarding and 
+            provided me with a number of valuable skills and attitudes. I hope to continue working in such positions in the future. 
+            </p>
+            <h3>Archelon</h3>
+            <p>
               In the summer after my first year at University, I spent 2 months in Greece volunteering with the
               <a
                 href="https://www.archelon.gr/index_eng.php"
-              >Sea Turtle Protection Society of Greece</a>. I found this a
-              really fun, rewarding experience and am eager to engage in more volunteering opportunities in the future. I am hoping to
-              be able to partake in the
-              <a
-                href="https://www.volunteerics.org/"
-              >International Citizen Service</a> volunteering program in 2019.
+              >Sea Turtle Protection Society of Greece (Archelon)</a>. Where I helped in tracking loggerhead sea turtles and their nests, 
+              morning/night monitoring of protected nesting beaches, and fundraising for the charity by operating a 
+              small kiosk, which dispensed information and souviners to tourists. Throughout this time, I had cooking and 
+              cleaning responsibilities for a group of 50 volunteers.
             </p>
+            <p> 
+              I found this a really fun and rewarding experience, which fostered the growth of a number of valuable skills.
+              For instance, the large team in which I worked was composed of mixed nationalities and language barriers were 
+              often present in day to day life, which greatly progressed my communication and teamwork skills.
+            </p>
+            <h3>Raleigh International</h3>
+            <p>
+              After graduating from University, I spent 3 months in rural Tanzania working alongside both UK and Tanzanian volunteers 
+              to provide daily entrepreneurial classes to villagers, with <a href="https://raleighinternational.org/">Raleigh International</a>. This work intended to 
+              arm such poverty stricken areas with the Knowledge necessary to start sustainable businesses, and provided several grants 
+              to locals to help fund their businesses.
+            </p>
+            <p>
+              Throughout this time, all 20 volunteers in our team lived among local families, eating local foods and becoming ecnompassed within the community. 
+              As well as organize lessons we also coordinated several events to raise awareness of our work, each of which attracted over 200 people. 
+            </p>
+            <!-- put in oven picture -->
+            <img></img>
           </div>
           <MoreLessComponent />
-          <!--CV-->
-          <div class="group-item" id="cv">
-            <h2>Curriculum Vitae</h2>
-            <p>Find enclosed a copy of my C.V</p>
+        </div>
+        <!--CV-->
+          <div  class="col-12" id="cv">
             <a
               href="./Charles_Howlett.pdf"
-              class="btn btn-primary btn-lg active"
+              class="btn btn-primary btn-block active"
               role="button"
               style="font-size: 14px"
               aria-pressed="true"
-            >Charles_Howlett.pdf</a>
-            <p style="margin-top: 10px;">
-              *note that some contact information on this copy has been hidden for privacy purposes,
-              you'll find more ways to contact me at the bottom of this page!
-            </p>
+            >
+              <h3>View My CV!</h3>
+            </a>
           </div>
-        </div>
       </div>
     </div>
     <hr />
@@ -342,6 +368,7 @@ h2 {
   font-weight: bold;
   font-size: 34px;
   margin-top: 0;
+  margin-bottom: 6px;
 }
 h3 {
   font-weight: bold;
@@ -421,5 +448,13 @@ table {
 #contact-info {
   margin-top: 45px;
   margin-bottom: 35px;
+}
+#cv {
+  padding: 0px;
+  border: none;
+  margin: 15px 0px;
+}
+#cv a {
+  padding: 0.75rem 1.5rem;
 }
 </style>

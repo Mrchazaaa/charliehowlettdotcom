@@ -46,7 +46,6 @@ $(document).ready(function() {
 
 function resizeConfigure() {
   //on smaller screens...
-  console.log($(window).width());
   if ($(window).width() <= 976) {
     if (!$(".group-item").hasClass("readMore")) {
       console.log("adding class");
