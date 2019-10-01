@@ -1,20 +1,20 @@
 <template>
-  <button type="button" class="lessMore btn btn-light btn-lg btn-block">Block level button</button>
+  <button type="button" class="less-more btn btn-light btn-lg btn-block">Block level button</button>
 </template>
 
 <script>
 $(document).ready(function() {
   //setup "show more/less" buttons (on smaller screens)
-  $(".lessMore").on("click", function(event) {
-    if ($(this).prev().hasClass("readMore")) {
+  $(".less-more").on("click", function(event) {
+    if ($(this).prev().hasClass("collapsed")) {
         $(this).prev().css('height', 'auto');
         $(this)
           .prev()
-          .removeClass("readMore");
+          .removeClass("collapsed");
         var autoHeight = $(this).prev().outerHeight();
         $(this)
           .prev()
-          .addClass("readMore");
+          .addClass("collapsed");
         $(this).prev().height(300).animate({height: autoHeight}, {
           duration: "slow"
         }).promise().then(() => {
@@ -34,7 +34,7 @@ $(document).ready(function() {
     }
     $(this)
       .prev()
-      .toggleClass("readMore");
+      .toggleClass("collapsed");
     $(this).text(function(i, text) {
       return text === "Show more..." ? "Show less..." : "Show more...";
     });
@@ -47,18 +47,18 @@ $(document).ready(function() {
 function resizeConfigure() {
   //on smaller screens...
   if ($(window).width() <= 976) {
-    if (!$(".group-item").hasClass("readMore")) {
+    if (!$(".group-item").hasClass("collapsed")) {
       console.log("adding class");
-      $(".group-item").addClass("readMore");
-      console.log($(".group-item").hasClass("readMore"));
+      $(".group-item").addClass("collapsed");
+      console.log($(".group-item").hasClass("collapsed"));
     }
-    $(".lessMore").removeClass("hidden");
-    $(".lessMore").text("Show more...");
+    $(".less-more").removeClass("hidden");
+    $(".less-more").text("Show more...");
   }
   //on larger screens...
   else {
-    $(".group-item").removeClass("readMore");
-    $(".lessMore").addClass("hidden");
+    $(".group-item").removeClass("collapsed");
+    $(".less-more").addClass("hidden");
   }
 }
 
@@ -74,12 +74,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.lessMore {
+.less-more {
   font-weight: bold;
   width: calc(100% - 15px);
   margin: 0 7.5px 0 7.5px;
 }
-.readMore {
+.collapsed {
   overflow-y: hidden;
   height: 300px;
   border-radius: 4px 4px 0px 0px !important;

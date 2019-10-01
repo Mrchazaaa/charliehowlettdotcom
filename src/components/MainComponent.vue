@@ -18,9 +18,9 @@
     <div id="group-content" class="container">
       <div class="row">
         <div class="col-12 col-lg-6">
-          <!--Sidebar for smaller screens-->
+          <!--Navbar at the top of the page for smaller screens-->
           <ToggleListComponent
-            id="topSideBar"
+            id="top-sidebar"
             :content="{title:'Nav', 
                 items:[{text:'Top', link:'#sketch'},
                        {text:'Previous Work', link:'#prev-work'},
@@ -31,11 +31,7 @@
           />
           <!--Previous work-->
           <div class="group-item" id="prev-work">
-            <h2>Some of My Work</h2>
-            <!-- <p>
-              Here are a few of the projects I'm proud to have worked on in
-              the past:
-            </p>-->
+            <h2>Previous Work</h2>
             <WorkTableComponent />
             <h3>Micro-controller Powered Music!</h3>
             <p>
@@ -60,7 +56,8 @@
             <p>
               In my spare time I like: reading, learning about web Development 
               and playing music (I play both the guitar and drums). I'm also an avid 
-              proponent of the <a href="https://www.raspberrypi.org/">Raspberry Pi</a> and have used them in developing various 
+              proponent of the <a href="https://www.raspberrypi.org/">Raspberry Pi</a> and have used 
+              rasperry pi products in developing various 
               novel projects as well as testing networking principles.
             </p>
             <CarouselComponent />
@@ -103,8 +100,8 @@
           <div class="group-item" id="uni-info">
             <h2>University</h2>
             <p>
-              I graduated from the <strong>University of York</strong> with a BEng/BSc in Computer Science in 2019, also having 
-              recieved the University's <strong>Futures Scholarship</strong>. 
+              I graduated from the <strong>University of York</strong> with a BEng/BSc in Computer Science in 2019, having 
+              recieved the University's <strong>York Futures Scholarship</strong>. 
               Here I list the modules I've studied in attaining this acceditation, as well as some
               information about the societies I participated in whilst at York and some details about my dissertation.
             </p>
@@ -112,7 +109,6 @@
             <p>
               Many of the modules during my 1st and 2nd year were compulsory. However, towards my final year I
               chose to mainly study modules related to the theory and implementation of real-time and embedded systems.
-              Here I list all of these modules as well as their respective years of study.
             </p>
             <ToggleListComponent
               :content=" {title:'First Year Modules', 
@@ -152,7 +148,7 @@
               I've listed here:
             </p>
             <p></p>
-            <table class="table table-striped" id="societiesTable">
+            <table class="table table-striped">
               <thead>
                 <thead></thead>
               </thead>
@@ -204,13 +200,13 @@
                 href="https://en.wikipedia.org/wiki/Extended_Kalman_filter"
               >Extended Kalman filter</a> which estimates
               vehicle longitudinal velocity by utilising an accurate tire physics model and various other wheel speed data.
+              Below, I've included several graphs showing actual vehicle velocity vs velocity calculated by my EKF to demonstrate 
+              how it converges on the real value with more accuracy over time.
             </p>
-
             <LightBoxComponent />
-
             <p>
               The majority of this work was completed using
-              <strong>C/C++</strong>, and by implementing the system in
+              <strong>C/C++</strong>. By implementing the system in
               <a
                 href="http://www.speed-dreams.org/"
               >Speed Dreams 2</a>, a driving simulator featuring realistic
@@ -252,7 +248,6 @@
               As well as organize lessons we also coordinated several events to raise awareness of our work, each of which attracted over 200 people. 
             </p>
             <!-- put in oven picture -->
-            <img></img>
           </div>
           <MoreLessComponent />
         </div>
@@ -303,22 +298,21 @@
 $(document).ready(function() {
   function resizeConfigure() {
     //on smaller screens...
-    console.log($(window).width());
     if ($(window).width() <= 976) {
-      $("#topSideBar").removeClass("hidden");
+      // show navbar on the top of the page
+      $("#top-sidebar").removeClass("hidden");
+      // hide button used to open sidebar
       $("#menu-open").addClass("hidden");
-      //always close sidebar after resizing
-      $("#app").removeClass("toggled");
     }
     //on larger screens...
     else {
-      $("#topSideBar").addClass("hidden");
+      // hide navbar on the top of the page
+      $("#top-sidebar").addClass("hidden");
+      // show button used to open sidebar
       $("#menu-open").removeClass("hidden");
-      //always close sidebar after resizing
-      $("#app").removeClass("toggled");
-      $("#menu-close").fadeOut("slow");
-      $("#menu-open").fadeIn("slow");
     }
+    //always close sidebar after resizing
+    $("#app").removeClass("toggled");
   }
 
   //add/remove sidebar to the top of page for small screen sizes
