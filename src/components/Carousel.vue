@@ -70,11 +70,10 @@ export default {
   right: 0;
   bottom: 0;
   padding: 0;
+  z-index: 2; /* used to stop carousel caption being shown infront of sidebar */
 }
 .carousel-caption p {
   margin: 10px 5px;
   font-weight: bold;
 }
-
-
 </style>

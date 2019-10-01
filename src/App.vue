@@ -59,13 +59,7 @@
         //set rules for hovering on/off content pointer
         $('#content-pointer').hover( function() { $(this).fadeTo(500, 1.0);  }, function() { $(this).fadeTo(500, 0.3); }  );
         
-        //add click event handler to sidebar toggle button
-        $("#menu-open").click(function(e) {
-            e.preventDefault();
-            $("#app").addClass("toggled");
-            $(this).fadeOut("slow");
-            $("#menu-close").fadeIn("slow");
-        });
+
     });
 
     export default {

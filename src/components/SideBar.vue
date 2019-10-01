@@ -8,6 +8,7 @@
     <a href="#prev-work" role="button" class="btn btn-light btn-block"><h3>Previous Work</h3></a>
     <a href="#uni-info" role="button" class="btn btn-light btn-block"><h3>University</h3></a>
     <a href="#hobbies" role="button" class="btn btn-light btn-block"><h3>Hobbies</h3></a>
+    <a href="#volunteering" role="button" class="btn btn-light btn-block"><h3>Volunteering</h3></a>
     <a href="#cv" role="button" class="btn btn-light btn-block"><h3>CV</h3></a>
     <a href="#contact-info" role="button" class="btn btn-light btn-block"><h3>Contact</h3></a>
 </div>
@@ -21,6 +22,14 @@
             $("#app").removeClass("toggled");
             $(this).fadeOut("slow");
             $("#menu-open").fadeIn("slow");
+        });
+
+        //add click event handler to sidebar toggle button
+        $("#menu-open").click(function(e) {
+            e.preventDefault();
+            $("#app").addClass("toggled");
+            $(this).fadeOut("slow");
+            $("#menu-close").fadeIn("slow");
         });
     });    
     export default {
@@ -55,7 +64,6 @@
     position: absolute; 
     width: 0px; 
     height: 0px; 
-   
 }
 #menu-close {
     position: relative;
