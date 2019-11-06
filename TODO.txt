@@ -1,1 +1,8 @@
-- on firefox, previous work icons are not centered properly. I imagine this is because of the hacky 1px method used to center them on other browsers. update to use flexbox properly.
+* on firefox, previous work icons are not centered properly. I imagine this is because of the hacky 1px method used to center them on other browsers. update to use flexbox properly.
+
+[] add dark theme button
+[] browser compatibility
+[] add codeacademy badges?
+[] add hackerwars badges?
+[] add scholarship news article
+

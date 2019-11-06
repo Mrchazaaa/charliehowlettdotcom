@@ -1,1 +1,1 @@
-source code for my website, currently at charliehowlett.com
+This site is currently live at charliehowlett.com
