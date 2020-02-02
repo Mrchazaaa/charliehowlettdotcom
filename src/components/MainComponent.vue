@@ -66,7 +66,6 @@
                so far competed in the following:</p>
             <table class="table table-striped" id="hackathonsTable">
               <thead>
-                <thead></thead>
               </thead>
               <tbody>
                 <tr>
@@ -142,34 +141,14 @@
                                {text: 'Design of Analysable Real-Time Systems', link:''},
                                {text: 'Machine Learning & Probabilistic Graphical Models', link:''}]}"
             />
-            <h3>Societies</h3>
-            <p>
-              During my time at University I took part in a number of student-run societies, some of which, 
-              I've listed here:
-            </p>
-            <p></p>
-            <table class="table table-striped">
-              <thead>
-                <thead></thead>
-              </thead>
-              <tbody>
-                <tr>
-                  <td scope="row">Cyber Security Society</td>
-                </tr>
-                <tr>
-                  <td scope="row">Dog Society</td>
-                </tr>
-                <tr>
-                  <td scope="row">Game Development Society</td>
-                </tr>
-                <tr>
-                  <td scope="row">Movie Society</td>
-                </tr>
-                <tr>
-                  <td scope="row">Band Society</td>
-                </tr>
-              </tbody>
-            </table>
+            <ToggleListComponent
+              :content=" {title:'Societies', 
+                        items:[{text: 'Cyber Security Society', link:''}, 
+                               {text: 'Dog Society', link:''}, 
+                               {text: 'Game Development Society', link:''},
+                               {text: 'Movie Society', link:''},
+                               {text: 'Band Society', link:''}]}"
+            />
             <h3>Dissertation</h3>
             <p>
               In the academic community surrounding automotive-safety, it is vital to incorporate

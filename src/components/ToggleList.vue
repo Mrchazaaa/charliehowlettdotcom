@@ -7,7 +7,7 @@
     <button
       v-if="content.title == 'Nav'"
       type="button"
-      class="toggle-list btn btn-secondary btn-block"
+      class="toggle-list btn btn-light btn-lg btn-block"
     >{{content.title}}</button>
     <ul class="list-group">
       <li class="list-group-item" v-for="entries in content.items" :key="entries.text">
@@ -70,7 +70,8 @@ export default {
   font-weight: bold;
 }
 #top-sidebar button {
-  color: white !important;
+  /* color: white !important; */
+  background-color: #EAEAEA;
 }
 #top-sidebar li {
   padding: 0 !important;
