@@ -9,6 +9,7 @@
 [] add hackerwars badges?
 [] add scholarship news article
 [] instead of More/Less buttons, make sections titles the buttons
+[] make mobile version take up full width
 
 [x] migrate to Heroku? Redirect charliehowlett.com dns? (actually changed to netify cdn hosting)
 [] live updates of codewars badges through scraping?

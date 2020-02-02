@@ -32,7 +32,13 @@
           <!--Previous work-->
           <div class="group-item" id="prev-work">
             <h2>Previous Work</h2>
-            <WorkTableComponent />
+            <!-- <WorkTableComponent /> -->
+            <IconGridComponent :content="{width: 4, 
+                                  items: [{text: '', image: require('@/assets/go.png'), link: ''},
+                                          {text: '', image: require('@/assets/universe-city.png'), link: ''},
+                                          {text: '', image: require('@/assets/github.svg'), link: ''},
+                                          {text: '', image: require('@/assets/PROM.jpg'), link: ''},
+                                          {text: '', image: require('@/assets/vim.png'), link: ''}]}" />
             <h3>Micro-controller Powered Music!</h3>
             <p>
               As part of our PROM Keypad Lock project (a piece of coursework for the 
@@ -245,8 +251,15 @@
       </div>
     </div>
     <hr />
+
+    <IconGridComponent :content="{width: 3,
+                          items: [{text: '', image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
+                                  {text: '', image: require('@/assets/linkedin.svg'), link: 'https://www.linkedin.com/in/charles-howlett-383b26155/'},
+                                  {text: '', image: require('@/assets/facebook.svg'), link: 'https://www.facebook.com/charlie.howlett.1'},
+                                  {text: '', image: require('@/assets/email.svg'), link: 'mailto:charlie.howlett@live.co.uk'}]}" />
+
     <!--Contact Information-->
-    <div class="row" id="contact-info">
+    <!-- <div class="row" id="contact-info">
       <div class="hidden-xs col-md-2"></div>
       <div class="col-6 col-md-2 contact">
         <a href="https://github.com/Mrchazaaa/">
@@ -269,7 +282,7 @@
         </a>
       </div>
       <div class="hidden-xs col-md-2"></div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -306,6 +319,7 @@ import ToggleListComponent from "./ToggleList.vue";
 import MoreLessComponent from "./MoreLess.vue";
 import WorkTableComponent from "./WorkTable.vue";
 import LightBoxComponent from "./LightBox.vue";
+import IconGridComponent from "./IconGrid.vue";
 
 export default {
   name: "MainContent",
@@ -314,7 +328,8 @@ export default {
     ToggleListComponent,
     MoreLessComponent,
     WorkTableComponent,
-    LightBoxComponent
+    LightBoxComponent,
+    IconGridComponent
   }
 };
 </script>
@@ -327,6 +342,25 @@ export default {
     max-width: 1140px !important;
   }
 }
+/* #work-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+#work-items div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+}
+#work-items img {
+  height: 100px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+#work-items img:hover {
+  height: 120px;
+  transition: 0.5s;
+} */
 #page-container {
   max-width: 1600px;
   padding-top: 20px;
