@@ -1,8 +1,19 @@
 * on firefox, previous work icons are not centered properly. I imagine this is because of the hacky 1px method used to center them on other browsers. update to use flexbox properly.
 
+[] move scss code to external files
+[] refactor code for cleanliness
+
 [] add dark theme button
 [] browser compatibility
 [] add codeacademy badges?
 [] add hackerwars badges?
 [] add scholarship news article
 
+[] migrate to Heroku? Redirect charliehowlett.com dns?
+[] live updates of codewars badges through scraping?
+
+[] add last tracking of last project that I worked on (using github api to find last accessed repo)
+
+[] make title page text chunkier and bigger for impace. Perhaps also use a nice looking font
+
+[] update work done !!!
