@@ -38,7 +38,14 @@
                                           {text: '', image: require('@/assets/universe-city.png'), link: ''},
                                           {text: '', image: require('@/assets/github.svg'), link: ''},
                                           {text: '', image: require('@/assets/PROM.jpg'), link: ''},
+                                          {text: '', image: require('@/assets/charlierobot.png'), link: ''},
                                           {text: '', image: require('@/assets/vim.png'), link: ''}]}" />
+
+            <IconGridComponent :content="{width: 6, 
+                                  items: [{text: '', image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
+                                          {text: '', image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
+                                          {text: '', image: require('@/assets/IET-bursary.jpg'), link: ''}]}" />
+
             <h3>Micro-controller Powered Music!</h3>
             <p>
               As part of our PROM Keypad Lock project (a piece of coursework for the 
