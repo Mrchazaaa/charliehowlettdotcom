@@ -1,8 +1,8 @@
 <template>
   <div id="icon-grid">
-    <div :class="'col-6 col-md-' + content.width" v-for="entries in content.items" :key="entries.image" >
-      <a :href="entries.link">
-        <img :src="entries.image"/>
+    <div :class="'col-6 col-md-' + item.width" v-for="item in items" :key="item.image" >
+      <a :href="item.link">
+        <img :src="item.image"/>
       </a>
     </div>
   </div>
@@ -12,8 +12,8 @@
 export default {
   name: "IconGrid",
   props: {
-    content: {
-      type: Object,
+    items: {
+      type: Array,
       required: true
     }
   }

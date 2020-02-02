@@ -33,18 +33,16 @@
           <div class="group-item" id="prev-work">
             <h2>Previous Work</h2>
             <!-- <WorkTableComponent /> -->
-            <IconGridComponent :content="{width: 4, 
-                                  items: [{text: '', image: require('@/assets/go.png'), link: ''},
-                                          {text: '', image: require('@/assets/universe-city.png'), link: ''},
-                                          {text: '', image: require('@/assets/github.svg'), link: ''},
-                                          {text: '', image: require('@/assets/PROM.jpg'), link: ''},
-                                          {text: '', image: require('@/assets/charlierobot.png'), link: ''},
-                                          {text: '', image: require('@/assets/vim.png'), link: ''}]}" />
+            <IconGridComponent :items="[{width: 4, text: '', image: require('@/assets/go.png'), link: ''},
+                                        {width: 4, text: '', image: require('@/assets/universe-city.png'), link: ''},
+                                        {width: 4, text: '', image: require('@/assets/github.svg'), link: ''},
+                                        {width: 4, text: '', image: require('@/assets/PROM.jpg'), link: ''},
+                                        {width: 4, text: '', image: require('@/assets/charlierobot.png'), link: ''},
+                                        {width: 4, text: '', image: require('@/assets/vim.png'), link: ''}]" />
 
-            <IconGridComponent :content="{width: 6, 
-                                  items: [{text: '', image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
-                                          {text: '', image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
-                                          {text: '', image: require('@/assets/IET-bursary.jpg'), link: ''}]}" />
+            <IconGridComponent :items="[{width: 12, text: '', image: require('@/assets/IET-bursary.jpg'), link: ''},
+                                        {width: 6, text: '', image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
+                                        {width: 6, text: '', image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'}]" />
 
             <h3>Micro-controller Powered Music!</h3>
             <p>
@@ -259,11 +257,10 @@
     </div>
     <hr />
 
-    <IconGridComponent :content="{width: 3,
-                          items: [{text: '', image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
-                                  {text: '', image: require('@/assets/linkedin.svg'), link: 'https://www.linkedin.com/in/charles-howlett-383b26155/'},
-                                  {text: '', image: require('@/assets/facebook.svg'), link: 'https://www.facebook.com/charlie.howlett.1'},
-                                  {text: '', image: require('@/assets/email.svg'), link: 'mailto:charlie.howlett@live.co.uk'}]}" />
+    <IconGridComponent :items="[{width: 3, text: '', image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
+                                {width: 3, text: '', image: require('@/assets/linkedin.svg'), link: 'https://www.linkedin.com/in/charles-howlett-383b26155/'},
+                                {width: 3, text: '', image: require('@/assets/facebook.svg'), link: 'https://www.facebook.com/charlie.howlett.1'},
+                                {width: 3, text: '', image: require('@/assets/email.svg'), link: 'mailto:charlie.howlett@live.co.uk'}]" />
 
     <!--Contact Information-->
     <!-- <div class="row" id="contact-info">

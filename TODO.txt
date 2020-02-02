@@ -3,6 +3,7 @@ Done:
 [x] add codewars badges?
 [x] add scholarship news article (they didnt upload your name in the article :) so make a little award poster about being an awardee)
 [x] migrate to Heroku? Redirect charliehowlett.com dns? (actually changed to netify cdn hosting)
+[x] give list items chevron rotation animation on click
 
 In progress:
 [] Redesign website for minamilism
@@ -18,6 +19,7 @@ Todo:
 [] make mobile version take up full width
 [] browser compatibility
 [] instead of More/Less buttons, make sections titles the buttons
+[] make cloud speed relative to browser width
 
 Maybe:
 [] add last tracking of last project that I worked on (using github api to find last accessed repo)

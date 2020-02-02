@@ -30,12 +30,10 @@ $(document).ready(function() {
     .next()
     .hide();
   $(".toggle-list").on("click", function(event) {
-    if ($(this).find("span").hasClass("glyphicon-chevron-right")) {
-      $(this).find("span").removeClass("glyphicon-chevron-right");
-      $(this).find("span").addClass("glyphicon-chevron-down");
+    if ($(this).find("span").css( "transform" ) == 'none' ){
+      $(this).find("span").css("transform","rotate(90deg)");
     } else {
-      $(this).find("span").removeClass("glyphicon-chevron-down");
-      $(this).find("span").addClass("glyphicon-chevron-right");
+      $(this).find("span").css("transform","" );
     }
     
     $(this)
@@ -58,6 +56,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+span {
+  transition: 0.5s;
+}
 .glyphicon {
   float:right
 }
