@@ -1,25 +1,24 @@
-* on firefox, previous work icons are not centered properly. I imagine this is because of the hacky 1px method used to center them on other browsers. update to use flexbox properly.
+Done:
+[x] add codeacademy badges?
+[x] add codewars badges?
+[x] add scholarship news article (they didnt upload your name in the article :) so make a little award poster about being an awardee)
+[x] migrate to Heroku? Redirect charliehowlett.com dns? (actually changed to netify cdn hosting)
 
-[] move scss code to external files
+In progress:
+[] Redesign website for minamilism
 [] refactor code for cleanliness
 
-[] add dark theme button
-[] browser compatibility
-[] add codeacademy badges?
-[] add hackerwars badges?
-[] add scholarship news article
-[] instead of More/Less buttons, make sections titles the buttons
-[] make mobile version take up full width
-
-[x] migrate to Heroku? Redirect charliehowlett.com dns? (actually changed to netify cdn hosting)
-[] live updates of codewars badges through scraping?
-
-[] add last tracking of last project that I worked on (using github api to find last accessed repo)
-
-[] make title page text chunkier and bigger for impace. Perhaps also use a nice looking font
-
-[] update work done and CV !!!
-
-Potential branches:
-[] Redesign website for minamilism
+Todo:
 [] Redesign color schemes
+[] update work done and CV !!!
+[] make title page text chunkier and bigger for impact. Perhaps also use a nice looking font
+[] figure out why on firefox, previous work icons are not centered properly. I imagine this is because of the hacky 1px method used to center them on other browsers. update to use flexbox properly.
+[] move to scss and refactor to external style files
+[] add dark theme button
+[] make mobile version take up full width
+[] browser compatibility
+[] instead of More/Less buttons, make sections titles the buttons
+
+Maybe:
+[] add last tracking of last project that I worked on (using github api to find last accessed repo)
+[] live updates of codewars badges through scraping?
