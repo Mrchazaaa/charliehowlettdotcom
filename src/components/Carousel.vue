@@ -16,13 +16,13 @@
       <div class="carousel-item">
         <img class="d-block w-100" src="../assets/raleigh.jpg" alt="Second slide" />
         <div class="carousel-caption d-none d-md-block">
-          <p>Giving one-on-one entrepeneur education to villagers in rural Tanzania</p>
+          <p>Giving one-on-one entrepeneurship education to villagers in rural Tanzania</p>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="../assets/band-leg.jpg" alt="Third slide" />
         <div class="carousel-caption d-none d-md-block">
-          <p>Me and my friends</p>
+          <p>Band practice</p>
         </div>
       </div>
     </div>

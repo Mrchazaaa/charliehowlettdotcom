@@ -4,7 +4,7 @@
       <div>
         <div>
           <div>
-            <img src="../assets/go.jpg" />
+            <img src="../assets/go.png" />
           </div>
         </div>
         <div>
