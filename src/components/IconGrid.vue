@@ -1,6 +1,8 @@
 <template>
-  <div id="icon-grid">
-    <div :class="'col-6 col-md-' + item.width" v-for="item in items" :key="item.image" >
+  <div id="icon-grid" :style="'justify-content: ' + justify + ';'">
+    <div v-for="item in items" 
+        :class="!item.width ? '' : 'col-6 col-md-' + item.width" 
+        :key="item.image" >
       <a :href="item.link">
         <img :src="item.image"/>
       </a>
@@ -15,6 +17,9 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+    justify: {
+      type: String
     }
   }
 };
@@ -22,6 +27,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 #icon-grid {
   display: flex;
   flex-wrap: wrap;
@@ -32,6 +38,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: pu
 }
 #icon-grid img {
   height: 100px;
@@ -39,6 +46,11 @@ export default {
   margin-bottom: 10px;
   border-radius: 10px;
   transition: 0.5s;
+}
+#icon-grid a {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 #icon-grid img:hover {
   margin-top: 0px;

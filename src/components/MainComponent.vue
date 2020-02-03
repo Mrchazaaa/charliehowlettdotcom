@@ -33,6 +33,8 @@
           <div class="group-item" id="prev-work">
             <h2>Previous Work</h2>
             <!-- <WorkTableComponent /> -->
+            <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game playing AIs, 
+              feel free to click on an icon to learn more!</p>
             <IconGridComponent :items="[{width: 4, text: '', image: require('@/assets/go.png'), link: ''},
                                         {width: 4, text: '', image: require('@/assets/universe-city.png'), link: ''},
                                         {width: 4, text: '', image: require('@/assets/github.svg'), link: ''},
@@ -40,16 +42,10 @@
                                         {width: 4, text: '', image: require('@/assets/charlierobot.png'), link: ''},
                                         {width: 4, text: '', image: require('@/assets/vim.png'), link: ''}]" />
 
-            <IconGridComponent :items="[{width: 12, text: '', image: require('@/assets/IET-bursary.jpg'), link: ''},
-                                        {width: 6, text: '', image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
-                                        {width: 6, text: '', image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'}]" />
-
             <h3>Micro-controller Powered Music!</h3>
             <p>
-              As part of our PROM Keypad Lock project (a piece of coursework for the 
-              University of York's Programming of Micro-Controllers module), we  
-              extended functionality via a piezoelectric buzzer, placed in a paper cup "megaphone" 
-              that we programmed to sing a few tunes! 
+              In addition to the electrical system we designed for the University of York's Programming of Micro-Controllers module, 
+              my classmates and I supplemented out work by adding singing capabilities via a piezoelectric buzzer!
             </p>
             <iframe
               width="100%"
@@ -59,6 +55,17 @@
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
+            <h2>Achievements</h2>
+            <p>As well as being a recipient of the Institute of Engineering's Horizons Bursary, 
+              I'm also proud of the voluminous collection of badges I've earnt through self-teaching coding resources!
+              Click on any of the icons below to be taken to my profile on the respective sites!</p>
+
+            <IconGridComponent :justify="'space-evenly'"
+             :items="[{width: 4, text: '', image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
+                      {width: 6, text: '', image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'}]" />
+
+            <IconGridComponent :justify="'center'" 
+             :items="[{width: 10, text: '', image: require('@/assets/IET-bursary.jpg'), link: ''}]" />
           </div>
           <MoreLessComponent />
           <!--Hobbies-->
@@ -390,6 +397,9 @@ h3 {
 }
 .group-item > p {
   text-align: justify;
+}
+#iet-banner {
+  width: 100%;
 }
 .group-item {
   font-size: 14px;
