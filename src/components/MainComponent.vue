@@ -47,14 +47,14 @@
               In addition to the electrical system we designed for the University of York's Programming of Micro-Controllers module, 
               my classmates and I supplemented out work by adding singing capabilities via a piezoelectric buzzer!
             </p>
-            <iframe
-              width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/nL3srjRjIdc"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <div class='embed-container'>
+              <iframe src='https://www.youtube.com/embed/nL3srjRjIdc?rel=0' 
+                frameborder='0' 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+
             <h2>Achievements</h2>
             <p>As well as being a recipient of the Institute of Engineering's Horizons Bursary, 
               I'm also proud of the voluminous collection of badges I've earnt through self-teaching coding resources!
@@ -477,5 +477,19 @@ table {
 }
 #cv a {
   padding: 0.75rem 1.5rem;
+}
+.embed-container { 
+  position: relative; 
+  padding-bottom: 56.25%; 
+  height: 0; 
+  overflow: hidden; 
+  max-width: 100%; 
+} 
+.embed-container iframe, .embed-container object, .embed-container embed { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
 }
 </style>
