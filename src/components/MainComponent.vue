@@ -47,13 +47,13 @@
               In addition to the electrical system we designed for the University of York's Programming of Micro-Controllers module, 
               my classmates and I supplemented out work by adding singing capabilities via a piezoelectric buzzer!
             </p>
+
             <div class='embed-container'>
               <iframe src='https://www.youtube.com/embed/nL3srjRjIdc?rel=0' 
                 frameborder='0' 
                 allowfullscreen>
               </iframe>
             </div>
-
 
             <h2>Achievements</h2>
             <p>As well as being a recipient of the Institute of Engineering's Horizons Bursary, 
@@ -119,13 +119,6 @@
             <p>
               I graduated from the <strong>University of York</strong> with a BEng/BSc in Computer Science in 2019, having 
               recieved the University's <strong>York Futures Scholarship</strong>. 
-              Here I list the modules I've studied in attaining this acceditation, as well as some
-              information about the societies I participated in whilst at York and some details about my dissertation.
-            </p>
-            <h3>Modules</h3>
-            <p>
-              Many of the modules during my 1st and 2nd year were compulsory. However, towards my final year I
-              chose to mainly study modules related to the theory and implementation of real-time and embedded systems.
             </p>
             <ToggleListComponent
               :content=" {title:'First Year Modules', 
@@ -169,45 +162,23 @@
             />
             <h3>Dissertation</h3>
             <p>
-              In the academic community surrounding automotive-safety, it is vital to incorporate
-              the behaviour of widespread software control systems (such as Adaptive Cruise Control,
-              Traction Control Systems, etc) into models used in conducting accurate research. However,
-              source code for popular commercial implementations of these systems is highly guarded by
-              manufacturers and thus it is very difficult for researchers to develop models that accurately
-              reflect the systems used in the real world.
-            </p>
-            <p>
               The topic of my dissertation focused around a self-defined project entitled:
               <strong>
                 "Construction of
                 Automotive Control Software"
-              </strong>, I produced an anti-lock braking system (ABS) which
-              attempted to mimic the timing characteristics of commercial ABS products, by implementing an older ABS algorithm
-              defined in a paper published by Bosch. However, this paper did not completely describe the
-              system's construction (particularly in determining vehicle speed in the ABS Electronic Control Unit)
+              </strong>, I produced an Anti-Lock Braking System (ABS) which
+              attempted to mimic the timing characteristics of commercial ABS products, by implementing an older algorithm
+              as defined in a paper published by <strong>Bosch</strong>. However, this paper did not completely describe the
+              system's construction (particularly determining vehicle speed within the ABS Electronic Control Unit)
               and so work from several other research areas were combined to produce a working Anti-lock Braking
-              System that, atleast to some degree, reflects those used in the real world.
-            </p>
-            <p>
-              One of the biggest challenges faced in producing this work was determining vehicle longitudinal velocity whilst only
-              being able to discern circumferential speeds of individual wheels (these values would not directly
-              reflect the actual velocity of the vehicle, under emergency braking conditions, due to large braking
-              forces locking up the wheels). To solve this I implemented an
-              <a
-                href="https://en.wikipedia.org/wiki/Extended_Kalman_filter"
-              >Extended Kalman filter</a> which estimates
-              vehicle longitudinal velocity by utilising an accurate tire physics model and various other wheel speed data.
-              Below, I've included several graphs showing actual vehicle velocity vs velocity calculated by my EKF to demonstrate 
-              how it converges on the real value with more accuracy over time.
+              System that reflects those used in the real world.
             </p>
             <LightBoxComponent />
             <p>
               The majority of this work was completed using
-              <strong>C/C++</strong>. By implementing the system in
-              <a
-                href="http://www.speed-dreams.org/"
-              >Speed Dreams 2</a>, a driving simulator featuring realistic
-              tire physics and individual wheel braking, functionality of the code was verified.
+              <strong>C/C++</strong>. An open-source driving simulator 
+              (<a href="http://www.speed-dreams.org/">Speed Dreams 2</a>), featuring realistic
+              tire physics and individual wheel braking, was used in verifying code functionality.
             </p>
           </div>
           <MoreLessComponent />

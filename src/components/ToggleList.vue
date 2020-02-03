@@ -96,5 +96,6 @@ li {
 }
 p {
   margin-bottom: 0;
+  font-weight: bold;
 }
 </style>
