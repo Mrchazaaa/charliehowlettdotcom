@@ -224,228 +224,203 @@
     </div>
     <hr />
 
-    <IconGridComponent :items="[{width: 3, text: '', image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
+    <!-- <IconGridComponent :items="[{width: 3, text: '', image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
                                 {width: 3, text: '', image: require('@/assets/linkedin.svg'), link: 'https://www.linkedin.com/in/charles-howlett-383b26155/'},
                                 {width: 3, text: '', image: require('@/assets/facebook.svg'), link: 'https://www.facebook.com/charlie.howlett.1'},
-                                {width: 3, text: '', image: require('@/assets/email.svg'), link: 'mailto:charlie.howlett@live.co.uk'}]" />
+                                {width: 3, text: '', image: require('@/assets/email.svg'), link: 'mailto:charlie.howlett@live.co.uk'}]" /> -->
 
     <!--Contact Information-->
-    <!-- <div class="row" id="contact-info">
-      <div class="hidden-xs col-md-2"></div>
-      <div class="col-6 col-md-2 contact">
+    <div class="row" id="contact-info">
+      <div class="col-3 contact">
         <a href="https://github.com/Mrchazaaa/">
           <img src="../assets/github.svg" />
         </a>
       </div>
-      <div class="col-6 col-md-2 contact">
+      <div class="col-3 contact">
         <a href="https://www.linkedin.com/in/charles-howlett-383b26155/">
           <img src="../assets/linkedin.svg" />
         </a>
       </div>
-      <div class="col-6 col-md-2 contact">
+      <div class="col-3 contact">
         <a href="https://www.facebook.com/charlie.howlett.1">
           <img src="../assets/facebook.svg" />
         </a>
       </div>
-      <div class="col-6 col-md-2 contact">
+      <div class="col-3 contact">
         <a href="mailto:charlie.howlett@live.co.uk">
           <img src="../assets/email.svg" />
         </a>
       </div>
-      <div class="hidden-xs col-md-2"></div>
-    </div> -->
+    </div>
   </div>
 </template>
 
 <script>
-$(document).ready(function() {
-  function resizeConfigure() {
-    //on smaller screens...
-    if ($(window).width() <= 976) {
-      // hide button used to open sidebar
-      $("#menu-open").addClass("hidden");
+  import CarouselComponent from "./Carousel.vue";
+  import ToggleListComponent from "./ToggleList.vue";
+  import MoreLessComponent from "./MoreLess.vue";
+  import WorkTableComponent from "./WorkTable.vue";
+  import LightBoxComponent from "./LightBox.vue";
+  import IconGridComponent from "./IconGrid.vue";
+
+  export default {
+    name: "MainContent",
+    components: {
+      CarouselComponent,
+      ToggleListComponent,
+      MoreLessComponent,
+      WorkTableComponent,
+      LightBoxComponent,
+      IconGridComponent
     }
-    //on larger screens...
-    else {
-      // show button used to open sidebar
-      $("#menu-open").removeClass("hidden");
-    }
-    //always close sidebar after resizing
-    $("#app").removeClass("toggled");
-  }
-
-  //add/remove sidebar to the top of page for small screen sizes
-  resizeConfigure();
-  $(window).resize(function() {
-    resizeConfigure();
-  });
-});
-
-import CarouselComponent from "./Carousel.vue";
-import ToggleListComponent from "./ToggleList.vue";
-import MoreLessComponent from "./MoreLess.vue";
-import WorkTableComponent from "./WorkTable.vue";
-import LightBoxComponent from "./LightBox.vue";
-import IconGridComponent from "./IconGrid.vue";
-
-export default {
-  name: "MainContent",
-  components: {
-    CarouselComponent,
-    ToggleListComponent,
-    MoreLessComponent,
-    WorkTableComponent,
-    LightBoxComponent,
-    IconGridComponent
-  }
-};
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* necessary setting jumbotron to correct width */
-@media (min-width: 1200px) {
-  #page-container {
-    max-width: 1140px !important;
+  /* necessary setting jumbotron to correct width */
+  @media (min-width: 1200px) {
+    #page-container {
+      max-width: 1140px !important;
+    }
   }
-}
-/* #work-items {
-  display: flex;
-  flex-wrap: wrap;
-}
-#work-items div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 160px;
-}
-#work-items img {
-  height: 100px;
-  border-radius: 10px;
-  transition: 0.5s;
-}
-#work-items img:hover {
-  height: 120px;
-  transition: 0.5s;
-} */
-#page-container {
-  max-width: 1600px;
-  padding-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.row {
-  margin: 0px;
-  padding: 0px;
-}
-h2 {
-  font-weight: bold;
-  font-size: 34px;
-  margin-top: 0;
-  margin-bottom: 6px;
-}
-h3 {
-  font-weight: bold;
-  font-size: 2.5rem;
-}
-/deep/ h4 {
-  font-size: 18px;
-}
-.group-item > p {
-  text-align: justify;
-}
-#iet-banner {
-  width: 100%;
-}
-.group-item {
-  font-size: 14px;
-  padding: 15px 15px 0 15px;
-  margin: 15px 7.5px 0px 7.5px;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-}
-#introduction {
-  padding: 5vh 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-#introduction > div:first-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
-  padding-left: 2vw;
-}
-#introduction p {
-  vertical-align: middle;
-  font-size: calc(14px + 0.8vw);
-  text-align: center;
-}
-#introduction img {
-  display: flex;
-  flex-direction: column;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-#portrait {
-  border-radius: 50%;
-  width: 90%;
-}
-#group-content {
-  flex-direction: column;
-  width: 100%;
-}
-#group-content div[class*="col-"] {
-  padding: 0px;
-}
-thead {
-  cursor: pointer;
-}
-table {
-  margin: 0 0 10px 0;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  font-weight: bold;
-}
-/*use flex to vertically center icons in previous work table*/
-.contact {
-  height: 40px;
-  margin-bottom: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.contact img {
-  height: 50px;
-  display: inline-block;
-}
-#contact-info {
-  margin-top: 45px;
-  margin-bottom: 35px;
-}
-#cv {
-  padding: 0px;
-  border: none;
-  margin: 15px 0px;
-}
-#cv a {
-  padding: 0.75rem 1.5rem;
-}
-.embed-container { 
-  position: relative; 
-  padding-bottom: 56.25%; 
-  height: 0; 
-  overflow: hidden; 
-  max-width: 100%; 
-} 
-.embed-container iframe, .embed-container object, .embed-container embed { 
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-}
+  /* #work-items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #work-items div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+  }
+  #work-items img {
+    height: 100px;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+  #work-items img:hover {
+    height: 120px;
+    transition: 0.5s;
+  } */
+  #page-container {
+    max-width: 1600px;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .row {
+    margin: 0px;
+    padding: 0px;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 34px;
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+  /deep/ h4 {
+    font-size: 18px;
+  }
+  .group-item > p {
+    text-align: justify;
+  }
+  #iet-banner {
+    width: 100%;
+  }
+  .group-item {
+    font-size: 14px;
+    padding: 15px 15px 0 15px;
+    margin: 15px 7.5px 0px 7.5px;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+  }
+  #introduction {
+    padding: 5vh 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #introduction > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding-left: 2vw;
+  }
+  #introduction p {
+    vertical-align: middle;
+    font-size: calc(14px + 0.8vw);
+    text-align: center;
+  }
+  #introduction img {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #portrait {
+    border-radius: 50%;
+    width: 90%;
+  }
+  #group-content {
+    flex-direction: column;
+    width: 100%;
+  }
+  #group-content div[class*="col-"] {
+    padding: 0px;
+  }
+  thead {
+    cursor: pointer;
+  }
+  table {
+    margin: 0 0 10px 0;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  /*use flex to vertically center icons in previous work table*/
+  .contact {
+    height: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contact img {
+    height: 50px;
+    display: inline-block;
+  }
+  #contact-info {
+    margin-top: 45px;
+    margin-bottom: 35px;
+  }
+  #cv {
+    padding: 0px;
+    border: none;
+    margin: 15px 0px;
+  }
+  #cv a {
+    padding: 0.75rem 1.5rem;
+  }
+  .embed-container { 
+    position: relative; 
+    padding-bottom: 56.25%; 
+    height: 0; 
+    overflow: hidden; 
+    max-width: 100%; 
+  } 
+  .embed-container iframe, .embed-container object, .embed-container embed { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+  }
 </style>
