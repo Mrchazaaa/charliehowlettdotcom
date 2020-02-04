@@ -94,11 +94,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@media screen and (max-width: 767px) {
-  .work-table img {
-    display: none;
-  }
-}
 h4 {
   font-weight: bold;
 }
