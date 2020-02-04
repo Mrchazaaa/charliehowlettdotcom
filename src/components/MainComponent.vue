@@ -1,5 +1,5 @@
 <template>
-  <div id="page-container" class="container">
+  <div id="page-container">
     <!--Introduction-->
     <div class="jumbotron row well hidden-sm hidden-xs" id="introduction">
       <div class="col-12 col-md-7">
@@ -15,20 +15,9 @@
       </div>
     </div>
     <hr class="hidden-sm hidden-xs" />
-    <div id="group-content" class="container">
+    <div id="group-content">
       <div class="row">
         <div class="col-12 col-lg-6">
-          <!--Navbar at the top of the page for smaller screens-->
-          <ToggleListComponent
-            id="top-sidebar"
-            :content="{title:'Nav', 
-                items:[{text:'Top', link:'#sketch'},
-                       {text:'Previous Work', link:'#prev-work'},
-                       {text:'University', link:'#uni-info'},
-                       {text:'Hobbies', link:'#hobbies'},
-                       {text:'CV', link:'#cv'},
-                       {text:'Contact', link:'#contact-info'}]}"
-          />
           <!--Previous work-->
           <div class="group-item" id="prev-work">
             <h2>Previous Work</h2>
@@ -273,15 +262,11 @@ $(document).ready(function() {
   function resizeConfigure() {
     //on smaller screens...
     if ($(window).width() <= 976) {
-      // show navbar on the top of the page
-      $("#top-sidebar").removeClass("hidden");
       // hide button used to open sidebar
       $("#menu-open").addClass("hidden");
     }
     //on larger screens...
     else {
-      // hide navbar on the top of the page
-      $("#top-sidebar").addClass("hidden");
       // show button used to open sidebar
       $("#menu-open").removeClass("hidden");
     }
@@ -320,7 +305,7 @@ export default {
 <style scoped>
 /* necessary setting jumbotron to correct width */
 @media (min-width: 1200px) {
-  .container {
+  #page-container {
     max-width: 1140px !important;
   }
 }

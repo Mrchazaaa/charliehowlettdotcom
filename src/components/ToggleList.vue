@@ -62,22 +62,6 @@ span {
 .glyphicon {
   float:right
 }
-#top-sidebar button,
-#top-sidebar a {
-  padding: 10px 15px;
-  font-size: 18px;
-  margin: 0 !important;
-  text-align: center !important;
-  font-weight: bold;
-}
-#top-sidebar button {
-  /* color: white !important; */
-  background-color: #EAEAEA;
-}
-#top-sidebar li {
-  padding: 0 !important;
-  margin: 0 7.5px;
-}
 .btn-light {
   text-align: left;
   padding: 8px !important;
