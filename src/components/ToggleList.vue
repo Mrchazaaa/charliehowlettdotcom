@@ -57,7 +57,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 .glyphicon {
   float:right
 }
@@ -71,7 +71,7 @@ export default {
 }
 #top-sidebar button {
   /* color: white !important; */
-  background-color: #EAEAEA;
+  background-color: $active-background;
 }
 #top-sidebar li {
   padding: 0 !important;
@@ -82,7 +82,7 @@ export default {
   padding: 8px !important;
   font-size: 14px;
   font-weight: bold;
-  background-color: #f2f2f2;
+  background-color: $list-primary-background;
 }
 .toggle-list-collection {
   margin-bottom: 10px;

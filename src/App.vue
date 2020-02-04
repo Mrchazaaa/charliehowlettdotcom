@@ -79,7 +79,7 @@
     }
 </script>
 
-<style>
+<style lang="scss">
 body, html {
     margin:0; 
     padding:0;
@@ -113,7 +113,7 @@ h1 {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #363635;
+    color: $primary-text;
 }
 #sketch {
     margin: 0; 
