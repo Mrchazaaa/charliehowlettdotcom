@@ -38,7 +38,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang="scss">
 #sidebar-wrapper {
     z-index: 3;
     position: fixed;
@@ -46,7 +46,7 @@
     width: 0; /* start with sidebar closed */
     height: 100%;
     margin-left: -255px; /* 250px + 5px to account for border */
-    background-color: #E9ECEF;
+    background-color: $active-background;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;

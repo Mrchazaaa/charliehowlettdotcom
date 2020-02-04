@@ -320,7 +320,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 /* necessary setting jumbotron to correct width */
 @media (min-width: 1200px) {
   .container {
@@ -421,6 +421,7 @@ table {
 #contact-info {
   margin-top: 45px;
   margin-bottom: 35px;
+
 }
 #cv {
   padding: 0px;

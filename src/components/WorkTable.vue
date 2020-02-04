@@ -93,7 +93,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 @media screen and (max-width: 767px) {
   .work-table img {
     display: none;
@@ -117,7 +117,7 @@ h4 {
 .work-table > a > div:hover {
   text-decoration: none !important;
   color: unset;
-  background-color: #eaeaea !important;
+  background-color: $active-background !important;
 }
 .work-table img {
   width: 100px;
@@ -132,7 +132,7 @@ h4 {
   border-top: none;
 }
 .work-table > a:nth-child(odd) > div {
-  background-color: #f9f9f9;
+  background-color: $list-primary-background;
 }
 .work-table > a > div > div:nth-child(1) {
   padding: 10px 8px 10px 8px;

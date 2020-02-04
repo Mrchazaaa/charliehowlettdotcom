@@ -1,3 +1,10 @@
 module.exports = {
-  baseUrl: './'
+  baseUrl: './',
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "@/externalcss/colors.scss";`
+      }
+    }
+  }
 }
