@@ -1,7 +1,7 @@
 <template>
   <div id="icon-grid" :style="'justify-content: ' + justify + ';'">
     <div v-for="item in items" 
-        :class="!item.width ? '' : 'col-6 col-md-' + item.width" 
+        :class="!item.width ? '' : 'col-' + item.width" 
         :key="item.image" >
       <a :href="item.link">
         <img :src="item.image"/>
