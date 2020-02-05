@@ -25,5 +25,6 @@ Todo:
 [] add buttons for options in cloud generation
 
 Maybe:
-[] add last tracking of last project that I worked on (using github api to find last accessed repo)
+[] add last tracking of last project that I worked on (using github api to find last accessed repo)?
 [] live updates of codewars badges through scraping?
+[] add loading screen for site startup?
