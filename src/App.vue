@@ -155,5 +155,4 @@ h1 {
 #page-content-wrapper {
     width: 100%;
 }
-
 </style>

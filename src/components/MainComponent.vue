@@ -53,8 +53,7 @@
              :items="[{width: 4, text: '', image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
                       {width: 6, text: '', image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'}]" />
 
-            <IconGridComponent :justify="'center'" 
-             :items="[{width: 10, text: '', image: require('@/assets/IET-bursary.jpg'), link: ''}]" />
+            <img id="iet-banner" :src="require('@/assets/IET-bursary.jpg')">
           </div>
           <MoreLessComponent />
           <!--Hobbies-->
@@ -279,9 +278,10 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   /* necessary setting jumbotron to correct width */
-  @media (min-width: 1200px) {
+  @media (min-width: $breakpoint-xl) {
     #page-container {
       max-width: 1140px !important;
+      background-color: red;
     }
   }
   /* #work-items {
@@ -422,5 +422,9 @@
     left: 0; 
     width: 100%; 
     height: 100%; 
+  }
+  #iet-banner {
+    width: 100%; 
+    margin-bottom: 10px; 
   }
 </style>
