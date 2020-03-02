@@ -3,8 +3,12 @@ $primary-text: #363635;
 
 $secondary-background: #E9ECEF;
 
-
 $table-primary-background: #E1E1E1;
 $table-secondary-background: #F9F9F9;
 
-// $list-
+// This file is used to define the SASS size variables used to define breakpoints throughout the site.
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
