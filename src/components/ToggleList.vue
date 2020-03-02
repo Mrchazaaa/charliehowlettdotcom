@@ -30,12 +30,10 @@ $(document).ready(function() {
     .next()
     .hide();
   $(".toggle-list").on("click", function(event) {
-    if ($(this).find("span").hasClass("glyphicon-chevron-right")) {
-      $(this).find("span").removeClass("glyphicon-chevron-right");
-      $(this).find("span").addClass("glyphicon-chevron-down");
+    if ($(this).find("span").css( "transform" ) == 'none' ){
+      $(this).find("span").css("transform","rotate(90deg)");
     } else {
-      $(this).find("span").removeClass("glyphicon-chevron-down");
-      $(this).find("span").addClass("glyphicon-chevron-right");
+      $(this).find("span").css("transform","" );
     }
     
     $(this)
@@ -58,42 +56,30 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.glyphicon {
-  float:right
-}
-#top-sidebar button,
-#top-sidebar a {
-  padding: 10px 15px;
-  font-size: 18px;
-  margin: 0 !important;
-  text-align: center !important;
-  font-weight: bold;
-}
-#top-sidebar button {
-  /* color: white !important; */
-  background-color: $active-background;
-}
-#top-sidebar li {
-  padding: 0 !important;
-  margin: 0 7.5px;
-}
-.btn-light {
-  text-align: left;
-  padding: 8px !important;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: $list-primary-background;
-}
-.toggle-list-collection {
-  margin-bottom: 10px;
-}
-.toggle-list {
-  cursor: pointer;
-}
-li {
-  padding: 8px !important;
-}
-p {
-  margin-bottom: 0;
-}
+  span {
+    transition: 0.5s;
+  }
+  .glyphicon {
+    float:right
+  }
+  .btn-light {
+    text-align: left;
+    padding: 8px !important;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: $list-primary-background;
+  }
+  .toggle-list-collection {
+    margin-bottom: 10px;
+  }
+  .toggle-list {
+    cursor: pointer;
+  }
+  li {
+    padding: 8px !important;
+  }
+  p {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
 </style>

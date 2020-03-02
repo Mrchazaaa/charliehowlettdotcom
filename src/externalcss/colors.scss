@@ -1,10 +1,16 @@
 // This file is used to define the SASS color variables used throughout the site.
 $primary-text: #363635;
-
 $primary-background: #FFFFFF;
-
 $active-background: #EAEAEA;
 $list-primary-background: #F9F9F9;
 $list-secondary-background: #FFFFFF;
-
 $link-color: #0062CC;
+$table-primary-background: #E1E1E1;
+$table-secondary-background: #F9F9F9;
+
+// This file is used to define the SASS size variables used to define breakpoints throughout the site.
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
