@@ -4,7 +4,7 @@
       <div>
         <div>
           <div>
-            <img src="../assets/go.jpg" />
+            <img src="../assets/go.png" />
           </div>
         </div>
         <div>
@@ -94,54 +94,54 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@media screen and (max-width: 767px) {
-  .work-table img {
-    display: none;
+  // @media screen and (max-width: 767px) {
+  //   .work-table img {
+  //     display: none;
+  //   }
+  // }
+  h4 {
+    font-weight: bold;
   }
-}
-h4 {
-  font-weight: bold;
-}
-.work-table {
-  width: 100%;
-  text-decoration: unset;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.work-table > a,
-.work-table > a:active,
-.work-table > a:focus {
-  text-decoration: none !important;
-  color: unset;
-}
-.work-table > a > div:hover {
-  text-decoration: none !important;
-  color: unset;
-  background-color: $active-background !important;
-}
-.work-table img {
-  width: 100px;
-  height: 100px;
-}
-.work-table > a:nth-child(1) > div {
-  border-top: 1px solid #e3e3e3;
-}
-.work-table > a > div {
-  display: flex;
-  border: 1px solid #e3e3e3;
-  border-top: none;
-}
-.work-table > a:nth-child(odd) > div {
-  background-color: $list-primary-background;
-}
-.work-table > a > div > div:nth-child(1) {
-  padding: 10px 8px 10px 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.work-table > a > div > div:nth-child(2) {
-  padding: 10px 8px 0 8px;
-  flex: 1;
-}
+  .work-table {
+    width: 100%;
+    text-decoration: unset;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .work-table > a,
+  .work-table > a:active,
+  .work-table > a:focus {
+    text-decoration: none !important;
+    color: unset;
+  }
+  .work-table > a > div:hover {
+    text-decoration: none !important;
+    color: unset;
+    background-color: $active-background !important;
+  }
+  .work-table img {
+    width: 100px;
+    height: 100px;
+  }
+  .work-table > a:nth-child(1) > div {
+    border-top: 1px solid #e3e3e3;
+  }
+  .work-table > a > div {
+    display: flex;
+    border: 1px solid #e3e3e3;
+    border-top: none;
+  }
+  .work-table > a:nth-child(odd) > div {
+    background-color: $list-primary-background;
+  }
+  .work-table > a > div > div:nth-child(1) {
+    padding: 10px 8px 10px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .work-table > a > div > div:nth-child(2) {
+    padding: 10px 8px 0 8px;
+    flex: 1;
+  }
 </style>

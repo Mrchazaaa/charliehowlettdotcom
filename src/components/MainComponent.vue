@@ -1,5 +1,5 @@
 <template>
-  <div id="page-container" class="container">
+  <div id="page-container">
     <!--Introduction-->
     <div class="jumbotron row well hidden-sm hidden-xs" id="introduction">
       <div class="col-12 col-md-7">
@@ -15,39 +15,45 @@
       </div>
     </div>
     <hr class="hidden-sm hidden-xs" />
-    <div id="group-content" class="container">
+    <div id="group-content">
       <div class="row">
         <div class="col-12 col-lg-6">
-          <!--Navbar at the top of the page for smaller screens-->
-          <ToggleListComponent
-            id="top-sidebar"
-            :content="{title:'Nav', 
-                items:[{text:'Top', link:'#sketch'},
-                       {text:'Previous Work', link:'#prev-work'},
-                       {text:'University', link:'#uni-info'},
-                       {text:'Hobbies', link:'#hobbies'},
-                       {text:'CV', link:'#cv'},
-                       {text:'Contact', link:'#contact-info'}]}"
-          />
           <!--Previous work-->
           <div class="group-item" id="prev-work">
             <h2>Previous Work</h2>
-            <WorkTableComponent />
+            <!-- <WorkTableComponent /> -->
+            <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game playing AIs, 
+              feel free to click on an icon to learn more!</p>
+            <IconGridComponent :items="[{width: 4, text: '', image: require('@/assets/go.png'), link: ''},
+                                        {width: 4, text: '', image: require('@/assets/universe-city.png'), link: ''},
+                                        {width: 4, text: '', image: require('@/assets/github.svg'), link: ''},
+                                        {width: 4, text: '', image: require('@/assets/PROM.jpg'), link: ''},
+                                        {width: 4, text: '', image: require('@/assets/charlierobot.png'), link: ''},
+                                        {width: 4, text: '', image: require('@/assets/vim.png'), link: ''}]" />
+
             <h3>Micro-controller Powered Music!</h3>
             <p>
-              As part of our PROM Keypad Lock project (a piece of coursework for the 
-              University of York's Programming of Micro-Controllers module), we  
-              extended functionality via a piezoelectric buzzer, placed in a paper cup "megaphone" 
-              that we programmed to sing a few tunes! 
+              In addition to the electrical system we designed for the University of York's Programming of Micro-Controllers module, 
+              my classmates and I supplemented out work by adding singing capabilities via a piezoelectric buzzer!
             </p>
-            <iframe
-              width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/nL3srjRjIdc"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+
+            <div class='embed-container'>
+              <iframe src='https://www.youtube.com/embed/nL3srjRjIdc?rel=0' 
+                frameborder='0' 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <h2>Achievements</h2>
+            <p>As well as being a recipient of the Institute of Engineering's Horizons Bursary, 
+              I'm also proud of the voluminous collection of badges I've earnt through self-teaching coding resources!
+              Click on any of the icons below to be taken to my profile on the respective sites!</p>
+
+            <IconGridComponent :justify="'space-evenly'"
+             :items="[{width: 4, text: '', image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
+                      {width: 6, text: '', image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'}]" />
+
+            <img id="iet-banner" :src="require('@/assets/IET-bursary.jpg')">
           </div>
           <MoreLessComponent />
           <!--Hobbies-->
@@ -101,13 +107,6 @@
             <p>
               I graduated from the <strong>University of York</strong> with a BEng/BSc in Computer Science in 2019, having 
               recieved the University's <strong>York Futures Scholarship</strong>. 
-              Here I list the modules I've studied in attaining this acceditation, as well as some
-              information about the societies I participated in whilst at York and some details about my dissertation.
-            </p>
-            <h3>Modules</h3>
-            <p>
-              Many of the modules during my 1st and 2nd year were compulsory. However, towards my final year I
-              chose to mainly study modules related to the theory and implementation of real-time and embedded systems.
             </p>
             <ToggleListComponent
               :content=" {title:'First Year Modules', 
@@ -151,45 +150,23 @@
             />
             <h3>Dissertation</h3>
             <p>
-              In the academic community surrounding automotive-safety, it is vital to incorporate
-              the behaviour of widespread software control systems (such as Adaptive Cruise Control,
-              Traction Control Systems, etc) into models used in conducting accurate research. However,
-              source code for popular commercial implementations of these systems is highly guarded by
-              manufacturers and thus it is very difficult for researchers to develop models that accurately
-              reflect the systems used in the real world.
-            </p>
-            <p>
               The topic of my dissertation focused around a self-defined project entitled:
               <strong>
                 "Construction of
                 Automotive Control Software"
-              </strong>, I produced an anti-lock braking system (ABS) which
-              attempted to mimic the timing characteristics of commercial ABS products, by implementing an older ABS algorithm
-              defined in a paper published by Bosch. However, this paper did not completely describe the
-              system's construction (particularly in determining vehicle speed in the ABS Electronic Control Unit)
+              </strong>, I produced an Anti-Lock Braking System (ABS) which
+              attempted to mimic the timing characteristics of commercial ABS products, by implementing an older algorithm
+              as defined in a paper published by <strong>Bosch</strong>. However, this paper did not completely describe the
+              system's construction (particularly determining vehicle speed within the ABS Electronic Control Unit)
               and so work from several other research areas were combined to produce a working Anti-lock Braking
-              System that, atleast to some degree, reflects those used in the real world.
-            </p>
-            <p>
-              One of the biggest challenges faced in producing this work was determining vehicle longitudinal velocity whilst only
-              being able to discern circumferential speeds of individual wheels (these values would not directly
-              reflect the actual velocity of the vehicle, under emergency braking conditions, due to large braking
-              forces locking up the wheels). To solve this I implemented an
-              <a
-                href="https://en.wikipedia.org/wiki/Extended_Kalman_filter"
-              >Extended Kalman filter</a> which estimates
-              vehicle longitudinal velocity by utilising an accurate tire physics model and various other wheel speed data.
-              Below, I've included several graphs showing actual vehicle velocity vs velocity calculated by my EKF to demonstrate 
-              how it converges on the real value with more accuracy over time.
+              System that reflects those used in the real world.
             </p>
             <LightBoxComponent />
             <p>
               The majority of this work was completed using
-              <strong>C/C++</strong>. By implementing the system in
-              <a
-                href="http://www.speed-dreams.org/"
-              >Speed Dreams 2</a>, a driving simulator featuring realistic
-              tire physics and individual wheel braking, functionality of the code was verified.
+              <strong>C/C++</strong>. An open-source driving simulator 
+              (<a href="http://www.speed-dreams.org/">Speed Dreams 2</a>), featuring realistic
+              tire physics and individual wheel braking, was used in verifying code functionality.
             </p>
           </div>
           <MoreLessComponent />
@@ -245,190 +222,209 @@
       </div>
     </div>
     <hr />
+
+    <!-- <IconGridComponent :items="[{width: 3, text: '', image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
+                                {width: 3, text: '', image: require('@/assets/linkedin.svg'), link: 'https://www.linkedin.com/in/charles-howlett-383b26155/'},
+                                {width: 3, text: '', image: require('@/assets/facebook.svg'), link: 'https://www.facebook.com/charlie.howlett.1'},
+                                {width: 3, text: '', image: require('@/assets/email.svg'), link: 'mailto:charlie.howlett@live.co.uk'}]" /> -->
+
     <!--Contact Information-->
     <div class="row" id="contact-info">
-      <div class="hidden-xs col-md-2"></div>
-      <div class="col-6 col-md-2 contact">
+      <div class="col-3 contact">
         <a href="https://github.com/Mrchazaaa/">
           <img src="../assets/github.svg" />
         </a>
       </div>
-      <div class="col-6 col-md-2 contact">
+      <div class="col-3 contact">
         <a href="https://www.linkedin.com/in/charles-howlett-383b26155/">
           <img src="../assets/linkedin.svg" />
         </a>
       </div>
-      <div class="col-6 col-md-2 contact">
+      <div class="col-3 contact">
         <a href="https://www.facebook.com/charlie.howlett.1">
           <img src="../assets/facebook.svg" />
         </a>
       </div>
-      <div class="col-6 col-md-2 contact">
+      <div class="col-3 contact">
         <a href="mailto:charlie.howlett@live.co.uk">
           <img src="../assets/email.svg" />
         </a>
       </div>
-      <div class="hidden-xs col-md-2"></div>
     </div>
   </div>
 </template>
 
 <script>
-$(document).ready(function() {
-  function resizeConfigure() {
-    //on smaller screens...
-    if ($(window).width() <= 976) {
-      // show navbar on the top of the page
-      $("#top-sidebar").removeClass("hidden");
-      // hide button used to open sidebar
-      $("#menu-open").addClass("hidden");
+  import CarouselComponent from "./Carousel.vue";
+  import ToggleListComponent from "./ToggleList.vue";
+  import MoreLessComponent from "./MoreLess.vue";
+  import WorkTableComponent from "./WorkTable.vue";
+  import LightBoxComponent from "./LightBox.vue";
+  import IconGridComponent from "./IconGrid.vue";
+
+  export default {
+    name: "MainContent",
+    components: {
+      CarouselComponent,
+      ToggleListComponent,
+      MoreLessComponent,
+      WorkTableComponent,
+      LightBoxComponent,
+      IconGridComponent
     }
-    //on larger screens...
-    else {
-      // hide navbar on the top of the page
-      $("#top-sidebar").addClass("hidden");
-      // show button used to open sidebar
-      $("#menu-open").removeClass("hidden");
-    }
-    //always close sidebar after resizing
-    $("#app").removeClass("toggled");
-  }
-
-  //add/remove sidebar to the top of page for small screen sizes
-  resizeConfigure();
-  $(window).resize(function() {
-    resizeConfigure();
-  });
-});
-
-import CarouselComponent from "./Carousel.vue";
-import ToggleListComponent from "./ToggleList.vue";
-import MoreLessComponent from "./MoreLess.vue";
-import WorkTableComponent from "./WorkTable.vue";
-import LightBoxComponent from "./LightBox.vue";
-
-export default {
-  name: "MainContent",
-  components: {
-    CarouselComponent,
-    ToggleListComponent,
-    MoreLessComponent,
-    WorkTableComponent,
-    LightBoxComponent
-  }
-};
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-/* necessary setting jumbotron to correct width */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px !important;
+  /* necessary setting jumbotron to correct width */
+  @media (min-width: $breakpoint-xl) {
+    #page-container {
+      max-width: 1140px !important;
+      background-color: red;
+    }
   }
-}
-#page-container {
-  max-width: 1600px;
-  padding-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.row {
-  margin: 0px;
-  padding: 0px;
-}
-h2 {
-  font-weight: bold;
-  font-size: 34px;
-  margin-top: 0;
-  margin-bottom: 6px;
-}
-h3 {
-  font-weight: bold;
-  font-size: 2.5rem;
-}
-/deep/ h4 {
-  font-size: 18px;
-}
-.group-item > p {
-  text-align: justify;
-}
-.group-item {
-  font-size: 14px;
-  padding: 15px 15px 0 15px;
-  margin: 15px 7.5px 0px 7.5px;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-}
-#introduction {
-  padding: 5vh 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-#introduction > div:first-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
-  padding-left: 2vw;
-}
-#introduction p {
-  vertical-align: middle;
-  font-size: calc(14px + 0.8vw);
-  text-align: center;
-}
-#introduction img {
-  display: flex;
-  flex-direction: column;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-#portrait {
-  border-radius: 50%;
-  width: 90%;
-}
-#group-content {
-  flex-direction: column;
-  width: 100%;
-}
-#group-content div[class*="col-"] {
-  padding: 0px;
-}
-thead {
-  cursor: pointer;
-}
-table {
-  margin: 0 0 10px 0;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  font-weight: bold;
-}
-/*use flex to vertically center icons in previous work table*/
-.contact {
-  height: 40px;
-  margin-bottom: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.contact img {
-  height: 50px;
-  display: inline-block;
-}
-#contact-info {
-  margin-top: 45px;
-  margin-bottom: 35px;
-
-}
-#cv {
-  padding: 0px;
-  border: none;
-  margin: 15px 0px;
-}
-#cv a {
-  padding: 0.75rem 1.5rem;
-}
+  /* #work-items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #work-items div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+  }
+  #work-items img {
+    height: 100px;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+  #work-items img:hover {
+    height: 120px;
+    transition: 0.5s;
+  } */
+  #page-container {
+    max-width: 1600px;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .row {
+    margin: 0px;
+    padding: 0px;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 34px;
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+  /deep/ h4 {
+    font-size: 18px;
+  }
+  .group-item > p {
+    text-align: justify;
+  }
+  #iet-banner {
+    width: 100%;
+  }
+  .group-item {
+    font-size: 14px;
+    padding: 15px 15px 0 15px;
+    margin: 15px 7.5px 0px 7.5px;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+  }
+  #introduction {
+    padding: 5vh 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #introduction > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding-left: 2vw;
+  }
+  #introduction p {
+    vertical-align: middle;
+    font-size: calc(14px + 0.8vw);
+    text-align: center;
+  }
+  #introduction img {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #portrait {
+    border-radius: 50%;
+    width: 90%;
+  }
+  #group-content {
+    flex-direction: column;
+    width: 100%;
+  }
+  #group-content div[class*="col-"] {
+    padding: 0px;
+  }
+  thead {
+    cursor: pointer;
+  }
+  table {
+    margin: 0 0 10px 0;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  /*use flex to vertically center icons in previous work table*/
+  .contact {
+    height: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contact img {
+    height: 50px;
+    display: inline-block;
+  }
+  #contact-info {
+    margin-top: 45px;
+    margin-bottom: 35px;
+  }
+  #cv {
+    padding: 0px;
+    border: none;
+    margin: 15px 0px;
+  }
+  #cv a {
+    padding: 0.75rem 1.5rem;
+  }
+  .embed-container { 
+    position: relative; 
+    padding-bottom: 56.25%; 
+    height: 0; 
+    overflow: hidden; 
+    max-width: 100%; 
+  } 
+  .embed-container iframe, .embed-container object, .embed-container embed { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+  }
+  #iet-banner {
+    width: 100%; 
+    margin-bottom: 10px; 
+  }
 </style>
