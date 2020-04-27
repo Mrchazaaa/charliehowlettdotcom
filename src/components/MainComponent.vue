@@ -24,12 +24,14 @@
             <!-- <WorkTableComponent /> -->
             <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game playing AIs, 
               feel free to click on an icon to learn more!</p>
-            <IconGridComponent :items="[{width: 4, text: '', image: require('@/assets/go.png'), link: ''},
-                                        {width: 4, text: '', image: require('@/assets/universe-city.png'), link: ''},
-                                        {width: 4, text: '', image: require('@/assets/github.svg'), link: ''},
-                                        {width: 4, text: '', image: require('@/assets/PROM.jpg'), link: ''},
-                                        {width: 4, text: '', image: require('@/assets/charlierobot.png'), link: ''},
-                                        {width: 4, text: '', image: require('@/assets/vim.png'), link: ''}]" />
+            <IconGridComponent 
+              :items="[{width: 4, image: require('@/assets/go.png'), link: ''},
+                       {width: 4, image: require('@/assets/universe-city.png'), link: ''},
+                       {width: 4, image: require('@/assets/github.svg'), link: ''},
+                       {width: 4, image: require('@/assets/PROM.jpg'), link: ''},
+                       {width: 4, image: require('@/assets/charlierobot.png'), link: ''},
+                       {width: 4, image: require('@/assets/vim.png'), link: ''}]"
+              :rowWidth="12" />
 
             <h3>Micro-controller Powered Music!</h3>
             <p>
@@ -50,10 +52,10 @@
               Click on any of the icons below to be taken to my profile on the respective sites!</p>
 
             <IconGridComponent :justify="'space-evenly'"
-             :items="[{width: 4, text: '', image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
-                      {width: 6, text: '', image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'}]" />
-
-            <img id="iet-banner" :src="require('@/assets/IET-bursary.jpg')">
+             :items="[{width: 6, image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
+                      {width: 6, image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
+                      {width: 12, image: require('@/assets/IET-bursary.jpg'), link: ''}]"
+             :rowWidth="12" />
           </div>
           <MoreLessComponent />
           <!--Hobbies-->
@@ -270,7 +272,7 @@
       MoreLessComponent,
       WorkTableComponent,
       LightBoxComponent,
-      IconGridComponent
+      IconGridComponent,
     }
   };
 </script>
@@ -281,7 +283,6 @@
   @media (min-width: $breakpoint-xl) {
     #page-container {
       max-width: 1140px !important;
-      background-color: red;
     }
   }
   /* #work-items {
