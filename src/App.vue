@@ -35,6 +35,16 @@
     },
     mounted() {
       this.myp5 = new p5(sketch, document.getElementById('sketch'));
+
+      var chevron = document.querySelector("#content-pointer");
+      chevron.onclick = (el) => {
+        el.preventDefault();
+        document.querySelector(chevron.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest"
+        });
+      };
     }
   }
 </script>
@@ -49,7 +59,6 @@
     margin:0; 
     padding:0;
     height: 100%;
-    scroll-behavior: smooth;
   }
   #title-container {
     display: flex; 
