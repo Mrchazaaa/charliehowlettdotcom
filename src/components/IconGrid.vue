@@ -6,7 +6,7 @@
       :image="item.image" 
       :href="item.link"
       :style="'grid-column: span ' + item.width + ';'"
-      :height="200" />
+      :height="height" />
   </div>
 </template>
 
@@ -23,6 +23,11 @@
       rowWidth: {
         type: Number,
         required: true
+      },
+      height: {
+        type: Number,
+        required: false,
+        default: 200
       }
     },
     components: {
