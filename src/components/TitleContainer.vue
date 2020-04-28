@@ -2,14 +2,14 @@
   <div>
     <!--p5js sketch background-->
     <div id='sketch'></div>
-    
-    <!--title (title-container used to vertically center title with flex)-->
-    <div id="title-container">
-        <h1>Charlie Howlett</h1>
-    </div>
 
-    <!--content pointer-->
-    <a id="content-pointer" href="#page-container"><img src="../assets/chevron-bottom.svg"></a>
+    <div id="title-container">    
+      <!--title-->
+      <h1>Charlie Howlett</h1>
+
+      <!--content pointer-->
+      <a id="content-pointer" href="#page-container"><img src="../assets/chevron-bottom.svg"></a>
+    </div>
   </div>
 </template>
 
@@ -46,8 +46,14 @@
       display: none;
     }
   }
+  #sketch {
+    margin: 0; 
+    z-index: 0;
+    height: 100vh;
+  }
   #title-container {
-    display: flex; 
+    display: grid;
+    grid-template-columns: 100%; 
     align-items: center; 
     justify-content: center; 
     position: absolute;
@@ -56,38 +62,32 @@
     height: 100vh;
     width: 100%;
     margin: 0 auto;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 75vh 25vh;
   }
   h1 {
     font-size: calc(250% + 40px);
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    background-color: transparent;
     margin: 0;
     padding: 0;
     text-align: center;
-    max-width: 582px;
-  }
-  #sketch {
-    margin: 0; 
-    z-index: 0;
-    height: 100vh;
+    // max-width: 582px;
   }
   #content-pointer {
-    position: absolute;
-    top: 75vh;
-    height: 25vh;
     width: 100%;
-    padding-top: 15vh;
     transition: 1.3s;
     opacity: 0.3;
+    height: 100%;
+    display: grid;
+    align-items: center; 
   }
   #content-pointer:hover {
     opacity: 1;
   }
   #content-pointer img {
-      position: relative;
-      top: 0;
-      width: 100%;
-      height: 5vh;
+    width: 100%;
+    height: 5vh;
   }
 </style>
