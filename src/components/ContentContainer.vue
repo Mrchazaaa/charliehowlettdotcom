@@ -246,7 +246,7 @@
   import IconGridComponent from "./IconGrid.vue";
 
   export default {
-    name: "MainContent",
+    name: "ContentContainerComponent",
     components: {
       CarouselComponent,
       ToggleListComponent,
