@@ -20,4 +20,4 @@ yarn-error.log*
 *.sln
 *.sw*
 
-./TODO.txt
+TODO.txt

@@ -4,6 +4,7 @@ Done:
 [x] add scholarship news article (they didnt upload your name in the article :) so make a little award poster about being an awardee)
 [x] migrate to Heroku? Redirect charliehowlett.com dns? (actually changed to netify cdn hosting)
 [x] give list items chevron rotation animation on click
+[x] figure out why on firefox, previous work icons are not centered properly. I imagine this is because of the hacky 1px method used to center them on other browsers. update to use flexbox properly.
 
 In progress:
 [] Redesign website for minamilism
@@ -13,7 +14,6 @@ Todo:
 [] Redesign color scheme
 [] update work done and CV !!!
 [] make title page text chunkier and bigger for impact. Perhaps also use a nice looking font
-[] figure out why on firefox, previous work icons are not centered properly. I imagine this is because of the hacky 1px method used to center them on other browsers. update to use flexbox properly.
 [] move to scss and refactor to external style files
 [] add dark theme button
 [] make mobile version take up full width
@@ -22,9 +22,14 @@ Todo:
 [] make cloud speed relative to browser width
 [] parallax cloud speeds
 [] cache first paint clouds for quick rendering
-[] add buttons for options in cloud generation
+[] add link to personal curated spotify playlist for coding backing music
+[] remove unnecessary javascript libraries for faster performance
+
+[] display title page with css grid for positioning chevron and title easier
+
 
 Maybe:
 [] add last tracking of last project that I worked on (using github api to find last accessed repo)?
 [] live updates of codewars badges through scraping?
 [] add loading screen for site startup?
+[] add buttons for options in cloud generation
