@@ -51,10 +51,10 @@
               I'm also proud of the voluminous collection of badges I've earnt through self-teaching coding resources!
               Click on any of the icons below to be taken to my profile on the respective sites!</p>
 
-            <IconGridComponent :justify="'space-evenly'"
-             :items="[{width: 6, image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
-                      {width: 6, image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
-                      {width: 12, image: require('@/assets/IET-bursary.jpg'), link: ''}]"
+            <IconGridComponent
+              :items="[{width: 6, image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
+                       {width: 6, image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
+                       {width: 12, image: require('@/assets/IET-bursary.jpg'), link: ''}]"
              :rowWidth="12" />
           </div>
           <MoreLessComponent />
@@ -210,49 +210,30 @@
           <MoreLessComponent />
         </div>
         <!--CV-->
-          <div  class="col-12" id="cv">
-            <a
-              href="./Charles_Howlett.pdf"
-              class="btn btn-primary btn-block active"
-              role="button"
-              style="font-size: 14px"
-              aria-pressed="true"
-            >
-              <h3>View My CV!</h3>
-            </a>
-          </div>
+        <div  class="col-12" id="cv">
+          <a
+            href="./Charles_Howlett.pdf"
+            class="btn btn-primary btn-block active"
+            role="button"
+            style="font-size: 14px"
+            aria-pressed="true"
+          >
+            <h3>View My CV!</h3>
+          </a>
+        </div>
       </div>
     </div>
-    <hr />
 
-    <!-- <IconGridComponent :items="[{width: 3, text: '', image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
-                                {width: 3, text: '', image: require('@/assets/linkedin.svg'), link: 'https://www.linkedin.com/in/charles-howlett-383b26155/'},
-                                {width: 3, text: '', image: require('@/assets/facebook.svg'), link: 'https://www.facebook.com/charlie.howlett.1'},
-                                {width: 3, text: '', image: require('@/assets/email.svg'), link: 'mailto:charlie.howlett@live.co.uk'}]" /> -->
+    <hr/>
 
     <!--Contact Information-->
-    <div class="row" id="contact-info">
-      <div class="col-3 contact">
-        <a href="https://github.com/Mrchazaaa/">
-          <img src="../assets/github.svg" />
-        </a>
-      </div>
-      <div class="col-3 contact">
-        <a href="https://www.linkedin.com/in/charles-howlett-383b26155/">
-          <img src="../assets/linkedin.svg" />
-        </a>
-      </div>
-      <div class="col-3 contact">
-        <a href="https://www.facebook.com/charlie.howlett.1">
-          <img src="../assets/facebook.svg" />
-        </a>
-      </div>
-      <div class="col-3 contact">
-        <a href="mailto:charlie.howlett@live.co.uk">
-          <img src="../assets/email.svg" />
-        </a>
-      </div>
-    </div>
+    <IconGridComponent
+      :items="[{width: 3, image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
+               {width: 3, image: require('@/assets/linkedin.svg'), link: 'https://www.linkedin.com/in/charles-howlett-383b26155/'},
+               {width: 3, image: require('@/assets/facebook.svg'), link: 'https://www.facebook.com/charlie.howlett.1'},
+               {width: 3, image: require('@/assets/email.svg'), link: 'mailto:charlie.howlett@live.co.uk'}]"
+      :rowWidth="12"
+      :height="75" />
   </div>
 </template>
 
@@ -397,10 +378,6 @@
   .contact img {
     height: 50px;
     display: inline-block;
-  }
-  #contact-info {
-    margin-top: 45px;
-    margin-bottom: 35px;
   }
   #cv {
     padding: 0px;
