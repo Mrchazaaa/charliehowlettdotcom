@@ -4,7 +4,7 @@
       <div>
         <div>
           <div>
-            <img src="../assets/go.png" />
+            <img src="../assets/go.webp" />
           </div>
         </div>
         <div>
@@ -20,7 +20,7 @@
       <div>
         <div>
           <div>
-            <img src="../assets/universe-city.png" />
+            <img src="../assets/universe-city.webp" />
           </div>
         </div>
         <div>
@@ -55,7 +55,7 @@
       <div>
         <div>
           <div>
-            <img src="../assets/PROM.jpg" />
+            <img src="../assets/PROM.webp" />
           </div>
         </div>
         <div>
@@ -71,7 +71,7 @@
       <div>
         <div>
           <div>
-            <img src="../assets/vim.png" />
+            <img src="../assets/vim.webp" />
           </div>
         </div>
         <div>

@@ -2,25 +2,26 @@
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="../assets/volunteering-leg.jpg" alt="First slide" />
+        <img class="d-block w-100" src="../assets/volunteering-leg.webp" alt="First slide" />
         <div class="carousel-caption d-none d-md-block" >
           <p>Preparing to give a presentation on protecting sea turtles for Archelon</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="../assets/cybersoc-leg.jpg" alt="First slide" />
+        
+        <img class="d-block w-100" src="../assets/cybersoc-leg.webp" alt="First slide" />
         <div class="carousel-caption d-none d-md-block">
           <p>Attending the Cyber Security Society's first event</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="../assets/raleigh.jpg" alt="Second slide" />
+        <img class="d-block w-100" src="../assets/raleigh.webp" alt="Second slide" />
         <div class="carousel-caption d-none d-md-block">
           <p>Giving one-on-one entrepeneurship education to villagers in rural Tanzania</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="../assets/band-leg.jpg" alt="Third slide" />
+        <img class="d-block w-100" src="../assets/band-leg.webp" alt="Third slide" />
         <div class="carousel-caption d-none d-md-block">
           <p>Band practice</p>
         </div>

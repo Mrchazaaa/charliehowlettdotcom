@@ -11,7 +11,7 @@
         </p>
       </div>
       <div class="col-12 col-md-5">
-        <img id="portrait" src="../assets/photo-of-me.jpg" />
+        <img id="portrait" src="../assets/photo-of-me.webp" />
       </div>
     </div>
     <hr class="hidden-sm hidden-xs" />
@@ -25,12 +25,12 @@
             <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game playing AIs, 
               feel free to click on an icon to learn more!</p>
             <IconGridComponent 
-              :items="[{width: 4, image: require('@/assets/go.png'), link: ''},
-                       {width: 4, image: require('@/assets/universe-city.png'), link: ''},
-                       {width: 4, image: require('@/assets/github.svg'), link: ''},
-                       {width: 4, image: require('@/assets/PROM.jpg'), link: ''},
-                       {width: 4, image: require('@/assets/charlierobot.png'), link: ''},
-                       {width: 4, image: require('@/assets/vim.png'), link: ''}]"
+              :items="[{width: 4, image: require('@/assets/go.png'), link: 'https://github.com/Mrchazaaa/go-bot'},
+                       {width: 4, image: require('@/assets/universe-city.png'), link: 'https://github.com/Mrchazaaa/universe-city'},
+                       {width: 4, image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
+                       {width: 4, image: require('@/assets/PROM.jpg'), link: 'https://github.com/spankie1337/PROM_keypad'},
+                       {width: 4, image: require('@/assets/charlierobot.png'), link: 'https://github.com/Mrchazaaa/charlie-robot'},
+                       {width: 4, image: require('@/assets/vim.png'), link: 'https://github.com/Mrchazaaa/vim-rc'}]"
               :rowWidth="12" />
 
             <h3>Micro-controller Powered Music!</h3>
@@ -54,7 +54,7 @@
             <IconGridComponent
               :items="[{width: 6, image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
                        {width: 6, image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
-                       {width: 12, image: require('@/assets/IET-bursary.jpg'), link: ''}]"
+                       {width: 12, image: require('@/assets/IET-bursary.jpg')}]"
              :rowWidth="12" />
           </div>
           <MoreLessComponent />
