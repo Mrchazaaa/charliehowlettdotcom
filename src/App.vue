@@ -30,4 +30,14 @@
     -moz-osx-font-smoothing: grayscale;
     color: $primary-text;
   }
+  h2 {
+    font-weight: bold;
+    font-size: 34px;
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
 </style>
