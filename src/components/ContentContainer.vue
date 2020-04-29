@@ -71,25 +71,25 @@
           <table class="table" id="hackathonsTable">
             <tbody>
               <tr>
-                <td scope="row">Google Code Jam (2017)</td>
+                <td>Google Code Jam (2017)</td>
               </tr>
               <tr>
-                <td scope="row">Google Hashcode (2017)</td>
+                <td>Google Hashcode (2017)</td>
               </tr>
               <tr>
-                <td scope="row">Google Hashcode (2018)</td>
+                <td>Google Hashcode (2018)</td>
               </tr>
               <tr>
-                <td scope="row">BAE Systems Capture the Flag (2017)</td>
+                <td>BAE Systems Capture the Flag (2017)</td>
               </tr>
               <tr>
-                <td scope="row">BAE Systems Capture the Flag (2018)</td>
+                <td>BAE Systems Capture the Flag (2018)</td>
               </tr>
               <tr>
-                <td scope="row">BBC Hackathon (2017)</td>
+                <td>BBC Hackathon (2017)</td>
               </tr>
               <tr>
-                <td scope="row">ARM Hackathon (2017)</td>
+                <td>ARM Hackathon (2017)</td>
               </tr>
             </tbody>
           </table>
