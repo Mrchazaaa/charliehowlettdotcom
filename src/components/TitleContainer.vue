@@ -8,7 +8,7 @@
       <h1>Charlie Howlett</h1>
 
       <!--content pointer-->
-      <a id="content-pointer" href="#page-container"><img src="../assets/chevron-bottom.svg"></a>
+      <a id="content-pointer" href="#content-container"><img src="../assets/chevron-bottom.svg"></a>
     </div>
   </div>
 </template>
@@ -64,7 +64,7 @@
     margin: 0 auto;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 75vh 25vh;
+    grid-template-rows: 80vh 20vh;
   }
   h1 {
     font-size: calc(250% + 40px);
