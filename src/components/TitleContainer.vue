@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div id="title-container">
     <!--p5js sketch background-->
     <div id='sketch'></div>
 
-    <div id="title-container">    
+    <div id="title">    
       <!--title-->
       <h1>Charlie Howlett</h1>
 
@@ -46,12 +46,18 @@
       display: none;
     }
   }
+  #title-container {
+    height: 100vh;
+  }
   #sketch {
     margin: 0; 
     z-index: 0;
-    height: 100vh;
+    height: 100%;
   }
-  #title-container {
+  canvas {
+    height: 100% !important;
+  }
+  #title {
     display: grid;
     grid-template-columns: 100%; 
     align-items: center; 

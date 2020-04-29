@@ -246,9 +246,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  @media (min-width: $breakpoint-xl) {
+  @media (max-width: $breakpoint-xl) {
     #content-container {
-      max-width: 1140px !important;
+      padding-top: 0px !important;
     }
   }
   @media (max-width: $breakpoint-sm) {
@@ -263,7 +263,8 @@
     }
   }
   #content-container {
-    max-width: 1600px;
+      max-width: $breakpoint-xl !important;
+    // max-width: 1600px;
     padding-top: 20px;
     margin-left: auto;
     margin-right: auto;
