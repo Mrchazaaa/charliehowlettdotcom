@@ -69,7 +69,7 @@
   h1 {
     font-size: calc(250% + 40px);
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Arial';
     margin: 0;
     padding: 0;
     text-align: center;
