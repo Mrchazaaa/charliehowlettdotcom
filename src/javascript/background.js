@@ -136,8 +136,9 @@ export default function( sketch ) {
 
     //called every time the canvas is drawn
     sketch.draw = function() {
+        sketch.clear();
         sketch.noStroke();
-        sketch.background('#80dfff');
+        // sketch.background('#80dfff');
         sketch.smooth();
 
         //draw sun

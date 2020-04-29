@@ -56,6 +56,7 @@
   }
   canvas {
     height: 100% !important;
+    background-color: $sky-color;
   }
   #title {
     display: grid;
