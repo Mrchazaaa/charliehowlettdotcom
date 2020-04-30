@@ -9,6 +9,9 @@
 
       <!--content pointer-->
       <a id="content-pointer" href="#content-container"><img src="../assets/chevron-bottom.svg"></a>
+    
+      <img id="mountains" :src="require('@/assets/mountains.png')"/>
+
     </div>
   </div>
 </template>
@@ -41,6 +44,15 @@
 </script>
 
 <style lang="scss">
+  #mountains {
+    position: absolute;
+    top: 60vh;
+    left: 0;
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    object-position: 100% 0;
+  }
   @media (max-width: $breakpoint-sm) {
     #content-pointer {
       display: none;
@@ -56,7 +68,7 @@
   }
   canvas {
     height: 100% !important;
-    background-color: $sky-color;
+  background-color: $sky-color;
   }
   #title {
     display: grid;
@@ -89,6 +101,7 @@
     height: 100%;
     display: grid;
     align-items: center; 
+    z-index: 1;
   }
   #content-pointer:hover {
     opacity: 1;
