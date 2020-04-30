@@ -136,13 +136,14 @@ export default function( sketch ) {
 
     //called every time the canvas is drawn
     sketch.draw = function() {
+        sketch.clear();
         sketch.noStroke();
-        sketch.background('#80dfff');
+        // sketch.background('#80dfff');
         sketch.smooth();
 
-        //draw sun
-        sketch.fill('#FFD670');
-        sketch.ellipse(width - 30, 30, 0.15 * width);
+        // //draw sun
+        // sketch.fill('#FFD670');
+        // sketch.ellipse(width - 30, 30, 0.15 * width);
         
         sketch.fill('#fff');
         //draw and move clouds
@@ -151,12 +152,12 @@ export default function( sketch ) {
             element.draw();  
         });
 
-        //draw background hill
-        sketch.fill('#9dc785');
-        sketch.arc(width - 20, height + 45, 1.5*width, height-100, sketch.PI, 0, sketch.PIE);
-        //draw foreground hill
-        sketch.fill('#93C178');
-        sketch.arc(0, height + 45, 1.5*width, height-100, sketch.PI, 0, sketch.PIE);
+        // //draw background hill
+        // sketch.fill('#9dc785');
+        // sketch.arc(width - 20, height + 45, 1.5*width, height-100, sketch.PI, 0, sketch.PIE);
+        // //draw foreground hill
+        // sketch.fill('#93C178');
+        // sketch.arc(0, height + 45, 1.5*width, height-100, sketch.PI, 0, sketch.PIE);
     };
 
     //called every time the canvas is resized

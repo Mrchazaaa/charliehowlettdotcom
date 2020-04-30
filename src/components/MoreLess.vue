@@ -48,9 +48,7 @@ function resizeConfigure() {
   //on smaller screens...
   if ($(window).width() <= 976) {
     if (!$(".group-item").hasClass("collapsed")) {
-      console.log("adding class");
       $(".group-item").addClass("collapsed");
-      console.log($(".group-item").hasClass("collapsed"));
     }
     $(".less-more").removeClass("hidden");
     $(".less-more").text("Show more...");
