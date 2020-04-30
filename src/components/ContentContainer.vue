@@ -13,7 +13,7 @@
           <img src="../assets/photo-of-me.webp" />
         </div>
       </div>
-      <hr class="hidden-sm hidden-xs" />
+      <hr />
       <div id="content-collection-container">
         <div class="column">
           <!--Previous work-->
@@ -216,11 +216,18 @@
     <!--contact Information-->
     <div id="contact-container" class="border">
       <div id="contact">
-        <IconGridComponent
+        <!-- <IconGridComponent
           :items="[{width: 3, image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
                   {width: 3, image: require('@/assets/linkedin.svg'), link: 'https://www.linkedin.com/in/charles-howlett-383b26155/'},
                   {width: 3, image: require('@/assets/facebook.svg'), link: 'https://www.facebook.com/charlie.howlett.1'},
                   {width: 3, image: require('@/assets/email.svg'), link: 'mailto:charlie.howlett@live.co.uk'}]"
+          :rowWidth="12"
+          :height="75" /> -->
+          <IconGridComponent
+          :items="[getIconGridIcon(require('@/assets/github.svg'), 'https://github.com/Mrchazaaa/'),
+                   getIconGridIcon(require('@/assets/linkedin.svg'), 'https://www.linkedin.com/in/charles-howlett-383b26155/'),
+                   getIconGridIcon(require('@/assets/facebook.svg'), 'https://www.facebook.com/charlie.howlett.1'),
+                   getIconGridIcon(require('@/assets/email.svg'), 'mailto:charlie.howlett@live.co.uk')]"
           :rowWidth="12"
           :height="75" />
       </div>
@@ -243,6 +250,23 @@
       WorkTableComponent,
       LightBoxComponent,
       IconGridComponent,
+    },
+    methods: {
+      getIconGridIcon: function(image, link) {
+        // if (window.innerWidth <= 768) {
+        //   return {
+        //     width: 6,
+        //     image: image,
+        //     link: link
+        //   }
+        // }
+        
+        return {
+          width: 3,
+          image: image,
+          link: link
+        }
+      }
     }
   };
 </script>
@@ -252,6 +276,10 @@
   @media (max-width: $breakpoint-xl) {
     #content-container {
       padding-top: 0px !important;
+    }
+    hr {
+      display: none !important;
+      background-color: red;
     }
   }
   @media (max-width: $breakpoint-sm) {
@@ -265,6 +293,9 @@
       display: none !important;
     }
   }
+  hr {
+      margin-bottom: 0px;
+  }
   #content-container {
       max-width: $breakpoint-xl !important;
     // max-width: 1600px;
@@ -275,7 +306,7 @@
   .content-collection {
     font-size: 14px;
     padding: 15px 15px 0 15px;
-    margin: 0px 7.5px 15px 7.5px;
+    margin: 15px 7.5px 0px 7.5px;
     text-align: justify;
   }
   #introduction {
