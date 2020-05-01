@@ -17,7 +17,7 @@
       <div id="content-collection-container">
         <div class="column">
           <!--Previous work-->
-          <div class="content-collection border" id="prev-work">
+          <div class="content-collection border" id="previous-work">
             <h2>Previous Work</h2>
             <!-- <WorkTableComponent /> -->
             <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game playing AIs, 
@@ -25,11 +25,11 @@
             <IconGridComponent 
               :items="[{width: 4, image: require('@/assets/go.png'), link: 'https://github.com/Mrchazaaa/go-bot'},
                         {width: 4, image: require('@/assets/universe-city.png'), link: 'https://github.com/Mrchazaaa/universe-city'},
-                        {width: 4, image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
+                        {width: 4, image: require('@/assets/spotify-glitch.jpg'), link: 'https://open.spotify.com/playlist/4d8VWZlfzYbWl4j6KiPuNC?si=C1TcDxlbTP2aeNFl94_c5w'},
                         {width: 4, image: require('@/assets/PROM.jpg'), link: 'https://github.com/spankie1337/PROM_keypad'},
                         {width: 4, image: require('@/assets/charlierobot.png'), link: 'https://github.com/Mrchazaaa/charlie-robot'},
                         {width: 4, image: require('@/assets/vim.png'), link: 'https://github.com/Mrchazaaa/vim-rc'}]"
-              :rowWidth="12" />
+              :rowWidth="12"/>
 
             <h3>Micro-controller Powered Music!</h3>
             <p>
@@ -49,11 +49,13 @@
               I'm also proud of the voluminous collection of badges I've earnt through self-teaching coding resources!
               Click on any of the icons below to be taken to my profile on the respective sites!</p>
 
-            <IconGridComponent
-              :items="[{width: 6, image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
-                        {width: 6, image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
-                        {width: 12, image: require('@/assets/IET-bursary.jpg')}]"
-              :rowWidth="12" />
+            <div id="achievments-grid"> 
+              <IconGridComponent
+                :items="[{width: 5, image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
+                          {width: 7, image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
+                          {width: 12, image: require('@/assets/IET-bursary.jpg')}]"
+                :rowWidth="12" />
+            </div>
           </div>
           <!--Hobbies-->
           <div class="content-collection border" id="hobbies">
@@ -204,7 +206,6 @@
         <!--CV-->
         <a id="cv"
           href="./Charles_Howlett.pdf"
-          class="btn btn-primary btn-block active"
           role="button"
           style="font-size: 14px"
           aria-pressed="true"
@@ -216,20 +217,12 @@
     <!--contact Information-->
     <div id="contact-container" class="border">
       <div id="contact">
-        <!-- <IconGridComponent
+        <IconGridComponent
           :items="[{width: 3, image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
                   {width: 3, image: require('@/assets/linkedin.svg'), link: 'https://www.linkedin.com/in/charles-howlett-383b26155/'},
                   {width: 3, image: require('@/assets/facebook.svg'), link: 'https://www.facebook.com/charlie.howlett.1'},
                   {width: 3, image: require('@/assets/email.svg'), link: 'mailto:charlie.howlett@live.co.uk'}]"
-          :rowWidth="12"
-          :height="75" /> -->
-          <IconGridComponent
-          :items="[getIconGridIcon(require('@/assets/github.svg'), 'https://github.com/Mrchazaaa/'),
-                   getIconGridIcon(require('@/assets/linkedin.svg'), 'https://www.linkedin.com/in/charles-howlett-383b26155/'),
-                   getIconGridIcon(require('@/assets/facebook.svg'), 'https://www.facebook.com/charlie.howlett.1'),
-                   getIconGridIcon(require('@/assets/email.svg'), 'mailto:charlie.howlett@live.co.uk')]"
-          :rowWidth="12"
-          :height="75" />
+          :rowWidth="12" />
       </div>
     </div>
   </div>
@@ -251,23 +244,6 @@
       LightBoxComponent,
       IconGridComponent,
     },
-    methods: {
-      getIconGridIcon: function(image, link) {
-        // if (window.innerWidth <= 768) {
-        //   return {
-        //     width: 6,
-        //     image: image,
-        //     link: link
-        //   }
-        // }
-        
-        return {
-          width: 3,
-          image: image,
-          link: link
-        }
-      }
-    }
   };
 </script>
 
@@ -279,7 +255,28 @@
     }
     hr {
       display: none !important;
-      background-color: red;
+    }
+    /deep/ #previous-work .floating-container {
+      height: 150px !important;
+    }
+    /deep/ #achievments-grid .floating-container {
+      height: 150px !important;
+    }
+  }
+  @media (max-width: $breakpoint-lg) {
+    /deep/ #previous-work .floating-container {
+      height: 120px !important;
+    }
+    /deep/ #achievments-grid .floating-container {
+      height: 120px !important;
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+    /deep/ #previous-work .floating-container {
+      height: 75px !important;
+    }
+    /deep/ #achievments-grid .floating-container {
+      height: 75px !important;
     }
   }
   @media (max-width: $breakpoint-sm) {
@@ -292,12 +289,21 @@
     #introduction {
       display: none !important;
     }
+    /deep/ #previous-work .floating-container {
+      height: 125px !important;
+    }
+    /deep/ #achievments-grid .floating-container {
+      height: 125px !important;
+    }
+  }
+  /deep/ #contact .floating-container {
+    height: 75px !important;
   }
   hr {
       margin-bottom: 0px;
   }
   #content-container {
-      max-width: $breakpoint-xl !important;
+    max-width: $breakpoint-xl !important;
     // max-width: 1600px;
     padding-top: 20px;
     margin-left: auto;
@@ -355,10 +361,16 @@
   }
   #cv {
     grid-column: span 2;
-    padding: 0px;
     border: none;
     margin: 15px 0px;
     padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+    background-color: $link-color;
+    color: $primary-background;
+    display: block;
+    width: 100%;
+    text-align: center;
   }
   .embed-container { 
     position: relative; 
@@ -366,6 +378,7 @@
     height: 0; 
     overflow: hidden; 
     max-width: 100%; 
+    margin-bottom: 10px;
   } 
   .embed-container iframe, .embed-container object, .embed-container embed { 
     position: absolute; 

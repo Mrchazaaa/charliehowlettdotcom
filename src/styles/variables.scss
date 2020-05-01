@@ -10,8 +10,9 @@ $table-secondary-background: #F9F9F9;
 $jumbotron-background: #E9ECEF;
 $border-color: #e3e3e3;
 
-// sketch colors
+// title colors
 $sky-color: #B0D0D3;
+$cloud-color: #fff;
 
 // Size variables used to define breakpoints throughout the site.
 $breakpoint-xs: 0;
@@ -19,3 +20,15 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+
+// export variablese for use in js code
+:export {
+    breakpoint-xs: $breakpoint-xs;
+    breakpoint-sm: $breakpoint-sm;
+    breakpoint-md: $breakpoint-md;
+    breakpoint-lg: $breakpoint-lg;
+    breakpoint-xl: $breakpoint-xl;
+
+    sky-color: $sky-color;
+    cloud-color: $cloud-color;
+  }
