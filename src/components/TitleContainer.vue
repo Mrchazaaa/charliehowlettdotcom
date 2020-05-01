@@ -19,6 +19,9 @@
 <script>
   import p5 from 'p5';
   import sketch from '../javascript/background.js';
+  import styles from '../styles/variables.scss';
+
+  console.log(parseInt(styles['breakpoint-md']));
 
   export default {
     name: 'TitleContainerComponent',
@@ -28,6 +31,8 @@
       }
     },
     mounted() {
+
+
       this.myp5 = new p5(sketch, document.getElementById('sketch'));
 
       var chevron = document.querySelector("#content-pointer");
@@ -44,6 +49,15 @@
 </script>
 
 <style lang="scss">
+  @media (max-width: $breakpoint-sm) {
+    #content-pointer {
+      display: none;
+    }
+  }
+  #title-container {
+    height: 100vh;
+    background-color: $sky-color;
+  }
   #mountains {
     position: absolute;
     top: 60vh;
@@ -53,14 +67,6 @@
     object-fit: cover;
     object-position: 100% 0;
   }
-  @media (max-width: $breakpoint-sm) {
-    #content-pointer {
-      display: none;
-    }
-  }
-  #title-container {
-    height: 100vh;
-  }
   #sketch {
     margin: 0; 
     z-index: 0;
@@ -68,7 +74,6 @@
   }
   canvas {
     height: 100% !important;
-  background-color: $sky-color;
   }
   #title {
     display: grid;

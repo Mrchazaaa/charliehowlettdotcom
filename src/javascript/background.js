@@ -1,3 +1,4 @@
+import styles from '../styles/variables.scss';
 
 //class used to represent clouds in the background sketch
 class Cloud {
@@ -141,23 +142,13 @@ export default function( sketch ) {
         // sketch.background('#80dfff');
         sketch.smooth();
 
-        // //draw sun
-        // sketch.fill('#FFD670');
-        // sketch.ellipse(width - 30, 30, 0.15 * width);
-        
-        sketch.fill('#fff');
         //draw and move clouds
+        sketch.fill(styles['cloud-color']);
+
         clouds.forEach(function(element) { 
             element.move(width, height); 
             element.draw();  
         });
-
-        // //draw background hill
-        // sketch.fill('#9dc785');
-        // sketch.arc(width - 20, height + 45, 1.5*width, height-100, sketch.PI, 0, sketch.PIE);
-        // //draw foreground hill
-        // sketch.fill('#93C178');
-        // sketch.arc(0, height + 45, 1.5*width, height-100, sketch.PI, 0, sketch.PIE);
     };
 
     //called every time the canvas is resized
