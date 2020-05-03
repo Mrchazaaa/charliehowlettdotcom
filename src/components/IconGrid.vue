@@ -5,8 +5,7 @@
       :key="item.image"
       :image="item.image" 
       :href="item.link"
-      :style="'grid-column: span ' + item.width + ';'"
-      :height="height" />
+      :style="'grid-column: span ' + item.width + ';'"/>
   </div>
 </template>
 
@@ -24,11 +23,6 @@
         type: Number,
         required: true
       },
-      height: {
-        type: Number,
-        required: false,
-        default: 200
-      }
     },
     components: {
       FloatingIcon,
@@ -37,7 +31,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss">
   #icon-grid {
     width: 100%;
     display: grid;

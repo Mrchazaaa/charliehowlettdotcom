@@ -8,9 +8,9 @@
       <h1>Charlie Howlett</h1>
 
       <!--content pointer-->
-      <a id="content-pointer" href="#content-container"><img src="../assets/chevron-bottom.svg"></a>
+      <a id="content-pointer" href="#content"><img src="../assets/chevron-bottom.svg"></a>
     
-      <img id="mountains" :src="require('@/assets/mountains.png')"/>
+      <img id="mountains" :src="require('@/assets/mountains.svg')"/>
 
     </div>
   </div>
@@ -19,9 +19,6 @@
 <script>
   import p5 from 'p5';
   import sketch from '../javascript/background.js';
-  import styles from '../styles/variables.scss';
-
-  console.log(parseInt(styles['breakpoint-md']));
 
   export default {
     name: 'TitleContainerComponent',
@@ -31,8 +28,6 @@
       }
     },
     mounted() {
-
-
       this.myp5 = new p5(sketch, document.getElementById('sketch'));
 
       var chevron = document.querySelector("#content-pointer");
@@ -56,7 +51,7 @@
   }
   #title-container {
     height: 100vh;
-    background-color: $sky-color;
+    background-color: var(--sky-color);
   }
   #mountains {
     position: absolute;

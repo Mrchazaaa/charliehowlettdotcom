@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="content-container">
+    <div id="content">
       <!--Introduction-->
       <div id="introduction" class="border">
         <p>
@@ -15,7 +15,7 @@
       </div>
       <hr />
       <div id="content-collection-container">
-        <div class="column">
+        <div class="content-column">
           <!--Previous work-->
           <div class="content-collection border" id="previous-work">
             <h2>Previous Work</h2>
@@ -71,7 +71,7 @@
             <h3>Hackathons</h3>
             <p>One of my most rewarding hobbies is participating in hackathons, particularly team based ones, and have 
                 so far competed in the following:</p>
-            <table class="table" id="hackathonsTable">
+            <table id="hackathon-table">
               <tbody>
                 <tr>
                   <td>Google Code Jam (2017)</td>
@@ -98,7 +98,7 @@
             </table>
           </div>
         </div>
-        <div class="column">
+        <div class="content-column">
           <!--University info-->
           <div class="content-collection border" id="uni-info">
             <h2>University</h2>
@@ -215,8 +215,8 @@
       </div>
     </div>
     <!--contact Information-->
-    <div id="contact-container" class="border">
-      <div id="contact">
+    <div id="contact" class="border">
+      <div>
         <IconGridComponent
           :items="[{width: 3, image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
                   {width: 3, image: require('@/assets/linkedin.svg'), link: 'https://www.linkedin.com/in/charles-howlett-383b26155/'},
@@ -248,34 +248,34 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss">
   @media (max-width: $breakpoint-xl) {
-    #content-container {
+    #content {
       padding-top: 0px !important;
     }
     hr {
       display: none !important;
     }
-    /deep/ #previous-work .floating-container {
+    #previous-work .floating-container {
       height: 150px !important;
     }
-    /deep/ #achievments-grid .floating-container {
+    #achievments-grid .floating-container {
       height: 150px !important;
     }
   }
   @media (max-width: $breakpoint-lg) {
-    /deep/ #previous-work .floating-container {
+    #previous-work .floating-container {
       height: 120px !important;
     }
-    /deep/ #achievments-grid .floating-container {
+    #achievments-grid .floating-container {
       height: 120px !important;
     }
   }
   @media (max-width: $breakpoint-md) {
-    /deep/ #previous-work .floating-container {
+    #previous-work .floating-container {
       height: 75px !important;
     }
-    /deep/ #achievments-grid .floating-container {
+    #achievments-grid .floating-container {
       height: 75px !important;
     }
   }
@@ -296,81 +296,72 @@
       height: 125px !important;
     }
   }
-  /deep/ #contact .floating-container {
+  #contact .floating-container {
     height: 75px !important;
   }
-  hr {
-      margin-bottom: 0px;
-  }
-  #content-container {
+  #content {
     max-width: $breakpoint-xl !important;
     // max-width: 1600px;
     padding-top: 20px;
     margin-left: auto;
     margin-right: auto;
   }
-  .content-collection {
-    font-size: 14px;
-    padding: 15px 15px 0 15px;
-    margin: 15px 7.5px 0px 7.5px;
-    text-align: justify;
-  }
   #introduction {
-    background-color: $jumbotron-background;
+    background-color: var(--jumbotron-background);
     padding: 5vh 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     border-radius: .3rem;
-  }
-  #introduction p {
-    display: grid;
-    align-items: center; 
-    justify-content: center; 
-    grid-column: span 7;
-    font-size: calc(14px + 0.8vw);
-    text-align: center;
-    padding: 0 2vw;
+    p {
+      display: grid;
+      align-items: center; 
+      justify-content: center; 
+      grid-column: span 7;
+      font-size: calc(14px + 0.8vw);
+      text-align: center;
+      padding: 0 2vw;
+    }
+    img {
+      padding-left: 5%;
+      padding-right: 5%;
+      border-radius: 50%;
+      width: 90%;
+    }
   }
   #portrait {
-    display: grid;
-    align-items: center; 
-    justify-content: center; 
-    grid-column: span 5;
-  }
-  #introduction img {
-    padding-left: 5%;
-    padding-right: 5%;
-    border-radius: 50%;
-    width: 90%;
+      display: grid;
+      align-items: center; 
+      justify-content: center; 
+      grid-column: span 5;
   }
   #content-collection-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
   .column {
-    grid-column: span 1;
-  }
-  table {
+      grid-column: span 1;
+    }
+    .content-collection {
+      font-size: 14px;
+      padding: 15px 15px 0 15px;
+      margin: 15px 7.5px 0px 7.5px;
+      text-align: justify;
+    }
+  #hackathon-table {
     margin: 0 0 10px 0;
     border: 1px solid #e3e3e3;
     border-radius: 4px;
     font-weight: bold;
-  }
-  tr:nth-child(odd) {
-    background-color: #F2F2F2;
-  }
-  #cv {
-    grid-column: span 2;
-    border: none;
-    margin: 15px 0px;
-    padding: 0.75rem 1.5rem;
-    font-weight: bold;
-    font-size: 2.5rem;
-    background-color: $link-color;
-    color: $primary-background;
-    display: block;
     width: 100%;
-    text-align: center;
+    tr:nth-child(odd) {
+      background-color: #F2F2F2;
+    }
+    td {
+      padding: 8px;
+      line-height: 1.42857143;
+      vertical-align: top;
+      border-top: 1px solid #ddd;
+    }
   }
   .embed-container { 
     position: relative; 
@@ -379,26 +370,38 @@
     overflow: hidden; 
     max-width: 100%; 
     margin-bottom: 10px;
-  } 
-  .embed-container iframe, .embed-container object, .embed-container embed { 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
+    iframe, object, embed {
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+    }
   }
-  .border {
-    border: 1px solid $border-color;
-    border-radius: 4px;
-  }
-  #contact-container {
-    padding: 10px 0px;
-    background-color: $jumbotron-background;
-    display: grid;
-    justify-content: center;
+  #cv {
+    grid-column: span 2;
+    border: none;
+    margin: 15px 0px;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+    background-color: var(--link-color);
+    color: var(--primary-background);
+    display: block;
+    width: 100%;
+    text-align: center;
   }
   #contact {
-    max-width: $breakpoint-xl !important;
-    width: 100%;
+    padding: 10px 0px;
+    background-color: var(--jumbotron-background);
+    display: grid;
+    justify-content: center;
+    & > div {
+      max-width: $breakpoint-xl !important;
+      width: 100%;
+    }
+    /deep/ .floating-container {
+      height: 75px !important;
+    }
   }
 </style>
