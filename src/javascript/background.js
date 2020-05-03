@@ -114,7 +114,7 @@ export default function( sketch ) {
     let width;
     let height;
     let clouds = [];
-    let cloudSpeeds = [0.3, 0.5, 0.7, 1]
+    let cloudSpeeds = [0.3, 0.5, 0.7, 1];
     // let cloudInterval;
     let initialCloudCount = 4;
     let cloudCountLimit = 15;
