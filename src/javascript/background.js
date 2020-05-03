@@ -1,4 +1,4 @@
-import styles from '../styles/variables.scss';
+import styles from '../styles/_variables.scss';
 
 //class used to represent clouds in the background sketch
 class Cloud {
@@ -118,7 +118,6 @@ export default function( sketch ) {
         height = document.body.clientHeight;
 
         let cnv = sketch.createCanvas(width, height);
-
 
         for (let i = 0; i < cloudCount; i++) {
             clouds.push(new Cloud(sketch, width, height)); 

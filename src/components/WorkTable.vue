@@ -117,7 +117,7 @@ export default {
   .work-table > a > div:hover {
     text-decoration: none !important;
     color: unset;
-    background-color: $active-background !important;
+    background-color: var(--active-background) !important;
   }
   .work-table img {
     width: 100px;
@@ -132,7 +132,7 @@ export default {
     border-top: none;
   }
   .work-table > a:nth-child(odd) > div {
-    background-color: $list-primary-background;
+    background-color: var(--list-primary-background);
   }
   .work-table > a > div > div:nth-child(1) {
     padding: 10px 8px 10px 8px;

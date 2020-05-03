@@ -55,7 +55,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss">
+.toggle-list-collection {
+  margin-bottom: 10px;
   span {
     transition: 0.5s;
   }
@@ -67,10 +69,7 @@ export default {
     padding: 8px !important;
     font-size: 14px;
     font-weight: bold;
-    background-color: $list-primary-background;
-  }
-  .toggle-list-collection {
-    margin-bottom: 10px;
+    background-color: var(--list-primary-background);
   }
   .toggle-list {
     cursor: pointer;
@@ -82,4 +81,5 @@ export default {
     margin-bottom: 0;
     font-weight: bold;
   }
+}
 </style>

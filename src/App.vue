@@ -2,6 +2,7 @@
   <div id="app">
     <TitleContainerComponent/>
     <ContentContainerComponent/>
+    <!-- <div id="dark-mode-button"/> -->
   </div>
 </template>
 
@@ -28,7 +29,7 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: $primary-text;
+    color: var(--primary-text);
   }
   h2 {
     font-weight: bold;
@@ -39,5 +40,20 @@
   h3 {
     font-weight: bold;
     font-size: 2.5rem;
+  }
+  hr {
+      margin-bottom: 0px;
+  }
+  .border {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+  }
+  #dark-mode-button {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: var(--jumbotron-background);
   }
 </style>
