@@ -9,9 +9,9 @@ class Cloud {
         // Stores x offset and radius of each cloud point that forms this cloud (px units).
         this.cloudPoints = [];
         // Maximum number of cloud points that can be used to make a cloud.
-        let maxCloudPoints = 8;
+        const maxCloudPoints = 8;
         // Minimum number of cloud points that can be used to make a cloud.
-        let minCloudPoints = 4;
+        const minCloudPoints = 4;
         // The average width of any cloud (in percentage of screen width).
         this.cloudWidth = 0.2;
 
@@ -20,13 +20,11 @@ class Cloud {
 
         // The minimum radius of any cloud point in a cloud (in percentage of screen width).
         // let cloudPointMinWidth = (this.cloudWidth/(this.cloudPointNum - 1))*1.5;
-        let cloudPointMinWidth = (this.cloudWidth/(this.cloudPointNum - 1))*1.8;
+        const cloudPointMinWidth = (this.cloudWidth/(this.cloudPointNum - 1))*1.8;
         // The maximum radius of any cloud point in a cloud (in percentage of screen width).
         // let cloudPointMaxWidth = cloudPointMinWidth * 2; 
-        let cloudPointMaxWidth = cloudPointMinWidth * 2.3; 
+        const cloudPointMaxWidth = cloudPointMinWidth * 2.3; 
 
-        // Radius of each cloud point as a percentage of viewport height.
-        this.ellipsePerc = [];
         // Generate a cloud point with random a relative x offset and radius to make a cloud looking blob.
         for (let i = 0; i < this.cloudPointNum; i++) {
             let ellipseRadius;
@@ -48,13 +46,12 @@ class Cloud {
             else {
                 ellipseRadius = (Math.random() * ((cloudPointMaxWidth - cloudPointMinWidth)/2)) + cloudPointMinWidth ;
             }
-            // Store percentage value of this cloud points radius so that it can be updated on screen size change.
-            this.ellipsePerc.push(ellipseRadius);
 
             let xOffset = this.cloudWidth * (i/this.cloudPointNum) * this.height;
             let radius = ellipseRadius * this.height; 
 
-            this.cloudPoints.push([xOffset, radius]);
+            // Store percentage value of this cloud points radius so that it can be updated on screen size change.
+            this.cloudPoints.push([xOffset, radius, ellipseRadius]);
         }
 
         // Initial x coordinate of cloud is set so that the cloud starts just off the left side of the screen.
@@ -98,13 +95,23 @@ class Cloud {
             // Update cloud offsets.
             this.cloudPoints[i][0] = this.cloudWidth * (i/this.cloudPointNum) * this.height;
             // Update cloud radius'. 
-            this.cloudPoints[i][1] = this.ellipsePerc[i] * this.height;
+            this.cloudPoints[i][1] = this.cloudPoints[i][2] * this.height;
         }
     }
 
     draw(){
+        this.sketch.rect(
+            this.cloudPoints[0][0] + this.x - (this.cloudPoints[0][1]/2), 
+            this.y-1,
+            this.cloudPoints[this.cloudPoints.length - 1][0] + (this.cloudPoints[this.cloudPoints.length - 1][1]/2) + (this.cloudPoints[0][1]/2),
+            10,
+            0,
+            0,
+            5,
+            5);
+
         for (let i = 0; i < this.cloudPoints.length; i++) {
-            this.sketch.ellipse( this.cloudPoints[i][0] + this.x, this.y, this.cloudPoints[i][1]);
+            this.sketch.arc(this.cloudPoints[i][0] + this.x, this.y, this.cloudPoints[i][1], this.cloudPoints[i][1], this.sketch.PI, 0, this.sketch.CHORD);
         }
     }
 }
@@ -114,7 +121,7 @@ export default function( sketch ) {
     let width;
     let height;
     let clouds = [];
-    let cloudSpeeds = [0.3, 0.5, 0.7, 1]
+    let cloudSpeeds = [0.3, 0.5, 0.7, 1];
     // let cloudInterval;
     let initialCloudCount = 4;
     let cloudCountLimit = 15;
@@ -127,12 +134,7 @@ export default function( sketch ) {
 
         let cnv = sketch.createCanvas(width, height);
 
-        for (let i = 0; i < initialCloudCount; i++) {
-            clouds.push(new Cloud(sketch, width, height, cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)]));
-            // if (clouds.length == cloudCountLimit) {
-            //     clearInterval(cloudInterval);
-            // }
-        }
+        clouds = Array(initialCloudCount).map(i => new Cloud(sketch, width, height, cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)]));
     
         // cloudInterval = setInterval( function() { 
         //     clouds.push(new Cloud(sketch, width, height)); 
