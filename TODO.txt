@@ -31,6 +31,7 @@ Todo:
 [] LAZY LOADING
 [] compress images for faster loading
 [] remove jQuery and other javascript libraries for faster loading
+[] add scss variables for margin/padding sizes (small, medium, large etc)
 
 Maybe:
 [] add last tracking of last project that I worked on (using github api to find last accessed repo)?
