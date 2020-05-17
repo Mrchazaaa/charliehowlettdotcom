@@ -1,4 +1,4 @@
-import styles from '../styles/_variables.scss';
+import p5 from 'p5';
 
 // Class used to represent clouds in the background sketch.
 class Cloud {
@@ -116,7 +116,9 @@ class Cloud {
     }
 }
 
-export default function( sketch ) {
+let cloudColor = '#fff';
+
+function clouds( sketch ) {
     // Stores the dimensions of the canvas (relative to the viewport).
     let width;
     let height;
@@ -132,7 +134,7 @@ export default function( sketch ) {
         width = document.body.clientWidth;
         height = document.body.clientHeight;
 
-        let cnv = sketch.createCanvas(width, height);
+        sketch.createCanvas(width, height);
 
         clouds = Array(initialCloudCount).fill(new Cloud(sketch, width, height, cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)]));
     
@@ -159,7 +161,7 @@ export default function( sketch ) {
         // sketch.smooth();
 
         // Draw and move clouds.
-        sketch.fill(styles['cloud-color']);
+        sketch.fill(cloudColor);
 
         clouds.forEach(function(element) { 
             element.move(width, height);
@@ -176,4 +178,13 @@ export default function( sketch ) {
             element.updateSize(width, height);  
         });
     };
+}
+
+
+export function setCloudColor(color) {
+    cloudColor = color;
+}
+
+export function cloudsSketch(dockItem) {
+    return new p5(clouds, dockItem);
 }
