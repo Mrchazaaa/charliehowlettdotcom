@@ -134,7 +134,7 @@ export default function( sketch ) {
 
         let cnv = sketch.createCanvas(width, height);
 
-        clouds = Array(initialCloudCount).map(i => new Cloud(sketch, width, height, cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)]));
+        clouds = Array(initialCloudCount).fill(new Cloud(sketch, width, height, cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)]));
     
         // cloudInterval = setInterval( function() { 
         //     clouds.push(new Cloud(sketch, width, height)); 
