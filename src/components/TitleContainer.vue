@@ -17,8 +17,7 @@
 </template>
 
 <script>
-  import p5 from 'p5';
-  import sketch from '../javascript/background.js';
+  import {cloudsSketch, setCloudColor} from '../javascript/background.js';
 
   export default {
     name: 'TitleContainerComponent',
@@ -28,7 +27,8 @@
       }
     },
     mounted() {
-      this.myp5 = new p5(sketch, document.getElementById('sketch'));
+      setCloudColor('red');
+      this.myp5 = cloudsSketch(document.getElementById('sketch'));
 
       var chevron = document.querySelector("#content-pointer");
       chevron.onclick = (el) => {
