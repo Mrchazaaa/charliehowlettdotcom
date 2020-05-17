@@ -32,6 +32,7 @@ Todo:
 [] remove jQuery and other javascript libraries for faster loading
 [] make cloud speed relative to browser width (add timer for speed control?)
 [] GENERATE 3 RANDOM TIMES AT STARTUP TO DETERMINE CREATE TIME OF NEW CLOUDS (no longer need to generate n_clouds*random_numbers) 
+[] add scss variables for margin/padding sizes (small, medium, large etc)
 
 Maybe:
 [] add last tracking of last project that I worked on (using github api to find last accessed repo)?
