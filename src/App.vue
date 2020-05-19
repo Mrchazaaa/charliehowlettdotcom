@@ -35,7 +35,7 @@
     font-weight: bold;
     font-size: 34px;
     margin-top: 0;
-    margin-bottom: 6px;
+    margin-bottom: $margin-sm;
   }
   h3 {
     font-weight: bold;

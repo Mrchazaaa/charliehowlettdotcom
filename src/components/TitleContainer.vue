@@ -18,6 +18,7 @@
 
 <script>
   import {cloudsSketch, setCloudColor} from '../javascript/background.js';
+  import styles from '../styles/_variables.scss';
 
   export default {
     name: 'TitleContainerComponent',
@@ -27,7 +28,7 @@
       }
     },
     mounted() {
-      setCloudColor('red');
+      setCloudColor(styles.cloudColorLight);
       this.myp5 = cloudsSketch(document.getElementById('sketch'));
 
       var chevron = document.querySelector("#content-pointer");
@@ -90,7 +91,6 @@
     font-weight: bold;
     font-family: 'Arial';
     margin: 0;
-    padding: 0;
     text-align: center;
     // max-width: 582px;
   }

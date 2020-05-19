@@ -41,7 +41,7 @@
       object-fit: contain;
       width: 100%;
       height: 100%;
-      padding: 10px;
+      padding: $padding-sm;
     }
     img:hover {
       padding: 0px;

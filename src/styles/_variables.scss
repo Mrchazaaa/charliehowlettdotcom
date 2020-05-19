@@ -1,4 +1,11 @@
-// Color variables used throughout the site.
+$padding-lg: 20px;
+$padding-md: 15px;
+$padding-sm: 10px;
+
+$margin-lg: 15px;
+$margin-md: 10px;
+$margin-sm: 5px;
+
 html {
   --primary-text: #363635;
   --primary-background: #FFFFFF;
@@ -11,7 +18,6 @@ html {
   --jumbotron-background: #E9ECEF;
   --border-color: #e3e3e3;
   --sky-color: #B0D0D3;
-  --cloud-color: #fff;
 }
 
 // html[theme="dark"] {
@@ -37,3 +43,9 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+
+// export variablese for use in js code
+:export {
+  cloudColorLight: #fff;
+  cloudColorDark: #000;
+}
