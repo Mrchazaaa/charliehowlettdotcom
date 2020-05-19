@@ -74,7 +74,7 @@ export default {
   z-index: 2; /* used to stop carousel caption being shown infront of sidebar */
 }
 .carousel-caption p {
-  margin: 10px 5px;
+  margin: $margin-md $margin-sm;
   font-weight: bold;
 }
 </style>

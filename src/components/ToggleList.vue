@@ -57,7 +57,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .toggle-list-collection {
-  margin-bottom: 10px;
+  margin-bottom: $margin-md;
   span {
     transition: 0.5s;
   }
@@ -66,7 +66,7 @@ export default {
   }
   .btn-light {
     text-align: left;
-    padding: 8px !important;
+    padding: $padding-sm !important;
     font-size: 14px;
     font-weight: bold;
     background-color: var(--list-primary-background);
@@ -75,7 +75,7 @@ export default {
     cursor: pointer;
   }
   li {
-    padding: 8px !important;
+    padding: $padding-sm !important;
   }
   p {
     margin-bottom: 0;

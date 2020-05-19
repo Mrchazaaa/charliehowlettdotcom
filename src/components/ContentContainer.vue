@@ -19,7 +19,6 @@
           <!--Previous work-->
           <div class="content-collection border" id="previous-work">
             <h2>Previous Work</h2>
-            <!-- <WorkTableComponent /> -->
             <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game playing AIs, 
               feel free to click on an icon to learn more!</p>
             <IconGridComponent 
@@ -203,7 +202,8 @@
             <!-- put in oven picture -->
           </div>
         </div>
-        <!--CV-->
+      </div>
+      <!--CV-->
         <a id="cv"
           href="./Charles_Howlett.pdf"
           role="button"
@@ -212,7 +212,6 @@
         >
           <h3>View My CV!</h3>
         </a>
-      </div>
     </div>
     <!--contact Information-->
     <div id="contact" class="border">
@@ -231,7 +230,6 @@
 <script>
   import CarouselComponent from "./Carousel.vue";
   import ToggleListComponent from "./ToggleList.vue";
-  import WorkTableComponent from "./WorkTable.vue";
   import LightBoxComponent from "./LightBox.vue";
   import IconGridComponent from "./IconGrid.vue";
 
@@ -240,7 +238,6 @@
     components: {
       CarouselComponent,
       ToggleListComponent,
-      WorkTableComponent,
       LightBoxComponent,
       IconGridComponent,
     },
@@ -302,7 +299,7 @@
   #content {
     max-width: $breakpoint-xl !important;
     // max-width: 1600px;
-    padding-top: 20px;
+    padding-top: $padding-lg;
     margin-left: auto;
     margin-right: auto;
   }
@@ -337,18 +334,21 @@
   #content-collection-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding: $padding-md $padding-md/2 0 $padding-md/2;
   }
-  .column {
-      grid-column: span 1;
-    }
-    .content-collection {
-      font-size: 14px;
-      padding: 15px 15px 0 15px;
-      margin: 15px 7.5px 0px 7.5px;
-      text-align: justify;
-    }
+  .content-column {
+    grid-gap: 10px;
+  }
+  .content-collection {
+    grid-column: span 1;
+    font-size: 14px;
+    padding: $padding-md $padding-md 0 $padding-md;
+    margin-bottom: $padding-md;
+    text-align: justify;
+  }
   #hackathon-table {
-    margin: 0 0 10px 0;
+    margin: 0 0 $margin-md 0;
     border: 1px solid #e3e3e3;
     border-radius: 4px;
     font-weight: bold;
@@ -357,7 +357,7 @@
       background-color: #F2F2F2;
     }
     td {
-      padding: 8px;
+      padding: $padding-md;
       line-height: 1.42857143;
       vertical-align: top;
       border-top: 1px solid #ddd;
@@ -369,7 +369,7 @@
     height: 0; 
     overflow: hidden; 
     max-width: 100%; 
-    margin-bottom: 10px;
+    margin-bottom: $margin-md;
     iframe, object, embed {
       position: absolute; 
       top: 0; 
@@ -381,7 +381,6 @@
   #cv {
     grid-column: span 2;
     border: none;
-    margin: 15px 0px;
     padding: 0.75rem 1.5rem;
     font-weight: bold;
     font-size: 2.5rem;
@@ -390,9 +389,10 @@
     display: block;
     width: 100%;
     text-align: center;
+    margin-bottom: $margin-lg;
   }
   #contact {
-    padding: 10px 0px;
+    padding: $padding-sm 0px;
     background-color: var(--jumbotron-background);
     display: grid;
     justify-content: center;
