@@ -2,19 +2,21 @@
   <div id="app">
     <TitleContainerComponent/>
     <ContentContainerComponent/>
-    <!-- <div id="dark-mode-button"/> -->
+    <FooterComponent/>
   </div>
 </template>
 
 <script>
   import ContentContainerComponent from './components/ContentContainer.vue';
   import TitleContainerComponent from './components/TitleContainer.vue';
+  import FooterComponent from "./components/Footer.vue";
 
   export default {
     name: 'app',
     components: {
       TitleContainerComponent,
       ContentContainerComponent,
+      FooterComponent
     },
   }
 </script>

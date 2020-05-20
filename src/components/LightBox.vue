@@ -35,10 +35,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-#gallery {
+  #gallery {
     margin-bottom: $margin-md;
-}
-img {
+  }
+  img {
     width: 33%;
-}
+  }
 </style>
