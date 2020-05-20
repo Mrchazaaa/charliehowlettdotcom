@@ -5,7 +5,10 @@
 
     <div id="title">    
       <!--title-->
-      <h1>Charlie Howlett</h1>
+      <div>
+        <h1>Charlie Howlett</h1>
+        <span id="dark-theme-btn" class="border">Dark Theme</span>
+      </div>
 
       <!--content pointer-->
       <a id="content-pointer" href="#content"><img src="../assets/chevron-bottom.svg"></a>
@@ -39,6 +42,13 @@
           block: "start",
           inline: "nearest"
         });
+      };
+
+      var darkThemeButton = document.querySelector("#dark-theme-btn");
+      darkThemeButton.onclick = (el) => {
+        var currentTheme = document.querySelector('html').getAttribute('theme');
+        var nextTheme = currentTheme == 'dark' ? '' : 'dark';
+        document.querySelector('html').setAttribute('theme', nextTheme);
       };
     }
   }
@@ -85,14 +95,24 @@
     align-items: center;
     justify-items: center;
     grid-template-rows: 80vh 20vh;
-  }
-  h1 {
-    font-size: calc(250% + 40px);
-    font-weight: bold;
-    font-family: 'Arial';
-    margin: 0;
-    text-align: center;
-    // max-width: 582px;
+
+    h1 {
+      font-size: calc(250% + 40px);
+      font-weight: bold;
+      font-family: 'Arial';
+      margin: 0;
+      text-align: center;
+      // max-width: 582px;
+    }
+    span {
+      float: right;
+      background-color: var(--link-color);
+      color: var(--primary-background);
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      margin-right: $margin-md;
+      cursor: pointer;
+    }
   }
   #content-pointer {
     width: 100%;

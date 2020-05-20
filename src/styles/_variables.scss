@@ -20,20 +20,19 @@ html {
   --sky-color: #B0D0D3;
 }
 
-// html[theme="dark"] {
-//   --primary-text: #363635;
-//   --primary-background: #FFFFFF;
-//   --active-background: #EAEAEA;
-//   --list-primary-background: #F9F9F9;
-//   --list-secondary-background: #FFFFFF;
-//   --link-color: #0062CC;
-//   --table-primary-background: #E1E1E1;
-//   --table-secondary-background: #F9F9F9;
-//   --jumbotron-background: #E9ECEF;
-//   --border-color: #e3e3e3;
-//   --sky-color: red;
-//   @value --cloud-color: #000;
-// }
+html[theme="dark"] {
+  --primary-text: #363635;
+  --primary-background: #FFFFFF;
+  --active-background: #EAEAEA;
+  --list-primary-background: #F9F9F9;
+  --list-secondary-background: #FFFFFF;
+  --link-color: #0062CC;
+  --table-primary-background: #E1E1E1;
+  --table-secondary-background: #F9F9F9;
+  --jumbotron-background: #E9ECEF;
+  --border-color: #e3e3e3;
+  --sky-color: #0B3954;
+}
 
 // title colors
 
