@@ -345,7 +345,7 @@
       font-weight: bold;
       width: 100%;
       tr:nth-child(odd) {
-        background-color: #F2F2F2;
+        background-color: var(--list-secondary-background);
       }
       td {
         padding: $padding-md;
@@ -380,7 +380,6 @@
     font-weight: bold;
     font-size: 2.5rem;
     background-color: var(--link-color);
-    color: var(--primary-background);
     display: block;
     width: 100%;
     text-align: center;
