@@ -9,9 +9,8 @@ $margin-sm: 5px;
 html {
   --primary-text: #363635;
   --primary-background: #FFFFFF;
-  --active-background: #EAEAEA;
   --list-primary-background: #F9F9F9;
-  --list-secondary-background: #FFFFFF;
+  --list-secondary-background: #F2F2F2;
   --link-color: #0062CC;
   --table-primary-background: #E1E1E1;
   --table-secondary-background: #F9F9F9;
@@ -21,17 +20,16 @@ html {
 }
 
 html[theme="dark"] {
-  --primary-text: #363635;
-  --primary-background: #FFFFFF;
-  --active-background: #EAEAEA;
-  --list-primary-background: #F9F9F9;
-  --list-secondary-background: #FFFFFF;
-  --link-color: #0062CC;
+  --primary-text: #E5E7E7;
+  --primary-background: #1C1C27;
+  --list-primary-background: #28293D;
+  --list-secondary-background: #28293D;
+  --link-color: #8A4FFF;
   --table-primary-background: #E1E1E1;
   --table-secondary-background: #F9F9F9;
-  --jumbotron-background: #E9ECEF;
-  --border-color: #e3e3e3;
-  --sky-color: #0B3954;
+  --jumbotron-background: #28293D;
+  --border-color: #33333E;
+  --sky-color: #202040;
 }
 
 // title colors
@@ -46,5 +44,5 @@ $breakpoint-xl: 1200px;
 // export variablese for use in js code
 :export {
   cloudColorLight: #fff;
-  cloudColorDark: #000;
+  cloudColorDark: #3A506B;
 }

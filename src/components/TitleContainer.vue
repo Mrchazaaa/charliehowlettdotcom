@@ -48,7 +48,11 @@
       darkThemeButton.onclick = (el) => {
         var currentTheme = document.querySelector('html').getAttribute('theme');
         var nextTheme = currentTheme == 'dark' ? '' : 'dark';
+        
         document.querySelector('html').setAttribute('theme', nextTheme);
+
+        var nextCloudColor = currentTheme == 'dark' ? styles.cloudColorLight : styles.cloudColorDark;
+        setCloudColor(nextCloudColor);
       };
     }
   }

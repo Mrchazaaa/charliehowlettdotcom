@@ -26,6 +26,7 @@
     margin:0; 
     padding:0;
     height: 100%;
+    background-color: var(--primary-background);
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -47,7 +48,7 @@
       margin-bottom: 0px;
   }
   .border {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color) !important;
     border-radius: 4px;
   }
   #dark-mode-button {

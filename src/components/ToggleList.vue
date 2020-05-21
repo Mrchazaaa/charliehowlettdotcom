@@ -70,6 +70,7 @@ export default {
     font-size: 14px;
     font-weight: bold;
     background-color: var(--list-primary-background);
+    color: var(--primary-text);
   }
   .toggle-list {
     cursor: pointer;
