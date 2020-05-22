@@ -8,31 +8,35 @@ $margin-sm: 5px;
 
 html {
   --primary-text: #363635;
+  --btn-text: #fff;
+  --btn-background: #2C3E50;
+  --btn-hover-background: #2b4764;
+  --btn-focus-background: #1e2b37;
+  --btn-active-border: #1e2b37;
   --primary-background: #FFFFFF;
-  --list-primary-background: #F9F9F9;
-  --list-secondary-background: #F2F2F2;
-  --link-color: #0062CC;
+  --list-background: #ECF0F1;
   --table-primary-background: #E1E1E1;
   --table-secondary-background: #F9F9F9;
-  --jumbotron-background: #E9ECEF;
+  --jumbotron-background: #ECF0F1;
   --border-color: #e3e3e3;
   --sky-color: #B0D0D3;
 }
 
 html[theme="dark"] {
-  --primary-text: #E5E7E7;
-  --primary-background: #18191A;
-  --list-primary-background: #28293D;
-  --list-secondary-background: #28293D;
-  --link-color: #8A4FFF;
+  --primary-text: #fff;
+  --btn-text: #fff;
+  --btn-background: #375A7F;
+  --btn-hover-background: #2b4764;
+  --btn-focus-background: #2b4764;
+  --btn-active-border: #2b4764;
+  --primary-background: #222222;
+  --list-background: #303030;
   --table-primary-background: #E1E1E1;
   --table-secondary-background: #F9F9F9;
-  --jumbotron-background: #28293D;
-  --border-color: #33333E;
+  --jumbotron-background: #303030;
+  --border-color: #444;
   --sky-color: #202040;
 }
-
-// title colors
 
 // Size variables used to define breakpoints throughout the site.
 $breakpoint-xs: 0;

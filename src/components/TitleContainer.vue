@@ -7,7 +7,7 @@
       <!--title-->
       <div>
         <h1>Charlie Howlett</h1>
-        <span id="dark-theme-btn" class="border">Dark Theme</span>
+        <span id="dark-theme-btn" class="button">Dark Theme</span>
       </div>
 
       <!--content pointer-->
@@ -99,7 +99,6 @@
     align-items: center;
     justify-items: center;
     grid-template-rows: 80vh 20vh;
-
     h1 {
       font-size: calc(250% + 40px);
       font-weight: bold;
@@ -110,9 +109,6 @@
     }
     span {
       float: right;
-      background-color: var(--link-color);
-      color: var(--primary-background);
-      font-weight: bold;
       padding: 0.75rem 1.5rem;
       margin-right: $margin-md;
       cursor: pointer;

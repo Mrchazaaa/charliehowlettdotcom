@@ -69,7 +69,7 @@
           <h3>Hackathons</h3>
           <p>One of my most rewarding hobbies is participating in hackathons, particularly team based ones, and have 
               so far competed in the following:</p>
-          <table id="hackathon-table">
+          <table id="hackathon-table" class="border">
             <tbody>
               <tr>
                 <td>Google Code Jam (2017)</td>
@@ -208,6 +208,7 @@
       role="button"
       style="font-size: 14px"
       aria-pressed="true"
+      class="button"
     >
       <h3>View My CV!</h3>
     </a>
@@ -322,11 +323,11 @@
   #content-collection {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: $margin-md;
     padding: $padding-md $padding-md/2 0 $padding-md/2;
     
     & > div {
-      grid-gap: 10px;
+      grid-gap: $margin-md;
     }
 
     .content-item {
@@ -340,18 +341,14 @@
     #hackathon-table {
       @include content-margin-flow;
 
-      border: 1px solid #e3e3e3;
       border-radius: 4px;
       font-weight: bold;
       width: 100%;
-      tr:nth-child(odd) {
-        background-color: var(--list-secondary-background);
-      }
+      background-color: var(--list-background);
       td {
-        padding: $padding-md;
+        padding: $padding-sm;
         line-height: 1.42857143;
         vertical-align: top;
-        border-top: 1px solid #ddd;
       }
     }
     .embed-container { 
@@ -375,11 +372,8 @@
     @include content-margin-flow;
 
     grid-column: span 2;
-    border: none;
     padding: 0.75rem 1.5rem;
-    font-weight: bold;
     font-size: 2.5rem;
-    background-color: var(--link-color);
     display: block;
     width: 100%;
     text-align: center;

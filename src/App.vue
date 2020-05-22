@@ -59,4 +59,16 @@
     top: 10px;
     background-color: var(--jumbotron-background);
   }
+  .button {
+    font-weight: bold;
+    color: var(--btn-text);
+    background-color: var(--btn-background);
+    border: 1px solid var(--btn-active-border);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  }
+  .button:hover {
+    color: var(--btn-text);
+    background-color: var(--btn-hover-background);
+    border: 1px solid var(--btn-background);
+  }
 </style>
