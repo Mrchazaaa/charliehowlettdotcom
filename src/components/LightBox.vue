@@ -37,8 +37,15 @@ export default {
 <style lang="scss" scoped>
   #gallery {
     margin-bottom: $margin-md;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: $margin-md;
+
+    & > a {
+      grid-column: span 1;
+    }
   }
   img {
-    width: 33%;
+    width: 100%;
   }
 </style>
