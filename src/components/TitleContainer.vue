@@ -10,6 +10,8 @@
         <span id="dark-theme-btn" class="button">Dark Theme</span>
       </div>
 
+      <img id="celestial" :src='require("@/assets/sun.svg")'/>
+
       <!--content pointer-->
       <a id="content-pointer" href="#content"><img src="../assets/chevron-bottom.svg"></a>
     
@@ -53,6 +55,9 @@
 
         var nextCloudColor = currentTheme == 'dark' ? styles.cloudColorLight : styles.cloudColorDark;
         setCloudColor(nextCloudColor);
+
+        var nextCelestial = currentTheme == 'dark' ? require("@/assets/sun.svg") : require("@/assets/moon.svg");
+        document.querySelector('#celestial').setAttribute('src', nextCelestial);
       };
     }
   }
@@ -129,5 +134,12 @@
   #content-pointer img {
     width: 100%;
     height: 5vh;
+  }
+  #celestial {
+    position: absolute;
+    top: 10vh;
+    right: 30%;
+    height: 250px;
+    width: 250px;
   }
 </style>
