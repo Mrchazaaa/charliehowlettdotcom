@@ -73,7 +73,7 @@
   }
   a {
     color: #00bc8c;
-    &:hover {
+    &:hover, &:focus {
       color: #007053;
     }
   }

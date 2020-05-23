@@ -40,7 +40,7 @@ html[theme="dark"] {
   --jumbotron-background: #303030;
   --border-color: #444;
   --sky-color: #18314F;
-  #footer img {
+  #footer img, #content-pointer img {
     filter: invert(1);
   }
 }
