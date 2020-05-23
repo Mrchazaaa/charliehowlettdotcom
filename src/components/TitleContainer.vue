@@ -1,6 +1,9 @@
 <template>
   <div id="title-container">
     <!--p5js sketch background-->
+
+    <img id="celestial" :src='require("@/assets/sun.svg")'/>
+
     <div id='sketch'></div>
 
     <div id="title">    
@@ -9,8 +12,6 @@
         <h1>Charlie Howlett</h1>
         <span id="dark-theme-btn" class="button">Dark Theme</span>
       </div>
-
-      <img id="celestial" :src='require("@/assets/sun.svg")'/>
 
       <!--content pointer-->
       <a id="content-pointer" href="#content"><img src="../assets/chevron-bottom.svg"></a>
@@ -58,6 +59,9 @@
 
         var nextCelestial = currentTheme == 'dark' ? require("@/assets/sun.svg") : require("@/assets/moon.svg");
         document.querySelector('#celestial').setAttribute('src', nextCelestial);
+
+        var nextMountains = currentTheme == 'dark' ? require("@/assets/mountains.svg") : require("@/assets/mountains-dark.svg");
+        document.querySelector('#mountains').setAttribute('src', nextMountains);
       };
     }
   }
@@ -83,8 +87,9 @@
     object-position: 100% 0;
   }
   #sketch {
+    position: relative;
     margin: 0; 
-    z-index: 0;
+    z-index: none;
     height: 100%;
   }
   canvas {
@@ -110,6 +115,7 @@
       font-family: 'Arial';
       margin: 0;
       text-align: center;
+      z-index: 2;
       // max-width: 582px;
     }
     span {
@@ -126,7 +132,7 @@
     height: 100%;
     display: grid;
     align-items: center; 
-    z-index: 1;
+    z-index: 2;
   }
   #content-pointer:hover {
     opacity: 1;
@@ -141,5 +147,6 @@
     right: 30%;
     height: 250px;
     width: 250px;
+    z-index: 0 !important;
   }
 </style>

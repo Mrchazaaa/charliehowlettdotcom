@@ -71,4 +71,10 @@
     background-color: var(--btn-hover-background);
     border: 1px solid var(--btn-background);
   }
+  a {
+    color: #00bc8c;
+    &:hover {
+      color: #007053;
+    }
+  }
 </style>

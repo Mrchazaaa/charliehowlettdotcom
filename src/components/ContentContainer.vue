@@ -51,7 +51,7 @@
             <IconGridComponent
               :items="[{width: 5, image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
                         {width: 7, image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
-                        {width: 12, image: require('@/assets/IET-bursary.jpg')}]"
+                        {width: 12, image: require('@/assets/IET-bursary.png')}]"
               :rowWidth="12" />
           </div>
         </div>
@@ -161,7 +161,7 @@
           <p>
             The majority of this work was completed using
             <strong>C/C++</strong>. An open-source driving simulator 
-            (<a href="http://www.speed-dreams.org/">Speed Dreams 2</a>), featuring realistic
+            <a href="http://www.speed-dreams.org/">Speed Dreams 2</a>, featuring realistic
             tire physics and individual wheel braking, was used in verifying code functionality.
           </p>
         </div>
