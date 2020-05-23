@@ -73,6 +73,12 @@
       display: none;
     }
   }
+  @media (max-width: $breakpoint-md) {
+    #dark-theme-btn {
+      float: none !important;
+      margin-right: 0px !important;
+    }
+  }
   #title-container {
     height: 100vh;
     background-color: var(--sky-color);
@@ -123,6 +129,9 @@
       padding: 0.75rem 1.5rem;
       margin-right: $margin-md;
       cursor: pointer;
+    }
+    div {
+      text-align: center;
     }
   }
   #content-pointer {
