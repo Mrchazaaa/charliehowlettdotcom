@@ -14,7 +14,7 @@
       </div>
 
       <!--content pointer-->
-      <a id="content-pointer" href="#content"><img src="../assets/chevron-bottom.svg"></a>
+      <a id="content-pointer" href="#content-container"><img src="../assets/chevron-bottom.svg"></a>
     
       <img id="mountains" :src="require('@/assets/mountains.svg')"/>
 
@@ -145,8 +145,8 @@
     position: absolute;
     top: 10vh;
     right: 30%;
-    height: 250px;
-    width: 250px;
+    height: calc(100px + 5vw);
+    width: calc(100px + 5vw);
     z-index: 0 !important;
   }
 </style>
