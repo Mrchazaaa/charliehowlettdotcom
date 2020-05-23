@@ -9,10 +9,14 @@ $margin-sm: 5px;
 html {
   --primary-text: #363635;
   --btn-text: #fff;
-  --btn-background: #2C3E50;
+  // --btn-background: #2C3E50;
+  // --btn-hover-background: #2b4764;
+  // --btn-focus-background: #1e2b37;
+  // --btn-active-border: #1e2b37;
+  --btn-background: #375A7F;
   --btn-hover-background: #2b4764;
-  --btn-focus-background: #1e2b37;
-  --btn-active-border: #1e2b37;
+  --btn-focus-background: #2b4764;
+  --btn-active-border: #2b4764;
   --primary-background: #FFFFFF;
   --list-background: #ECF0F1;
   --table-primary-background: #E1E1E1;
@@ -35,7 +39,10 @@ html[theme="dark"] {
   --table-secondary-background: #F9F9F9;
   --jumbotron-background: #303030;
   --border-color: #444;
-  --sky-color: #202040;
+  --sky-color: #18314F;
+  #footer img {
+    filter: invert(1);
+  }
 }
 
 // Size variables used to define breakpoints throughout the site.
@@ -48,5 +55,5 @@ $breakpoint-xl: 1200px;
 // export variablese for use in js code
 :export {
   cloudColorLight: #fff;
-  cloudColorDark: #3A506B;
+  cloudColorDark: #ADB5BD;
 }
