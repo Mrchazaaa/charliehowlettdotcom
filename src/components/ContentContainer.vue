@@ -336,7 +336,7 @@
       grid-column: span 1;
       font-size: 14px;
       padding: $padding-md $padding-md 0 $padding-md;
-      text-align: justify;
+      // text-align: justify;
     }
     #hackathon-table {
       @include content-margin-flow;

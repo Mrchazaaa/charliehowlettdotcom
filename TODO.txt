@@ -11,31 +11,31 @@ Done:
 [x] parallax cloud speeds
 [x] make mobile version take up full width
 [x] begin painting clouds offscreen which then float into view (render few at first for performance)
+[x] make cloud speed relative to browser width (add timer for speed control?)
+[x] Redesign color scheme
+[x] add dark theme button (probably only really viable with css variables)
+[x] add scss variables for margin/padding sizes (small, medium, large etc)
 
 In progress:
 [] Redesign website for minamilism
 [] refactor code for cleanliness
 [] instead of More/Less buttons, make sections titles the buttons
 [] REMOVE SCOPED DIRECTIVES FOR PERFORMANCE
+[] compress images for faster loading
 
 Todo:
-[] Redesign color scheme
 [] update work done and CV !!!
 [] make title page text chunkier and bigger for impact. Perhaps also use a nice looking font
-[] add dark theme button (probably only really viable with css variables)
 [] browser compatibility
-[] cloud flyweight pattern
 [] remove unnecessary javascript libraries for faster performance
 [] add clouds and sun as vector images instead of drawing them using p5
 [] LAZY LOADING
-[] compress images for faster loading
 [] remove jQuery and other javascript libraries for faster loading
-[] make cloud speed relative to browser width (add timer for speed control?)
 [] GENERATE 3 RANDOM TIMES AT STARTUP TO DETERMINE CREATE TIME OF NEW CLOUDS (no longer need to generate n_clouds*random_numbers) 
-[] add scss variables for margin/padding sizes (small, medium, large etc)
 
 Maybe:
 [] add last tracking of last project that I worked on (using github api to find last accessed repo)?
 [] live updates of codewars badges through scraping?
 [] add loading screen for site startup?
 [] add buttons for options in cloud generation
+[] cloud flyweight pattern
