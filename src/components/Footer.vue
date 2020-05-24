@@ -24,6 +24,8 @@
 </script>
 
 <style lang="scss">
+  @import "@/styles/_variables.scss";
+
   #footer {
     padding: $padding-sm 0px;
     background-color: var(--jumbotron-background);

@@ -1,4 +1,5 @@
 import p5 from 'p5';
+import $ from 'jquery';
 
 // Class used to represent clouds in the background sketch.
 class Cloud {
