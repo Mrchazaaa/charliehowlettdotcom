@@ -1,21 +1,21 @@
 <template>
   <div class="toggle-list-collection">
-    <button v-if="content.title != 'Nav'" type="button" class="toggle-list btn btn-light btn-block">
+    <button v-if="content.title != 'Nav'" type="button" class="toggle-list button">
       {{content.title}}
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     </button>
     <button
       v-if="content.title == 'Nav'"
       type="button"
-      class="toggle-list btn btn-light btn-lg btn-block"
+      class="button toggle-list"
     >{{content.title}}</button>
-    <ul class="list-group">
+    <ul class="list-group border">
       <li class="list-group-item" v-for="entries in content.items" :key="entries.text">
         <a
           v-if="entries.link != ''"
           :href="entries.link"
           role="button"
-          class="toggle-list btn btn-light btn-block"
+          class="toggle-list"
         >{{entries.text}}</a>
         <p v-if="entries.link == ''">{{entries.text}}</p>
       </li>
@@ -57,29 +57,37 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .toggle-list-collection {
-  margin-bottom: 10px;
+  margin-bottom: $margin-md;
   span {
     transition: 0.5s;
   }
   .glyphicon {
     float:right
   }
-  .btn-light {
+  button {
     text-align: left;
-    padding: 8px !important;
+    padding: $padding-sm !important;
     font-size: 14px;
-    font-weight: bold;
-    background-color: var(--list-primary-background);
+    width: 100%;
   }
   .toggle-list {
     cursor: pointer;
   }
   li {
-    padding: 8px !important;
+    padding: $padding-sm !important;
   }
   p {
     margin-bottom: 0;
     font-weight: bold;
+  }
+  .list-group-item {
+    border: none;
+    background-color: transparent !important;
+  }
+  .list-group {
+    background-color: var(--list-background);
+    border-top-left-radius: 0px;;
+    border-top-right-radius: 0px;;
   }
 }
 </style>

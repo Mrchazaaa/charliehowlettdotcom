@@ -75,7 +75,7 @@ export default {
 .less-more {
   font-weight: bold;
   width: calc(100% - 15px);
-  margin: 0 7.5px 0 7.5px;
+  margin: 0 $margin-lg/2 0 $margin-lg/2;
 }
 .collapsed {
   overflow-y: hidden;

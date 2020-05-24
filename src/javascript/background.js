@@ -1,4 +1,4 @@
-import styles from '../styles/_variables.scss';
+import p5 from 'p5';
 
 // Class used to represent clouds in the background sketch.
 class Cloud {
@@ -52,17 +52,20 @@ class Cloud {
 
             // Store percentage value of this cloud points radius so that it can be updated on screen size change.
             this.cloudPoints.push([xOffset, radius, ellipseRadius]);
+
+            this.lastTime = new Date();
         }
 
         // Initial x coordinate of cloud is set so that the cloud starts just off the left side of the screen.
-        this.startingPoint = -((this.cloudWidth + (cloudPointMaxWidth/2)) * this.height);
+        this.startingPoint = -((this.cloudWidth + (cloudPointMaxWidth)) * this.height);
         this.x = this.startingPoint;
         // Randomly positon cloud along x axis.
         // this.x = Math.random() * this.width;
 
-        // Initial y coordinate of cloud is a random number between 0 and view port height (stored as percentage of viewport height from top of page).
+        // Initial y coordinate of cloud is a random number between 0 and canvas height (stored as percentage of viewport height from top of page).
+        // Minus maximum height of clouds, plus 10 padding, to avoid rendering clouds off the top of the screen.
         this.yPerc = Math.random() / 2; 
-        this.y = this.height * this.yPerc;
+        this.y = (this.height + 10 + (cloudPointMaxWidth/2)) * this.yPerc;
     }
 
     // A cloud is essentially a collection of ellipses, of varying size. Each ellipse is refered to as a "cloud point".
@@ -82,7 +85,14 @@ class Cloud {
         if (this.x++ >= this.width + (this.cloudPoints[0][1]/2)) {
             this.x = this.startingPoint - (this.x - (this.width + (this.cloudPoints[0][1]/2)));
         }
-        this.x+=this.speed;
+
+        let newTime = new Date();
+        let timeDiff = (newTime - this.lastTime)/1000; //milliseconds
+        let offset = (this.width/this.speed)*timeDiff;
+
+        this.x+=offset;
+
+        this.lastTime = newTime;
     }
 
     updateSize(newWidth, newHeight) {
@@ -116,13 +126,14 @@ class Cloud {
     }
 }
 
-export default function( sketch ) {
+let cloudColor = '#fff';
+
+function clouds( sketch ) {
     // Stores the dimensions of the canvas (relative to the viewport).
     let width;
     let height;
     let clouds = [];
-    let cloudSpeeds = [0.3, 0.5, 0.7, 1];
-    // let cloudInterval;
+    let cloudSpeeds = [12, 13, 15];
     let initialCloudCount = 4;
     let cloudCountLimit = 15;
     let cloudCreationSuccessRate = 0.005;
@@ -132,10 +143,10 @@ export default function( sketch ) {
         width = document.body.clientWidth;
         height = document.body.clientHeight;
 
-        let cnv = sketch.createCanvas(width, height);
+        sketch.createCanvas(width, height);
 
-        clouds = Array(initialCloudCount).fill(new Cloud(sketch, width, height, cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)]));
-    
+        clouds = Array.from({length: initialCloudCount}, () => new Cloud(sketch, width, height, cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)]));
+
         // cloudInterval = setInterval( function() { 
         //     clouds.push(new Cloud(sketch, width, height)); 
         //     if (clouds.length == maxClouds) {
@@ -149,7 +160,9 @@ export default function( sketch ) {
 
         if (clouds.length < cloudCountLimit) {
             if (Math.random() < cloudCreationSuccessRate ) {
-                clouds.push(new Cloud(sketch, width, height, cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)]));
+                var speed = cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)];
+                
+                clouds.push(new Cloud(sketch, width, height, speed));
             }
         }
 
@@ -159,7 +172,7 @@ export default function( sketch ) {
         // sketch.smooth();
 
         // Draw and move clouds.
-        sketch.fill(styles['cloud-color']);
+        sketch.fill(cloudColor);
 
         clouds.forEach(function(element) { 
             element.move(width, height);
@@ -176,4 +189,13 @@ export default function( sketch ) {
             element.updateSize(width, height);  
         });
     };
+}
+
+
+export function setCloudColor(color) {
+    cloudColor = color;
+}
+
+export function cloudsSketch(dockItem) {
+    return new p5(clouds, dockItem);
 }
