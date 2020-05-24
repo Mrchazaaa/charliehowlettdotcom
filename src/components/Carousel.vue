@@ -49,15 +49,19 @@
 </template>
 
 <script>
-$(".carousel").carousel();
+  import $ from 'jquery';
 
-export default {
-  name: "Carousel"
-};
+  $(".carousel").carousel();
+
+  export default {
+    name: "Carousel"
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+@import "@/styles/_variables.scss";
+
 .carousel {
   margin-bottom: 10px;
 }

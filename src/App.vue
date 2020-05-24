@@ -22,11 +22,14 @@
 </script>
 
 <style lang="scss">
+  @import "@/styles/_variables.scss";
+
   body, html {
     margin:0; 
     padding:0;
     height: 100%;
     background-color: var(--primary-background);
+    font-size: 10px;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;

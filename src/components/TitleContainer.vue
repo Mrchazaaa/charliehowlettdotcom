@@ -14,8 +14,13 @@
       </div>
 
       <!--content pointer-->
-      <a id="content-pointer" href="#content-container"><img src="../assets/chevron-bottom.svg"></a>
-    
+      <!-- <a id="content-pointer" href="#content-container"><img src="../assets/chevron-bottom.svg"></a> -->
+      <a id="content-pointer" href="#content-container">
+        <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </a>
+
       <img id="mountains" :src="require('@/assets/mountains.svg')"/>
 
     </div>
@@ -68,6 +73,8 @@
 </script>
 
 <style lang="scss">
+  @import "@/styles/_variables.scss";
+
   @media (max-width: $breakpoint-sm) {
     #content-pointer {
       display: none;
@@ -146,9 +153,10 @@
   #content-pointer:hover {
     opacity: 1;
   }
-  #content-pointer img {
+  #content-pointer svg {
     width: 100%;
     height: 5vh;
+    fill: black;
   }
   #celestial {
     position: absolute;

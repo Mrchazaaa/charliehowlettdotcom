@@ -32,6 +32,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+  @import "@/styles/_variables.scss";
+  
   #icon-grid {
     width: 100%;
     display: grid;
