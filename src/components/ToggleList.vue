@@ -1,17 +1,12 @@
 <template>
   <div class="toggle-list-collection">
-    <button v-if="content.title != 'Nav'" type="button" class="toggle-list button">
+    <button @click="toggleList" type="button" class="toggle-list button">
       {{content.title}}
-      <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <svg ref="toggle-list-icon" class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
       </svg>
     </button>
-    <button
-      v-if="content.title == 'Nav'"
-      type="button"
-      class="button toggle-list"
-    >{{content.title}}</button>
-    <ul class="list-group border">
+    <ul ref="toggle-list" class="list-group border">
       <li class="list-group-item" v-for="entries in content.items" :key="entries.text">
         <a
           v-if="entries.link != ''"
@@ -26,36 +21,34 @@
 </template>
 
 <script>
-  // import $ from 'jquery';
+  export default {
+    name: "ToggleList",
+    props: {
+      content: {
+        type: Object,
+        required: true
+      }
+    },
+    methods: {
+      toggleList() {
 
-  // $(document).ready(function() {
-  //   //setup animations for each toggleable list
-  //   $(".toggle-list")
-  //     .next()
-  //     .hide();
-  //   $(".toggle-list").on("click", function(event) {
-  //     if ($(this).find("svg").css( "transform" ) == 'none' ){
-  //       $(this).find("svg").css("transform","rotate(90deg)");
-  //     } else {
-  //       $(this).find("svg").css("transform","" );
-  //     }
-      
-  //     $(this)
-  //       .next()
-  //       .slideToggle("slow");
-  //     $(this).toggleClass("toggle-listClicked");
-  //   });
-  // });
+        const slideDown = function (element, icon) {
+          element.style.height = `${element.scrollHeight}px`;
+          icon.setAttribute("style", "transform: rotate(90deg");
+        }
+        
+        const slideUp = function (element, icon) {
+          element.style.height = '0px';
+          icon.setAttribute("style", "transform: none");
+        }
 
-export default {
-  name: "ToggleList",
-  props: {
-    content: {
-      type: Object,
-      required: true
-    }
-  }
-};
+        var icon = this.$refs['toggle-list-icon'];
+        var scrollable = this.$refs['toggle-list'];
+        scrollable.style.height == '0px' || !scrollable.style.height 
+          ? slideDown(scrollable, icon) : slideUp(scrollable, icon);
+      }
+    },
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -67,15 +60,6 @@ export default {
     svg {
       transition: 0.5s;
       float: right;
-      // position: relative;
-      // top: 1px;
-      // display: inline-block;
-      // font-family: 'Glyphicons Halflings';
-      // font-style: normal;
-      // font-weight: 400;
-      // line-height: 1;
-      // -webkit-font-smoothing: antialiased;
-      // -moz-osx-font-smoothing: grayscale;
     }
     button {
       text-align: left;
@@ -99,8 +83,12 @@ export default {
     }
     .list-group {
       background-color: var(--list-background);
-      border-top-left-radius: 0px;;
-      border-top-right-radius: 0px;;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      
+      transition:height 0.75s ease-out;
+      height:0;
+      overflow:hidden;
     }
   }
 </style>
