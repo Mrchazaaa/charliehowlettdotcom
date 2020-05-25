@@ -26,27 +26,26 @@
 </template>
 
 <script>
-  import $ from 'jquery';
+  // import $ from 'jquery';
 
-  $(document).ready(function() {
-    //setup animations for each toggleable list
-    $(".toggle-list")
-      .next()
-      .hide();
-    $(".toggle-list").on("click", function(event) {
-      if ($(this).find("svg").css( "transform" ) == 'none' ){
-        $(this).find("svg").css("transform","rotate(90deg)");
-      } else {
-        $(this).find("svg").css("transform","" );
-      }
+  // $(document).ready(function() {
+  //   //setup animations for each toggleable list
+  //   $(".toggle-list")
+  //     .next()
+  //     .hide();
+  //   $(".toggle-list").on("click", function(event) {
+  //     if ($(this).find("svg").css( "transform" ) == 'none' ){
+  //       $(this).find("svg").css("transform","rotate(90deg)");
+  //     } else {
+  //       $(this).find("svg").css("transform","" );
+  //     }
       
-      $(this)
-        .next()
-        .slideToggle("slow");
-      $(this).toggleClass("toggle-listClicked");
-    });
-  }
-);
+  //     $(this)
+  //       .next()
+  //       .slideToggle("slow");
+  //     $(this).toggleClass("toggle-listClicked");
+  //   });
+  // });
 
 export default {
   name: "ToggleList",

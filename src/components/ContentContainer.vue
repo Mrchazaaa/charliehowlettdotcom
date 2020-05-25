@@ -65,7 +65,7 @@
             rasperry pi products in developing various 
             novel projects as well as testing networking principles.
           </p>
-          <CarouselComponent />
+          <CarouselContainer />
           <h3>Hackathons</h3>
           <p>One of my most rewarding hobbies is participating in hackathons, particularly team based ones, and have 
               so far competed in the following:</p>
@@ -216,7 +216,7 @@
 </template>
 
 <script>
-  import CarouselComponent from "./Carousel.vue";
+  import CarouselContainer from "./CarouselContainer.vue";
   import ToggleListComponent from "./ToggleList.vue";
   import LightBoxComponent from "./LightBox.vue";
   import IconGridComponent from "./IconGrid.vue";
@@ -224,7 +224,7 @@
   export default {
     name: "ContentContainerComponent",
     components: {
-      CarouselComponent,
+      CarouselContainer,
       ToggleListComponent,
       LightBoxComponent,
       IconGridComponent,
