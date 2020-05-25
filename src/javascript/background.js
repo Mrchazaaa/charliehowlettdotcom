@@ -1,5 +1,5 @@
-import p5 from 'p5';
-import $ from 'jquery';
+import p5 from 'p5/lib/p5.min.js';
+// import $ from 'jquery';
 
 // Class used to represent clouds in the background sketch.
 class Cloud {
@@ -183,12 +183,12 @@ function clouds( sketch ) {
 
     // Called every time the canvas is resized.
     sketch.windowResized = function() {
-        width = $(window).width(); //document.body.clientWidth;
-        height = $(window).height(); //document.body.clientHeight;
-        sketch.resizeCanvas(width, height);
-        clouds.forEach(function(element) { 
-            element.updateSize(width, height);  
-        });
+        // width = $(window).width(); //document.body.clientWidth;
+        // height = $(window).height(); //document.body.clientHeight;
+        // sketch.resizeCanvas(width, height);
+        // clouds.forEach(function(element) { 
+        //     element.updateSize(width, height);  
+        // });
     };
 }
 
