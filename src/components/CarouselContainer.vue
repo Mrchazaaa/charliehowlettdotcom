@@ -20,7 +20,6 @@
 
 <script>
   import { Carousel, Slide } from 'vue-carousel'
-  // $(".carousel").carousel();
 
   export default {
     name: "CarouselContainer",
