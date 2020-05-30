@@ -1,5 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import VueSilentbox from 'vue-silentbox';
+import './styles/styles.scss';
 
 import Vue from 'vue';
 import App from './App.vue';
