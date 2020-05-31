@@ -6,14 +6,8 @@
     :paginationColor="'var(--pagination-color)'"
     :paginationActiveColor="'var(--pagination-active-color)'"
     :paginationPadding="5">
-    <Slide>
-      <img src="../assets/volunteering-leg.webp" alt="First slide" />
-    </Slide>
-    <Slide>
-      <img src="../assets/volunteering-leg.webp" alt="First slide" />
-    </Slide>
-    <Slide>
-      <img src="../assets/volunteering-leg.webp" alt="First slide" />
+    <Slide v-for="image in images" :key="image">
+      <img :src="image" alt="First slide" />
     </Slide>
   </Carousel>
 </template>
@@ -27,27 +21,13 @@
       Carousel,
       Slide
     },
-    methods: {
-      onClick(i) {
-        this.index = i;
-      },
-      getCSSVariable(variableName) {
-        return getComputedStyle(document.body).getPropertyValue(variableName);
-      }
-    },
     data: function() {
       return {
         images: [
-          'https://placekitten.com/801/800',
-          'https://placekitten.com/802/800',
-          'https://placekitten.com/803/800',
-          'https://placekitten.com/804/800',
-          'https://placekitten.com/805/800',
-          'https://placekitten.com/806/800',
-          'https://placekitten.com/807/800',
-          'https://placekitten.com/808/800',
-          'https://placekitten.com/809/800',
-          'https://placekitten.com/810/800'
+          require('@/assets/volunteering-leg.webp'),
+          require('@/assets/cybersoc-leg.webp'),
+          require('@/assets/raleigh.webp'),
+          require('@/assets/band-leg.webp'),
         ],
         index: 0
       }
