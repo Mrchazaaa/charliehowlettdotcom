@@ -59,6 +59,8 @@
       padding: $padding-sm !important;
       font-size: 14px;
       width: 100%;
+      z-index: 5;
+      position: relative;
     }
     .toggle-list {
       cursor: pointer;
@@ -74,10 +76,6 @@
       border: none;
     }
     .list-group {
-      // background-color: var(--list-background);
-      // border-top-left-radius: 0px;
-      // border-top-right-radius: 0px;
-      
       transition:height 0.75s ease-out;
       height:0;
       overflow:hidden;

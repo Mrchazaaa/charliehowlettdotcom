@@ -1,10 +1,11 @@
 <template>
   <Carousel 
     :perPage="1" 
-    :navigationEnabled="true"
-    :paginationEnabled="false" 
     :autoplay="true"
-    :autoplayHoverPause="true">
+    :autoplayHoverPause="true"
+    :paginationColor="'var(--pagination-color)'"
+    :paginationActiveColor="'var(--pagination-active-color)'"
+    :paginationPadding="5">
     <Slide>
       <img src="../assets/volunteering-leg.webp" alt="First slide" />
     </Slide>
@@ -15,7 +16,6 @@
       <img src="../assets/volunteering-leg.webp" alt="First slide" />
     </Slide>
   </Carousel>
-  <!-- <div></div> -->
 </template>
 
 <script>
@@ -30,6 +30,9 @@
     methods: {
       onClick(i) {
         this.index = i;
+      },
+      getCSSVariable(variableName) {
+        return getComputedStyle(document.body).getPropertyValue(variableName);
       }
     },
     data: function() {
@@ -58,7 +61,10 @@
   
   .VueCarousel {
     width: 100%;
-    // display: none;
+  }
+
+  .VueCarousel-dot {
+    margin-top: $margin-sm !important;
   }
 
   .VueCarousel img {
@@ -66,23 +72,9 @@
     // display: none;
   }
 
-  // .carousel {
-  //   margin-bottom: 10px;
-  // }
-  // .carousel-item {
-  //   position: relative;
-  // }
-  // .carousel-caption {
-  //   background-color: rgba(0,0,0,0.5);
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   padding: 0;
-  //   z-index: 2; /* used to stop carousel caption being shown infront of sidebar */
-  // }
-  // .carousel-caption p {
-  //   margin: $margin-md $margin-sm;
-  //   font-weight: bold;
-  // }
+  .VueCarousel-navigation-prev .VueCarousel-navigation-next {
+    padding: 0 8px !important;
+    color: white !important;
+    transform: none !important;
+  }
 </style>
