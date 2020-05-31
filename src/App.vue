@@ -29,7 +29,7 @@
     padding:0;
     height: 100%;
     // background-color: var(--primary-background);
-    font-size: 10px;
+    // font-size: 10px;
   }
   #app {
     // font-family: 'Avenir', Helvetica, Arial, sans-serif;

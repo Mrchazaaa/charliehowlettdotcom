@@ -2,12 +2,12 @@
   <div id="content-container">
     <!--Introduction-->
     <div id="introduction" class="jumbotron">
-      <h2 class="lead">
+      <h4 class="">
         "I'm a recent computer science graduate of the University of York. I designed
         this site to supplement my cv and give people a way to get to know me and the 
         kind of work I do. Below, you'll find links to a few of my
         past projects and some more information about what I enjoy doing in my free time!"
-      </h2>
+      </h4>
       <div id="portrait">
         <img src="../assets/photo-of-me.webp" />
       </div>
@@ -294,22 +294,18 @@
   }
   #content-container {
     max-width: $breakpoint-xl !important;
-    // max-width: 1600px;
     padding-top: $padding-lg;
     margin-left: auto;
     margin-right: auto;
   }
   #introduction {
-    // background-color: var(--jumbotron-background);
     padding: 5vh 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    h2 {
+    h4 {
       display: grid;
-      align-items: center; 
-      // justify-content: center; 
+      align-items: center;
       grid-column: span 7;
-      // font-size: calc(14px + 0.8vw);
       text-align: center;
       padding: 0 2vw;
     }
@@ -340,9 +336,7 @@
       @include content-margin-flow;
 
       grid-column: span 1;
-      // font-size: 14px;
       padding: $padding-md $padding-md 0 $padding-md;
-      // text-align: justify;
     }
     .embed-container { 
       @include content-margin-flow;
@@ -360,15 +354,13 @@
         height: 100%; 
       }
     }
+    .list-group, .list-group-item {
+      border: none;
+    }
   }
   #cv {
     @include content-margin-flow;
 
     grid-column: span 2;
-    // padding: 0.75rem 1.5rem;
-    // font-size: 2.5rem;
-    // display: block;
-    // width: 100%;
-    // text-align: center;
   }
 </style>

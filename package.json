@@ -11,7 +11,7 @@
     "p5": "^0.7.2",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
-    "vue-silentbox": "^2.0.1"
+    "vue-gallery": "^2.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.1",

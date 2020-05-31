@@ -1,5 +1,5 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import VueSilentbox from 'vue-silentbox';
+// import VueSilentbox from 'vue-silentbox';
 import './styles/styles.scss';
 
 import Vue from 'vue';
@@ -7,7 +7,7 @@ import App from './App.vue';
 
 Vue.config.productionTip = false;
 
-Vue.use(VueSilentbox);
+// Vue.use(VueSilentbox);
 
 new Vue({
   render: h => h(App)
