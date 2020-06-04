@@ -10,12 +10,24 @@
       <!--title-->
       <div>
         <h1>Charlie Howlett</h1>
-        <span id="dark-theme-btn" class="button">Dark Theme</span>
+        <button @click="themeToggle" id="dark-theme-btn" type="button" class="btn btn-primary">Dark Theme</button>
       </div>
 
       <!--content pointer-->
-      <a id="content-pointer" href="#content-container"><img src="../assets/chevron-bottom.svg"></a>
-    
+      <div id="content-pointer">
+        <svg 
+          class="bi bi-chevron-down" 
+          width="1em" 
+          height="1em" 
+          viewBox="0 0 16 16" 
+          fill="currentColor" 
+          xmlns="http://www.w3.org/2000/svg"
+          @click="makeScrollSmooth" 
+          href="#content-container">
+          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </div>
+
       <img id="mountains" :src="require('@/assets/mountains.svg')"/>
 
     </div>
@@ -36,38 +48,51 @@
     mounted() {
       setCloudColor(styles.cloudColorLight);
       this.myp5 = cloudsSketch(document.getElementById('sketch'));
+    },
+    methods: {
+      themeToggle() {
+        var currentTheme = document.getElementById('style-sheet').getAttribute('href');
+        var nextCelestial, nextMountains, nextStyleSheet, nextCloudColor, nextTheme; 
 
-      var chevron = document.querySelector("#content-pointer");
-      chevron.onclick = (el) => {
-        el.preventDefault();
+        if (currentTheme == "darkly.css") {
+          //current theme is dark, next is light        
+          nextCloudColor = styles.cloudColorLight;
+          nextCelestial = require("@/assets/sun.svg");
+          nextMountains = require("@/assets/mountains.svg");
+          nextStyleSheet = "";
+          nextTheme = '';
+        }
+        else {
+          //current theme is light, next is dark
+          nextCloudColor = styles.cloudColorDark;
+          nextCelestial = require("@/assets/moon.svg");
+          nextMountains = require("@/assets/mountains-dark.svg");
+          nextStyleSheet = "darkly.css";
+          nextTheme = 'dark';
+        }
+
+        setCloudColor(nextCloudColor);
+        document.getElementById('celestial').setAttribute('src', nextCelestial);
+        document.getElementById('mountains').setAttribute('src', nextMountains);
+        document.getElementById('style-sheet').setAttribute("href", nextStyleSheet);
+        document.querySelector('html').setAttribute('theme', nextTheme);
+      },
+      makeScrollSmooth(event) {
+        var chevron = event.target;
+
         document.querySelector(chevron.getAttribute("href")).scrollIntoView({
           behavior: "smooth",
           block: "start",
           inline: "nearest"
         });
-      };
-
-      var darkThemeButton = document.querySelector("#dark-theme-btn");
-      darkThemeButton.onclick = (el) => {
-        var currentTheme = document.querySelector('html').getAttribute('theme');
-        var nextTheme = currentTheme == 'dark' ? '' : 'dark';
-        
-        document.querySelector('html').setAttribute('theme', nextTheme);
-
-        var nextCloudColor = currentTheme == 'dark' ? styles.cloudColorLight : styles.cloudColorDark;
-        setCloudColor(nextCloudColor);
-
-        var nextCelestial = currentTheme == 'dark' ? require("@/assets/sun.svg") : require("@/assets/moon.svg");
-        document.querySelector('#celestial').setAttribute('src', nextCelestial);
-
-        var nextMountains = currentTheme == 'dark' ? require("@/assets/mountains.svg") : require("@/assets/mountains-dark.svg");
-        document.querySelector('#mountains').setAttribute('src', nextMountains);
-      };
+      }
     }
   }
 </script>
 
 <style lang="scss">
+  @import "@/styles/_variables.scss";
+
   @media (max-width: $breakpoint-sm) {
     #content-pointer {
       display: none;
@@ -142,13 +167,15 @@
     display: grid;
     align-items: center; 
     z-index: 2;
+    cursor: pointer;
   }
   #content-pointer:hover {
     opacity: 1;
   }
-  #content-pointer img {
+  #content-pointer svg {
     width: 100%;
     height: 5vh;
+    fill: black;
   }
   #celestial {
     position: absolute;

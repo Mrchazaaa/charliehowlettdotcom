@@ -182,9 +182,13 @@ function clouds( sketch ) {
 
     // Called every time the canvas is resized.
     sketch.windowResized = function() {
-        width = $(window).width(); //document.body.clientWidth;
-        height = $(window).height(); //document.body.clientHeight;
+        width = document.body.clientWidth;
+        height = document.body.clientHeight;
+        console.log(width);
+        console.log(height);
+
         sketch.resizeCanvas(width, height);
+
         clouds.forEach(function(element) { 
             element.updateSize(width, height);  
         });

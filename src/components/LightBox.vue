@@ -1,51 +1,58 @@
 <template>
   <div id="gallery">
-    <a
-      class="example-image-link"
-      href="img/80kmh.919f9483.png"
-      data-lightbox="example-set"
-      data-title="Calculated vehicle longitudinal velocity (red) vs actual vehicle longitudinal velocity (blue), when emergency braking is initiated at 80kmh."
-    >
-      <img class="example-image" src="../assets/80kmh.png" alt />
-    </a>
-    <a
-      class="example-image-link"
-      href="img/110kmh.11d3e1ce.png"
-      data-lightbox="example-set"
-      data-title="Calculated vehicle longitudinal velocity (red) vs actual vehicle longitudinal velocity (blue), when emergency braking is initiated at 110kmh."
-    >
-      <img class="example-image" src="../assets/110kmh.png" alt />
-    </a>
-    <a
-      class="example-image-link"
-      href="img/150kmh.f85d336b.png"
-      data-lightbox="example-set"
-      data-title="Calculated vehicle longitudinal velocity (red) vs actual vehicle longitudinal velocity (blue), when emergency braking is initiated at 150kmh."
-    >
-      <img class="example-image" src="../assets/150kmh.png" alt />
-    </a>
+    <gallery 
+      :images="images" 
+      :index="index" 
+      @close="index = null"
+      :options="{
+        fullScreen: false,
+        hidePageScrollbars: false}"></gallery>
+    <div
+      class="image"
+      v-for="(image, imageIndex) in images"
+      :key="imageIndex"
+      @click="index = imageIndex">
+      <img class="img" :src="image"/>
+      </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "LightBox"
-};
+  import VueGallery from 'vue-gallery';
+
+  export default {
+    name: "LightBox",
+    data: function() {
+      return {
+        images: [
+          require('@/assets/80kmh.png'),
+          require('@/assets/110kmh.png'),
+          require('@/assets/150kmh.png'),
+        ],
+        index: null
+      };
+    },
+    components: {
+      'gallery': VueGallery
+    }
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+  @import "@/styles/_variables.scss";
+
   #gallery {
     margin-bottom: $margin-md;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: $margin-md;
-
-    & > a {
+    & > .image {
       grid-column: span 1;
     }
   }
-  img {
+  .img {
     width: 100%;
+    // height: 200px;
   }
 </style>

@@ -32,6 +32,7 @@ Todo:
 [] LAZY LOADING
 [] remove jQuery and other javascript libraries for faster loading
 [] GENERATE 3 RANDOM TIMES AT STARTUP TO DETERMINE CREATE TIME OF NEW CLOUDS (no longer need to generate n_clouds*random_numbers) 
+[] Fix bug where clouds dont render if you leave the tab open but unfocused for a significant period of time
 
 Maybe:
 [] add last tracking of last project that I worked on (using github api to find last accessed repo)?
