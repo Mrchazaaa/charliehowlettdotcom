@@ -72,14 +72,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-.less-more {
-  font-weight: bold;
-  width: calc(100% - 15px);
-  margin: 0 $margin-lg/2 0 $margin-lg/2;
-}
-.collapsed {
-  overflow-y: hidden;
-  height: 300px;
-  border-radius: 4px 4px 0px 0px !important;
+  @import "@/styles/_variables.scss";
+
+  .less-more {
+    font-weight: bold;
+    width: calc(100% - 15px);
+    margin: 0 $margin-lg/2 0 $margin-lg/2;
+  }
+  .collapsed {
+    overflow-y: hidden;
+    height: 300px;
+    border-radius: 4px 4px 0px 0px !important;
 }
 </style>

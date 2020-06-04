@@ -1,6 +1,6 @@
 <template>
   <!--contact Information-->
-    <div id="footer" class="border">
+    <div id="footer" class="jumbotron">
       <div>
         <IconGridComponent
           :items="[{width: 3, image: require('@/assets/github.svg'), link: 'https://github.com/Mrchazaaa/'},
@@ -24,12 +24,15 @@
 </script>
 
 <style lang="scss">
+  @import "@/styles/_variables.scss";
+
   #footer {
     padding: $padding-sm 0px;
-    background-color: var(--jumbotron-background);
+    margin-bottom: 0px;
     display: grid;
     justify-content: center;
-    & > div {
+
+& > div {
       max-width: $breakpoint-xl !important;
       width: 100%;
     }

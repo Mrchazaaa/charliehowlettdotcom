@@ -1,22 +1,23 @@
 <template>
   <div id="content-container">
     <!--Introduction-->
-    <div id="introduction" class="border">
-      <p>
+    <div id="introduction" class="jumbotron">
+      <h4 class="">
         "I'm a recent computer science graduate of the University of York. I designed
         this site to supplement my cv and give people a way to get to know me and the 
         kind of work I do. Below, you'll find links to a few of my
         past projects and some more information about what I enjoy doing in my free time!"
-      </p>
+      </h4>
       <div id="portrait">
         <img src="../assets/photo-of-me.webp" />
       </div>
     </div>
     <hr />
+
     <div id="content-collection">
       <div>
         <!--Previous work-->
-        <div class="content-item border" id="previous-work">
+        <div class="content-item card" id="previous-work">
           <h2>Previous Work</h2>
           <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game playing AIs, 
             feel free to click on an icon to learn more!</p>
@@ -56,7 +57,7 @@
           </div>
         </div>
         <!--Hobbies-->
-        <div class="content-item border" id="hobbies">
+        <div class="content-item card" id="hobbies">
           <h2>Hobbies</h2>
           <p>
             In my spare time I like: reading, learning about web Development 
@@ -65,40 +66,38 @@
             rasperry pi products in developing various 
             novel projects as well as testing networking principles.
           </p>
-          <CarouselComponent />
+          <CarouselContainer />
           <h3>Hackathons</h3>
           <p>One of my most rewarding hobbies is participating in hackathons, particularly team based ones, and have 
               so far competed in the following:</p>
-          <table id="hackathon-table" class="border">
-            <tbody>
-              <tr>
-                <td>Google Code Jam (2017)</td>
-              </tr>
-              <tr>
-                <td>Google Hashcode (2017)</td>
-              </tr>
-              <tr>
-                <td>Google Hashcode (2018)</td>
-              </tr>
-              <tr>
-                <td>BAE Systems Capture the Flag (2017)</td>
-              </tr>
-              <tr>
-                <td>BAE Systems Capture the Flag (2018)</td>
-              </tr>
-              <tr>
-                <td>BBC Hackathon (2017)</td>
-              </tr>
-              <tr>
-                <td>ARM Hackathon (2017)</td>
-              </tr>
-            </tbody>
-          </table>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <td>Google Code Jam (2017)</td>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <td>Google Hashcode (2017)</td>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <td>Google Hashcode (2018)</td>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <td>BAE Systems Capture the Flag (2017)</td>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <td>BAE Systems Capture the Flag (2018)</td>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <td>BBC Hackathon (2017)</td>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <td>ARM Hackathon (2017)</td>
+            </li>
+          </ul>
         </div>
       </div>
       <div>
         <!--University info-->
-        <div class="content-item border" id="uni-info">
+        <div class="content-item card" id="uni-info">
           <h2>University</h2>
           <p>
             I graduated from the <strong>University of York</strong> with a BEng/BSc in Computer Science in 2019, having 
@@ -106,43 +105,43 @@
           </p>
           <ToggleListComponent
             :content=" {title:'First Year Modules', 
-                      items:[{text: 'Human Aspects of Computer Science', link:''}, 
-                              {text: 'Skills, Knowledge & Independent Learning', link:''}, 
-                              {text: 'Introduction to Computer Architectures', link:''},
-                              {text: 'Mathematical Foundations of Computer Science', link:''},
-                              {text: 'Theory & Practice of Programming', link:''},
-                              {text: 'Numerical Analysis', link:''},
-                              {text: 'Foundation in Electronics, Signals & Circuits', link:''},
-                              {text: 'Programming of micro-controllers', link:''}]}"
+                      items:[{text: 'Human Aspects of Computer Science'}, 
+                              {text: 'Skills, Knowledge & Independent Learning'}, 
+                              {text: 'Introduction to Computer Architectures'},
+                              {text: 'Mathematical Foundations of Computer Science'},
+                              {text: 'Theory & Practice of Programming'},
+                              {text: 'Numerical Analysis'},
+                              {text: 'Foundation in Electronics, Signals & Circuits'},
+                              {text: 'Programming of micro-controllers'}]}"
           />
           <ToggleListComponent
             :content=" {title:'Second Year Modules', 
-                      items:[{text: 'Vision & Graphics', link:''}, 
-                              {text: 'Implementation of Programming Languages', link:''}, 
-                              {text: 'Principles of Programming Languages', link:''},
-                              {text: 'Software Engineering Project', link:''},
-                              {text: 'Computability & Complexity', link:''},
-                              {text: 'Artificial Intelligence', link:''},
-                              {text: 'Systems (Operating Systems)', link:''}]}"
+                      items:[{text: 'Vision & Graphics'}, 
+                              {text: 'Implementation of Programming Languages'}, 
+                              {text: 'Principles of Programming Languages'},
+                              {text: 'Software Engineering Project'},
+                              {text: 'Computability & Complexity'},
+                              {text: 'Artificial Intelligence'},
+                              {text: 'Systems (Operating Systems)'}]}"
           />
           <ToggleListComponent
             :content=" {title:'Third Year Modules', 
-                      items:[{text: 'Analysable Real-Time Systems', link:''}, 
-                              {text: 'Fundamentals of Machine Learning', link:''}, 
-                              {text: 'Project Management for Computer Scientists', link:''},
-                              {text: 'Embedded Systems Design & Implementation', link:''},
-                              {text: 'Third Year Project (Dissertation)', link:''},
-                              {text: 'Computer Vision', link:''},
-                              {text: 'Design of Analysable Real-Time Systems', link:''},
-                              {text: 'Machine Learning & Probabilistic Graphical Models', link:''}]}"
+                      items:[{text: 'Analysable Real-Time Systems'}, 
+                              {text: 'Fundamentals of Machine Learning'}, 
+                              {text: 'Project Management for Computer Scientists'},
+                              {text: 'Embedded Systems Design & Implementation'},
+                              {text: 'Third Year Project (Dissertation)'},
+                              {text: 'Computer Vision'},
+                              {text: 'Design of Analysable Real-Time Systems'},
+                              {text: 'Machine Learning & Probabilistic Graphical Models'}]}"
           />
           <ToggleListComponent
             :content=" {title:'Societies', 
-                      items:[{text: 'Cyber Security Society', link:''}, 
-                              {text: 'Dog Society', link:''}, 
-                              {text: 'Game Development Society', link:''},
-                              {text: 'Movie Society', link:''},
-                              {text: 'Band Society', link:''}]}"
+                      items:[{text: 'Cyber Security Society'}, 
+                              {text: 'Dog Society'}, 
+                              {text: 'Game Development Society'},
+                              {text: 'Movie Society'},
+                              {text: 'Band Society'}]}"
           />
           <h3>Dissertation</h3>
           <p>
@@ -165,8 +164,9 @@
             tire physics and individual wheel braking, was used in verifying code functionality.
           </p>
         </div>
+
         <!--Volunteering-->
-        <div class="content-item border" id="volunteering">
+        <div class="content-item card" id="volunteering">
           <h2>Volunteering</h2>
           <p>
           Participating with effective volunteering organizations in the past has been greatly rewarding and 
@@ -202,21 +202,21 @@
         </div>
       </div>
     </div>
+    
     <!--CV-->
-    <a id="cv"
-      href="./Charles_Howlett.pdf"
-      role="button"
-      style="font-size: 14px"
-      aria-pressed="true"
-      class="button"
-    >
+    <button 
+      id="cv"
+      type="button" 
+      class="btn btn-primary btn-lg btn-block" 
+      @click="openCV">
       <h3>View My CV!</h3>
-    </a>
+    </button>
+
   </div>
 </template>
 
 <script>
-  import CarouselComponent from "./Carousel.vue";
+  import CarouselContainer from "./CarouselContainer.vue";
   import ToggleListComponent from "./ToggleList.vue";
   import LightBoxComponent from "./LightBox.vue";
   import IconGridComponent from "./IconGrid.vue";
@@ -224,16 +224,23 @@
   export default {
     name: "ContentContainerComponent",
     components: {
-      CarouselComponent,
+      CarouselContainer,
       ToggleListComponent,
       LightBoxComponent,
       IconGridComponent,
     },
+    methods: {
+      openCV() {
+        window.open('./Charles_Howlett.pdf');
+      }
+    }
   };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+  @import "@/styles/_variables.scss";
+
   @mixin content-margin-flow {
     margin-bottom: $padding-md;
   }
@@ -287,23 +294,18 @@
   }
   #content-container {
     max-width: $breakpoint-xl !important;
-    // max-width: 1600px;
     padding-top: $padding-lg;
     margin-left: auto;
     margin-right: auto;
   }
   #introduction {
-    background-color: var(--jumbotron-background);
     padding: 5vh 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    border-radius: .3rem;
-    p {
+    h4 {
       display: grid;
-      align-items: center; 
-      justify-content: center; 
+      align-items: center;
       grid-column: span 7;
-      font-size: calc(14px + 0.8vw);
       text-align: center;
       padding: 0 2vw;
     }
@@ -334,22 +336,7 @@
       @include content-margin-flow;
 
       grid-column: span 1;
-      font-size: 14px;
       padding: $padding-md $padding-md 0 $padding-md;
-      // text-align: justify;
-    }
-    #hackathon-table {
-      @include content-margin-flow;
-
-      border-radius: 4px;
-      font-weight: bold;
-      width: 100%;
-      background-color: var(--list-background);
-      td {
-        padding: $padding-sm;
-        line-height: 1.42857143;
-        vertical-align: top;
-      }
     }
     .embed-container { 
       @include content-margin-flow;
@@ -367,15 +354,13 @@
         height: 100%; 
       }
     }
+    .list-group, .list-group-item {
+      border: none;
+    }
   }
   #cv {
     @include content-margin-flow;
 
     grid-column: span 2;
-    padding: 0.75rem 1.5rem;
-    font-size: 2.5rem;
-    display: block;
-    width: 100%;
-    text-align: center;
   }
 </style>
