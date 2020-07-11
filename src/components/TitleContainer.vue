@@ -1,19 +1,16 @@
 <template>
   <div id="title-container">
-    <!--p5js sketch background-->
 
-    <img id="celestial" :src='require("@/assets/sun.svg")'/>
+    <div id="celestial"></div>
 
     <div id='sketch'></div>
 
     <div id="title">    
-      <!--title-->
       <div>
         <h1>Charlie Howlett</h1>
         <button @click="themeToggle" id="dark-theme-btn" type="button" class="btn btn-primary">Dark Theme</button>
       </div>
 
-      <!--content pointer-->
       <div id="content-pointer">
         <svg 
           class="bi bi-chevron-down" 
@@ -28,7 +25,7 @@
         </svg>
       </div>
 
-      <img id="mountains" :src="require('@/assets/mountains.svg')"/>
+      <div id="mountains"></div>
 
     </div>
   </div>
@@ -51,30 +48,25 @@
     },
     methods: {
       themeToggle() {
-        var currentTheme = document.getElementById('style-sheet').getAttribute('href');
-        var nextCelestial, nextMountains, nextStyleSheet, nextCloudColor, nextTheme; 
+        var currentTheme = document.querySelector('html').getAttribute('theme');
+        // var currentTheme = document.getElementById('style-sheet').getAttribute('href');
+        var nextStyleSheet, nextCloudColor, nextTheme; 
 
-        if (currentTheme == "darkly.css") {
+        if (currentTheme == "dark") {
           //current theme is dark, next is light        
           nextCloudColor = styles.cloudColorLight;
-          nextCelestial = require("@/assets/sun.svg");
-          nextMountains = require("@/assets/mountains.svg");
           nextStyleSheet = "";
           nextTheme = '';
         }
         else {
           //current theme is light, next is dark
           nextCloudColor = styles.cloudColorDark;
-          nextCelestial = require("@/assets/moon.svg");
-          nextMountains = require("@/assets/mountains-dark.svg");
           nextStyleSheet = "darkly.css";
           nextTheme = 'dark';
         }
 
         setCloudColor(nextCloudColor);
-        document.getElementById('celestial').setAttribute('src', nextCelestial);
-        document.getElementById('mountains').setAttribute('src', nextMountains);
-        document.getElementById('style-sheet').setAttribute("href", nextStyleSheet);
+        // document.getElementById('style-sheet').setAttribute("href", nextStyleSheet);
         document.querySelector('html').setAttribute('theme', nextTheme);
       },
       makeScrollSmooth(event) {
@@ -114,8 +106,10 @@
     left: 0;
     width: 100%;
     height: 40vh;
-    object-fit: cover;
     object-position: 100% 0;
+    background-image: var(--mountains);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   #sketch {
     position: relative;
@@ -184,5 +178,9 @@
     height: calc(100px + 5vw);
     width: calc(100px + 5vw);
     z-index: 0 !important;
+    object-position: 100% 0;
+    background-image: var(--celestial);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 </style>

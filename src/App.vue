@@ -22,7 +22,7 @@
 </script>
 
 <style lang="scss">
-  @import "@/styles/_variables.scss";
+  @import "~@/styles/_variables.scss";
 
   body, html {
     margin:0; 
@@ -31,12 +31,12 @@
     // background-color: var(--primary-background);
     // font-size: 10px;
   }
-  #app {
+  // #app {
     // font-family: 'Avenir', Helvetica, Arial, sans-serif;
     // -webkit-font-smoothing: antialiased;
     // -moz-osx-font-smoothing: grayscale;
     // color: var(--primary-text);
-  }
+  // }
   // h2 {
   //   font-weight: bold;
   //   font-size: 34px;
