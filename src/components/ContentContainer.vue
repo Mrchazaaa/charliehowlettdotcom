@@ -202,16 +202,6 @@
         </div>
       </div>
     </div>
-    
-    <!--CV-->
-    <button 
-      id="cv"
-      type="button" 
-      class="btn btn-primary btn-lg btn-block" 
-      @click="openCV">
-      <h3>View My CV!</h3>
-    </button>
-
   </div>
 </template>
 
@@ -230,9 +220,6 @@
       IconGridComponent,
     },
     methods: {
-      openCV() {
-        window.open('./Charles_Howlett.pdf');
-      }
     }
   };
 </script>
