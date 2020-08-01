@@ -9,15 +9,10 @@ $margin-sm: 5px;
 html {
   --primary-text: #363635;
   --btn-text: #fff;
-  // --btn-background: #2C3E50;
-  // --btn-hover-background: #2b4764;
-  // --btn-focus-background: #1e2b37;
-  // --btn-active-border: #1e2b37;
   --btn-background: #375A7F;
   --btn-hover-background: #2b4764;
   --btn-focus-background: #2b4764;
   --btn-active-border: #2b4764;
-  // --primary-background: #FFFFFF;
   --list-background: #ECF0F1;
   --table-primary-background: #E1E1E1;
   --table-secondary-background: #F9F9F9;
@@ -29,8 +24,6 @@ html {
 
   --mountains: url('~@/assets/mountains.svg');
   --celestial: url('~@/assets/sun.svg');
-
-  // @import "~@/styles/flatly.css";
 }
 
 html[theme="dark"] {
@@ -40,7 +33,6 @@ html[theme="dark"] {
   --btn-hover-background: #2b4764;
   --btn-focus-background: #2b4764;
   --btn-active-border: #2b4764;
-  // --primary-background: #222222;
   --list-background: #303030;
   --table-primary-background: #E1E1E1;
   --table-secondary-background: #F9F9F9;
@@ -52,8 +44,6 @@ html[theme="dark"] {
   
   --mountains: url('~@/assets/mountains-dark.svg');
   --celestial: url('~@/assets/moon.svg');
-  
-  // @import "~@/styles/darkly.css";
 
   #footer img, #content-pointer svg {
     filter: invert(1);

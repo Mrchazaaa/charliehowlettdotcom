@@ -48,11 +48,10 @@
     },
     methods: {
       themeToggle() {
-        var currentTheme = document.querySelector('html').getAttribute('theme');
-        // var currentTheme = document.getElementById('style-sheet').getAttribute('href');
+        var currentTheme = document.getElementById('style-sheet').getAttribute('href');
         var nextStyleSheet, nextCloudColor, nextTheme; 
 
-        if (currentTheme == "dark") {
+        if (currentTheme == "darkly.css") {
           //current theme is dark, next is light        
           nextCloudColor = styles.cloudColorLight;
           nextStyleSheet = "";
@@ -66,7 +65,7 @@
         }
 
         setCloudColor(nextCloudColor);
-        // document.getElementById('style-sheet').setAttribute("href", nextStyleSheet);
+        document.getElementById('style-sheet').setAttribute("href", nextStyleSheet);
         document.querySelector('html').setAttribute('theme', nextTheme);
       },
       makeScrollSmooth(event) {
