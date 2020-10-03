@@ -52,7 +52,7 @@
             <IconGridComponent
               :items="[{width: 5, image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
                         {width: 7, image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
-                        {width: 12, image: require('@/assets/IET-bursary.png')}]"
+                        {width: 12, image: require('@/assets/IET-bursary.png'), link: 'https://www.cs.york.ac.uk/news-events/news/2019/students-win-bursary-engineering-talent/'}]"
               :rowWidth="12" />
           </div>
         </div>
