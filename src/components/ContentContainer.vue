@@ -161,7 +161,7 @@
             The majority of this work was completed using
             <strong>C/C++</strong>. An open-source driving simulator 
             <a href="http://www.speed-dreams.org/">Speed Dreams 2</a>, featuring realistic
-            tire physics and individual wheel braking, was used in verifying code functionality.
+            tire physics and individual wheel braking, was used in verifying code functionality. <a href="ABSConstruction.pdf">View a copy of my dissertation here!</a>
           </p>
         </div>
 
