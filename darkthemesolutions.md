@@ -1,0 +1,3 @@
+- Could modify darkly to append :root[theme="dark"] to all rules
+  - could do this manually or via postcss plugin
+- could try and use a webservice worker to cache darkly.css and dynamically hide and show it

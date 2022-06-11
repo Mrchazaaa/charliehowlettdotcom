@@ -1,9 +1,9 @@
 <template>
   <div id="icon-grid" :style="'grid-template-columns: repeat(' + rowWidth + ', 1fr);'">
-    <FloatingIcon 
-      v-for="item in items" 
+    <FloatingIcon
+      v-for="item in items"
       :key="item.image"
-      :image="item.image" 
+      :image="item.image"
       :href="item.link"
       :style="'grid-column: span ' + item.width + ';'"/>
   </div>
@@ -33,7 +33,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   @import "@/styles/_variables.scss";
-  
+
   #icon-grid {
     width: 100%;
     display: grid;

@@ -16,7 +16,7 @@
   import IconGridComponent from "./IconGrid.vue";
 
   export default {
-    name: "Footer",
+    name: "ContentFooter",
     components: {
       IconGridComponent,
     },
@@ -32,12 +32,12 @@
     display: grid;
     justify-content: center;
 
-& > div {
-      max-width: $breakpoint-xl !important;
-      width: 100%;
+    & > div {
+        max-width: $breakpoint-xl !important;
+        width: 100%;
+        }
+        /deep/ .floating-container {
+        height: 75px !important;
+        }
     }
-    /deep/ .floating-container {
-      height: 75px !important;
-    }
-  }
 </style>

@@ -29,7 +29,7 @@
           element.style.height = `${element.scrollHeight}px`;
           icon.setAttribute("style", "transform: rotate(90deg");
         }
-        
+
         const slideUp = function (element, icon) {
           element.style.height = '0px';
           icon.setAttribute("style", "transform: none");
@@ -37,7 +37,7 @@
 
         var icon = this.$refs['toggle-list-icon'];
         var scrollable = this.$refs['toggle-list'];
-        scrollable.style.height == '0px' || !scrollable.style.height 
+        scrollable.style.height == '0px' || !scrollable.style.height
           ? slideDown(scrollable, icon) : slideUp(scrollable, icon);
       }
     },
