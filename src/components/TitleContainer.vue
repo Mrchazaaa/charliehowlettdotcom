@@ -2,11 +2,12 @@
   <div id="title-container">
     <!--p5js sketch background-->
 
-    <img id="celestial" :src='require("@/assets/sun.svg")'/>
+    <img class="celestial" id="sun" :src='require("@/assets/sun.svg")'/>
+    <img class="celestial" id="moon" :src='require("@/assets/moon.svg")'/>
 
     <div id='sketch'></div>
 
-    <div id="title">    
+    <div id="title">
       <!--title-->
       <div>
         <h1>Charlie Howlett</h1>
@@ -15,20 +16,21 @@
 
       <!--content pointer-->
       <div id="content-pointer">
-        <svg 
-          class="bi bi-chevron-down" 
-          width="1em" 
-          height="1em" 
-          viewBox="0 0 16 16" 
-          fill="currentColor" 
+        <svg
+          class="bi bi-chevron-down"
+          width="1em"
+          height="1em"
+          viewBox="0 0 16 16"
+          fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
-          @click="makeScrollSmooth" 
+          @click="makeScrollSmooth"
           href="#content-container">
           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
         </svg>
       </div>
 
-      <img id="mountains" :src="require('@/assets/mountains.svg')"/>
+      <img class="mountains" id="dark-mountains" :src="require('@/assets/mountains-dark.svg')"/>
+      <img class="mountains" id="light-mountains" :src="require('@/assets/mountains.svg')"/>
 
     </div>
   </div>
@@ -48,33 +50,36 @@
     mounted() {
       setCloudColor(styles.cloudColorLight);
       this.myp5 = cloudsSketch(document.getElementById('sketch'));
+      document.getElementById('moon').hidden = true;
+    //   document.querySelectorAll("link[href='/darkly.css'][rel='stylesheet']")[0].setAttribute('disabled', true);
+      document.querySelectorAll("link[href='/darkly.css'][rel='stylesheet']")[0].setAttribute('href', "");
     },
     methods: {
       themeToggle() {
-        var currentTheme = document.getElementById('style-sheet').getAttribute('href');
-        var nextCelestial, nextMountains, nextStyleSheet, nextCloudColor, nextTheme; 
+        var darkThemeStyleSheet = document.querySelectorAll("link[href='/darkly.css'][rel='stylesheet']")[0];
+        var darkThemeEnabled = !darkThemeStyleSheet.hasAttribute('disabled');
+        var nextCloudColor, nextTheme;
+        console.log(darkThemeEnabled);
 
-        if (currentTheme == "darkly.css") {
-          //current theme is dark, next is light        
+        if (darkThemeEnabled) {
+          //current theme is dark, next is light
           nextCloudColor = styles.cloudColorLight;
-          nextCelestial = require("@/assets/sun.svg");
-          nextMountains = require("@/assets/mountains.svg");
-          nextStyleSheet = "";
           nextTheme = '';
+          darkThemeStyleSheet.setAttribute('disabled', true);
         }
         else {
           //current theme is light, next is dark
           nextCloudColor = styles.cloudColorDark;
-          nextCelestial = require("@/assets/moon.svg");
-          nextMountains = require("@/assets/mountains-dark.svg");
-          nextStyleSheet = "darkly.css";
           nextTheme = 'dark';
+          darkThemeStyleSheet.removeAttribute('disabled');
         }
 
         setCloudColor(nextCloudColor);
-        document.getElementById('celestial').setAttribute('src', nextCelestial);
-        document.getElementById('mountains').setAttribute('src', nextMountains);
-        document.getElementById('style-sheet').setAttribute("href", nextStyleSheet);
+        document.getElementById('moon').hidden = nextTheme != "dark";
+        document.getElementById('sun').hidden = nextTheme == "dark";
+        document.getElementById('dark-mountains').hidden = nextTheme != "dark";
+        document.getElementById('light-mountains').hidden = nextTheme == "dark";
+        // document.getElementById('style-sheet').setAttribute("href", nextStyleSheet);
         document.querySelector('html').setAttribute('theme', nextTheme);
       },
       makeScrollSmooth(event) {
@@ -108,7 +113,7 @@
     height: 100vh;
     background-color: var(--sky-color);
   }
-  #mountains {
+  .mountains {
     position: absolute;
     top: 60vh;
     left: 0;
@@ -119,7 +124,7 @@
   }
   #sketch {
     position: relative;
-    margin: 0; 
+    margin: 0;
     z-index: none;
     height: 100%;
   }
@@ -128,9 +133,9 @@
   }
   #title {
     display: grid;
-    grid-template-columns: 100%; 
-    align-items: center; 
-    justify-content: center; 
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -165,7 +170,7 @@
     opacity: 0.3;
     height: 100%;
     display: grid;
-    align-items: center; 
+    align-items: center;
     z-index: 2;
     cursor: pointer;
   }
@@ -177,7 +182,7 @@
     height: 5vh;
     fill: black;
   }
-  #celestial {
+  .celestial {
     position: absolute;
     top: 10vh;
     right: 30%;
