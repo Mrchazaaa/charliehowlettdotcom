@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <PreLoad/>
     <TitleContainerComponent/>
     <ContentContainerComponent/>
     <FooterComponent/>
@@ -7,17 +8,17 @@
 </template>
 
 <script>
+  import PreLoad from './components/PreLoad.vue'
   import ContentContainerComponent from './components/ContentContainer.vue';
   import TitleContainerComponent from './components/TitleContainer.vue';
   import FooterComponent from "./components/Footer.vue";
 //   (() => import(/* webpackChunkName: "flatly" */ "@/assets/flatly.css"))();
 //   (() => import(/* webpackChunkName: "darkly" */ "@/assets/darkly.css"))();
-//   import "@/assets/flatly.css";
-//   import "@/assets/darkly.css";
 
   export default {
     name: 'app',
     components: {
+      PreLoad,
       TitleContainerComponent,
       ContentContainerComponent,
       FooterComponent
@@ -27,57 +28,19 @@
 
 <style lang="scss">
   @import "@/styles/_variables.scss";
-  @import "@/styles/flatly.css";
-//   @import "@/styles/darkly.css";
+  @import "@/styles/scss/bootstrap.scss";
+  @import "@/styles/flatly.scss";
+  @import "@/styles/darkly.scss";
 
   body, html {
     margin:0;
     padding:0;
     height: 100%;
-    // background-color: var(--primary-background);
-    // font-size: 10px;
   }
-  #app {
-    // font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    // -webkit-font-smoothing: antialiased;
-    // -moz-osx-font-smoothing: grayscale;
-    // color: var(--primary-text);
-  }
-  // h2 {
-  //   font-weight: bold;
-  //   font-size: 34px;
-  //   margin-top: 0;
-  //   margin-bottom: $margin-sm;
-  // }
-  // h3 {
-  //   font-weight: bold;
-  //   font-size: 2.5rem;
-  // }
   hr {
       margin-bottom: 0px;
   }
   .border {
-    // border: 1px solid var(--border-color) !important;
     border-radius: 4px;
   }
-  // #dark-mode-button {
-  //   width: 100px;
-  //   height: 100px;
-  //   position: absolute;
-  //   right: 10px;
-  //   top: 10px;
-  //   background-color: var(--jumbotron-background);
-  // }
-  // .button {
-  //   font-weight: bold;
-  //   color: var(--btn-text);
-  //   background-color: var(--btn-background);
-  //   border: 1px solid var(--btn-active-border);
-  //   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  // }
-  // .button:hover {
-  //   color: var(--btn-text);
-  //   background-color: var(--btn-hover-background);
-  //   border: 1px solid var(--btn-background);
-  // }
 </style>

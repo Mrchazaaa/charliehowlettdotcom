@@ -128,7 +128,7 @@ class Cloud {
 
 let cloudColor = '#fff';
 
-function clouds( sketch ) {
+function clouds(sketch, dockItem) {
     // Stores the dimensions of the canvas (relative to the viewport).
     let width;
     let height;
@@ -140,8 +140,8 @@ function clouds( sketch ) {
 
     // Setup function, run at initialization.
     sketch.setup = function() {
-        width = document.body.clientWidth;
-        height = document.body.clientHeight;
+        width = dockItem.clientWidth;
+        height = dockItem.clientHeight;
 
         sketch.createCanvas(width, height);
 
@@ -182,8 +182,8 @@ function clouds( sketch ) {
 
     // Called every time the canvas is resized.
     sketch.windowResized = function() {
-        width = document.body.clientWidth;
-        height = document.body.clientHeight;
+        width = dockItem.clientWidth;
+        height = dockItem.clientHeight;
 
         sketch.resizeCanvas(width, height);
 
@@ -193,11 +193,21 @@ function clouds( sketch ) {
     };
 }
 
+export function setTheme(theme) {
+    let newCloudColor;
 
-export function setCloudColor(color) {
-    cloudColor = color;
+    switch(theme) {
+        case "light":
+            newCloudColor = "#fff";
+            break;
+        case "dark":
+            newCloudColor = "#ADB5BD";
+            break;
+    }
+
+    cloudColor = newCloudColor;
 }
 
 export function cloudsSketch(dockItem) {
-    return new p5(clouds, dockItem);
+    return new p5(sketch => clouds(sketch, dockItem), dockItem);
 }

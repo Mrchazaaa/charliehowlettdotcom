@@ -6,7 +6,10 @@ $margin-lg: 15px;
 $margin-md: 10px;
 $margin-sm: 5px;
 
-html {
+:root[theme="light"] {
+  --celestial: url("@/assets/sun.svg");
+  --mountains: url("@/assets/mountains.svg");
+
   --primary-text: #363635;
   --btn-text: #fff;
   // --btn-background: #2C3E50;
@@ -28,7 +31,9 @@ html {
   --pagination-active-color: #000000;
 }
 
-html[theme="dark"] {
+:root[theme="dark"] {
+  --celestial: url("@/assets/moon.svg");
+  --mountains: url("@/assets/mountains-dark.svg");
   --primary-text: #fff;
   --btn-text: #fff;
   --btn-background: #375A7F;
@@ -55,9 +60,3 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
-
-// export variablese for use in js code
-:export {
-  cloudColorLight: #fff;
-  cloudColorDark: #ADB5BD;
-}

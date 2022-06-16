@@ -1,20 +1,15 @@
 <template>
   <div id="title-container">
-    <!--p5js sketch background-->
-
-    <img class="celestial" id="sun" :src='require("@/assets/sun.svg")'/>
-    <img class="celestial" id="moon" :src='require("@/assets/moon.svg")'/>
+    <div class="celestial"/>
 
     <div id='sketch'></div>
 
     <div id="title">
-      <!--title-->
       <div>
         <h1>Charlie Howlett</h1>
         <button @click="themeToggle" id="dark-theme-btn" type="button" class="btn btn-primary">Dark Theme</button>
       </div>
 
-      <!--content pointer-->
       <div id="content-pointer">
         <svg
           class="bi bi-chevron-down"
@@ -29,16 +24,14 @@
         </svg>
       </div>
 
-      <img class="mountains" id="dark-mountains" :src="require('@/assets/mountains-dark.svg')"/>
-      <img class="mountains" id="light-mountains" :src="require('@/assets/mountains.svg')"/>
+      <img class="mountains"/>
 
     </div>
   </div>
 </template>
 
 <script>
-  import {cloudsSketch, setCloudColor} from '../javascript/background.js';
-  import styles from '../styles/_variables.scss';
+  import {cloudsSketch, setTheme} from '../javascript/background.js';
 
   export default {
     name: 'TitleContainerComponent',
@@ -48,39 +41,15 @@
       }
     },
     mounted() {
-    //   var cloudColor = styles.cloudColorLight;
-    //   setCloudColor(cloudColor);
       this.myp5 = cloudsSketch(document.getElementById('sketch'));
-      document.getElementById('moon').hidden = true;
-    //   document.querySelectorAll("link[href='/darkly.css'][rel='stylesheet']")[0].setAttribute('disabled', true);
-    //   document.querySelectorAll("link[href='/darkly.css'][rel='stylesheet']")[0].setAttribute('href', "");
     },
     methods: {
       themeToggle() {
-        var darkThemeStyleSheet = document.querySelectorAll("link[href='/darkly.css'][rel='stylesheet']")[0];
-        var darkThemeEnabled = !darkThemeStyleSheet.hasAttribute('disabled');
-        var nextCloudColor, nextTheme;
-        console.log(darkThemeEnabled);
+        var htmlElement = document.querySelectorAll("html")[0];
+        var darkThemeEnabled = htmlElement.getAttribute('theme') == "dark";
+        var nextTheme = darkThemeEnabled ? 'light' : 'dark';
 
-        if (darkThemeEnabled) {
-          //current theme is dark, next is light
-          nextCloudColor = styles.cloudColorLight;
-          nextTheme = '';
-          darkThemeStyleSheet.setAttribute('disabled', true);
-        }
-        else {
-          //current theme is light, next is dark
-          nextCloudColor = styles.cloudColorDark;
-          nextTheme = 'dark';
-          darkThemeStyleSheet.removeAttribute('disabled');
-        }
-
-        setCloudColor(nextCloudColor);
-        document.getElementById('moon').hidden = nextTheme != "dark";
-        document.getElementById('sun').hidden = nextTheme == "dark";
-        document.getElementById('dark-mountains').hidden = nextTheme != "dark";
-        document.getElementById('light-mountains').hidden = nextTheme == "dark";
-        // document.getElementById('style-sheet').setAttribute("href", nextStyleSheet);
+        setTheme(nextTheme);
         document.querySelector('html').setAttribute('theme', nextTheme);
       },
       makeScrollSmooth(event) {
@@ -122,6 +91,7 @@
     height: 40vh;
     object-fit: cover;
     object-position: 100% 0;
+    content:var(--mountains);
   }
   #sketch {
     position: relative;
@@ -153,7 +123,6 @@
       margin: 0;
       text-align: center;
       z-index: 2;
-      // max-width: 582px;
     }
     span {
       float: right;
@@ -190,5 +159,6 @@
     height: calc(100px + 5vw);
     width: calc(100px + 5vw);
     z-index: 0 !important;
+    content:var(--celestial);
   }
 </style>
