@@ -21,7 +21,7 @@
     data: function() {
       return {
         images: [
-          require('@/assets/volunteering-leg.webp'),
+          require('@/assets/trafalgar.webp'),
           require('@/assets/cybersoc-leg.webp'),
           require('@/assets/raleigh.webp'),
           require('@/assets/band-leg.webp'),
