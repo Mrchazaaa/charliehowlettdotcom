@@ -1,42 +1,37 @@
 <template>
   <div id="title-container">
-    <!--p5js sketch background-->
-
-    <img id="celestial" :src='require("@/assets/sun.svg")'/>
+    <div class="celestial"/>
 
     <div id='sketch'></div>
 
-    <div id="title">    
-      <!--title-->
+    <div id="title">
       <div>
         <h1>Charlie Howlett</h1>
         <button @click="themeToggle" id="dark-theme-btn" type="button" class="btn btn-primary">Dark Theme</button>
       </div>
 
-      <!--content pointer-->
       <div id="content-pointer">
-        <svg 
-          class="bi bi-chevron-down" 
-          width="1em" 
-          height="1em" 
-          viewBox="0 0 16 16" 
-          fill="currentColor" 
+        <svg
+          class="bi bi-chevron-down"
+          width="1em"
+          height="1em"
+          viewBox="0 0 16 16"
+          fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
-          @click="makeScrollSmooth" 
+          @click="makeScrollSmooth"
           href="#content-container">
           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
         </svg>
       </div>
 
-      <img id="mountains" :src="require('@/assets/mountains.svg')"/>
+      <img class="mountains"/>
 
     </div>
   </div>
 </template>
 
 <script>
-  import {cloudsSketch, setCloudColor} from '../javascript/background.js';
-  import styles from '../styles/_variables.scss';
+  import {cloudsSketch, setTheme} from '../javascript/background.js';
 
   export default {
     name: 'TitleContainerComponent',
@@ -46,35 +41,15 @@
       }
     },
     mounted() {
-      setCloudColor(styles.cloudColorLight);
       this.myp5 = cloudsSketch(document.getElementById('sketch'));
     },
     methods: {
       themeToggle() {
-        var currentTheme = document.getElementById('style-sheet').getAttribute('href');
-        var nextCelestial, nextMountains, nextStyleSheet, nextCloudColor, nextTheme; 
+        var htmlElement = document.querySelectorAll("html")[0];
+        var darkThemeEnabled = htmlElement.getAttribute('theme') == "dark";
+        var nextTheme = darkThemeEnabled ? 'light' : 'dark';
 
-        if (currentTheme == "darkly.css") {
-          //current theme is dark, next is light        
-          nextCloudColor = styles.cloudColorLight;
-          nextCelestial = require("@/assets/sun.svg");
-          nextMountains = require("@/assets/mountains.svg");
-          nextStyleSheet = "";
-          nextTheme = '';
-        }
-        else {
-          //current theme is light, next is dark
-          nextCloudColor = styles.cloudColorDark;
-          nextCelestial = require("@/assets/moon.svg");
-          nextMountains = require("@/assets/mountains-dark.svg");
-          nextStyleSheet = "darkly.css";
-          nextTheme = 'dark';
-        }
-
-        setCloudColor(nextCloudColor);
-        document.getElementById('celestial').setAttribute('src', nextCelestial);
-        document.getElementById('mountains').setAttribute('src', nextMountains);
-        document.getElementById('style-sheet').setAttribute("href", nextStyleSheet);
+        setTheme(nextTheme);
         document.querySelector('html').setAttribute('theme', nextTheme);
       },
       makeScrollSmooth(event) {
@@ -108,7 +83,7 @@
     height: 100vh;
     background-color: var(--sky-color);
   }
-  #mountains {
+  .mountains {
     position: absolute;
     top: 60vh;
     left: 0;
@@ -116,10 +91,11 @@
     height: 40vh;
     object-fit: cover;
     object-position: 100% 0;
+    content:var(--mountains);
   }
   #sketch {
     position: relative;
-    margin: 0; 
+    margin: 0;
     z-index: none;
     height: 100%;
   }
@@ -128,9 +104,9 @@
   }
   #title {
     display: grid;
-    grid-template-columns: 100%; 
-    align-items: center; 
-    justify-content: center; 
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -147,7 +123,6 @@
       margin: 0;
       text-align: center;
       z-index: 2;
-      // max-width: 582px;
     }
     span {
       float: right;
@@ -165,7 +140,7 @@
     opacity: 0.3;
     height: 100%;
     display: grid;
-    align-items: center; 
+    align-items: center;
     z-index: 2;
     cursor: pointer;
   }
@@ -177,12 +152,13 @@
     height: 5vh;
     fill: black;
   }
-  #celestial {
+  .celestial {
     position: absolute;
     top: 10vh;
     right: 30%;
     height: calc(100px + 5vw);
     width: calc(100px + 5vw);
     z-index: 0 !important;
+    content:var(--celestial);
   }
 </style>

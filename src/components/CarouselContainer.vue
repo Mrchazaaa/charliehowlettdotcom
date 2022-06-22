@@ -1,35 +1,56 @@
 <template>
-  <Carousel 
-    :perPage="1" 
-    :autoplay="true"
-    :autoplayHoverPause="true"
-    :paginationColor="'var(--pagination-color)'"
-    :paginationActiveColor="'var(--pagination-active-color)'"
-    :paginationPadding="5">
-    <Slide v-for="image in images" :key="image">
-      <img :src="image" alt="First slide" />
-    </Slide>
-  </Carousel>
+  <div class="carousel">
+    <swiper
+        class="swiper"
+        :style="{
+            '--swiper-navigation-color': '#fff',
+            '--swiper-pagination-color': '#fff',
+        }"
+        :navigation="true"
+        :loop="true"
+        :autoplay="{
+                delay: 5000,
+                disableOnInteraction: false
+            }"
+        :modules="modules">
+        <swiper-slide
+            v-for="image in images"
+            :key="image">
+            <img :src="image"/>
+        </swiper-slide>
+    </swiper>
+  </div>
 </template>
 
 <script>
-  import { Carousel, Slide } from 'vue-carousel'
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Navigation, Autoplay } from 'swiper';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/autoplay';
 
   export default {
     name: "CarouselContainer",
     components: {
-      Carousel,
-      Slide
+      Swiper,
+      SwiperSlide
+    },
+    setup() {
+        return {
+            modules: [Navigation, Autoplay]
+        }
     },
     data: function() {
       return {
         images: [
-          require('@/assets/volunteering-leg.webp'),
+          require('@/assets/greenery.webp'),
           require('@/assets/cybersoc-leg.webp'),
           require('@/assets/raleigh.webp'),
           require('@/assets/band-leg.webp'),
         ],
-        index: 0
+        index: 0,
+        options: {
+        }
       }
     }
   };
@@ -38,23 +59,32 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   @import "@/styles/_variables.scss";
-  
-  .VueCarousel {
+  .swiper {
+    display: inline-grid;
     width: 100%;
   }
 
-  .VueCarousel-dot {
-    margin-top: $margin-sm !important;
-  }
-
-  .VueCarousel img {
+  .carousel {
     width: 100%;
-    // display: none;
+    display: grid
   }
 
-  .VueCarousel-navigation-prev .VueCarousel-navigation-next {
-    padding: 0 8px !important;
-    color: white !important;
-    transform: none !important;
+  .swiper-slide {
+    display: inline-grid;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
   }
 </style>

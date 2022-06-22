@@ -22,8 +22,8 @@ class Cloud {
         // let cloudPointMinWidth = (this.cloudWidth/(this.cloudPointNum - 1))*1.5;
         const cloudPointMinWidth = (this.cloudWidth/(this.cloudPointNum - 1))*1.8;
         // The maximum radius of any cloud point in a cloud (in percentage of screen width).
-        // let cloudPointMaxWidth = cloudPointMinWidth * 2; 
-        const cloudPointMaxWidth = cloudPointMinWidth * 2.3; 
+        // let cloudPointMaxWidth = cloudPointMinWidth * 2;
+        const cloudPointMaxWidth = cloudPointMinWidth * 2.3;
 
         // Generate a cloud point with random a relative x offset and radius to make a cloud looking blob.
         for (let i = 0; i < this.cloudPointNum; i++) {
@@ -37,18 +37,18 @@ class Cloud {
             // or equal in size to the previous cloud point.
             else if ( i < Math.floor(this.cloudPointNum/2) ) {
                 ellipseRadius = (Math.random() * ((cloudPointMaxWidth - cloudPointMinWidth)/2)) + cloudPointMinWidth ;
-            } 
+            }
             else if ( i == Math.floor(this.cloudPointNum/2) - 1 ) {
                 ellipseRadius = (Math.random() * (cloudPointMaxWidth - cloudPointMinWidth)) + cloudPointMinWidth;
             }
-            // End of the cloud should be thinner so allow ellipses 
+            // End of the cloud should be thinner so allow ellipses
             // to be smaller or equal in size to the previous cloud point.
             else {
                 ellipseRadius = (Math.random() * ((cloudPointMaxWidth - cloudPointMinWidth)/2)) + cloudPointMinWidth ;
             }
 
             let xOffset = this.cloudWidth * (i/this.cloudPointNum) * this.height;
-            let radius = ellipseRadius * this.height; 
+            let radius = ellipseRadius * this.height;
 
             // Store percentage value of this cloud points radius so that it can be updated on screen size change.
             this.cloudPoints.push([xOffset, radius, ellipseRadius]);
@@ -64,7 +64,7 @@ class Cloud {
 
         // Initial y coordinate of cloud is a random number between 0 and canvas height (stored as percentage of viewport height from top of page).
         // Minus maximum height of clouds, plus 10 padding, to avoid rendering clouds off the top of the screen.
-        this.yPerc = Math.random() / 2; 
+        this.yPerc = Math.random() / 2;
         this.y = (this.height + 10 + (cloudPointMaxWidth/2)) * this.yPerc;
     }
 
@@ -104,14 +104,14 @@ class Cloud {
             this.y = this.height * this.yPerc;
             // Update cloud offsets.
             this.cloudPoints[i][0] = this.cloudWidth * (i/this.cloudPointNum) * this.height;
-            // Update cloud radius'. 
+            // Update cloud radius'.
             this.cloudPoints[i][1] = this.cloudPoints[i][2] * this.height;
         }
     }
 
     draw(){
         this.sketch.rect(
-            this.cloudPoints[0][0] + this.x - (this.cloudPoints[0][1]/2), 
+            this.cloudPoints[0][0] + this.x - (this.cloudPoints[0][1]/2),
             this.y-1,
             this.cloudPoints[this.cloudPoints.length - 1][0] + (this.cloudPoints[this.cloudPoints.length - 1][1]/2) + (this.cloudPoints[0][1]/2),
             10,
@@ -128,7 +128,7 @@ class Cloud {
 
 let cloudColor = '#fff';
 
-function clouds( sketch ) {
+function clouds(sketch, dockItem) {
     // Stores the dimensions of the canvas (relative to the viewport).
     let width;
     let height;
@@ -140,15 +140,15 @@ function clouds( sketch ) {
 
     // Setup function, run at initialization.
     sketch.setup = function() {
-        width = document.body.clientWidth;
-        height = document.body.clientHeight;
+        width = dockItem.clientWidth;
+        height = dockItem.clientHeight;
 
         sketch.createCanvas(width, height);
 
         clouds = Array.from({length: initialCloudCount}, () => new Cloud(sketch, width, height, cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)]));
 
-        // cloudInterval = setInterval( function() { 
-        //     clouds.push(new Cloud(sketch, width, height)); 
+        // cloudInterval = setInterval( function() {
+        //     clouds.push(new Cloud(sketch, width, height));
         //     if (clouds.length == maxClouds) {
         //         clearInterval(cloudInterval);
         //     }
@@ -161,7 +161,7 @@ function clouds( sketch ) {
         if (clouds.length < cloudCountLimit) {
             if (Math.random() < cloudCreationSuccessRate ) {
                 var speed = cloudSpeeds[Math.floor(Math.random() * cloudSpeeds.length)];
-                
+
                 clouds.push(new Cloud(sketch, width, height, speed));
             }
         }
@@ -174,7 +174,7 @@ function clouds( sketch ) {
         // Draw and move clouds.
         sketch.fill(cloudColor);
 
-        clouds.forEach(function(element) { 
+        clouds.forEach(function(element) {
             element.move(width, height);
             element.draw();
         });
@@ -182,24 +182,32 @@ function clouds( sketch ) {
 
     // Called every time the canvas is resized.
     sketch.windowResized = function() {
-        width = document.body.clientWidth;
-        height = document.body.clientHeight;
-        console.log(width);
-        console.log(height);
+        width = dockItem.clientWidth;
+        height = dockItem.clientHeight;
 
         sketch.resizeCanvas(width, height);
 
-        clouds.forEach(function(element) { 
-            element.updateSize(width, height);  
+        clouds.forEach(function(element) {
+            element.updateSize(width, height);
         });
     };
 }
 
+export function setTheme(theme) {
+    let newCloudColor;
 
-export function setCloudColor(color) {
-    cloudColor = color;
+    switch(theme) {
+        case "light":
+            newCloudColor = "#fff";
+            break;
+        case "dark":
+            newCloudColor = "#ADB5BD";
+            break;
+    }
+
+    cloudColor = newCloudColor;
 }
 
 export function cloudsSketch(dockItem) {
-    return new p5(clouds, dockItem);
+    return new p5(sketch => clouds(sketch, dockItem), dockItem);
 }
