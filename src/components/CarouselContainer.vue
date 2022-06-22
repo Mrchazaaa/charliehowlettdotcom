@@ -1,27 +1,49 @@
 <template>
-  <div class="VueCarousel agile">
-    <agile :options="options">
-        <div class="slide" v-for="image in images" :key="image">
+  <div class="carousel">
+    <swiper
+        class="swiper"
+        :style="{
+            '--swiper-navigation-color': '#fff',
+            '--swiper-pagination-color': '#fff',
+        }"
+        :navigation="true"
+        :loop="true"
+        :autoplay="{
+                delay: 5000,
+                disableOnInteraction: false
+            }"
+        :modules="modules">
+        <swiper-slide
+            v-for="image in images"
+            :key="image">
             <img :src="image"/>
-        </div>
-        <template v-slot:prevButton><i class="fas fa-chevron-left">&lt;</i></template>
-        <template v-slot:nextButton><i class="fas fa-chevron-right">&gt;</i></template>
-    </agile>
+        </swiper-slide>
+    </swiper>
   </div>
 </template>
 
 <script>
-  import { VueAgile } from 'vue-agile';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Navigation, Autoplay } from 'swiper';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/autoplay';
 
   export default {
     name: "CarouselContainer",
     components: {
-      agile: VueAgile,
+      Swiper,
+      SwiperSlide
+    },
+    setup() {
+        return {
+            modules: [Navigation, Autoplay]
+        }
     },
     data: function() {
       return {
         images: [
-          require('@/assets/trafalgar.webp'),
+          require('@/assets/greenery.webp'),
           require('@/assets/cybersoc-leg.webp'),
           require('@/assets/raleigh.webp'),
           require('@/assets/band-leg.webp'),
@@ -37,57 +59,28 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   @import "@/styles/_variables.scss";
+  .swiper {
+    display: inline-grid;
+    width: 100%;
+  }
 
-  .agile {
-    display: grid;
+  .carousel {
+    width: 100%;
+    display: grid
   }
-  .agile__nav-button {
-    background: transparent;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 24px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition-duration: 0.3s;
-    width: 80px;
+
+  .swiper-slide {
+    display: inline-grid;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
   }
-  .agile__nav-button:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 1;
-  }
-  .agile__nav-button--prev {
-    left: 0;
-  }
-  .agile__nav-button--next {
-    right: 0;
-  }
-  .agile__dots {
-    bottom: 10px;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-  }
-  .agile__dot {
-    margin: 0 10px;
-  }
-  .agile__dot button {
-    background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    cursor: pointer;
+
+  .swiper-slide img {
     display: block;
-    height: 10px;
-    font-size: 0;
-    line-height: 0;
-    margin: 0;
-    padding: 0;
-    transition-duration: 0.3s;
-    width: 10px;
-  }
-  .agile__dot--current button, .agile__dot:hover button {
-    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   img {
     object-fit: cover;

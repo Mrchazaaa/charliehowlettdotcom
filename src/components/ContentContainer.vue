@@ -9,7 +9,7 @@
         past projects and some more information about what I enjoy doing in my free time!"
       </h4>
       <div id="portrait">
-        <img src="../assets/photo-of-me.webp" />
+        <img :src="require('@/assets/trafalgar.webp')" />
       </div>
     </div>
     <hr />
