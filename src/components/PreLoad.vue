@@ -1,8 +1,8 @@
 <template>
-    <img src="@/assets/sun.svg" style="display:none;" alt="" />
-    <img src="@/assets/moon.svg" style="display:none;" alt="" />
-    <img src="@/assets/mountains.svg" style="display:none;" alt="" />
-    <img src="@/assets/mountains-dark.svg" style="display:none;" alt="" />
+    <img src="@/assets/sun.webp" style="display:none;" alt="" />
+    <img src="@/assets/moon.webp" style="display:none;" alt="" />
+    <img src="@/assets/mountains.webp" style="display:none;" alt="" />
+    <img src="@/assets/mountains-dark.webp" style="display:none;" alt="" />
 </template>
 
 <script>

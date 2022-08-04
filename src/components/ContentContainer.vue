@@ -3,10 +3,8 @@
     <!--Introduction-->
     <div id="introduction" class="jumbotron">
       <h4 class="">
-        "I'm a recent computer science graduate of the University of York. I designed
-        this site to supplement my cv and give people a way to get to know me and the
-        kind of work I do. Below, you'll find links to a few of my
-        past projects and some more information about what I enjoy doing in my free time!"
+        "I'm a full stack Software Engineer and built this site to supplement my CV and share personal projects. Below, you'll find links to some of my
+        past work and more information about what I enjoy doing in my free time!"
       </h4>
       <div id="portrait">
         <img :src="require('@/assets/trafalgar.webp')" />
@@ -19,8 +17,8 @@
         <!--Previous work-->
         <div class="content-item card" id="previous-work">
           <h2>Previous Work</h2>
-          <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game playing AIs,
-            feel free to click on an icon to learn more!</p>
+          <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game AI.</p>
+          <p>Click on an icon to learn more.</p>
           <IconGridComponent
             :items="[{width: 4, image: require('@/assets/go.png'), link: 'https://github.com/Mrchazaaa/go-bot'},
                       {width: 4, image: require('@/assets/universe-city.png'), link: 'https://github.com/Mrchazaaa/universe-city'},
@@ -32,8 +30,8 @@
 
           <h3>Micro-controller Powered Music!</h3>
           <p>
-            In addition to the electrical system we designed for the University of York's Programming of Micro-Controllers module,
-            my classmates and I supplemented out work by adding singing capabilities via a piezoelectric buzzer!
+            In addition to an electrical system designed for the University of York's 'Programming of Micro-Controllers' module,
+            my classmates and I added musical capabilities via a piezoelectric buzzer!
           </p>
 
           <div class='embed-container'>
@@ -45,8 +43,8 @@
 
           <h2>Achievements</h2>
           <p>As well as being a recipient of the Institute of Engineering's Horizons Bursary,
-            I'm also proud of the voluminous collection of badges I've earnt through self-teaching coding resources!
-            Click on any of the icons below to be taken to my profile on the respective sites!</p>
+            I'm also proud of the collection of badges I've earned through self-teaching coding resources.</p>
+          <p>Click on any of the icons below to be taken to my profile.</p>
 
           <div id="achievments-grid">
             <IconGridComponent
@@ -61,10 +59,8 @@
           <h2>Hobbies</h2>
           <p>
             In my spare time I like: reading, learning about web Development
-            and playing music (I play both the guitar and drums). I'm also an avid
-            proponent of the <a href="https://www.raspberrypi.org/">Raspberry Pi</a> and have used
-            rasperry pi products in developing various
-            novel projects as well as testing networking principles.
+            and playing music (I play both the guitar and drums). I also occasionally tinker with
+            <a href="https://www.raspberrypi.org/">Raspberry Pis</a> and <a href="https://www.arduino.cc/">Arduinos</a>.
           </p>
           <CarouselContainer />
           <h3>Hackathons</h3>

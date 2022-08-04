@@ -5,7 +5,7 @@
     <div id='sketch'></div>
 
     <div id="title">
-      <div>
+      <div id="title-content">
         <h1>Charlie Howlett</h1>
         <button @click="themeToggle" id="dark-theme-btn" type="button" class="btn btn-primary">Dark Theme</button>
       </div>
@@ -85,10 +85,10 @@
   }
   .mountains {
     position: absolute;
-    top: 60vh;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 40vh;
+    height: 100%;
     object-fit: cover;
     object-position: 100% 0;
     content:var(--mountains);
@@ -96,11 +96,14 @@
   #sketch {
     position: relative;
     margin: 0;
-    z-index: none;
+    z-index: 1;
     height: 100%;
   }
   canvas {
     height: 100% !important;
+  }
+  #title-content {
+    z-index: 2;
   }
   #title {
     display: grid;
@@ -158,7 +161,7 @@
     right: 30%;
     height: calc(100px + 5vw);
     width: calc(100px + 5vw);
-    z-index: 0 !important;
+    z-index: 1 !important;
     content:var(--celestial);
   }
 </style>

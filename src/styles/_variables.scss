@@ -7,8 +7,8 @@ $margin-md: 10px;
 $margin-sm: 5px;
 
 :root[theme="light"] {
-  --celestial: url("@/assets/sun.svg");
-  --mountains: url("@/assets/mountains.svg");
+  --celestial: url("@/assets/sun.webp");
+  --mountains: url("@/assets/mountains.webp");
 
   --primary-text: #363635;
   --btn-text: #fff;
@@ -32,8 +32,8 @@ $margin-sm: 5px;
 }
 
 :root[theme="dark"] {
-  --celestial: url("@/assets/moon.svg");
-  --mountains: url("@/assets/mountains-dark.svg");
+  --celestial: url("@/assets/moon.webp");
+  --mountains: url("@/assets/mountains-dark.webp");
   --primary-text: #fff;
   --btn-text: #fff;
   --btn-background: #375A7F;
