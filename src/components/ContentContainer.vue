@@ -16,16 +16,9 @@
       <div>
         <!--Current job-->
         <div class="content-item card" id="current-job">
-          <div style="margin: 0px 5px 5px 5px;">
-            <FloatingIconComponent
-                :image="require('@/assets/mindlink.jpg')"
-                :href="'https://www.mindlinksoft.com/'"
-                height=200
-                />
-          </div>
           <h3>Current Job</h3>
           <p>I'm currently employed as a full stack engineer at MindLink, providing a scalable and secure messaging platform for mission critical operations.
-            Being a startup, with a relatively small engineering team, I find myself working on new parts of the stack frequently,
+            Working for a startup, with a relatively small engineering team, I find myself working on new parts of the stack frequently,
             but particulalry enjoy working on DevOps projects and automating all kinds of developer workflows.</p>
         </div>
         <!--Previous work-->
@@ -129,12 +122,12 @@
         <!--Hobbies-->
         <div class="content-item card" id="hobbies">
           <h2>Hobbies</h2>
+          <CarouselContainer />
           <p>
             In my spare time I like: reading, learning about web Development
             and playing music (I play both the guitar and drums). I also occasionally tinker with
             <a href="https://www.raspberrypi.org/">Raspberry Pis</a> and <a href="https://www.arduino.cc/">Arduinos</a>.
           </p>
-          <CarouselContainer />
         </div>
       </div>
     </div>
@@ -146,7 +139,6 @@
   import ToggleListComponent from "./ToggleList.vue";
   import LightBoxComponent from "./LightBox.vue";
   import IconGridComponent from "./IconGrid.vue";
-  import FloatingIconComponent from "./FloatingIcon.vue";
 
   export default {
     name: "ContentContainerComponent",
@@ -154,8 +146,7 @@
       CarouselContainer,
       ToggleListComponent,
       LightBoxComponent,
-      IconGridComponent,
-      FloatingIconComponent,
+      IconGridComponent
     },
     methods: {
     }
