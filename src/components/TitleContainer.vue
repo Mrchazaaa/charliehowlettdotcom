@@ -84,6 +84,7 @@
     background-color: var(--sky-color);
   }
   .mountains {
+    padding: 0;
     position: absolute;
     top: 0;
     left: 0;

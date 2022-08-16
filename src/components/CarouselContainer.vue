@@ -1,25 +1,25 @@
 <template>
-  <div class="carousel">
-    <swiper
-        class="swiper"
-        :style="{
-            '--swiper-navigation-color': '#fff',
-            '--swiper-pagination-color': '#fff',
-        }"
-        :navigation="true"
-        :loop="true"
-        :autoplay="{
-                delay: 5000,
-                disableOnInteraction: false
+    <div class="carousel">
+        <swiper
+            class="swiper"
+            :style="{
+                '--swiper-navigation-color': '#fff',
+                '--swiper-pagination-color': '#fff',
             }"
-        :modules="modules">
-        <swiper-slide
-            v-for="image in images"
-            :key="image">
-            <img :src="image"/>
-        </swiper-slide>
-    </swiper>
-  </div>
+            :navigation="true"
+            :loop="true"
+            :autoplay="{
+                    delay: 5000,
+                    disableOnInteraction: false
+                }"
+            :modules="modules">
+            <swiper-slide
+                v-for="image in images"
+                :key="image">
+                <img :src="image"/>
+            </swiper-slide>
+        </swiper>
+    </div>
 </template>
 
 <script>

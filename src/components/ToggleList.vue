@@ -76,7 +76,7 @@
       border: none;
     }
     .list-group {
-      transition:height 0.75s ease-out;
+      transition:height 0.5s ease-out;
       height:0;
       overflow:hidden;
     }

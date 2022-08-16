@@ -14,19 +14,34 @@
 
     <div id="content-collection">
       <div>
+        <!--Current job-->
+        <div class="content-item card" id="current-job">
+          <div style="margin: 0px 5px 5px 5px;">
+            <FloatingIconComponent
+                :image="require('@/assets/mindlink.jpg')"
+                :href="'https://www.mindlinksoft.com/'"
+                height=200
+                />
+          </div>
+          <h3>Current Job</h3>
+          <p>I'm currently employed as a full stack engineer at MindLink, providing a scalable and secure messaging platform for mission critical operations.
+            Being a startup, with a relatively small engineering team, I find myself working on new parts of the stack frequently,
+            but particulalry enjoy working on DevOps projects and automating all kinds of developer workflows.</p>
+        </div>
         <!--Previous work-->
         <div class="content-item card" id="previous-work">
           <h2>Previous Work</h2>
-          <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game AI.</p>
-          <p>Click on an icon to learn more.</p>
           <IconGridComponent
             :items="[{width: 4, image: require('@/assets/go.png'), link: 'https://github.com/Mrchazaaa/go-bot'},
-                      {width: 4, image: require('@/assets/universe-city.png'), link: 'https://github.com/Mrchazaaa/universe-city'},
-                      {width: 4, image: require('@/assets/spotify-glitch.jpg'), link: 'https://open.spotify.com/playlist/4d8VWZlfzYbWl4j6KiPuNC?si=C1TcDxlbTP2aeNFl94_c5w'},
+                      {width: 4, image: require('@/assets/ConnectControl.png'), link: 'https://github.com/thorpelawrence/alexa-spotify-connect'},
                       {width: 4, image: require('@/assets/PROM.jpg'), link: 'https://github.com/spankie1337/PROM_keypad'},
                       {width: 4, image: require('@/assets/charlierobot.png'), link: 'https://github.com/Mrchazaaa/charlie-robot'},
-                      {width: 4, image: require('@/assets/vim.png'), link: 'https://github.com/Mrchazaaa/vim-rc'}]"
-            :rowWidth="12"/>
+                      {width: 4, image: require('@/assets/LightMonitoring.webp'), link: 'https://github.com/Mrchazaaa/pi-lights'},
+                      {width: 4, image: require('@/assets/PresenceMonitoring.webp'), link: 'https://github.com/Mrchazaaa/arduino-monitoring'}
+                    ]"
+            :rowWidth=12
+            :rowHeight=200
+            />
 
           <h3>Micro-controller Powered Music!</h3>
           <p>
@@ -40,18 +55,6 @@
               allowfullscreen>
             </iframe>
           </div>
-        </div>
-        <!--Hobbies-->
-        <div class="content-item card" id="hobbies">
-          <h2>Hobbies</h2>
-          <p>
-            In my spare time I like: reading, learning about web Development
-            and playing music (I play both the guitar and drums). I also occasionally tinker with
-            <a href="https://www.raspberrypi.org/">Raspberry Pis</a> and <a href="https://www.arduino.cc/">Arduinos</a>.
-          </p>
-          <CarouselContainer />
-          <h3>Current Job</h3>
-          <p>Current Job is MindLink :)</p>
         </div>
       </div>
       <div>
@@ -123,6 +126,16 @@
             tire physics and individual wheel braking, was used in verifying code functionality. <a href="ABSConstruction.pdf">View a copy of my dissertation here!</a>
           </p>
         </div>
+        <!--Hobbies-->
+        <div class="content-item card" id="hobbies">
+          <h2>Hobbies</h2>
+          <p>
+            In my spare time I like: reading, learning about web Development
+            and playing music (I play both the guitar and drums). I also occasionally tinker with
+            <a href="https://www.raspberrypi.org/">Raspberry Pis</a> and <a href="https://www.arduino.cc/">Arduinos</a>.
+          </p>
+          <CarouselContainer />
+        </div>
       </div>
     </div>
   </div>
@@ -133,6 +146,7 @@
   import ToggleListComponent from "./ToggleList.vue";
   import LightBoxComponent from "./LightBox.vue";
   import IconGridComponent from "./IconGrid.vue";
+  import FloatingIconComponent from "./FloatingIcon.vue";
 
   export default {
     name: "ContentContainerComponent",
@@ -141,6 +155,7 @@
       ToggleListComponent,
       LightBoxComponent,
       IconGridComponent,
+      FloatingIconComponent,
     },
     methods: {
     }
@@ -204,7 +219,6 @@
   }
   #content-container {
     max-width: $breakpoint-xl !important;
-    margin-top: $margin-lg;
     margin-left: auto;
     margin-right: auto;
   }
@@ -235,6 +249,9 @@
   }
   #content-collection {
     padding: $padding-md $padding-md/2 0 $padding-md/2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $margin-md;
 
     & > div {
       grid-gap: $margin-md;
