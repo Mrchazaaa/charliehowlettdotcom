@@ -201,7 +201,7 @@ export function setTheme(theme) {
             newCloudColor = "#fff";
             break;
         case "dark":
-            newCloudColor = "#ADB5BD";
+            newCloudColor = "#a5b0e5";
             break;
     }
 

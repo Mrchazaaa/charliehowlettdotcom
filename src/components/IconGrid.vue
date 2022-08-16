@@ -5,7 +5,8 @@
       :key="item.image"
       :image="item.image"
       :href="item.link"
-      :style="'grid-column: span ' + item.width + ';'"/>
+      :style="'grid-column: span ' + item.width + ';'"
+      :height="rowHeight"/>
   </div>
 </template>
 
@@ -20,6 +21,10 @@
         required: true
       },
       rowWidth: {
+        type: Number,
+        required: true
+      },
+      rowHeight: {
         type: Number,
         required: true
       },

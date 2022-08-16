@@ -14,19 +14,34 @@
 
     <div id="content-collection">
       <div>
+        <!--Current job-->
+        <div class="content-item card" id="current-job">
+          <div style="margin: 0px 5px 5px 5px;">
+            <FloatingIconComponent
+                :image="require('@/assets/mindlink.jpg')"
+                :href="'https://www.mindlinksoft.com/'"
+                height=200
+                />
+          </div>
+          <h3>Current Job</h3>
+          <p>I'm currently employed as a full stack engineer at MindLink, providing a scalable and secure messaging platform for mission critical operations.
+            Being a startup, with a relatively small engineering team, I find myself working on new parts of the stack frequently,
+            but particulalry enjoy working on DevOps projects and automating all kinds of developer workflows.</p>
+        </div>
         <!--Previous work-->
         <div class="content-item card" id="previous-work">
           <h2>Previous Work</h2>
-          <p>Here you can find some of the past projects that I've worked on from self-driving robots to board game AI.</p>
-          <p>Click on an icon to learn more.</p>
           <IconGridComponent
             :items="[{width: 4, image: require('@/assets/go.png'), link: 'https://github.com/Mrchazaaa/go-bot'},
-                      {width: 4, image: require('@/assets/universe-city.png'), link: 'https://github.com/Mrchazaaa/universe-city'},
-                      {width: 4, image: require('@/assets/spotify-glitch.jpg'), link: 'https://open.spotify.com/playlist/4d8VWZlfzYbWl4j6KiPuNC?si=C1TcDxlbTP2aeNFl94_c5w'},
+                      {width: 4, image: require('@/assets/ConnectControl.png'), link: 'https://github.com/thorpelawrence/alexa-spotify-connect'},
                       {width: 4, image: require('@/assets/PROM.jpg'), link: 'https://github.com/spankie1337/PROM_keypad'},
                       {width: 4, image: require('@/assets/charlierobot.png'), link: 'https://github.com/Mrchazaaa/charlie-robot'},
-                      {width: 4, image: require('@/assets/vim.png'), link: 'https://github.com/Mrchazaaa/vim-rc'}]"
-            :rowWidth="12"/>
+                      {width: 4, image: require('@/assets/LightMonitoring.webp'), link: 'https://github.com/Mrchazaaa/pi-lights'},
+                      {width: 4, image: require('@/assets/PresenceMonitoring.webp'), link: 'https://github.com/Mrchazaaa/arduino-monitoring'}
+                    ]"
+            :rowWidth=12
+            :rowHeight=200
+            />
 
           <h3>Micro-controller Powered Music!</h3>
           <p>
@@ -40,55 +55,6 @@
               allowfullscreen>
             </iframe>
           </div>
-
-          <h2>Achievements</h2>
-          <p>As well as being a recipient of the Institute of Engineering's Horizons Bursary,
-            I'm also proud of the collection of badges I've earned through self-teaching coding resources.</p>
-          <p>Click on any of the icons below to be taken to my profile.</p>
-
-          <div id="achievments-grid">
-            <IconGridComponent
-              :items="[{width: 5, image: require('@/assets/codewars.png'), link: 'https://www.codewars.com/users/Mrchazaaa'},
-                        {width: 7, image: require('@/assets/codeacademy.jpg'), link: 'https://www.codecademy.com/users/Mrchazaaa/achievements'},
-                        {width: 12, image: require('@/assets/IET-bursary.png'), link: 'https://www.cs.york.ac.uk/news-events/news/2019/students-win-bursary-engineering-talent/'}]"
-              :rowWidth="12" />
-          </div>
-        </div>
-        <!--Hobbies-->
-        <div class="content-item card" id="hobbies">
-          <h2>Hobbies</h2>
-          <p>
-            In my spare time I like: reading, learning about web Development
-            and playing music (I play both the guitar and drums). I also occasionally tinker with
-            <a href="https://www.raspberrypi.org/">Raspberry Pis</a> and <a href="https://www.arduino.cc/">Arduinos</a>.
-          </p>
-          <CarouselContainer />
-          <h3>Hackathons</h3>
-          <p>One of my most rewarding hobbies is participating in hackathons, particularly team based ones, and have
-              so far competed in the following:</p>
-          <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <td>Google Code Jam (2017)</td>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <td>Google Hashcode (2017)</td>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <td>Google Hashcode (2018)</td>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <td>BAE Systems Capture the Flag (2017)</td>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <td>BAE Systems Capture the Flag (2018)</td>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <td>BBC Hackathon (2017)</td>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <td>ARM Hackathon (2017)</td>
-            </li>
-          </ul>
         </div>
       </div>
       <div>
@@ -160,41 +126,15 @@
             tire physics and individual wheel braking, was used in verifying code functionality. <a href="ABSConstruction.pdf">View a copy of my dissertation here!</a>
           </p>
         </div>
-
-        <!--Volunteering-->
-        <div class="content-item card" id="volunteering">
-          <h2>Volunteering</h2>
+        <!--Hobbies-->
+        <div class="content-item card" id="hobbies">
+          <h2>Hobbies</h2>
           <p>
-          Participating with effective volunteering organizations in the past has been greatly rewarding and
-          provided me with a number of valuable skills and attitudes. I hope to continue working in such positions in the future.
+            In my spare time I like: reading, learning about web Development
+            and playing music (I play both the guitar and drums). I also occasionally tinker with
+            <a href="https://www.raspberrypi.org/">Raspberry Pis</a> and <a href="https://www.arduino.cc/">Arduinos</a>.
           </p>
-          <h3>Archelon</h3>
-          <p>
-            In the summer after my first year at University, I spent 2 months in Greece volunteering with the
-            <a
-              href="https://www.archelon.gr/index_eng.php"
-            >Sea Turtle Protection Society of Greece (Archelon)</a>. Where I helped in tracking loggerhead sea turtles and their nests,
-            morning/night monitoring of protected nesting beaches, and fundraising for the charity by operating a
-            small kiosk, which dispensed information and souviners to tourists. Throughout this time, I had cooking and
-            cleaning responsibilities for a group of 50 volunteers.
-          </p>
-          <p>
-            I found this a really fun and rewarding experience, which fostered the growth of a number of valuable skills.
-            For instance, the large team in which I worked was composed of mixed nationalities and language barriers were
-            often present in day to day life, which greatly progressed my communication and teamwork skills.
-          </p>
-          <h3>Raleigh International</h3>
-          <p>
-            After graduating from University, I spent 3 months in rural Tanzania working alongside both UK and Tanzanian volunteers
-            to provide daily entrepreneurial classes to villagers, with <a href="https://raleighinternational.org/">Raleigh International</a>. This work intended to
-            arm such poverty stricken areas with the Knowledge necessary to start sustainable businesses, and provided several grants
-            to locals to help fund their businesses.
-          </p>
-          <p>
-            Throughout this time, all 20 volunteers in our team lived among local families, eating local foods and becoming ecnompassed within the community.
-            As well as organize lessons we also coordinated several events to raise awareness of our work, each of which attracted over 200 people.
-          </p>
-          <!-- put in oven picture -->
+          <CarouselContainer />
         </div>
       </div>
     </div>
@@ -206,6 +146,7 @@
   import ToggleListComponent from "./ToggleList.vue";
   import LightBoxComponent from "./LightBox.vue";
   import IconGridComponent from "./IconGrid.vue";
+  import FloatingIconComponent from "./FloatingIcon.vue";
 
   export default {
     name: "ContentContainerComponent",
@@ -214,6 +155,7 @@
       ToggleListComponent,
       LightBoxComponent,
       IconGridComponent,
+      FloatingIconComponent,
     },
     methods: {
     }
@@ -277,7 +219,6 @@
   }
   #content-container {
     max-width: $breakpoint-xl !important;
-    padding-top: $padding-lg;
     margin-left: auto;
     margin-right: auto;
   }
@@ -285,6 +226,7 @@
     padding: 5vh 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    margin-bottom: $margin-lg;
     h4 {
       display: grid;
       align-items: center;
@@ -306,10 +248,10 @@
     }
   }
   #content-collection {
+    padding: $padding-md $padding-md/2 0 $padding-md/2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: $margin-md;
-    padding: $padding-md $padding-md/2 0 $padding-md/2;
 
     & > div {
       grid-gap: $margin-md;
