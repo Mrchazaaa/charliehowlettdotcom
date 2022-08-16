@@ -65,6 +65,7 @@
   }
 
   .carousel {
+    margin-bottom: 8px;
     width: 100%;
     display: grid
   }
