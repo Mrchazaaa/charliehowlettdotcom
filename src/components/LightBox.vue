@@ -22,9 +22,9 @@
     name: "LightBox",
     data: function() {
       let images = [
-          require('@/assets/80kmh.png'),
-          require('@/assets/110kmh.png'),
-          require('@/assets/150kmh.png'),
+          require('@/assets/80kmh.webp'),
+          require('@/assets/110kmh.webp'),
+          require('@/assets/150kmh.webp'),
         ];
 
       return {

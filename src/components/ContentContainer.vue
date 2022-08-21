@@ -25,9 +25,9 @@
         <div class="content-item card" id="previous-work">
           <h2>Previous Work</h2>
           <IconGridComponent
-            :items="[{width: 4, image: require('@/assets/go.png'), link: 'https://github.com/Mrchazaaa/go-bot'},
+            :items="[{width: 4, image: require('@/assets/go.webp'), link: 'https://github.com/Mrchazaaa/go-bot'},
                       {width: 4, image: require('@/assets/ConnectControl.png'), link: 'https://github.com/thorpelawrence/alexa-spotify-connect'},
-                      {width: 4, image: require('@/assets/PROM.jpg'), link: 'https://github.com/spankie1337/PROM_keypad'},
+                      {width: 4, image: require('@/assets/PROM.webp'), link: 'https://github.com/spankie1337/PROM_keypad'},
                       {width: 4, image: require('@/assets/charlierobot.png'), link: 'https://github.com/Mrchazaaa/charlie-robot'},
                       {width: 4, image: require('@/assets/LightMonitoring.webp'), link: 'https://github.com/Mrchazaaa/pi-lights'},
                       {width: 4, image: require('@/assets/PresenceMonitoring.webp'), link: 'https://github.com/Mrchazaaa/arduino-monitoring'}
